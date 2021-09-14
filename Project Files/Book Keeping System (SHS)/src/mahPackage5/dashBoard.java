@@ -2715,8 +2715,8 @@ public class dashBoard extends javax.swing.JFrame {
 
         //my.remove_multiple_tabs(mainTab, new int [] {1,2});
         //String where = "WHERE subjectCode LIKE 'ADV%'";
-        String where = "WHERE subjectCode LIKE '%"+toSearch+"%' OR subjectCode is NULL";
-
+        String where = "WHERE subjectCode LIKE '%"+toSearch+"%' AND (gradeLevel = 11 OR gradeLevel = 12)";
+        
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
@@ -2738,7 +2738,7 @@ public class dashBoard extends javax.swing.JFrame {
         }
 
         if(toSearch.length() > 0){
-            where +=" AND sectionName LIKE '%"+toSearch+"%'";
+            where +=" OR sectionName LIKE '%"+toSearch+"%'";
         }
 
         String [] result = my.return_values("*", "v_managedsubjects_wbooktemplate", where, myVariables.getManagedSubjectsWTemplateViewOrder());

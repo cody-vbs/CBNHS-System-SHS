@@ -2474,7 +2474,7 @@
                                           <Component id="tfSearchEnrolledStudent" alignment="1" min="-2" pref="27" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" pref="661" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="727" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2576,7 +2576,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jPanel18" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" pref="598" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="664" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnSaveStatusChanges" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>

@@ -799,7 +799,7 @@ public class myFunctions {
         return new ActionEvent(source,ActionEvent.ACTION_FIRST, "");
     }
     public int login(String userName,String passWord,int [] accessLevelAllowed){
-        String [] result = return_values("*", "users","WHERE user_name ='"+userName+"' AND user_password = '"+passWord+"'",myVariables.getUsersOrder());
+        String [] result = return_values("*", "v_users_shs","WHERE user_name ='"+userName+"' AND user_password = '"+passWord+"' ",myVariables.getUsersOrder());
         if(result != null){
             String [] tempRow = toNameFormat(result[0], new int [] {1,2,3}).split("@@");
             int accessLevel = Integer.valueOf(tempRow[5]);

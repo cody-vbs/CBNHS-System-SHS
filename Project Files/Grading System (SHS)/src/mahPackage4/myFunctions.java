@@ -755,7 +755,7 @@ public class myFunctions {
         return new ActionEvent(source,ActionEvent.ACTION_FIRST, "");
     }
     public int login(String userName,String passWord,int [] accessLevelAllowed){
-        String [] result = return_values("*", "users","WHERE user_name ='"+userName+"' AND user_password = '"+passWord+"'",myVariables.getUsersOrder());
+        String [] result = return_values("*", "v_users_shs","WHERE user_name ='"+userName+"' AND user_password = '"+passWord+"'",myVariables.getUsersOrder());
         if(result != null){
             String [] tempRow = toNameFormat(result[0], new int [] {1,2,3}).split("@@");
             int accessLevel = Integer.valueOf(tempRow[5]);
@@ -1218,27 +1218,5 @@ public class myFunctions {
     
     public Image getImage(String url){
         return new ImageIcon(getClass().getResource(url)).getImage();
-    }
-    
-    //method md5 conversion
-    public String convertMd5(String input)
-    {
-        try {
-  
-            MessageDigest md = MessageDigest.getInstance("MD5");
-  
-            byte[] messageDigest = md.digest(input.getBytes());
-  
-            BigInteger no = new BigInteger(1, messageDigest);
-  
-            String hashtext = no.toString(16);
-            while (hashtext.length() < 32) {
-                hashtext = "0" + hashtext;
-            }
-            return hashtext;
-        } 
-        catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

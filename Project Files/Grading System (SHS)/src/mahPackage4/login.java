@@ -368,8 +368,7 @@ public class login extends javax.swing.JFrame implements java.lang.Runnable {
         String userName = user.getText();
         String password = String.valueOf(pass.getPassword());
         
-        //convert the password to md5 hash
-        int result = my.login(userName, my.convertMd5(password), new int [] {1,2,4,5});
+        int result = my.login(userName, password, new int [] {1,2,4,5});
         
         switch(result){
             case 0:{

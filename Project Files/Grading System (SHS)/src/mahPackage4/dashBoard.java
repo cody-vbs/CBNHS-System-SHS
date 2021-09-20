@@ -2760,7 +2760,7 @@ public class dashBoard extends javax.swing.JFrame {
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
-                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"'";
+                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }case 2:{   //Department Head
                 String managedSubjects = "";
@@ -2772,19 +2772,20 @@ public class dashBoard extends javax.swing.JFrame {
                     }
                 }
                 if(managedSubjects.length() > 0){
-                    where += " AND subjectId IN ("+managedSubjects+")";
+                    where += " AND subjectId IN ("+managedSubjects+") AND gradeLevel='11' OR gradeLevel='12'";
                 }else{
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("There are no subjects assigned to you. Try refreshing again.\nIf the problem persists, please consult your Curruculum Head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 
-                where += " AND teacherId!='-1'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }case 4:{
-                where += " AND teacherId!='-1'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }case 5:{
+                where += " AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }
         }
@@ -2833,7 +2834,7 @@ public class dashBoard extends javax.swing.JFrame {
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
-                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"'";
+                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }case 2:{   //Department Head
                 String managedSubjects = "";
@@ -2846,19 +2847,20 @@ public class dashBoard extends javax.swing.JFrame {
                 }
                 
                 if(managedSubjects.length() > 0){
-                    where += " AND subjectId IN ("+managedSubjects+")";
+                    where += " AND subjectId IN ("+managedSubjects+") AND gradeLevel='11' OR gradeLevel='12'";
                 }else{
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("You have no subjects assigned to you. Try refreshing again.\nIf the problem persists, please consult your Curruculum Head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 
-                where += " AND teacherId!='-1'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }case 4:{
-                where += " AND teacherId!='-1'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }case 5:{
+                where += " AND gradeLevel='11' OR gradeLevel='12'";
                 break;
             }
         }

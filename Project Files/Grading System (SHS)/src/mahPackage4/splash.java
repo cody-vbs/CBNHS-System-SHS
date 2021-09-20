@@ -26,7 +26,7 @@ public class splash extends javax.swing.JFrame {
     public splash() {
         initComponents();
         
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icons8_add_user_male_16px.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/gradingIcon.png")));
 
        
         try{

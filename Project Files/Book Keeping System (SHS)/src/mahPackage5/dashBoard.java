@@ -27,6 +27,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.*;
+import javax.swing.table.DefaultTableModel;
 import javazoom.jl.player.Player;
 /**
  *
@@ -2586,6 +2587,10 @@ public class dashBoard extends javax.swing.JFrame {
             playSuccess();
             my.showMessage("Update Successful. Please select the section again.", JOptionPane.INFORMATION_MESSAGE);
             closeCustomDialog();
+            
+            DefaultTableModel tMOdel = (DefaultTableModel)  assignedTeacherTable.getModel();
+            tMOdel.setRowCount(0);
+            
         }else{
             playError();
             my.showMessage("Update failed. Please make sure you are connected to the School Network.", JOptionPane.ERROR_MESSAGE);
@@ -2922,7 +2927,10 @@ public class dashBoard extends javax.swing.JFrame {
         myCards.add(selectSectionTab);
         myCards.repaint();
         myCards.revalidate();
-
+        
+        DefaultTableModel tMOdel = (DefaultTableModel)  assignedTeacherTable.getModel();
+        tMOdel.setRowCount(0);
+        
         tab3.setBackground(Color.decode("#FDE8F0"));
 
         tab1.setBackground(Color.decode("#FBB9D3"));
@@ -3218,16 +3226,6 @@ public class dashBoard extends javax.swing.JFrame {
         
     }
     private void loadTabs(){ 
-        
-        //mainTab.addTab("Manage Books",manageBooksTab);
-        //mainTab.addTab("Manage Book Templates",manageBookTemplatesTab);
-        //mainTab.addTab("Select Managed Section",selectSectionTab);
-        //mainTab.addTab("Distribute/Return Books",distributeReturnBooksTab);
-        //mainTab.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
-        
-        //mainTab.setFont(myVariables.TAB_HEADER_FONT);
-        //
-        
         if(myVariables.getAccessLevel() == 1){
             jPanel3.remove(tab1);
             jPanel3.remove(tab2);

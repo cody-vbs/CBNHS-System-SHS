@@ -4160,13 +4160,13 @@ public class dashBoard extends javax.swing.JFrame {
     }
     private void hideElementsByAccessLevel(){
         //default 2 & 5 - to hide my managed subjects 
-        if(myVariables.getAccessLevel() != 69 && myVariables.getAccessLevel() != 69){
+        //if(myVariables.getAccessLevel() != 2 && myVariables.getAccessLevel() != 5){
             btnMyManagedSubjects.setVisible(false);
-        }
+        //}
         //default 4 & 5 - to hide import 
-        if(myVariables.getAccessLevel() != 69 && myVariables.getAccessLevel() != 69){
+        //if(myVariables.getAccessLevel() != 4 && myVariables.getAccessLevel() != 5){
             btnImportFromSf10.setVisible(false);
-        }
+        //}
     }
     private void refreshAssignedSubjects(boolean notifyIfEmpty){
         if(myVariables.getAccessLevel() != 2 && myVariables.getAccessLevel() != 5){

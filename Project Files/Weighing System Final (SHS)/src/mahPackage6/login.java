@@ -248,6 +248,11 @@ static void playErrorSound() {
         pass.setFont(new Font("Poppins", Font.PLAIN, 12));
         pass.setForeground(Color.BLACK);
         pass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new Font("Poppins", Font.PLAIN, 12));
         jLabel2.setForeground(Color.BLACK);
@@ -339,8 +344,8 @@ static void playErrorSound() {
         String userName = username.getText();
         String password = String.valueOf(pass.getPassword());
         
-        //convert the password to md5 hash
-        int result = my.login(userName, my.convertMd5(password), new int [] {1,4,5});
+        //convert the password to md5 hash is not applicable,see database
+        int result = my.login(userName, password, new int [] {1,4,5});
         
         switch(result){
             case 0:{
@@ -385,6 +390,10 @@ static void playErrorSound() {
         this.setVisible(false);
         new contact().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
     private void loadColoredButtons(){
         JButton buttons [] = {
             btnLogin,

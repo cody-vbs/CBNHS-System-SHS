@@ -27,6 +27,7 @@ import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.Shape;
+import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,7 +54,7 @@ public class dashBoard extends javax.swing.JFrame {
     Font poppins12;
     Font poppins12R;
     
-    
+    //  int counter = 0,counter2 = 0,counter3 = 0,counter4 = 0;
     public dashBoard() {
         
         try{
@@ -164,7 +165,7 @@ public class dashBoard extends javax.swing.JFrame {
         }
 
     }
-    
+ 
     
     //call these methods for message sound
     void playSuccess(){
@@ -175,6 +176,8 @@ public class dashBoard extends javax.swing.JFrame {
         SwingUtilities.invokeLater(new PlayErrorMessageSound());
     }
     
+ 
+    // Toolkit.getDefaultToolkit().beep();
 
     //<editor-fold desc="Custom Functions"> 
     JDialog dialog;
@@ -617,7 +620,8 @@ public class dashBoard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfSearchTeacherLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearchSection, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnSearchSection, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)))
                 .addContainerGap())
         );
         selectSectionTabLayout.setVerticalGroup(
@@ -1733,7 +1737,7 @@ public void myInitComponents() {
 
         my.remove_multiple_tabs(mainTab, new int [] {1,2});
 
-        String where = "WHERE subjectCode LIKE 'ADV%'";
+        String where = "WHERE subjectCode LIKE 'ADV%' AND gradeLevel > 10 ";
 
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
@@ -1778,7 +1782,12 @@ public void myInitComponents() {
 
         my.clear_table_rows(assignedTeacherTable);
         if(result == null){
+           
             lbSearchResult.setText("Showing 0 results for '"+toSearch+"'.");
+             Toolkit.getDefaultToolkit().beep(); 
+            my.showMessage("You have no SHS section assigned to you",JOptionPane.WARNING_MESSAGE);
+
+           
             return;
         }else{
             if(result.length > 1){
@@ -1838,6 +1847,7 @@ public void myInitComponents() {
         int row = assignedTeacherTable.getSelectedRow();
 
         if(row == -1){
+             Toolkit.getDefaultToolkit().beep();
             my.showMessage("Please select a section first.", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1853,6 +1863,7 @@ public void myInitComponents() {
     private void btnEvaluateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluateActionPerformed
         int row = enrolledStudentsTable.getSelectedRow();
         if(row == -1){
+             Toolkit.getDefaultToolkit().beep();
             my.showMessage("No Student Selected.", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1868,11 +1879,15 @@ public void myInitComponents() {
         try {
             dateConducted = my.jCalendarToNumberDate(jdcDateOfMeasurement.getDate().toString(), false);
             dateOfBirth = enrolledStudentsTable.getValueAt(row, 5).toString();
-        } catch (Exception e) {my.showMessage("Invalid Date.", JOptionPane.WARNING_MESSAGE);return;}
+        } catch (Exception e) {
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Date.", JOptionPane.WARNING_MESSAGE);return;}
         try {
             Integer.parseInt(weight);
             Float.parseFloat(height);
-        } catch (Exception e) {my.showMessage("Invalid Weight/Height.", JOptionPane.WARNING_MESSAGE);return;}
+        } catch (Exception e) {
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Weight/Height.", JOptionPane.WARNING_MESSAGE);return;}
         
         heightSquared = my.getHeightSquared(height);
         bmi = my.getBmi(weight, heightSquared);
@@ -1901,11 +1916,15 @@ public void myInitComponents() {
         try {
             dateConducted = my.jCalendarToNumberDate(jdcTestDateOfMeasurement.getDate().toString(), false);
             dateOfBirth = my.jCalendarToNumberDate(jdcTestDateOfBirt.getDate().toString(), false);
-        } catch (Exception e) {my.showMessage("Invalid Date.", JOptionPane.WARNING_MESSAGE);return;}
+        } catch (Exception e) {
+             Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Date.", JOptionPane.WARNING_MESSAGE);return;}
         try {
             Integer.parseInt(weight);
             Float.parseFloat(height);
-        } catch (Exception e) {my.showMessage("Invalid Weight/Height.", JOptionPane.WARNING_MESSAGE);return;}
+        } catch (Exception e) {
+             Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Weight/Height.", JOptionPane.WARNING_MESSAGE);return;}
         
         heightSquared = my.getHeightSquared(height);
         bmi = my.getBmi(weight, heightSquared);

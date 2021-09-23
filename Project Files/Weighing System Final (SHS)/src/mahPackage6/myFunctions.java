@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.File;
@@ -192,31 +193,31 @@ public class myFunctions {
         int [] order = null;
         switch(viewTableIndex){
             case 0:{
-                from = "students";
+                from = "v_students_shs";
                 order = myVariables.getStudentsOrder();
                 break;
             }case 1:{
-                from = "subjects";
+                from = "v_subjects_shs";
                 order = myVariables.getSubjectOrder();
                 break;
             }case 2:{
-                from = "loads";
+                from = "v_loads_shs";
                 order = myVariables.getSubjectLoadsOrder();
                 break;
             }case 3:{
-                from = "users";
+                from = "v_users_shs";
                 order = myVariables.getUsersOrder();
                 break;
             }case 4:{
-                from = "v_sections";
+                from = "v_sections_shs";
                 order = myVariables.getSectionsOrder();
                 break;
             }case 5:{
-                from = "v_teacherloads";
+                from = "v_teacherloads_shs";
                 order = myVariables.getTeacherLoadsViewOrder();
                 break;
             }case 6:{
-                from = "v_enrollment_minimal";
+                from = "v_enrollment_minimal_shs";
                 order = myVariables.getEnrollmentViewMinimalOrder();
                 break;
             }case 7:{
@@ -224,7 +225,7 @@ public class myFunctions {
                 order = myVariables.getAttendanceOrder();
                 break;
             }case 8:{
-                from = "v_enrollment_mini_wbdate";
+                from = "v_enrollment_mini_wbdate_shs";
                 order = myVariables.getEnrollmentViewMinWBdateOrder();
                 break;
             }default:{
@@ -259,7 +260,8 @@ public class myFunctions {
                 resultText.setText("Showing "+result.length+" result(s) for '"+searchField.getText()+"'.");
             }
         }else{
-            showMessage("No Results found.", JOptionPane.PLAIN_MESSAGE);
+             Toolkit.getDefaultToolkit().beep(); 
+            showMessage("No Results found.", JOptionPane.WARNING_MESSAGE);
             clear_table_rows(resultTable);
             if(resultText!= null){
                 resultText.setText("Showing 0 results for '"+searchField.getText()+"'.");
@@ -836,7 +838,7 @@ public class myFunctions {
         return new ActionEvent(source,ActionEvent.ACTION_FIRST, "");
     }
     public int login(String userName,String passWord,int [] accessLevelAllowed){
-        String [] result = return_values("*", "users","WHERE user_name ='"+userName+"' AND user_password = '"+passWord+"'",myVariables.getUsersOrder());
+        String [] result = return_values("*", "v_users_shs","WHERE user_name ='"+userName+"' AND user_password = '"+passWord+"'",myVariables.getUsersOrder());
         if(result != null){
             String [] tempRow = toNameFormat(result[0], new int [] {1,2,3}).split("@@");
             int accessLevel = Integer.valueOf(tempRow[5]);

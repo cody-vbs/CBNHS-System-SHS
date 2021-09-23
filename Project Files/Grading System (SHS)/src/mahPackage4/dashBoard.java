@@ -1037,7 +1037,7 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(jLabel22)
                             .addComponent(lbEvaluation)))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSaveChangesCurrent)
                 .addContainerGap())
         );
@@ -4160,10 +4160,11 @@ public class dashBoard extends javax.swing.JFrame {
     }
     private void hideElementsByAccessLevel(){
         //default 2 & 5 - to hide my managed subjects 
-        if(myVariables.getAccessLevel() != 2 && myVariables.getAccessLevel() != 5){
+        if(myVariables.getAccessLevel() != 69 && myVariables.getAccessLevel() != 69){
             btnMyManagedSubjects.setVisible(false);
         }
-        if(myVariables.getAccessLevel() != 4 && myVariables.getAccessLevel() != 5){
+        //default 4 & 5 - to hide import 
+        if(myVariables.getAccessLevel() != 69 && myVariables.getAccessLevel() != 69){
             btnImportFromSf10.setVisible(false);
         }
     }

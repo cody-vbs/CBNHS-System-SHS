@@ -342,7 +342,7 @@
                                       </Group>
                                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="46" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnSaveChangesCurrent" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -3555,12 +3555,12 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="mainTab" alignment="1" pref="987" max="32767" attributes="0"/>
+                          <Component id="mainTab" alignment="1" pref="1028" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="mainTab" alignment="1" pref="720" max="32767" attributes="0"/>
+                          <Component id="mainTab" alignment="1" pref="508" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -3635,7 +3635,7 @@
                               <Component id="jScrollPane4" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel17" min="-2" pref="457" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="530" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="571" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3647,7 +3647,7 @@
                                       <Component id="btnRefresh" min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane4" pref="655" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane4" pref="443" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel17" min="-2" pref="17" max="-2" attributes="0"/>
                               </Group>
@@ -3783,7 +3783,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel94" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jtbImportTabs" max="32767" attributes="0"/>
+                                  <Component id="jtbImportTabs" pref="465" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3820,7 +3820,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jScrollPane9" alignment="1" max="32767" attributes="0"/>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lbSearchResult2" pref="653" max="32767" attributes="0"/>
+                                                  <Component id="lbSearchResult2" pref="694" max="32767" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="tfSearchStudent" min="-2" pref="191" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -3841,7 +3841,7 @@
                                               <Component id="lbSearchResult2" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jScrollPane9" pref="598" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane9" pref="386" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3946,7 +3946,7 @@
                                               <Component id="btnOpenFileExplorer" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="gradeTabs" max="32767" attributes="0"/>
+                                          <Component id="gradeTabs" pref="331" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -4016,12 +4016,12 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jScrollPane10" pref="937" max="32767" attributes="0"/>
+                                                      <Component id="jScrollPane10" pref="978" max="32767" attributes="0"/>
                                                       <Component id="jLabel20" max="32767" attributes="0"/>
                                                       <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="jScrollPane11" alignment="0" max="32767" attributes="0"/>
                                                       <Group type="102" alignment="1" attributes="0">
-                                                          <EmptySpace min="0" pref="828" max="32767" attributes="0"/>
+                                                          <EmptySpace min="0" pref="869" max="32767" attributes="0"/>
                                                           <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="lbImportedGeneralAverage" min="-2" max="-2" attributes="0"/>
@@ -4041,7 +4041,7 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane11" pref="347" max="32767" attributes="0"/>
+                                                  <Component id="jScrollPane11" pref="138" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
                                                       <Component id="lbImportedGeneralAverage" alignment="3" min="-2" max="-2" attributes="0"/>

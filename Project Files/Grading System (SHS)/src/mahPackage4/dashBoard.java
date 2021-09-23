@@ -2272,7 +2272,7 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(lbLoggedInUser1)
                             .addComponent(jLabel32)
                             .addComponent(lbLoggedInUser))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2760,29 +2760,29 @@ public class dashBoard extends javax.swing.JFrame {
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
-                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR gradeLevel='12'";
+                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
                 break;
             }case 2:{   //Department Head
-                String managedSubjects = "";
+                /*String managedSubjects = "";
                 
                 for(int n=0;n<assignedSubjectsTable.getRowCount();n++){
-                    managedSubjects += assignedSubjectsTable.getValueAt(n, 0).toString();
+                    managedSubjects += assignedSubjectsTable.getValueAt(n, 1).toString();
                     if(n < assignedSubjectsTable.getRowCount()-1){
                         managedSubjects+=",";
                     }
                 }
                 if(managedSubjects.length() > 0){
-                    where += " AND subjectId IN ("+managedSubjects+") AND gradeLevel='11' OR gradeLevel='12'";
+                    where += " AND subjectId IN ("+managedSubjects+")";
                 }else{
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("There are no subjects assigned to you. Try refreshing again.\nIf the problem persists, please consult your Curruculum Head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
                     return;
-                }
+                }*/
                 
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 4:{
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 5:{
                 where += " AND gradeLevel='11' OR gradeLevel='12'";
@@ -2834,30 +2834,30 @@ public class dashBoard extends javax.swing.JFrame {
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
-                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR gradeLevel='12'";
+                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
                 break;
             }case 2:{   //Department Head
-                String managedSubjects = "";
+                /*String managedSubjects = "";
                 
                 for(int n=0;n<assignedSubjectsTable.getRowCount();n++){
-                    managedSubjects += assignedSubjectsTable.getValueAt(n, 0).toString();
+                    managedSubjects += assignedSubjectsTable.getValueAt(n, 1).toString();
                     if(n < assignedSubjectsTable.getRowCount()-1){
                         managedSubjects+=",";
                     }
                 }
                 
                 if(managedSubjects.length() > 0){
-                    where += " AND subjectId IN ("+managedSubjects+") AND gradeLevel='11' OR gradeLevel='12'";
+                    where += " AND subjectId IN ("+managedSubjects+")";
                 }else{
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("You have no subjects assigned to you. Try refreshing again.\nIf the problem persists, please consult your Curruculum Head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
                     return;
-                }
+                }*/
                 
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 4:{
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR gradeLevel='12'";
+                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 5:{
                 where += " AND gradeLevel='11' OR gradeLevel='12'";

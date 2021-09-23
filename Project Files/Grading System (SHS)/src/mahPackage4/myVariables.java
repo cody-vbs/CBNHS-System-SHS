@@ -88,7 +88,7 @@ public class myVariables {
     private static final int [] sf2StudentListViewOrder = new int [] {4,5,0,2,6,1,3};
     private static final int [] sf2StudentListViewOrderRev2 = new int [] {4,5,0,2,6,1,3,7};
     private static final int [] attendanceOrder = new int [] {2,0,3,4,6,5,1};
-    private static final int [] subjectOrder = new int[] {2,3,1,0};
+    private static final int [] subjectOrder = new int[] {3,4,2,1,0};
     private static final int [] booksViewOrder = new int [] {14,21,8,0,4,23,1,3,9,12,7,5,19,24,2,17,26,20,16,18,25,13,22,6,15,10,11};
     private static int [] gradesViewOrder = new int []{11,4,7,10,2,1,12,0,5,13,3,9,8,14,6};
     

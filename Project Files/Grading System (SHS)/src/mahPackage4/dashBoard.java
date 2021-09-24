@@ -2321,11 +2321,11 @@ public class dashBoard extends javax.swing.JFrame {
         card1.setLayout(card1Layout);
         card1Layout.setHorizontalGroup(
             card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainTab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
+            .addComponent(mainTab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1028, Short.MAX_VALUE)
         );
         card1Layout.setVerticalGroup(
             card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainTab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(mainTab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
         );
 
         cards.add(card1, "card2");
@@ -2386,7 +2386,7 @@ public class dashBoard extends javax.swing.JFrame {
             .addComponent(jScrollPane4)
             .addGroup(myAssignedSubjectsDialogLayout.createSequentialGroup()
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 530, Short.MAX_VALUE))
+                .addGap(0, 571, Short.MAX_VALUE))
         );
         myAssignedSubjectsDialogLayout.setVerticalGroup(
             myAssignedSubjectsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2395,7 +2395,7 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(jLabel37)
                     .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -2456,7 +2456,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGroup(selectStudentTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane9)
                     .addGroup(selectStudentTabLayout.createSequentialGroup()
-                        .addComponent(lbSearchResult2, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                        .addComponent(lbSearchResult2, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2472,7 +2472,7 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(btnSearch)
                     .addComponent(lbSearchResult2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2578,12 +2578,12 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(gradeDetailsTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(gradeDetailsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane11)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradeDetailsTabLayout.createSequentialGroup()
-                        .addGap(0, 828, Short.MAX_VALUE)
+                        .addGap(0, 869, Short.MAX_VALUE)
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbImportedGeneralAverage)))
@@ -2599,7 +2599,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(gradeDetailsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbImportedGeneralAverage)
@@ -2644,7 +2644,7 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(tfFileLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOpenFileExplorer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gradeTabs)
+                .addComponent(gradeTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -2670,7 +2670,7 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(importDialogLayout.createSequentialGroup()
                 .addComponent(jLabel94)
                 .addGap(18, 18, 18)
-                .addComponent(jtbImportTabs))
+                .addComponent(jtbImportTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout card3Layout = new javax.swing.GroupLayout(card3);
@@ -2748,19 +2748,21 @@ public class dashBoard extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         my.openWindow(this, new login());
     }//GEN-LAST:event_formWindowClosed
-
+   
     private void tfSearchTeacherLoadsearchManagedSections(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSearchTeacherLoadsearchManagedSections
         String toSearch = tfSearchTeacherLoad.getText();
         String schoolYear = jcbSchoolYear1.getSelectedItem().toString();
 
         my.remove_multiple_tabs(mainTab, new int [] {1,2});
-
-        String where = "WHERE subjectCode NOT LIKE 'ADV%'";
+        
+        //String where = "WHERE subjectCode NOT LIKE 'ADV%'";
+        String where = "WHERE ";
         
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
-                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
+                //where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
+                where += "teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
                 break;
             }case 2:{   //Department Head
                 /*String managedSubjects = "";
@@ -2779,13 +2781,16 @@ public class dashBoard extends javax.swing.JFrame {
                     return;
                 }*/
                 
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                //where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                where += "teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 4:{
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                //where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                where += "teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 5:{
-                where += " AND gradeLevel='11' OR gradeLevel='12'";
+                //where += " AND gradeLevel='11' OR gradeLevel='12'";
+                where += "gradeLevel='11' OR gradeLevel='12'";
                 break;
             }
         }
@@ -2829,12 +2834,13 @@ public class dashBoard extends javax.swing.JFrame {
 
         my.remove_multiple_tabs(mainTab, new int [] {1,2});
 
-        String where = "WHERE subjectCode NOT LIKE 'ADV%'";
+        String where = "WHERE ";
         
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){
             case 1:{    //Teacher or Subject Teacher
-                where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
+                //where += " AND teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
+                where += "teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='11' OR teacherId='"+myVariables.getUserLoggedInId()+"' AND gradeLevel='12'";
                 break;
             }case 2:{   //Department Head
                 /*String managedSubjects = "";
@@ -2845,22 +2851,24 @@ public class dashBoard extends javax.swing.JFrame {
                         managedSubjects+=",";
                     }
                 }
-                
                 if(managedSubjects.length() > 0){
                     where += " AND subjectId IN ("+managedSubjects+")";
                 }else{
                     Toolkit.getDefaultToolkit().beep();
-                    my.showMessage("You have no subjects assigned to you. Try refreshing again.\nIf the problem persists, please consult your Curruculum Head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
+                    my.showMessage("There are no subjects assigned to you. Try refreshing again.\nIf the problem persists, please consult your Curruculum Head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
                     return;
                 }*/
                 
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                //where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                where += "teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 4:{
-                where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                //where += " AND teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
+                where += "teacherId!='-1' AND gradeLevel='11' OR teacherId!='-1' AND gradeLevel='12'";
                 break;
             }case 5:{
-                where += " AND gradeLevel='11' OR gradeLevel='12'";
+                //where += " AND gradeLevel='11' OR gradeLevel='12'";
+                where += "gradeLevel='11' OR gradeLevel='12'";
                 break;
             }
         }
@@ -4159,11 +4167,9 @@ public class dashBoard extends javax.swing.JFrame {
         return finalStatus;
     }
     private void hideElementsByAccessLevel(){
-        //default 2 & 5 - to hide my managed subjects 
         //if(myVariables.getAccessLevel() != 2 && myVariables.getAccessLevel() != 5){
             btnMyManagedSubjects.setVisible(false);
         //}
-        //default 4 & 5 - to hide import 
         //if(myVariables.getAccessLevel() != 4 && myVariables.getAccessLevel() != 5){
             btnImportFromSf10.setVisible(false);
         //}
@@ -4633,9 +4639,7 @@ public class dashBoard extends javax.swing.JFrame {
         
         
     }
-    
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable assignedSubjectsTable;
     private javax.swing.JTable assignedTeacherTable;

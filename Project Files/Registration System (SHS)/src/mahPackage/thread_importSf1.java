@@ -20,7 +20,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author Phil Rey Paderogao
+ * @author Syd
  */
 public class thread_importSf1 extends SwingWorker<String, Object>{
     long threadDelay = 100;

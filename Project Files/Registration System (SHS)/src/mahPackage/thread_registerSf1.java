@@ -12,7 +12,7 @@ import org.apache.commons.validator.GenericValidator;
 
 /**
  *
- * @author Phil Rey Paderogao
+ * @author Syd
  */
 public class thread_registerSf1 extends SwingWorker<String, Object>{
     long threadDelay = 100;

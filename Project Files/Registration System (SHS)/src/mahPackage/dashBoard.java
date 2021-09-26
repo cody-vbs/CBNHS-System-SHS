@@ -3665,18 +3665,21 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(jLabel85, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel86, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel97, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(tfSearchSubject3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(btnAddManagedSubject)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addComponent(jLabel82)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lbUserInfoId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel16Layout.createSequentialGroup()
-                                .addComponent(tfSearchSubject3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSearch7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(tfPosition)
                             .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfFundSource)
@@ -3687,27 +3690,22 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(tfMinor)
                             .addComponent(tfMajor)
                             .addComponent(tfDegree)
-                            .addComponent(jLabel88, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel16Layout.createSequentialGroup()
-                                .addComponent(btnAddManagedSubject)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSaveManagedSubjectChanges)))
-                        .addContainerGap())))
+                            .addComponent(jLabel88, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(jPanel16Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnEditAssignedSubject))))
+                        .addGap(0, 5, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnDeleteManagedSubject)))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEditAssignedSubject, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                                .addComponent(btnDeleteManagedSubject)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSaveManagedSubjectChanges)))))
                 .addContainerGap())
         );
         jPanel16Layout.setVerticalGroup(
@@ -3752,14 +3750,6 @@ public class dashBoard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSaveChanges6)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel97)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditAssignedSubject)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteManagedSubject)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel61)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -3768,10 +3758,18 @@ public class dashBoard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSaveManagedSubjectChanges)
-                    .addComponent(btnAddManagedSubject))
+                .addComponent(btnAddManagedSubject)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel97)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditAssignedSubject)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSaveManagedSubjectChanges)
+                    .addComponent(btnDeleteManagedSubject))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel82)
                     .addComponent(lbUserInfoId))
@@ -6990,25 +6988,6 @@ public class dashBoard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSaveChanges6ActionPerformed
 
-    private void btnEditAssignedSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAssignedSubjectActionPerformed
-        int row = usersTable1.getSelectedRow();
-
-        if(row != -1){
-            int accessLevel = Integer.parseInt(usersTable1.getValueAt(row, 7).toString());
-
-            if(accessLevel != 2 && accessLevel != 5 && myVariables.getAccessLevel() != 5){
-                playError();
-                my.showMessage("Users with an access level "+2+" ("+myVariables.getAccessLevelName(2)+") can only be assigned.", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-        }else{
-            playError();
-            my.showMessage("No User Selected.", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        enableDisableManagedSubjectButtons(true, false);
-    }//GEN-LAST:event_btnEditAssignedSubjectActionPerformed
-
     private void btnSaveManagedSubjectChangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveManagedSubjectChangesActionPerformed
         //Get Values
         String profileId = lbUserInfoId.getText();
@@ -7087,20 +7066,6 @@ public class dashBoard extends javax.swing.JFrame {
             my.showMessage("Please select at least 1 subject to add to the list.", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAddManagedSubjectActionPerformed
-
-    private void btnDeleteManagedSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteManagedSubjectActionPerformed
-        if(managedSubjectTable.getSelectedRow() != -1){
-            int selectedRows [] = managedSubjectTable.getSelectedRows();
-
-            //Start deleting from the last index to avoid errors
-            for(int n=selectedRows.length-1;n>=0;n--){
-                my.remove_table_row(managedSubjectTable, selectedRows[n]);
-            }
-        }else{
-            Toolkit.getDefaultToolkit().beep();
-            my.showMessage("No subject selected to remove.", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_btnDeleteManagedSubjectActionPerformed
 
     private void btnSearch7findSubjectHandler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch7findSubjectHandler
         String toSearch = my.convertEscapeCharacters(tfSearchSubject3.getText());
@@ -7370,6 +7335,39 @@ public class dashBoard extends javax.swing.JFrame {
             new login().setVisible(true);
         }
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void btnDeleteManagedSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteManagedSubjectActionPerformed
+        if(managedSubjectTable.getSelectedRow() != -1){
+            int selectedRows [] = managedSubjectTable.getSelectedRows();
+
+            //Start deleting from the last index to avoid errors
+            for(int n=selectedRows.length-1;n>=0;n--){
+                my.remove_table_row(managedSubjectTable, selectedRows[n]);
+            }
+        }else{
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("No subject selected to remove.", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDeleteManagedSubjectActionPerformed
+
+    private void btnEditAssignedSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAssignedSubjectActionPerformed
+        int row = usersTable1.getSelectedRow();
+
+        if(row != -1){
+            int accessLevel = Integer.parseInt(usersTable1.getValueAt(row, 7).toString());
+
+            if(accessLevel != 2 && accessLevel != 5 && myVariables.getAccessLevel() != 5){
+                playError();
+                my.showMessage("Users with an access level "+2+" ("+myVariables.getAccessLevelName(2)+") can only be assigned.", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }else{
+            playError();
+            my.showMessage("No User Selected.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        enableDisableManagedSubjectButtons(true, false);
+    }//GEN-LAST:event_btnEditAssignedSubjectActionPerformed
 
     /**
      * @param args the command line arguments

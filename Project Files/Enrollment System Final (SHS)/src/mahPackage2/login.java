@@ -19,7 +19,7 @@ import javazoom.jl.player.Player;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class login extends javax.swing.JFrame implements java.lang.Runnable  {
     myFunctions my;

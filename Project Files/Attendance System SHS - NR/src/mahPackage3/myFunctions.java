@@ -235,7 +235,7 @@ public class myFunctions {
                 order = myVariables.getTeacherLoadsViewOrder();
                 break;
             }case 6:{
-                from = "v_enrollment_minimal_shs"; // ---
+                from = "v_enrollment_minimal"; // ---
                 order = myVariables.getEnrollmentViewMinimalOrder();
                 break;
             }case 7:{

@@ -1976,13 +1976,13 @@ public class dashBoard extends javax.swing.JFrame {
         String remarks = " ! !";
 
         if(currentGradeLevel == 0){
-//            if(sectionGradeLevel != 11){
-//                if(!my.getConfirmation("This student should be enrolled to a GRADE 11 section.\nContinue?")){
-//                    Toolkit.getDefaultToolkit().beep();
-//                    my.showMessage("Enrollment Cancelled.", JOptionPane.PLAIN_MESSAGE);
-//                    return;
-//                }
-//            }
+            if(sectionGradeLevel != 11){
+                 if(!my.getConfirmation("This student should be enrolled to a GRADE "+(currentGradeLevel)+" section.\nContinue?")){
+                    Toolkit.getDefaultToolkit().beep();
+                    my.showMessage("Enrollment Cancelled.", JOptionPane.PLAIN_MESSAGE);
+                    return;
+                }
+            }
             if(my.getConfirmation("This is this Student's first time being enrolled.\n"
                 + "Would you like to put a status of (TRANSFERRED IN) for this student?")){
             remarks = "T/I: "+dateNow+"!T/I: "+dateNow+"!";
@@ -2003,10 +2003,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         if(my.getConfirmation("Enroll this student? \n"+studentName+" to "+sectionName+"?")){
             String fields [] = {
-                "null",studentId,sectionId,"now()",remarks
+                "null",studentId,sectionId,"now()",remarks,"SHS"
             };
 
-            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks", fields)){
+            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks,dep_type", fields)){
                 //Update current grade level
                 String sets [] = {"curGrLvl='"+sectionGradeLevel+"'"};
                 if(my.update_values("students", sets, "id='"+studentId+"'")){

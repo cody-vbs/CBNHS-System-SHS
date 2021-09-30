@@ -3362,17 +3362,17 @@ public class dashBoard extends javax.swing.JFrame {
             tfBookName,tfBookName1,tfBookCode,tfBookCode1,tfTemplateName,tfTemplateName1,
         };
         for(JSpinner n : spinners){
-            n.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
+            n.setFont(myVariables.TEXTFIELD_FONT);
         }
         for(JDateChooser n : dateChoosers){
             n.setFont(myVariables.TEXTFIELD_FONT);
             n.setDateFormatString("yyyy-MM-dd");
         }
         for(JTextField n : searchFields){
-            n.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
+            n.setFont(myVariables.SEARCH_TEXTFIELD_FONT);
         }
         for(JTextField n : forms){
-            n.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
+            n.setFont(myVariables.TEXTFIELD_FONT);
         }
     }
     private void loadYearDropDowns(int numberOfYears){
@@ -3390,21 +3390,21 @@ public class dashBoard extends javax.swing.JFrame {
         
         for(JComboBox n : yearDropDowns){
             n.removeAllItems();
-            n.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
+            n.setFont(myVariables.TEXTFIELD_FONT);
             for(int x=0;x<numberOfYears;x++){
                 n.addItem(String.valueOf(startingYear+x));
             }
         }
         for(JComboBox n : yearDropDownsWithAllOption){
             n.removeAllItems();
-            n.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
+            n.setFont(myVariables.TEXTFIELD_FONT);
             n.addItem("All");
             for(int x=0;x<numberOfYears;x++){
                 n.addItem(String.valueOf(startingYear+x));
             }
         }
         for(JComboBox n : dropDowns){
-            n.setFont(new java.awt.Font("Poppins", Font.PLAIN, 19 ));
+            n.setFont(myVariables.TEXTFIELD_FONT);
         }
     }
     //</editor-fold>

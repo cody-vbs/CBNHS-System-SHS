@@ -1390,25 +1390,25 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         String fileName = "";
         switch(myVariables.getFormSelected()){
             case 1:{
-                fileName = importExport? "templates/jh_sf1.xlsx" : "exports/jh_sf1.xlsx";break;
+                fileName = importExport? "templates/shs_sf1.xlsx" : "exports/shs_sf1.xlsx";break;
             }case 2:{
-                fileName = importExport? "templates/jh_sf2.xlsx" : "exports/jh_sf2.xlsx";break;
+                fileName = importExport? "templates/shs_sf2.xlsx" : "exports/shs_sf2.xlsx";break;
             }case 3:{
-                fileName = importExport? "templates/jh_sf3.xlsx" : "exports/jh_sf3.xlsx";break;
+                fileName = importExport? "templates/shs_sf3.xlsx" : "exports/shs_sf3.xlsx";break;
             }case 4:{
-                fileName = importExport? "templates/jh_sf4.xlsx" : "exports/jh_sf4.xlsx";break;
+                fileName = importExport? "templates/shs_sf4.xlsx" : "exports/shs_sf4.xlsx";break;
             }case 5:{
-                fileName = importExport? "templates/jh_sf5.xlsx" : "exports/jh_sf5.xlsx";break;
+                fileName = importExport? "templates/shs_sf5.xlsx" : "exports/shs_sf5.xlsx";break;
             }case 6:{
-                fileName = importExport? "templates/jh_sf6.xlsx" : "exports/jh_sf6.xlsx";break;
+                fileName = importExport? "templates/shs_sf6.xlsx" : "exports/shs_sf6.xlsx";break;
             }case 7:{
-                fileName = importExport? "templates/jh_sf7.xlsx" : "exports/jh_sf7.xlsx";break;
+                fileName = importExport? "templates/shs_sf7.xlsx" : "exports/shs_sf7.xlsx";break;
             }case 8:{
-                fileName = importExport? "templates/jh_sf8.xlsx" : "exports/jh_sf8.xlsx";break;
+                fileName = importExport? "templates/shs_sf8.xlsx" : "exports/shs_sf8.xlsx";break;
             }case 9:{
-                fileName = importExport? "templates/jh_sf9.xlsx" : "exports/jh_sf9.xlsx";break;
+                fileName = importExport? "templates/shs_sf9.xlsx" : "exports/shs_sf9.xlsx";break;
             }case 10:{
-                fileName = importExport? "templates/jh_sf10.xlsx" : "exports/jh_sf10.xlsx";break;
+                fileName = importExport? "templates/shs_sf10.xlsx" : "exports/shs_sf10.xlsx";break;
             }
         }
         

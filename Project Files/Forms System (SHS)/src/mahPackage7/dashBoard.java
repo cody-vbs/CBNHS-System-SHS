@@ -6709,7 +6709,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         //my.remove_multiple_tabs(mainTab, new int [] {1,2});
 
-        String where = "WHERE subjectCode LIKE '%"+toSearch+"%' OR subjectCode is NULL";
+        String where = "WHERE gradeLevel> 10 AND subjectCode LIKE '%"+toSearch+"%' OR subjectCode is NULL ";
 
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){

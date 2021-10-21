@@ -32,7 +32,7 @@ import javazoom.jl.player.Player;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class dashBoard extends javax.swing.JFrame {
     myFunctions my;
@@ -681,7 +681,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         usersTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        usersTable.setPreferredSize(null);
         usersTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane11.setViewportView(usersTable);
         if (usersTable.getColumnModel().getColumnCount() > 0) {
@@ -896,7 +895,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         usersTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        usersTable1.setPreferredSize(null);
         usersTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane13.setViewportView(usersTable1);
         if (usersTable1.getColumnModel().getColumnCount() > 0) {
@@ -1572,7 +1570,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         assignedTeacherTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        assignedTeacherTable.setPreferredSize(null);
         assignedTeacherTable.getTableHeader().setReorderingAllowed(false);
         assignedTeacherTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1980,7 +1977,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         if(currentGradeLevel == 0){
             if(sectionGradeLevel != 11){
-                if(!my.getConfirmation("This student should be enrolled to a GRADE 11 section.\nContinue?")){
+                 if(!my.getConfirmation("This student should be enrolled to a GRADE "+(currentGradeLevel)+" section.\nContinue?")){
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("Enrollment Cancelled.", JOptionPane.PLAIN_MESSAGE);
                     return;
@@ -2006,10 +2003,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         if(my.getConfirmation("Enroll this student? \n"+studentName+" to "+sectionName+"?")){
             String fields [] = {
-                "null",studentId,sectionId,"now()",remarks
+                "null",studentId,sectionId,"now()",remarks,"SHS"
             };
 
-            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks", fields)){
+            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks,dep_type", fields)){
                 //Update current grade level
                 String sets [] = {"curGrLvl='"+sectionGradeLevel+"'"};
                 if(my.update_values("students", sets, "id='"+studentId+"'")){
@@ -3115,8 +3112,8 @@ public class dashBoard extends javax.swing.JFrame {
     columnModelAssignedTeacherTable.getColumn(4).setPreferredWidth(150);
     columnModelAssignedTeacherTable.getColumn(5).setPreferredWidth(150);
     columnModelAssignedTeacherTable.getColumn(6).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(150);
+    columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(100);
+    columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(100);
 
 
 

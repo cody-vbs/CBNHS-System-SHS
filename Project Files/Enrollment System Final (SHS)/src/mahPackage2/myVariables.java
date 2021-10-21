@@ -9,7 +9,7 @@ import java.awt.Font;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class myVariables {
     private static boolean debugModeOn = false;

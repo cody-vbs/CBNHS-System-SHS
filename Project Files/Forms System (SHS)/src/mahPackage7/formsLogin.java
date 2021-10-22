@@ -330,7 +330,7 @@ public class formsLogin extends javax.swing.JFrame implements java.lang.Runnable
         
         switch(result){
             case 0:{
-                playSuccess();
+                //playSuccess();
                 my.openWindow(this,new dashBoard());
                 break;
             }case 1:{

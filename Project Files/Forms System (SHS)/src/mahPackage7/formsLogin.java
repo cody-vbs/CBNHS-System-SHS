@@ -20,7 +20,11 @@ import javazoom.jl.player.Player;
 
 /**
  *
+<<<<<<< HEAD:Project Files/Enrollment System Final (SHS)/src/mahPackage2/login.java
+ * @author Syd
+=======
  * @author Phil Rey Paderogao
+>>>>>>> 48bf8b4e31924623245a194efdb8f89e5d250d66:Project Files/Forms System (SHS)/src/mahPackage7/formsLogin.java
  */
 public class formsLogin extends javax.swing.JFrame implements java.lang.Runnable {
     myFunctions my;

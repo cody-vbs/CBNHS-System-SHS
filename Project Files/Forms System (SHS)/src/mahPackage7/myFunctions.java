@@ -173,7 +173,7 @@ public class myFunctions {
                 order = myVariables.getAttendanceOrder();
                 break;
             }case 8:{
-                from = "v_enrollment_mini_wbdate_shs";
+                from = "v_enrollment_mini_wbdate";
                 order = myVariables.getEnrollmentViewMinWBdateOrder();
                 break;
             }case 9:{

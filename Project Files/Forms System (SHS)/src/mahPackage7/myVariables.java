@@ -14,7 +14,7 @@ import javax.swing.JProgressBar;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class myVariables {
     private static boolean debugModeOn = false;

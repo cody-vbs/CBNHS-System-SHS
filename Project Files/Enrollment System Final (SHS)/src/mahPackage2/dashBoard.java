@@ -681,6 +681,7 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         usersTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        usersTable.setMinimumSize(new java.awt.Dimension(45, 64));
         usersTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane11.setViewportView(usersTable);
         if (usersTable.getColumnModel().getColumnCount() > 0) {
@@ -829,7 +830,7 @@ public class dashBoard extends javax.swing.JFrame {
         addNewSectionPanel.setLayout(addNewSectionPanelLayout);
         addNewSectionPanelLayout.setHorizontalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
         );
         addNewSectionPanelLayout.setVerticalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1056,7 +1057,7 @@ public class dashBoard extends javax.swing.JFrame {
         editSectionPanel.setLayout(editSectionPanelLayout);
         editSectionPanelLayout.setHorizontalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
         );
         editSectionPanelLayout.setVerticalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1070,12 +1071,12 @@ public class dashBoard extends javax.swing.JFrame {
         rightLayout.setHorizontalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightLayout.createSequentialGroup()
-                .addComponent(sectionsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                .addComponent(sectionsTab)
                 .addGap(0, 0, 0))
         );
         rightLayout.setVerticalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sectionsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+            .addComponent(sectionsTab)
         );
 
         jSplitPane1.setRightComponent(right);
@@ -1621,7 +1622,9 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         subjectTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        subjectTable.setPreferredSize(new java.awt.Dimension(900, 64));
+        subjectTable.setMaximumSize(new java.awt.Dimension(2147483647, 192));
+        subjectTable.setMinimumSize(new java.awt.Dimension(135, 192));
+        subjectTable.setPreferredSize(new java.awt.Dimension(960, 92));
         subjectTable.getTableHeader().setReorderingAllowed(false);
         subjectTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3085,14 +3088,14 @@ public class dashBoard extends javax.swing.JFrame {
     columnModelSectionsTable1.getColumn(4).setPreferredWidth(180);
     
     TableColumnModel columnModelUsersTable1 = usersTable1.getColumnModel();
-    columnModelUsersTable1.getColumn(1).setPreferredWidth(180);
-    columnModelUsersTable1.getColumn(2).setPreferredWidth(150);
-    columnModelUsersTable1.getColumn(3).setPreferredWidth(180);
+    columnModelUsersTable1.getColumn(1).setPreferredWidth(260);
+    columnModelUsersTable1.getColumn(2).setPreferredWidth(260);
+    columnModelUsersTable1.getColumn(3).setPreferredWidth(260);
     
     TableColumnModel columnModelUsersTable = usersTable.getColumnModel();
-    columnModelUsersTable.getColumn(1).setPreferredWidth(150);
-    columnModelUsersTable.getColumn(2).setPreferredWidth(150);
-    columnModelUsersTable.getColumn(3).setPreferredWidth(150);
+    columnModelUsersTable.getColumn(1).setPreferredWidth(260);
+    columnModelUsersTable.getColumn(2).setPreferredWidth(260);
+    columnModelUsersTable.getColumn(3).setPreferredWidth(260);
 
     TableColumnModel columnModelSectionsTable2 = sectionsTable2.getColumnModel();
     columnModelSectionsTable2.getColumn(1).setPreferredWidth(150);
@@ -3106,14 +3109,19 @@ public class dashBoard extends javax.swing.JFrame {
     columnModelSectionsTable2.getColumn(9).setPreferredWidth(180);
     
     TableColumnModel columnModelAssignedTeacherTable = assignedTeacherTable.getColumnModel();
-    columnModelAssignedTeacherTable.getColumn(1).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(2).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(3).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(4).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(5).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(6).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(100);
-    columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(100);
+    columnModelAssignedTeacherTable.getColumn(1).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(2).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(3).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(4).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(5).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(6).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(260);
+    
+    TableColumnModel columnModelSubjectTable = subjectTable.getColumnModel();
+    columnModelSubjectTable.getColumn(1).setPreferredWidth(760);
+    columnModelSubjectTable.getColumn(2).setPreferredWidth(760);
+    columnModelSubjectTable.getColumn(3).setPreferredWidth(760);
 
 
 

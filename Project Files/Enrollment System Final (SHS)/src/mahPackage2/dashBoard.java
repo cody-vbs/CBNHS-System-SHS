@@ -303,10 +303,11 @@ public class dashBoard extends javax.swing.JFrame {
         left2 = new javax.swing.JPanel();
         jcbSchoolYear3 = new javax.swing.JComboBox<>();
         lbSearchResult2 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        sectionsTable2 = new javax.swing.JTable();
         tfSearchSection2 = new javax.swing.JTextField();
         btnSearchSection2 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        sectionsTable2 = new javax.swing.JTable();
         right2 = new javax.swing.JPanel();
         subjectTeacherTab = new javax.swing.JTabbedPane();
         detailsTab = new javax.swing.JPanel();
@@ -830,11 +831,11 @@ public class dashBoard extends javax.swing.JFrame {
         addNewSectionPanel.setLayout(addNewSectionPanelLayout);
         addNewSectionPanelLayout.setHorizontalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
         addNewSectionPanelLayout.setVerticalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
 
         sectionsTab.addTab("Add Section", addNewSectionPanel);
@@ -1057,11 +1058,11 @@ public class dashBoard extends javax.swing.JFrame {
         editSectionPanel.setLayout(editSectionPanelLayout);
         editSectionPanelLayout.setHorizontalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
         editSectionPanelLayout.setVerticalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
 
         sectionsTab.addTab("Edit Section", editSectionPanel);
@@ -1071,7 +1072,7 @@ public class dashBoard extends javax.swing.JFrame {
         rightLayout.setHorizontalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightLayout.createSequentialGroup()
-                .addComponent(sectionsTab)
+                .addComponent(sectionsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         rightLayout.setVerticalGroup(
@@ -1425,7 +1426,29 @@ public class dashBoard extends javax.swing.JFrame {
         lbSearchResult2.setForeground(new java.awt.Color(255, 255, 255));
         lbSearchResult2.setText("Search using the search bar...");
 
-        jScrollPane6.setPreferredSize(new java.awt.Dimension(770, 64));
+        tfSearchSection2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchSectionHandler2(evt);
+            }
+        });
+
+        btnSearchSection2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/search_24px.png"))); // NOI18N
+        btnSearchSection2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchSectionHandler2(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         sectionsTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1447,34 +1470,8 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         sectionsTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        sectionsTable2.setPreferredSize(new java.awt.Dimension(770, 64));
         sectionsTable2.getTableHeader().setReorderingAllowed(false);
-        sectionsTable2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loadSubjectsContainedHandler(evt);
-            }
-        });
         jScrollPane6.setViewportView(sectionsTable2);
-        if (sectionsTable2.getColumnModel().getColumnCount() > 0) {
-            sectionsTable2.getColumnModel().getColumn(1).setPreferredWidth(100);
-            sectionsTable2.getColumnModel().getColumn(3).setPreferredWidth(150);
-            sectionsTable2.getColumnModel().getColumn(4).setPreferredWidth(50);
-            sectionsTable2.getColumnModel().getColumn(7).setPreferredWidth(50);
-            sectionsTable2.getColumnModel().getColumn(8).setPreferredWidth(50);
-        }
-
-        tfSearchSection2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSectionHandler2(evt);
-            }
-        });
-
-        btnSearchSection2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/search_24px.png"))); // NOI18N
-        btnSearchSection2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSectionHandler2(evt);
-            }
-        });
 
         javax.swing.GroupLayout left2Layout = new javax.swing.GroupLayout(left2);
         left2.setLayout(left2Layout);
@@ -1483,9 +1480,12 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(left2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(left2Layout.createSequentialGroup()
-                        .addComponent(lbSearchResult2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(left2Layout.createSequentialGroup()
+                        .addComponent(lbSearchResult2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jcbSchoolYear3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1505,7 +1505,9 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(tfSearchSection2)
                     .addComponent(jcbSchoolYear3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+                .addGroup(left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -2085,7 +2087,9 @@ public class dashBoard extends javax.swing.JFrame {
         }
         where +=(jcbSchoolYear2.getSelectedIndex()!=0?"AND schoolYear='"+yearFilter+"'":"");
 
-        String [] result = my.return_values("*", "v_enrollment", where, myVariables.getEnrollmentViewOrder());
+        String [] result = my.return_values("*", "v_enrollment_shs", where, myVariables.getEnrollmentViewOrder());
+        
+        
 
         my.clear_table_rows(enrollmentTable);
         if(result != null){
@@ -2453,185 +2457,25 @@ public class dashBoard extends javax.swing.JFrame {
     private void btnSearchSectionHandler2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSectionHandler2
         String toSearch = tfSearchSection2.getText();
         String schoolYear = jcbSchoolYear3.getSelectedItem().toString();
-
+        
         String where = "";
-
+        
         if(jcbSchoolYear3.getSelectedIndex() == 0){
             where = "WHERE sectionName LIKE '%"+toSearch+"%'";
         }else{
             where = "WHERE sectionName LIKE '%"+toSearch+"%' AND schoolYear="+schoolYear;
         }
-
+        
         my.searchItem(where, sectionsTable2, 4,null, new int [] {3,4,5}, true, true, lbSearchResult2, tfSearchSection2, true);
         if(subjectTeacherTab.getTabCount() > 1){
             subjectTeacherTab.removeTabAt(1);
         }
         my.clear_table_rows(assignedTeacherTable);
-
+        
         refreshListToEditHandler(evt);
-
+        
         enableDisableAssignSubjectTeacherFields(false, false,false);
     }//GEN-LAST:event_btnSearchSectionHandler2
-
-    private void loadSubjectsContainedHandler(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loadSubjectsContainedHandler
-        if(evt.getClickCount() == 2){
-            int row = sectionsTable2.getSelectedRow();
-            String subjectsContained = "";
-            subjectsContained = sectionsTable2.getValueAt(row, 9) == null?null : sectionsTable2.getValueAt(row, 9).toString();
-
-            if(subjectsContained == null || subjectsContained.length() <= 0){
-                Toolkit.getDefaultToolkit().beep();
-                my.showMessage("This section has no subjects added to it.\nPlease contact your curriculum head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
-                my.clear_table_rows(assignedTeacherTable);
-                return;
-            }
-
-            String where = "";
-            String sectionId = sectionsTable2.getValueAt(row, 0).toString();
-
-            //Check if there is at least one subject to search
-            subjectsContained = sectionsTable2.getValueAt(row, 9).toString();
-            subjectsContained = subjectsContained.replace(':', ',');
-
-            if(subjectsContained.charAt(subjectsContained.length()-1) == ','){
-                subjectsContained = subjectsContained.substring(0, subjectsContained.length()-1);
-                System.err.println("Comma found...deleting");
-            }
-
-            where = "WHERE subjectId IN ("+subjectsContained+") AND sectionId='"+sectionId+"'";
-
-            //Check if section is already finalized in teacherLoads table
-            String result [] = my.return_values("*", "v_teacherloads", where, myVariables.getTeacherLoadsViewOrder());
-
-            if(result == null){
-                //Prompt to finalize section
-                if(my.getConfirmation("This section has not been finalized yet.\nFinalize now?\n\n"
-                    + "-You can no longer change the curruiculum of this section.\n"
-                    + "-You can now assign Subject Teachers.")){
-                //Build Query
-                String subjects [] = subjectsContained.split(",");
-                String values [] = new String[subjects.length];
-
-                for(int n=0;n<values.length;n++){
-                    values[n] = "null,"+sectionId+",-1,"+subjects[n];
-                }
-
-                if(my.add_multiple_values("teacherLoads", "id,sectionId,teacherId,subjectId", values)){
-                    playSuccess();
-                    my.showMessage("Finalizing Completed. You can now assign Subject Teachers to this section.", JOptionPane.INFORMATION_MESSAGE);
-
-                    btnSearchSectionHandler2(my.getButtonPressedEvent(btnSearchSection2));
-                    return;
-                }else{
-                    playError();
-                    my.showMessage("Finalizing Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-            }else{
-                Toolkit.getDefaultToolkit().beep();
-                my.showMessage("Finalizing canceled.", JOptionPane.PLAIN_MESSAGE);
-            }
-            return;
-        }
-        //Check for missing subjects
-        String expectedSubjectIds [] = subjectsContained.split(",");
-
-        boolean prompForMissingSubjects;
-        for(String n : expectedSubjectIds){
-            int expectedId = Integer.parseInt(n);
-            prompForMissingSubjects = true;
-
-            for(String x : result){
-                int resultId = Integer.parseInt(my.getValueAtColumn(x, 7));
-                //System.err.println("Expected: "+expectedId+" result: "+resultId);
-                if(expectedId == resultId){
-                    //System.out.println("Match Found for subject Id: "+expectedId);
-                    prompForMissingSubjects = false;
-                    break;
-                }
-            }
-
-            if(prompForMissingSubjects){
-                System.out.println("Missing entry for subject Id: "+expectedId);
-                //Update list for missing subjects code here
-                if(my.getConfirmation("This section has missing subjects.\n"
-                    + "Add them now?\n\nPossible causes:\n"
-                    + "-Curriculum Head User changed this section's current curriculum.\n"
-                    + "-Curriuculum Head User changed subjects assigned to this section's curriculum.\n"
-                    + "-Developer changed the curriculum's subjects forcefully.")){
-                //Build update multiple values query
-                String values [] = new String[expectedSubjectIds.length];
-
-                int subjectId = 0;
-                int existingId = 0;
-                String teacherLoadId = "";
-                String teacherId = "";
-                boolean matchFound;
-                for(int y=0;y<values.length;y++){
-                    subjectId = Integer.parseInt(expectedSubjectIds[y]);
-
-                    matchFound = false;
-                    for(String z : result){
-                        existingId = Integer.parseInt(my.getValueAtColumn(z, 7));
-
-                        if(subjectId == existingId){
-                            teacherLoadId = my.getValueAtColumn(z, 0);
-                            teacherId = my.getValueAtColumn(z, 2);
-                            matchFound = true;
-                            break;
-                        }
-                    }
-
-                    if(matchFound){
-                        //id,sectionId,teacherId,subjectId
-                        values[y] = teacherLoadId+","+sectionId+","+teacherId+","+subjectId;
-                    }else{
-                        values[y] = "null,"+sectionId+",-1,"+subjectId;
-                    }
-                }
-
-                for(String a : values){
-                    System.out.println(a);
-                }
-
-                if(my.update_multiple_values("teacherloads", "id,sectionId,teacherId,subjectId", "teacherId = VALUES(teacherId)", values)){
-                    playSuccess();
-                    my.showMessage("Finalizing Completed. You can now assign Subject Teachers to this section.", JOptionPane.INFORMATION_MESSAGE);
-                    btnSearchSectionHandler2(new ActionEvent(btnSearchSection2,ActionEvent.ACTION_FIRST, ""));
-                    return;
-                }else{
-                    playError();
-                    my.showMessage("Finalizing Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-            }else{
-                Toolkit.getDefaultToolkit().beep();
-                my.showMessage("Finalizing canceled.", JOptionPane.PLAIN_MESSAGE);
-            }
-            break;
-        }
-        }
-
-        my.clear_table_rows(assignedTeacherTable);
-        enableDisableAssignSubjectTeacherFields(true, false, false);
-        for(String n : result){
-            n = my.toNameFormat(n, new int [] {3,4,5});
-
-            if(my.getValueAtColumn(n, 2).contains("-1")){
-                n = my.setValueAtColumn(n, 3, "None");
-            }
-
-            my.add_table_row(n, assignedTeacherTable);
-        }
-        }else{
-            my.clear_table_rows(assignedTeacherTable);
-            enableDisableAssignSubjectTeacherFields(false, false, false);
-
-            if(subjectTeacherTab.getTabCount() >= 2){
-                subjectTeacherTab.removeTabAt(1);
-            }
-        }
-    }//GEN-LAST:event_loadSubjectsContainedHandler
 
     
    
@@ -3180,6 +3024,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;

@@ -157,6 +157,7 @@ public class myFunctions {
             
             if(resultText!= null){
                 resultText.setText("Showing "+result.length+" result(s) for '"+searchField.getText()+"'.");
+                System.out.println(result.length);
             }
         }else{
             showMessage("No Results found.", JOptionPane.PLAIN_MESSAGE);

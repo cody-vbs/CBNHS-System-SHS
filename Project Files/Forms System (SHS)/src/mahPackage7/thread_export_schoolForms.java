@@ -7,6 +7,9 @@ package mahPackage7;
 
 import java.awt.Color;
 import java.awt.Dialog;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -1388,28 +1391,32 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
     }
     private String getFileName(boolean importExport){
         String fileName = "";
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+        Date date = new Date();
+        String fileNameDate = dateFormat.format(date);
         String home = System.getProperty("user.home");
+        System.out.println(fileNameDate);
         switch(myVariables.getFormSelected()){
             case 1:{
-                fileName = importExport? "templates/shs_sf1.xlsx" : home+"/Downloads/" + "shs_sf1.xlsx";break;
+                fileName = importExport? "templates/shs_sf1.xlsx" : home+"/Downloads/" + "shs_sf1_"+ fileNameDate +".xlsx";break;
             }case 2:{
-                fileName = importExport? "templates/shs_sf2.xlsx" : home+"/Downloads/" + "shs_sf2.xlsx";break;
+                fileName = importExport? "templates/shs_sf2.xlsx" : home+"/Downloads/" + "shs_sf2_"+ fileNameDate +".xlsx";break;
             }case 3:{
-                fileName = importExport? "templates/shs_sf3.xlsx" : home+"/Downloads/" + "shs_sf3.xlsx";break;
+                fileName = importExport? "templates/shs_sf3.xlsx" : home+"/Downloads/" + "shs_sf3_"+ fileNameDate +".xlsx";break;
             }case 4:{
-                fileName = importExport? "templates/shs_sf4.xlsx" : home+"/Downloads/" + "shs_sf4.xlsx";break;
+                fileName = importExport? "templates/shs_sf4.xlsx" : home+"/Downloads/" + "shs_sf4_"+ fileNameDate +".xlsx";break;
             }case 5:{
-                fileName = importExport? "templates/shs_sf5.xlsx" : home+"/Downloads/" + "shs_sf5.xlsx";break;
+                fileName = importExport? "templates/shs_sf5.xlsx" : home+"/Downloads/" + "shs_sf5_"+ fileNameDate +".xlsx";break;
             }case 6:{
-                fileName = importExport? "templates/shs_sf6.xlsx" : home+"/Downloads/" + "shs_sf6.xlsx";break;
+                fileName = importExport? "templates/shs_sf6.xlsx" : home+"/Downloads/" + "shs_sf6_"+ fileNameDate +".xlsx";break;
             }case 7:{
-                fileName = importExport? "templates/shs_sf7.xlsx" : home+"/Downloads/" + "shs_sf7.xlsx";break;
+                fileName = importExport? "templates/shs_sf7.xlsx" : home+"/Downloads/" + "shs_sf7_"+ fileNameDate +".xlsx";break;
             }case 8:{
-                fileName = importExport? "templates/shs_sf8.xlsx" : home+"/Downloads/" + "shs_sf8.xlsx";break;
+                fileName = importExport? "templates/shs_sf8.xlsx" : home+"/Downloads/" + "shs_sf8_"+ fileNameDate +".xlsx";break;
             }case 9:{
-                fileName = importExport? "templates/shs_sf9.xlsx" : home+"/Downloads/" + "shs_sf9.xlsx";break;
+                fileName = importExport? "templates/shs_sf9.xlsx" : home+"/Downloads/" + "shs_sf9_"+ fileNameDate +".xlsx";break;
             }case 10:{
-                fileName = importExport? "templates/shs_sf10.xlsx" : home+"/Downloads/" + "shs_sf10.xlsx";break;
+                fileName = importExport? "templates/shs_sf10.xlsx" : home+"/Downloads/" + "shs_sf10_"+ fileNameDate +".xlsx";break;
             }
         }
         

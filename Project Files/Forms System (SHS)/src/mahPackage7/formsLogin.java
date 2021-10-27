@@ -326,7 +326,7 @@ public class formsLogin extends javax.swing.JFrame implements java.lang.Runnable
         String password = String.valueOf(pass.getPassword());
         
         //convert the password to md5 hash
-        int result = my.login(userName, password, new int [] {2,3,4,5});
+        int result = my.login(userName, password, new int [] {1,2,3,4,5});
         
         switch(result){
             case 0:{

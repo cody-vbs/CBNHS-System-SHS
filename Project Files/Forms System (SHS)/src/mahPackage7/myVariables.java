@@ -14,7 +14,7 @@ import javax.swing.JProgressBar;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class myVariables {
     private static boolean debugModeOn = false;
@@ -81,7 +81,7 @@ public class myVariables {
     //Table Orders
     private static final int [] usersOrder = new int [] {6,4,3,7,1,2,0,5};
     private static final int [] usersPersonalInfoOrder = new int [] {5,7,8,9,6,3,4,1,2,0};
-    private static final int [] studentsOrder = new int [] {8,6,0,2,9,4,1,3,5,10,7};
+    private static final int [] studentsOrder = new int [] {9,7,1,3,10,5,2,4,6,11,8};
     private static final int [] gradesOrder = new int [] {4,0,5,8,1,6,3,7,2,9,10};
     private static final int [] studentsPersonalInfoOrder = new int[] {13,9,11,15,16,4,10,3,5,6,0,8,14,2,7,12,1};
     private static final int [] subjectLoadsOrder = new int [] {0,3,2,1};

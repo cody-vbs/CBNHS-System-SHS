@@ -5206,7 +5206,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cards, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
@@ -6709,7 +6709,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         //my.remove_multiple_tabs(mainTab, new int [] {1,2});
 
-        String where = "WHERE subjectCode LIKE '%"+toSearch+"%' OR subjectCode is NULL";
+        String where = "WHERE gradeLevel> 10 AND subjectCode LIKE '%"+toSearch+"%' OR subjectCode is NULL ";
 
         //Filter search based on Access Level
         switch (myVariables.getAccessLevel()){

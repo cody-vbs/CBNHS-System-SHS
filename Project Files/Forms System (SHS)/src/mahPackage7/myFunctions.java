@@ -957,6 +957,7 @@ public class myFunctions {
                 toLoad = new Thread(lR);
                 break;
             }case 6:{
+                System.out.println("Load Grades Entry 2");
                 thread_loadSf9DetailsRevised lR = new thread_loadSf9DetailsRevised(tablesToUse, valuesToUse, textFieldsToUse, buttonsToUse, booleansToUse);
                 //thread_loadSf9Details lR = new thread_loadSf9Details(tablesToUse, valuesToUse, textFieldsToUse, buttonsToUse, booleansToUse);
                 toLoad = new Thread(lR);

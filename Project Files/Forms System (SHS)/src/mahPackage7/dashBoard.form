@@ -8156,7 +8156,7 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel86">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="Elemtary School Name"/>
+                                <Property name="text" type="java.lang.String" value="Junior High School Name"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="tfSchoolName">

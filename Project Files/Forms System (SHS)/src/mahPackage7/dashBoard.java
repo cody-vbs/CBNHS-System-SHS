@@ -4599,7 +4599,7 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel85.setText("Basic");
 
-        jLabel86.setText("Elemtary School Name");
+        jLabel86.setText("Junior High School Name");
 
         tfSchoolName.setEditable(false);
 
@@ -6062,6 +6062,9 @@ public class dashBoard extends javax.swing.JFrame {
             my.showMessage("No Subjects are assigned to this Section's Load.\nPlease contact your Curriculumn Head to add one.", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        System.out.println("Load Grades Entry 1");
+        
         my.runSecondaryThread(6, true,
                 new JTable[]{gradesTable},
                 new String[]{studentId,sectionId,subjectsContained},
@@ -6910,9 +6913,9 @@ public class dashBoard extends javax.swing.JFrame {
             my.hideColumns(grade12RankingTable, new int [] {0,1,3,4,5,7,11});
             
             my.hideColumns(enrolledStudentsTable, new int []{0,1,6});
-            my.hideColumns(gradesTable, new int [] {0,1,2,3});
+            my.hideColumns(gradesTable, new int [] {0,1,2,3,8,9});
             
-            my.hideColumns(gradesTable1, new int [] {0,1,2,3});
+            my.hideColumns(gradesTable1, new int [] {0,1,2,3,8,9});
             my.hideColumns(gradesTable2, new int [] {0,1,2,3});
             my.hideColumns(gradesTable3, new int [] {0,1,2,3});
             my.hideColumns(gradesTable4, new int [] {0,1,2,3});

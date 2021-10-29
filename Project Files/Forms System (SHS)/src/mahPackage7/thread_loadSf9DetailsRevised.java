@@ -128,7 +128,8 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                 lbLoadingMessage.setText("Loading Subjects..."+(n+1)+" of "+subjectCount);
                 progressBar.setValue(n+1);
                 //Find Match Using subjectId
-                currSubjectId = Integer.parseInt(my.getValueAtColumn(subjectsResult[n], 0));
+                currSubjectId = Integer.parseInt(my.getValueAtColumn(subjectsResult[n], 1));
+                System.out.println(currSubjectId);
                 matchFound = false;
                 for (int x = 0; x < gradeCount; x++) {
                     foundSubjectId = Integer.parseInt(my.getValueAtColumn(result[x], 3));
@@ -139,6 +140,8 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                         try {
                             result[x] = my.setValueAtColumn(result[x], 11, temp[4].toUpperCase());
                         } catch (Exception e) {System.err.println("Invalid Status Found");}
+                        
+                        System.out.println(result[x]);
 
                         my.add_table_row(result[x], sf9Table);
                         break;

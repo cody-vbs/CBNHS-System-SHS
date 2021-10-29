@@ -322,7 +322,7 @@ public class login extends javax.swing.JFrame implements java.lang.Runnable  {
         String userName = user.getText();
         String password = String.valueOf(pass.getPassword());
 
-        int result = my.login(userName, password, new int [] {4,5});
+        int result = my.login(userName, password, new int [] {3,4,5});
 
         switch(result){
             case 0:{

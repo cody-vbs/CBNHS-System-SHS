@@ -237,16 +237,6 @@ public class dashBoard extends javax.swing.JFrame {
         jRadioButton22 = new javax.swing.JRadioButton();
         jRadioButton23 = new javax.swing.JRadioButton();
         jRadioButton24 = new javax.swing.JRadioButton();
-        lbStatusOptions3 = new javax.swing.JLabel();
-        jRadioButton25 = new javax.swing.JRadioButton();
-        jRadioButton26 = new javax.swing.JRadioButton();
-        jRadioButton27 = new javax.swing.JRadioButton();
-        jRadioButton28 = new javax.swing.JRadioButton();
-        lbStatusOptions4 = new javax.swing.JLabel();
-        jRadioButton29 = new javax.swing.JRadioButton();
-        jRadioButton30 = new javax.swing.JRadioButton();
-        jRadioButton31 = new javax.swing.JRadioButton();
-        jRadioButton32 = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -301,8 +291,6 @@ public class dashBoard extends javax.swing.JFrame {
         btnSelectQuarter = new javax.swing.JButton();
         rbQuarter1 = new javax.swing.JRadioButton();
         rbQuarter2 = new javax.swing.JRadioButton();
-        rbQuarter3 = new javax.swing.JRadioButton();
-        rbQuarter4 = new javax.swing.JRadioButton();
         rbAllQuarters = new javax.swing.JRadioButton();
         editGradeDialog = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -557,7 +545,7 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel23.setText("Grade Details");
 
         lbStatusOptions1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbStatusOptions1.setText("1st Semester - 1st Quarter Status");
+        lbStatusOptions1.setText("1st Quarter");
 
         jRadioButton17.setBackground(new java.awt.Color(203, 184, 160));
         q1StatusGroup.add(jRadioButton17);
@@ -654,7 +642,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         lbStatusOptions2.setForeground(new java.awt.Color(1, 1, 1));
         lbStatusOptions2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbStatusOptions2.setText("1st Semester - 2nd Quarter Status");
+        lbStatusOptions2.setText("2nd Quarter");
 
         jRadioButton21.setBackground(new java.awt.Color(203, 184, 160));
         q2StatusGroup.add(jRadioButton21);
@@ -734,212 +722,33 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        lbStatusOptions3.setForeground(new java.awt.Color(1, 1, 1));
-        lbStatusOptions3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbStatusOptions3.setText("2nd Semester - 1st Quarter Status");
-
-        jRadioButton25.setBackground(new java.awt.Color(203, 184, 160));
-        q3tatusGroup.add(jRadioButton25);
-        jRadioButton25.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton25.setForeground(new java.awt.Color(0, 102, 0));
-        jRadioButton25.setText("Open");
-        jRadioButton25.setToolTipText("The subject teacher can edit the grades.");
-        jRadioButton25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton25.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton25.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton25.setFocusable(false);
-        jRadioButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton25.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton25.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-
-        jRadioButton26.setBackground(new java.awt.Color(203, 184, 160));
-        q3tatusGroup.add(jRadioButton26);
-        jRadioButton26.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton26.setForeground(new java.awt.Color(0, 0, 153));
-        jRadioButton26.setText("Submitted");
-        jRadioButton26.setToolTipText("Once submitted, subject teachers can't edit the grade anymore and should wait for the Approval of the Department Head");
-        jRadioButton26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton26.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton26.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton26.setFocusable(false);
-        jRadioButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton26.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton26.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-        jRadioButton26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton26ActionPerformed(evt);
-            }
-        });
-
-        jRadioButton27.setBackground(new java.awt.Color(203, 184, 160));
-        q3tatusGroup.add(jRadioButton27);
-        jRadioButton27.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton27.setForeground(new java.awt.Color(188, 0, 200));
-        jRadioButton27.setText("Approved");
-        jRadioButton27.setToolTipText("Approved by the Department Head and waiting for the Registrar to close it.");
-        jRadioButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton27.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton27.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton27.setFocusable(false);
-        jRadioButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton27.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton27.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-
-        jRadioButton28.setBackground(new java.awt.Color(203, 184, 160));
-        q3tatusGroup.add(jRadioButton28);
-        jRadioButton28.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton28.setForeground(new java.awt.Color(204, 0, 0));
-        jRadioButton28.setText("Closed");
-        jRadioButton28.setToolTipText("Closed by the Registrar and means it has been finalized.");
-        jRadioButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton28.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton28.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton28.setFocusable(false);
-        jRadioButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton28.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton28.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-
-        lbStatusOptions4.setForeground(new java.awt.Color(1, 1, 1));
-        lbStatusOptions4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbStatusOptions4.setText("2nd Semester - 2nd Quarter Status");
-
-        jRadioButton29.setBackground(new java.awt.Color(203, 184, 160));
-        q4StatusGroup.add(jRadioButton29);
-        jRadioButton29.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton29.setForeground(new java.awt.Color(0, 102, 0));
-        jRadioButton29.setText("Open");
-        jRadioButton29.setToolTipText("The subject teacher can edit the grades.");
-        jRadioButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton29.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton29.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton29.setFocusable(false);
-        jRadioButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton29.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton29.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-
-        jRadioButton30.setBackground(new java.awt.Color(203, 184, 160));
-        q4StatusGroup.add(jRadioButton30);
-        jRadioButton30.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton30.setForeground(new java.awt.Color(0, 0, 153));
-        jRadioButton30.setSelected(true);
-        jRadioButton30.setText("Submitted");
-        jRadioButton30.setToolTipText("Once submitted, subject teachers can't edit the grade anymore and should wait for the Approval of the Department Head");
-        jRadioButton30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton30.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton30.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton30.setFocusable(false);
-        jRadioButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton30.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton30.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-
-        jRadioButton31.setBackground(new java.awt.Color(203, 184, 160));
-        q4StatusGroup.add(jRadioButton31);
-        jRadioButton31.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton31.setForeground(new java.awt.Color(188, 0, 200));
-        jRadioButton31.setText("Approved");
-        jRadioButton31.setToolTipText("Approved by the Department Head and waiting for the Registrar to close it.");
-        jRadioButton31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton31.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton31.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton31.setFocusable(false);
-        jRadioButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton31.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton31.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-
-        jRadioButton32.setBackground(new java.awt.Color(203, 184, 160));
-        q4StatusGroup.add(jRadioButton32);
-        jRadioButton32.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        jRadioButton32.setForeground(new java.awt.Color(204, 0, 0));
-        jRadioButton32.setText("Closed");
-        jRadioButton32.setToolTipText("Closed by the Registrar and means it has been finalized.");
-        jRadioButton32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton32.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_unchecked_radio_button_20px.png"))); // NOI18N
-        jRadioButton32.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton32.setFocusable(false);
-        jRadioButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        jRadioButton32.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        jRadioButton32.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton30MouseClicked(evt);
-            }
-        });
-        jRadioButton32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton32ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jRadioButton29)
-                .addGap(18, 34, Short.MAX_VALUE)
-                .addComponent(jRadioButton30)
-                .addGap(18, 34, Short.MAX_VALUE)
-                .addComponent(jRadioButton31)
-                .addGap(18, 34, Short.MAX_VALUE)
-                .addComponent(jRadioButton32))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jRadioButton17)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton18)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton19)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton20))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jRadioButton21)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton22)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton23)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton24))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jRadioButton25)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton26)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton27)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jRadioButton28))
-            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23)
-                    .addComponent(lbStatusOptions3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbStatusOptions4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbStatusOptions1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbStatusOptions2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbStatusOptions2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(jRadioButton21)
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton24))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addComponent(jRadioButton17)
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton20)
+                            .addGap(95, 95, 95))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -962,23 +771,7 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(jRadioButton22)
                     .addComponent(jRadioButton23)
                     .addComponent(jRadioButton24))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbStatusOptions3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton25)
-                    .addComponent(jRadioButton26)
-                    .addComponent(jRadioButton27)
-                    .addComponent(jRadioButton28))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbStatusOptions4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton29)
-                    .addComponent(jRadioButton30)
-                    .addComponent(jRadioButton31)
-                    .addComponent(jRadioButton32))
-                .addGap(0, 0, 0))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -988,32 +781,26 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel38)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel18)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbSectionName2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lbSubjectName2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel18)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel22)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lbEvaluation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(28, 28, 28)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnSaveChangesCurrent)))
-                        .addContainerGap())))
+                                    .addComponent(lbSectionName2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbSubjectName2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbEvaluation, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel38)
+                            .addComponent(btnSaveChangesCurrent))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1021,22 +808,21 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(jLabel38)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(lbSectionName2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21)
-                            .addComponent(lbSubjectName2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel22)
-                            .addComponent(lbEvaluation)))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(lbSectionName2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(lbSubjectName2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(lbEvaluation))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSaveChangesCurrent)
                 .addContainerGap())
@@ -1165,7 +951,7 @@ public class dashBoard extends javax.swing.JFrame {
         left2.setLayout(left2Layout);
         left2Layout.setHorizontalGroup(
             left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 755, Short.MAX_VALUE)
         );
         left2Layout.setVerticalGroup(
             left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1184,7 +970,7 @@ public class dashBoard extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Student ID", "LRN", "Name", "Gender", "Section ID", "Grade ID", "S1-Q1", "S1-Q2", "S2-Q1", "S2-Q2", "General Average", "Status", "Date Updated"
+                "ID", "Student ID", "LRN", "Name", "Gender", "Section ID", "Grade ID", "1st Quarter", "2nd Quarter", "placeholder", "palceholder", "General Average", "Status", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1210,8 +996,10 @@ public class dashBoard extends javax.swing.JFrame {
         jScrollPane5.setViewportView(enrolledStudentsTable1);
         if (enrolledStudentsTable1.getColumnModel().getColumnCount() > 0) {
             enrolledStudentsTable1.getColumnModel().getColumn(2).setPreferredWidth(150);
-            enrolledStudentsTable1.getColumnModel().getColumn(3).setPreferredWidth(200);
+            enrolledStudentsTable1.getColumnModel().getColumn(3).setPreferredWidth(250);
             enrolledStudentsTable1.getColumnModel().getColumn(4).setPreferredWidth(100);
+            enrolledStudentsTable1.getColumnModel().getColumn(7).setPreferredWidth(100);
+            enrolledStudentsTable1.getColumnModel().getColumn(8).setPreferredWidth(100);
             enrolledStudentsTable1.getColumnModel().getColumn(11).setPreferredWidth(120);
             enrolledStudentsTable1.getColumnModel().getColumn(12).setPreferredWidth(250);
             enrolledStudentsTable1.getColumnModel().getColumn(13).setPreferredWidth(200);
@@ -1254,7 +1042,7 @@ public class dashBoard extends javax.swing.JFrame {
                         .addComponent(pbProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRefreshStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1565,7 +1353,7 @@ public class dashBoard extends javax.swing.JFrame {
         selectQuarterGroup.add(rbQuarter1);
         rbQuarter1.setFont(myVariables.TEXTFIELD_HEADER_FONT);
         rbQuarter1.setSelected(true);
-        rbQuarter1.setText("1st Semester - 1st Quarter");
+        rbQuarter1.setText("1st Quarter");
         rbQuarter1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rbQuarter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
         rbQuarter1.setIconTextGap(10);
@@ -1584,7 +1372,7 @@ public class dashBoard extends javax.swing.JFrame {
         rbQuarter2.setBackground(new java.awt.Color(249, 239, 227));
         selectQuarterGroup.add(rbQuarter2);
         rbQuarter2.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        rbQuarter2.setText("1st Semester - 2nd Quarter");
+        rbQuarter2.setText("2nd Quarter");
         rbQuarter2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rbQuarter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
         rbQuarter2.setIconTextGap(10);
@@ -1594,32 +1382,9 @@ public class dashBoard extends javax.swing.JFrame {
                 rbQuarter2cbAllowDecimalValuesMouseClicked(evt);
             }
         });
-
-        rbQuarter3.setBackground(new java.awt.Color(249, 239, 227));
-        selectQuarterGroup.add(rbQuarter3);
-        rbQuarter3.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        rbQuarter3.setText("2nd Semester - 1st Quarter");
-        rbQuarter3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rbQuarter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        rbQuarter3.setIconTextGap(10);
-        rbQuarter3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        rbQuarter3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbQuarter3cbAllowDecimalValuesMouseClicked(evt);
-            }
-        });
-
-        rbQuarter4.setBackground(new java.awt.Color(249, 239, 227));
-        selectQuarterGroup.add(rbQuarter4);
-        rbQuarter4.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        rbQuarter4.setText("2nd Semester - 2nd Quarter");
-        rbQuarter4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rbQuarter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_round_20px.png"))); // NOI18N
-        rbQuarter4.setIconTextGap(10);
-        rbQuarter4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage4/icons/icons8_ok_20px.png"))); // NOI18N
-        rbQuarter4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbQuarter4cbAllowDecimalValuesMouseClicked(evt);
+        rbQuarter2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbQuarter2ActionPerformed(evt);
             }
         });
 
@@ -1645,35 +1410,29 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(selectQuarterDialogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(selectQuarterDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbQuarterSelect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbAllQuarters, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, selectQuarterDialogLayout.createSequentialGroup()
                         .addGroup(selectQuarterDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(rbAllQuarters, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbQuarter4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbQuarter3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbQuarter2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbQuarter1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSelectQuarter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                            .addComponent(lbQuarterSelect, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSelectQuarter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rbQuarter1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addComponent(rbQuarter2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         selectQuarterDialogLayout.setVerticalGroup(
             selectQuarterDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(selectQuarterDialogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbQuarterSelect)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbQuarter1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbQuarter2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbQuarter3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbQuarter4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbAllQuarters)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSelectQuarter)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSelectQuarter, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane3.setBorder(null);
@@ -3129,21 +2888,12 @@ public class dashBoard extends javax.swing.JFrame {
         
         //jephthah is here
         
-        int x = 0;
-        String sem = "secret";
+        String qua = "secret";
         
         if(col == 7){
-            x = 1;
-            sem = "1st";
+            qua = "1st";
         }else if(col == 8){
-            x = 2;
-            sem = "1st";
-        }else if(col == 9){
-            x = 1;
-            sem = "2nd";
-        }else if(col == 10){
-            x = 2;
-            sem = "2nd";
+            qua = "2nd";
         }
         
         if(row != -1){
@@ -3161,7 +2911,7 @@ public class dashBoard extends javax.swing.JFrame {
                         
                         String temp = (String) JOptionPane.showInputDialog(
                                 this,
-                                col-6!= 5? "" + sem + " Semester, Quarter " + x + " Grade:" : "General Average",
+                                col-6!= 5? "" + qua + " Quarter Grade:" : "General Average",
                                 studentName,
                                 JOptionPane.INFORMATION_MESSAGE,
                                 my.getImgIcn(myVariables.getMsgUrlIcon()),
@@ -3223,10 +2973,6 @@ public class dashBoard extends javax.swing.JFrame {
                 return jRadioButton17.isSelected();
             }case 8:{
                 return jRadioButton21.isSelected();
-            }case 9:{
-                return jRadioButton25.isSelected();
-            }case 10:{
-                return jRadioButton29.isSelected();
             }case 11:{
                 return true;//can edit General Average Directly
             } default: {
@@ -3244,22 +2990,13 @@ public class dashBoard extends javax.swing.JFrame {
         int col = enrolledStudentsTable1.getSelectedColumn();
         
         //jephthah is here
-        
-        int x = 0;
-        String sem = "secret";
+
+        String qua = "secret";
         
         if(col == 7){
-            x = 1;
-            sem = "1st";
+            qua = "1st";
         }else if(col == 8){
-            x = 2;
-            sem = "1st";
-        }else if(col == 9){
-            x = 1;
-            sem = "2nd";
-        }else if(col == 10){
-            x = 2;
-            sem = "2nd";
+            qua = "2nd";
         }
         
         if(row != -1 && (evt.getKeyCode() == KeyEvent.VK_RIGHT || evt.getKeyCode() == KeyEvent.VK_LEFT)){
@@ -3277,7 +3014,7 @@ public class dashBoard extends javax.swing.JFrame {
                         
                         String temp = (String) JOptionPane.showInputDialog(
                                 this,
-                                col-6!= 5? "" + sem + " Semester, Quarter " + x + " Grade:" : "General Average",
+                                col-6!= 5? "" + qua + " Quarter Grade:" : "General Average",
                                 studentName,
                                 JOptionPane.INFORMATION_MESSAGE,
                                 my.getImgIcn(myVariables.getMsgUrlIcon()),
@@ -3318,14 +3055,6 @@ public class dashBoard extends javax.swing.JFrame {
     private void rbQuarter2cbAllowDecimalValuesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbQuarter2cbAllowDecimalValuesMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_rbQuarter2cbAllowDecimalValuesMouseClicked
-
-    private void rbQuarter3cbAllowDecimalValuesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbQuarter3cbAllowDecimalValuesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbQuarter3cbAllowDecimalValuesMouseClicked
-
-    private void rbQuarter4cbAllowDecimalValuesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbQuarter4cbAllowDecimalValuesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbQuarter4cbAllowDecimalValuesMouseClicked
 
     private void btnSelectQuarterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectQuarterActionPerformed
         //Save Here
@@ -3457,14 +3186,6 @@ public class dashBoard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton24ActionPerformed
 
-    private void jRadioButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton26ActionPerformed
-
-    private void jRadioButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton32ActionPerformed
-
     private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton19ActionPerformed
@@ -3497,6 +3218,10 @@ public class dashBoard extends javax.swing.JFrame {
     private void jcbSchoolYear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSchoolYear1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbSchoolYear1ActionPerformed
+
+    private void rbQuarter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbQuarter2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbQuarter2ActionPerformed
     
     
     public static void main(String args[]) {
@@ -3537,13 +3262,7 @@ public class dashBoard extends javax.swing.JFrame {
         
         String updatedStatus = "";
         
-        if(myVariables.getAccessLevel() == 1){
-            updatedStatus = retrieveCheckedStatuses(row, true);
-        }else {
-            updatedStatus = my.getConfirmation("Set grade's status from 'Open' to 'Submitted'?\n(Any grade that has 'Open' checked are affected)")?
-                                    retrieveCheckedStatuses(row, true):
-                                    retrieveCheckedStatuses(row, false);
-        }
+        updatedStatus = retrieveCheckedStatuses(row, false);
         
         String q1 = enrolledStudentsTable1.getValueAt(row, 7).toString().trim().length()>0? enrolledStudentsTable1.getValueAt(row, 7).toString() : "";
         String q2 = enrolledStudentsTable1.getValueAt(row, 8).toString().trim().length()>0? enrolledStudentsTable1.getValueAt(row, 8).toString() : "";
@@ -3598,10 +3317,6 @@ public class dashBoard extends javax.swing.JFrame {
             rbIndexToUpdate = 0;
         if(rbQuarter2.isSelected())
             rbIndexToUpdate = 1;
-        if(rbQuarter3.isSelected())
-            rbIndexToUpdate = 2;
-        if(rbQuarter4.isSelected())
-            rbIndexToUpdate = 3;
         
         int scount = 0; //count sa successful actions
         int icount = 0; //count sa mga invalid actions
@@ -3614,23 +3329,25 @@ public class dashBoard extends javax.swing.JFrame {
             
             String previousStatuses[] = enrolledStudentsTable1.getValueAt(rowId[x], 12).toString().split(":");
             
-            if(status == "Submitted"){
-                if(!"Open".equals(previousStatuses[rbIndexToUpdate])){
-                    System.out.println(previousStatuses[rbIndexToUpdate]);
-                    icount++;
-                    continue;
-                }
-            }else if(status == "Approved"){
-                if(!"Submitted".equals(previousStatuses[rbIndexToUpdate])){
-                    System.out.println(previousStatuses[rbIndexToUpdate]);
-                    icount++;
-                    continue;
-                }
-            }else if(status == "Closed"){
-                if(!"Approved".equals(previousStatuses[rbIndexToUpdate])){
-                    System.out.println(previousStatuses[rbIndexToUpdate]);
-                    icount++;
-                    continue;
+            if(myVariables.getAccessLevel() != 5){
+                if(status == "Submitted"){
+                    if(!"Open".equals(previousStatuses[rbIndexToUpdate])){
+                        System.out.println(previousStatuses[rbIndexToUpdate]);
+                        icount++;
+                        continue;
+                    }
+                }else if(status == "Approved"){
+                    if(!"Submitted".equals(previousStatuses[rbIndexToUpdate])){
+                        System.out.println(previousStatuses[rbIndexToUpdate]);
+                        icount++;
+                        continue;
+                    }
+                }else if(status == "Closed"){
+                    if(!"Approved".equals(previousStatuses[rbIndexToUpdate])){
+                        System.out.println(previousStatuses[rbIndexToUpdate]);
+                        icount++;
+                        continue;
+                    }
                 }
             }
             
@@ -3688,10 +3405,6 @@ public class dashBoard extends javax.swing.JFrame {
             rbIndexToUpdate = 0;
         if(rbQuarter2.isSelected())
             rbIndexToUpdate = 1;
-        if(rbQuarter3.isSelected())
-            rbIndexToUpdate = 2;
-        if(rbQuarter4.isSelected())
-            rbIndexToUpdate = 3;
         
         int scount = 0; //count sa successful actions
         int icount = 0; //count sa mga invalid actions
@@ -3705,23 +3418,25 @@ public class dashBoard extends javax.swing.JFrame {
             
             String previousStatuses [] = enrolledStudentsTable1.getValueAt(x, 12).toString().split(":");
             
-            if(status == "Submitted"){
-                if(!"Open".equals(previousStatuses[rbIndexToUpdate])){
-                    System.out.println(previousStatuses[rbIndexToUpdate]);
-                    icount++;
-                    continue;
-                }
-            }else if(status == "Approved"){
-                if(!"Submitted".equals(previousStatuses[rbIndexToUpdate])){
-                    System.out.println(previousStatuses[rbIndexToUpdate]);
-                    icount++;
-                    continue;
-                }
-            }else if(status == "Closed"){
-                if(!"Approved".equals(previousStatuses[rbIndexToUpdate])){
-                    System.out.println(previousStatuses[rbIndexToUpdate]);
-                    icount++;
-                    continue;
+            if(myVariables.getAccessLevel() != 5){
+                if(status == "Submitted"){
+                    if(!"Open".equals(previousStatuses[rbIndexToUpdate])){
+                        System.out.println(previousStatuses[rbIndexToUpdate]);
+                        icount++;
+                        continue;
+                    }
+                }else if(status == "Approved"){
+                    if(!"Submitted".equals(previousStatuses[rbIndexToUpdate])){
+                        System.out.println(previousStatuses[rbIndexToUpdate]);
+                        icount++;
+                        continue;
+                    }
+                }else if(status == "Closed"){
+                    if(!"Approved".equals(previousStatuses[rbIndexToUpdate])){
+                        System.out.println(previousStatuses[rbIndexToUpdate]);
+                        icount++;
+                        continue;
+                    }
                 }
             }
             
@@ -3774,18 +3489,12 @@ public class dashBoard extends javax.swing.JFrame {
             }case 8: {
                 rbQuarter2.setSelected(true);
                 break;
-            }case 9: {
-                rbQuarter3.setSelected(true);
-                break;
-            }case 10: {
-                rbQuarter4.setSelected(true);
-                break;
             }default: {
                 rbQuarter1.setSelected(true);
                 break;
             }
         }
-        showCustomDialog(title, selectQuarterDialog, true, 250, 300, false);
+        showCustomDialog(title, selectQuarterDialog, true, 250, 210, false);
         
         btnSelectQuarter.requestFocus();
     }
@@ -3797,8 +3506,6 @@ public class dashBoard extends javax.swing.JFrame {
             JRadioButton [][] radioSets = {
                 new JRadioButton[] {jRadioButton17,jRadioButton18,jRadioButton19,jRadioButton20},
                 new JRadioButton[] {jRadioButton21,jRadioButton22,jRadioButton23,jRadioButton24},
-                new JRadioButton[] {jRadioButton25,jRadioButton26,jRadioButton27,jRadioButton28},
-                new JRadioButton[] {jRadioButton29,jRadioButton30,jRadioButton31,jRadioButton32},
             };
             String status = retrieveStatuses();
         }
@@ -3857,9 +3564,7 @@ public class dashBoard extends javax.swing.JFrame {
     private String getEvaluation(int row, double gwa){
         //Check if all fields have values
         if(enrolledStudentsTable1.getValueAt(row, 7).toString().length() == 0 || 
-            enrolledStudentsTable1.getValueAt(row, 8).toString().length() == 0 ||
-            enrolledStudentsTable1.getValueAt(row, 9).toString().length() == 0 ||
-            enrolledStudentsTable1.getValueAt(row, 10).toString().length() == 0){
+            enrolledStudentsTable1.getValueAt(row, 8).toString().length() == 0){
             return "Incomplete";
         }
         if(gwa<75f){
@@ -3869,7 +3574,7 @@ public class dashBoard extends javax.swing.JFrame {
         }
     }
     private void calculateGrade(int row){
-        int q1,q2,q3,q4,gwa;
+        int q1,q2,gwa;
         
         //Column 7 = Q1
         
@@ -3878,12 +3583,8 @@ public class dashBoard extends javax.swing.JFrame {
                     Integer.parseInt(enrolledStudentsTable1.getValueAt(row, 7).toString()) : 0;
             q2 = enrolledStudentsTable1.getValueAt(row, 8).toString().length()>0 ?
                     Integer.parseInt(enrolledStudentsTable1.getValueAt(row, 8).toString()) : 0;
-            q3 = enrolledStudentsTable1.getValueAt(row, 9).toString().length()>0 ?
-                    Integer.parseInt(enrolledStudentsTable1.getValueAt(row, 9).toString()) : 0;
-            q4 = enrolledStudentsTable1.getValueAt(row, 10).toString().length()>0 ?
-                    Integer.parseInt(enrolledStudentsTable1.getValueAt(row, 10).toString()) : 0;
 
-            gwa = (q1+q2+q3+q4)/4;
+            gwa = (q1+q2)/2;
 
             enrolledStudentsTable1.setValueAt(gwa,row, 11);
             
@@ -4023,10 +3724,8 @@ public class dashBoard extends javax.swing.JFrame {
         JRadioButton [][] radioSets = {
             new JRadioButton[] {jRadioButton17,jRadioButton18,jRadioButton19,jRadioButton20},
             new JRadioButton[] {jRadioButton21,jRadioButton22,jRadioButton23,jRadioButton24},
-            new JRadioButton[] {jRadioButton25,jRadioButton26,jRadioButton27,jRadioButton28},
-            new JRadioButton[] {jRadioButton29,jRadioButton30,jRadioButton31,jRadioButton32},
         };
-        ButtonGroup [] radioGroups = {q1StatusGroup,q2StatusGroup,q3tatusGroup,q4StatusGroup};
+        ButtonGroup [] radioGroups = {q1StatusGroup,q2StatusGroup};
         
         if(statuses == null){
             
@@ -4060,6 +3759,7 @@ public class dashBoard extends javax.swing.JFrame {
             enableDisableRadioBtnsByUserType();
         }
     }
+    
     private String retrieveCheckedStatuses(int row, boolean checkForSubmittedGrades ){
         String status [] = new String[4];
         String previousStatuses [] = enrolledStudentsTable1.getValueAt(row, 12).toString().split(":");
@@ -4067,18 +3767,12 @@ public class dashBoard extends javax.swing.JFrame {
         JRadioButton [][] radioSets = {
             new JRadioButton[] {jRadioButton17,jRadioButton18,jRadioButton19,jRadioButton20},
             new JRadioButton[] {jRadioButton21,jRadioButton22,jRadioButton23,jRadioButton24},
-            new JRadioButton[] {jRadioButton25,jRadioButton26,jRadioButton27,jRadioButton28},
-            new JRadioButton[] {jRadioButton29,jRadioButton30,jRadioButton31,jRadioButton32},
         };
         int rbIndexToUpdate = 0;
         if(rbQuarter1.isSelected())
             rbIndexToUpdate = 0;
         if(rbQuarter2.isSelected())
             rbIndexToUpdate = 1;
-        if(rbQuarter3.isSelected())
-            rbIndexToUpdate = 2;
-        if(rbQuarter4.isSelected())
-            rbIndexToUpdate = 3;
         
         for(int n=0;n<radioSets.length;n++){
             if(radioSets[n][0].isSelected()){   //Open
@@ -4130,7 +3824,7 @@ public class dashBoard extends javax.swing.JFrame {
                 status[n] = "Closed";
             }
         }
-        String finalStatus = status[0]+":"+status[1]+":"+status[2]+":"+status[3]+":"+previousStatuses[4]+":";
+        String finalStatus = status[0]+":"+status[1]+":Open:Open:"+previousStatuses[4]+":";
         
         System.out.println("New Status: " + finalStatus);
         return finalStatus;
@@ -4273,8 +3967,6 @@ public class dashBoard extends javax.swing.JFrame {
         JRadioButton [][] radioSets = {
             new JRadioButton[] {jRadioButton17,jRadioButton18,jRadioButton19,jRadioButton20},
             new JRadioButton[] {jRadioButton21,jRadioButton22,jRadioButton23,jRadioButton24},
-            new JRadioButton[] {jRadioButton25,jRadioButton26,jRadioButton27,jRadioButton28},
-            new JRadioButton[] {jRadioButton29,jRadioButton30,jRadioButton31,jRadioButton32},
         };
         
         for(int n=0;n<radioSets.length;n++){
@@ -4381,7 +4073,7 @@ public class dashBoard extends javax.swing.JFrame {
         if(!myVariables.isDebugModeOn()){
             my.hideColumns(assignedTeacherTable, new int [] {0,1,3,6});
             my.hideColumns(enrolledStudentsTable, new int [] {0,1,5});
-            my.hideColumns(enrolledStudentsTable1, new int [] {0,1,5,6}); // 12 is status column
+            my.hideColumns(enrolledStudentsTable1, new int [] {0,1,5,6,9,10}); // 12 is status column
             my.hideColumns(assignedSubjectsTable, new int [] {0});
         }
         
@@ -4527,7 +4219,7 @@ public class dashBoard extends javax.swing.JFrame {
             lbDateUpdated,lbGradeStatus,jLabel5,jLabel6,jLabel7,jLabel8,jLabel9,lbSubjectName,
             jLabel1,jLabel4,jLabel10,jLabel11,jLabel15,lbRecordId,jLabel16,lbStatusOptions,jLabel17,
             jLabel19,lbSectionName2,jLabel21,lbSubjectName2,
-            lbStatusOptions1,lbStatusOptions2,lbStatusOptions3,lbStatusOptions4,
+            lbStatusOptions1,lbStatusOptions2,
             jLabel24,jLabel25,jLabel26,jLabel22,lbEvaluation,
         };
         
@@ -4594,7 +4286,7 @@ public class dashBoard extends javax.swing.JFrame {
         JComboBox [] dropDowns = {
             //jcbMeridan,
         };
-        int startingYear = 2019;
+        int startingYear = 2021;
         
         for(JComboBox n : yearDropDowns){
             n.removeAllItems();
@@ -4629,15 +4321,13 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel30.setFont(poppins48);
         jLabel28.setFont(poppins19);
 //        label1.setFont(poppins16);
-////        label2.setFont(poppins16);
-////        label3.setFont(poppins16);
+//        label2.setFont(poppins16);
+//        label3.setFont(poppins16);
 //        
 //        tab1.setBackground(new java.awt.Color(253,232,240));
 //        tab2.setBackground(new java.awt.Color(251,185,211));
 //        tab3.setBackground(new java.awt.Color(251,185,211));
-        
-        
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -4743,15 +4433,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton22;
     private javax.swing.JRadioButton jRadioButton23;
     private javax.swing.JRadioButton jRadioButton24;
-    private javax.swing.JRadioButton jRadioButton25;
-    private javax.swing.JRadioButton jRadioButton26;
-    private javax.swing.JRadioButton jRadioButton27;
-    private javax.swing.JRadioButton jRadioButton28;
-    private javax.swing.JRadioButton jRadioButton29;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton30;
-    private javax.swing.JRadioButton jRadioButton31;
-    private javax.swing.JRadioButton jRadioButton32;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
@@ -4791,8 +4473,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel lbStatusOptions;
     private javax.swing.JLabel lbStatusOptions1;
     private javax.swing.JLabel lbStatusOptions2;
-    private javax.swing.JLabel lbStatusOptions3;
-    private javax.swing.JLabel lbStatusOptions4;
     private javax.swing.JLabel lbSubjectName;
     private javax.swing.JLabel lbSubjectName2;
     private javax.swing.JPanel left;
@@ -4811,8 +4491,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbManual;
     private javax.swing.JRadioButton rbQuarter1;
     private javax.swing.JRadioButton rbQuarter2;
-    private javax.swing.JRadioButton rbQuarter3;
-    private javax.swing.JRadioButton rbQuarter4;
     private javax.swing.JPanel right;
     private javax.swing.JPanel right2;
     private javax.swing.JPanel selectQuarterDialog;

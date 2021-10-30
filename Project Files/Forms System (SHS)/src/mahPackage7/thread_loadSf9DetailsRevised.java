@@ -138,7 +138,7 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                         matchFound = true;
                         String temp []= my.getValueAtColumn(result[x], 11).split(":");
                         try {
-                            result[x] = my.setValueAtColumn(result[x], 11, temp[4].toUpperCase());
+                            result[x] = my.setValueAtColumn(result[x], 11, temp[2].toUpperCase());
                         } catch (Exception e) {System.err.println("Invalid Status Found");}
                         
                         System.out.println(result[x]);
@@ -166,6 +166,8 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
         if(enableDisableButtons){
             btnExportSf9.setEnabled(true);
         }
+        
+        //code here for computation of final grades
         
         return "Task Complete...";
     }

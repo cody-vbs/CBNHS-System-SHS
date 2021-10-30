@@ -6013,9 +6013,11 @@ public class dashBoard extends javax.swing.JFrame {
             my.showMessage("Please Select a Student.", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
         String sectionId = assignedTeacherTable.getValueAt(sectionRow, 1).toString();
         String studentId = enrolledStudentsTable.getValueAt(studentRow, 1).toString();
         int recordId = Integer.parseInt(lbFinalGradeId.getText());
+        
         if(recordId <= 0){
             String where = "WHERE sectionId='"+sectionId+"' AND studentId='"+studentId+"'";
             //Load student's final grades first.
@@ -6062,8 +6064,6 @@ public class dashBoard extends javax.swing.JFrame {
             my.showMessage("No Subjects are assigned to this Section's Load.\nPlease contact your Curriculumn Head to add one.", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        System.out.println("Load Grades Entry 1");
         
         my.runSecondaryThread(6, true,
                 new JTable[]{gradesTable},

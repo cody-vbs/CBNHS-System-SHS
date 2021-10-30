@@ -6074,7 +6074,13 @@ public class dashBoard extends javax.swing.JFrame {
                     System.out.print("Final Status: "+status+" ");
                     //set final status
 
-                    String [] values2 = {"null,'"+sectionId+"','"+studentId+"','"+generalAverage+"','"+status+"','"+failedSubjects2+"'",};
+                    String [] sets = {
+                        "generalAverage='"+generalAverage+"'",
+                        "actionTaken='"+status+"'",
+                        "failedSubjects='"+failedSubjects2+"'",
+                        "dateUpdated=now()",
+                    };
+                    
                     System.out.println("Out Here");
                     //jephthah is here
                 
@@ -6085,7 +6091,7 @@ public class dashBoard extends javax.swing.JFrame {
                 String gwa = my.getValueAtColumn(result[0], 3);
                 String evaluation = my.getValueAtColumn(result[0], 4);
                 String failedSubjects = my.getValueAtColumn(result[0], 5);
-                String dateUpdated = my.getValueAtColumn(result[0], 6);
+                //String dateUpdated = my.getValueAtColumn(result[0], 6);
                 System.out.println("Out Here 2");
                 
                 //Compare computed grade and previous grade
@@ -6095,7 +6101,7 @@ public class dashBoard extends javax.swing.JFrame {
                     needToUpdate = "Yes";
                 }
                 if( "Yes".equals(needToUpdate)){
-                    my.add_values("finalgrades", "id,sectionId,studentId,generalAverage,actionTaken,failedSubjects", values2);
+                    my.update_values("finalgrades", sets, "id='"+id+"'");
                     System.out.println("Update Success");
                 }
                 System.out.println("Out Here 3");
@@ -6108,7 +6114,7 @@ public class dashBoard extends javax.swing.JFrame {
                 String gwa3 = my.getValueAtColumn(result3[0], 3);
                 String evaluation3 = my.getValueAtColumn(result3[0], 4);
                 String failedSubjects3 = my.getValueAtColumn(result3[0], 5);
-                String dateUpdated3 = my.getValueAtColumn(result3[0], 6);
+                //String dateUpdated3 = my.getValueAtColumn(result3[0], 6);
 
                 lbFinalGradeId.setText(id3);
                 tfGeneralAverage.setText(gwa3);

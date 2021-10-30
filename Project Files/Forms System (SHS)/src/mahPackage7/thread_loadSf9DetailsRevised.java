@@ -167,8 +167,6 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
             btnExportSf9.setEnabled(true);
         }
         
-        //code here for computation of final grades
-        
         return "Task Complete...";
     }
 

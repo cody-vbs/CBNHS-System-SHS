@@ -6022,27 +6022,157 @@ public class dashBoard extends javax.swing.JFrame {
             String where = "WHERE sectionId='"+sectionId+"' AND studentId='"+studentId+"'";
             //Load student's final grades first.
             if(my.checkForDuplicates("finalgrades",where, myVariables.getFinalGradesOrder())){
-                //Load
+                //Load and compute updated grades
+                    //jephthah is here
+                    System.out.println("Entry Here");
+                    String where2 = "";
+                    where2 = "WHERE sectionId='"+sectionId+"' "
+                            + "AND studentId='"+studentId+"' ";
+                    String result2 [] = my.return_values("*", "form_sf9_view", where2, myVariables.getJhsf9Order());
+
+                    //computing general average
+                    int generalAverage = 0;
+                    for(int x = 0; x < result2.length; x++){
+                        generalAverage += Integer.parseInt(my.getValueAtColumn(result2[x], 10));
+                    }
+                    generalAverage = generalAverage/result2.length;
+                    String gwa2 = String.valueOf(generalAverage);
+                    System.out.print("Total General Average: "+gwa2+" ");
+                    //computing general average
+
+                    //checking failed subjects
+                    String failedSubjects2 = "";
+                    for(int x = 0; x < result2.length; x++){
+                        int temp = Integer.parseInt(my.getValueAtColumn(result2[x], 10));
+                        if(temp < 75){
+                            String subjectCode = my.getValueAtColumn(result2[x], 3);
+                            failedSubjects2 += subjectCode+":";
+                        }
+                    }
+                    System.out.print("Failed Subjects: "+failedSubjects2+" ");
+                    //checking failed subjects
+
+                    //set final status
+                    String status = "";
+                    String hasIncompleteGrade = "";
+                    for(int x = 0; x < result2.length; x++){
+                        String temp1 = my.getValueAtColumn(result2[x], 6);
+                        String temp2 = my.getValueAtColumn(result2[x], 7);
+                        if(temp1 == null || temp2 == null){
+                            hasIncompleteGrade = "Yes";
+                        }
+                    }
+                    if(!"".equals(failedSubjects2)){ //kung naay unod ang failed subjects edi bagsak
+                        status = "Failed";
+                    }else if(generalAverage < 75){
+                        status = "Failed";
+                    }else if("Yes".equals(hasIncompleteGrade)){
+                        status = "Incomplete";
+                    }else{
+                        status = "Passed";
+                    }
+                    System.out.print("Final Status: "+status+" ");
+                    //set final status
+
+                    String [] values2 = {"null,'"+sectionId+"','"+studentId+"','"+generalAverage+"','"+status+"','"+failedSubjects2+"'",};
+                    System.out.println("Out Here");
+                    //jephthah is here
+                
+                //Load previous grade
+                System.out.println("Entry Here 2");
                 String result [] = my.return_values("*", "finalgrades",where, myVariables.getFinalGradesOrder());
                 String id = my.getValueAtColumn(result[0], 0);
                 String gwa = my.getValueAtColumn(result[0], 3);
                 String evaluation = my.getValueAtColumn(result[0], 4);
                 String failedSubjects = my.getValueAtColumn(result[0], 5);
                 String dateUpdated = my.getValueAtColumn(result[0], 6);
+                System.out.println("Out Here 2");
+                
+                //Compare computed grade and previous grade
+                System.out.println("Entry Here 3");
+                String needToUpdate = "";
+                if( !gwa2.equals(gwa) || !status.equals(evaluation) || !failedSubjects2.equals(failedSubjects)){
+                    needToUpdate = "Yes";
+                }
+                if( "Yes".equals(needToUpdate)){
+                    my.add_values("finalgrades", "id,sectionId,studentId,generalAverage,actionTaken,failedSubjects", values2);
+                    System.out.println("Update Success");
+                }
+                System.out.println("Out Here 3");
+                //Compare computed grade and previous grade
+                
+                //Load update grade
+                System.out.println("Entry Here 4");
+                String result3 [] = my.return_values("*", "finalgrades",where, myVariables.getFinalGradesOrder());
+                String id3 = my.getValueAtColumn(result3[0], 0);
+                String gwa3 = my.getValueAtColumn(result3[0], 3);
+                String evaluation3 = my.getValueAtColumn(result3[0], 4);
+                String failedSubjects3 = my.getValueAtColumn(result3[0], 5);
+                String dateUpdated3 = my.getValueAtColumn(result3[0], 6);
 
-                lbFinalGradeId.setText(id);
-                tfGeneralAverage.setText(gwa);
-                tfFailedSubjects.setText(failedSubjects);
+                lbFinalGradeId.setText(id3);
+                tfGeneralAverage.setText(gwa3);
+                tfFailedSubjects.setText(failedSubjects3);
                 btnExportSf9.setEnabled(true);
-                tfEvaluation.setText(evaluation.toUpperCase());
+                tfEvaluation.setText(evaluation3.toUpperCase());
+                System.out.println("Out Here 4");
                 return;
             }else{
                 //Ask to add new record
                 if(my.getConfirmation("This student has no records yet. Add one now?")){
-                    String [] values = {
-                        "null,'"+sectionId+"','"+studentId+"'",
-                    };
-                    if(my.add_values("finalgrades", "id,sectionId,studentId", values)){
+                    //jephthah is here
+                    String where2 = "";
+                    where2 = "WHERE sectionId='"+sectionId+"' "
+                            + "AND studentId='"+studentId+"' ";
+                    String result2 [] = my.return_values("*", "form_sf9_view", where2, myVariables.getJhsf9Order());
+
+                    //computing general average
+                    int generalAverage = 0;
+                    for(int x = 0; x < result2.length; x++){
+                        generalAverage += Integer.parseInt(my.getValueAtColumn(result2[x], 10));
+                    }
+                    generalAverage = generalAverage/result2.length;
+                    System.out.print("Total General Average: "+generalAverage+" ");
+                    //computing general average
+
+                    //checking failed subjects
+                    String failedSubjects2 = "";
+                    for(int x = 0; x < result2.length; x++){
+                        int temp = Integer.parseInt(my.getValueAtColumn(result2[x], 10));
+                        if(temp < 75){
+                            String subjectCode = my.getValueAtColumn(result2[x], 3);
+                            failedSubjects2 += subjectCode+":";
+                        }
+                    }
+                    System.out.print("Failed Subjects: "+failedSubjects2+" ");
+                    //checking failed subjects
+
+                    //set final status
+                    String status = "";
+                    String hasIncompleteGrade = "";
+                    for(int x = 0; x < result2.length; x++){
+                        String temp1 = my.getValueAtColumn(result2[x], 6);
+                        String temp2 = my.getValueAtColumn(result2[x], 7);
+                        if(temp1 == null || temp2 == null){
+                            hasIncompleteGrade = "Yes";
+                        }
+                    }
+                    if(!"".equals(failedSubjects2)){ //kung naay unod ang failed subjects edi bagsak
+                        status = "Failed";
+                    }else if(generalAverage < 75){
+                        status = "Failed";
+                    }else if("Yes".equals(hasIncompleteGrade)){
+                        status = "Incomplete";
+                    }else{
+                        status = "Passed";
+                    }
+                    System.out.print("Final Status: "+status+" ");
+                    //set final status
+
+                    String [] values2 = {"null,'"+sectionId+"','"+studentId+"','"+generalAverage+"','"+status+"','"+failedSubjects2+"'",};
+
+                    //jephthah is here
+                    if(my.add_values("finalgrades", "id,sectionId,studentId,generalAverage,actionTaken,failedSubjects", values2)){
                         playSuccess();
                         my.showMessage("Adding Successful. Please reload this student.", JOptionPane.INFORMATION_MESSAGE);
                         return;

@@ -2154,8 +2154,6 @@ public class dashBoard extends javax.swing.JFrame {
                     myCards.add(selectBookTemplateDialog);
                     myCards.repaint();
                     myCards.revalidate();
-                    
-               
                     //showCustomDialog("Select a template for this Section", selectBookTemplateDialog, true, 600, 500, true);
                 }
             }

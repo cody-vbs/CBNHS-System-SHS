@@ -495,7 +495,7 @@ public class dashBoard extends javax.swing.JFrame {
         tab4Layout.setHorizontalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(tab4Label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
         );
@@ -775,7 +775,7 @@ public class dashBoard extends javax.swing.JFrame {
         manageBooksTab.setLayout(manageBooksTabLayout);
         manageBooksTabLayout.setHorizontalGroup(
             manageBooksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 995, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
         );
         manageBooksTabLayout.setVerticalGroup(
             manageBooksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -850,7 +850,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(editBookDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfBookName1)
-                    .addComponent(btnSaveBook1, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+                    .addComponent(btnSaveBook1, javax.swing.GroupLayout.DEFAULT_SIZE, 977, Short.MAX_VALUE)
                     .addGroup(editBookDialogLayout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -866,7 +866,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(editBookDialogLayout.createSequentialGroup()
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 845, Short.MAX_VALUE))
+                .addGap(0, 847, Short.MAX_VALUE))
         );
         editBookDialogLayout.setVerticalGroup(
             editBookDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -938,7 +938,7 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfTemplateName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE)
+                    .addComponent(tfTemplateName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jcbTemplateGradeLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1049,7 +1049,7 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(left2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 977, Short.MAX_VALUE)
                     .addGroup(left2Layout.createSequentialGroup()
                         .addComponent(lbSearchResult3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1262,7 +1262,7 @@ public class dashBoard extends javax.swing.JFrame {
                         .addComponent(btnRemobeBookFromList))
                     .addComponent(tfTemplateName1)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                     .addGroup(right3Layout.createSequentialGroup()
                         .addGroup(right3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jcbTemplateGradeLevel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1337,7 +1337,7 @@ public class dashBoard extends javax.swing.JFrame {
         editBookTemplateDialog.setLayout(editBookTemplateDialogLayout);
         editBookTemplateDialogLayout.setHorizontalGroup(
             editBookTemplateDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 995, Short.MAX_VALUE)
+            .addComponent(jSplitPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
             .addGroup(editBookTemplateDialogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel15)
@@ -1430,7 +1430,7 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(selectSectionTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(selectSectionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 977, Short.MAX_VALUE)
                     .addGroup(selectSectionTabLayout.createSequentialGroup()
                         .addComponent(lbSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1667,7 +1667,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnSaveTemplateSelected)
                 .addContainerGap())
-            .addComponent(jSplitPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 995, Short.MAX_VALUE)
+            .addComponent(jSplitPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
         );
         selectBookTemplateDialogLayout.setVerticalGroup(
             selectBookTemplateDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1875,7 +1875,7 @@ public class dashBoard extends javax.swing.JFrame {
         distributeReturnBooksTab.setLayout(distributeReturnBooksTabLayout);
         distributeReturnBooksTabLayout.setHorizontalGroup(
             distributeReturnBooksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
         );
         distributeReturnBooksTabLayout.setVerticalGroup(
             distributeReturnBooksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2057,7 +2057,7 @@ public class dashBoard extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1015, Short.MAX_VALUE)
+            .addGap(0, 1017, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -2070,7 +2070,7 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(myCards, javax.swing.GroupLayout.PREFERRED_SIZE, 649, Short.MAX_VALUE)
+                    .addComponent(myCards, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -2134,6 +2134,8 @@ public class dashBoard extends javax.swing.JFrame {
         if(evt.getClickCount() == 2){
             int row = assignedTeacherTable.getSelectedRow();
             int templateId = Integer.parseInt(assignedTeacherTable.getValueAt(row, 11).toString());
+            tab4.setBackground(Color.decode("#FDE8F0"));
+            tab3.setBackground(Color.decode("#FBB9D3"));
             
             if(templateId != -1){
                 loadBookTemplatesToTable();
@@ -2152,6 +2154,8 @@ public class dashBoard extends javax.swing.JFrame {
                     myCards.add(selectBookTemplateDialog);
                     myCards.repaint();
                     myCards.revalidate();
+                    
+               
                     //showCustomDialog("Select a template for this Section", selectBookTemplateDialog, true, 600, 500, true);
                 }
             }

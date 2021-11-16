@@ -77,7 +77,7 @@ public class myVariables {
     //Table Orders
     private static final int [] usersOrder = new int [] {6,4,3,7,1,2,0,5};
     private static final int [] usersPersonalInfoOrder = new int [] {5,7,8,9,6,3,4,1,2,0};
-    private static final int [] studentsOrder = new int [] {8,6,0,2,9,4,1,3,5,10,7};
+    private static final int [] studentsOrder = new int [] {9,7,0,2,10,5,1,4,3,11,8,6};
     private static final int [] gradesOrder = new int [] {4,0,5,8,1,6,3,7,2,9,10};
     private static final int [] studentsPersonalInfoOrder = new int[] {13,9,11,15,16,4,10,3,5,6,0,8,14,2,7,12,1};
     private static final int [] subjectLoadsOrder = new int [] {0,3,2,1};
@@ -93,7 +93,7 @@ public class myVariables {
     private static final int [] sf2StudentListViewOrder = new int [] {4,5,0,2,6,1,3};
     private static final int [] sf2StudentListViewOrderRev2 = new int [] {4,5,0,2,6,1,3,7};
     private static final int [] attendanceOrder = new int [] {2,0,3,4,6,5,1};
-    private static final int [] subjectOrder = new int[] {2,3,1,0};
+    private static final int [] subjectOrder = new int[] {3,4,1,0,2};
     private static final int [] booksViewOrder = new int [] {14,21,8,0,4,23,1,3,9,12,7,5,19,24,2,17,26,20,16,18,25,13,22,6,15,10,11};
     
     //Icons

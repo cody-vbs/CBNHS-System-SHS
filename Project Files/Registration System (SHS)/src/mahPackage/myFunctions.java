@@ -261,13 +261,15 @@ public class myFunctions {
                         result[n] = combineColumns(result[n], combineColumns);
                     }
                 }
-                //System.err.println(result[n]);
+                System.err.println(result[n]);
                 add_table_row(result[n], resultTable);
             }
             
             if(resultText!= null){
-                resultText.setText("Showing "+result.length+" result(s) for '"+searchField.getText()+"'.");
+                resultText.setText("Showing "+result.length+" result(s) for '"+searchField.getText()+"'.");               
             }
+            
+            
         }else{
             playError();
             showMessage("No Results found.", JOptionPane.PLAIN_MESSAGE);

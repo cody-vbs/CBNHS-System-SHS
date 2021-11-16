@@ -319,10 +319,6 @@ public class dashBoard extends javax.swing.JFrame {
         assignedTeacherTable = new javax.swing.JTable();
         btnSaveSubjectTeacherChanges = new javax.swing.JButton();
         btnEditSubjectTeacher = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        btnRefreshList = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        subjectTable = new javax.swing.JTable();
         selectTeacherTab = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
@@ -831,7 +827,7 @@ public class dashBoard extends javax.swing.JFrame {
         addNewSectionPanel.setLayout(addNewSectionPanelLayout);
         addNewSectionPanelLayout.setHorizontalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
         addNewSectionPanelLayout.setVerticalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -934,7 +930,7 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("Select Curriculum");
+        jLabel10.setText("Select Subject Load");
 
         loadsTable1.setAutoCreateRowSorter(true);
         loadsTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -1058,7 +1054,7 @@ public class dashBoard extends javax.swing.JFrame {
         editSectionPanel.setLayout(editSectionPanelLayout);
         editSectionPanelLayout.setHorizontalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
         editSectionPanelLayout.setVerticalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1120,7 +1116,7 @@ public class dashBoard extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "LRN", "Name", "Gender", "Section", "Adviser", "Curriculum", "Level", "School Year", "Date"
+                "ID", "LRN", "Name", "Gender", "Section", "Adviser", "Subject Load", "Level", "School Year", "Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1443,7 +1439,7 @@ public class dashBoard extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Section Name", "Adv ID", "Adviser", "Gender", "Lod ID", "Curriculum", "Level", "School Year", "Subjects Contained"
+                "ID", "Section Name", "Adv ID", "Adviser", "Gender", "Lod ID", "Subject Load", "Level", "School Year", "Subjects Contained"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1589,44 +1585,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Allowed Subjects To Edit");
-
-        btnRefreshList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/icons8_sync_16px.png"))); // NOI18N
-        btnRefreshList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshListToEditHandler(evt);
-            }
-        });
-
-        subjectTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Code", "Name", "Grade"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        subjectTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        subjectTable.getTableHeader().setReorderingAllowed(false);
-        subjectTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                subjectTableMouseClicked(evt);
-            }
-        });
-        jScrollPane10.setViewportView(subjectTable);
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1643,12 +1601,7 @@ public class dashBoard extends javax.swing.JFrame {
                         .addGap(0, 218, Short.MAX_VALUE)
                         .addComponent(btnEditSubjectTeacher)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSaveSubjectTeacherChanges))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRefreshList))
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(btnSaveSubjectTeacherChanges)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1659,18 +1612,12 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSaveSubjectTeacherChanges)
                     .addComponent(btnEditSubjectTeacher))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(btnRefreshList))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(169, 169, 169))
         );
 
         jScrollPane7.setViewportView(jPanel3);
@@ -1679,7 +1626,7 @@ public class dashBoard extends javax.swing.JFrame {
         detailsTab.setLayout(detailsTabLayout);
         detailsTabLayout.setHorizontalGroup(
             detailsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
         detailsTabLayout.setVerticalGroup(
             detailsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1837,7 +1784,7 @@ public class dashBoard extends javax.swing.JFrame {
         selectTeacherTab.setLayout(selectTeacherTabLayout);
         selectTeacherTabLayout.setHorizontalGroup(
             selectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane9)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
         selectTeacherTabLayout.setVerticalGroup(
             selectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1863,7 +1810,7 @@ public class dashBoard extends javax.swing.JFrame {
         assignSubjectTeacherTab.setLayout(assignSubjectTeacherTabLayout);
         assignSubjectTeacherTabLayout.setHorizontalGroup(
             assignSubjectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
+            .addComponent(jSplitPane3)
         );
         assignSubjectTeacherTabLayout.setVerticalGroup(
             assignSubjectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2112,7 +2059,7 @@ public class dashBoard extends javax.swing.JFrame {
         }
         if(currIndex == -1){
             Toolkit.getDefaultToolkit().beep();
-            my.showMessage("Please select a Curriculum", JOptionPane.WARNING_MESSAGE);
+            my.showMessage("Please select a Subject Load", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -2321,115 +2268,6 @@ public class dashBoard extends javax.swing.JFrame {
         }
         my.searchItem(where, usersTable2, 3, new int[]{5,6}, new int[]{1,2,3}, true, true, null, tfSearchUser2, true);
     }//GEN-LAST:event_searchUserHandler2
-
-    private void refreshListToEditHandler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshListToEditHandler
-        int userId = myVariables.getUserLoggedInId();
-        System.out.println(userId);
-        String [] result = my.return_values("*", "userdetails", "WHERE userId='"+userId+"'", myVariables.getUsersPersonalInfoOrder());
-
-        if(myVariables.getAccessLevel() == 5){
-            jLabel16.setText("Allowed Subjects To Edit (Ignored by Admin)");
-        }else{
-            jLabel16.setText("Allowed Subjects To Edit");
-        }
-
-        if(result != null){
-            String managedSubjects = my.getValueAtColumn(result[0], 9);
-            if(managedSubjects.contains("NONE")){
-                my.clear_table_rows(subjectTable);
-                return;
-            }
-
-            managedSubjects = managedSubjects.replace(':', ',');
-
-            int length = managedSubjects.length();
-            if(managedSubjects.charAt(length-1) == ','){
-                System.err.println("Comma found...Deleting");
-                managedSubjects = managedSubjects.substring(0, length-1);
-            }
-
-            String [] subjects = my.return_values("*", "subjects", "WHERE id IN ("+managedSubjects+")", myVariables.getSubjectOrder());
-
-            my.clear_table_rows(subjectTable);
-            if(subjects != null){
-                for(String n : subjects){
-                    my.add_table_row(n, subjectTable);
-                }
-            }
-        }else{
-            my.clear_table_rows(subjectTable);
-        }
-    }//GEN-LAST:event_refreshListToEditHandler
-
-    private void btnEditSubjectTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditSubjectTeacherActionPerformed
-        enableDisableAssignSubjectTeacherFields(false, true, true);
-
-        assignedTeacherTable.setRowSelectionInterval(0, 0);
-    }//GEN-LAST:event_btnEditSubjectTeacherActionPerformed
-
-    private void saveSubjectTeacherChanges(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSubjectTeacherChanges
-        //Get Values
-        int sectionRow = sectionsTable2.getSelectedRow();
-
-        String sectionId = sectionsTable2.getValueAt(sectionRow, 0).toString();
-        int count = assignedTeacherTable.getRowCount();
-
-        String [] rows = new String[count];
-        for(int n=0;n<count;n++){
-            String id = assignedTeacherTable.getValueAt(n, 0).toString();
-            String teacherId = assignedTeacherTable.getValueAt(n, 2).toString();
-            String subjectId = assignedTeacherTable.getValueAt(n, 5).toString();
-            //ID,Section ID,Teacher ID,Subject ID
-            rows[n] = id+","+sectionId+","+teacherId+","+subjectId;
-        }
-
-        if(my.update_multiple_values("teacherloads", "id,sectionId,teacherId,subjectId", "teacherId = VALUES(teacherId)", rows)){
-            playSuccess();
-            my.showMessage("Update Succesfull.", JOptionPane.INFORMATION_MESSAGE);
-            btnSearchSectionHandler2(evt);
-        }else{
-            playError();
-            my.showMessage("Update Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_saveSubjectTeacherChanges
-
-    private void assignedTeacherTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignedTeacherTableMouseClicked
-        if(evt.getClickCount() == 2 && assignedTeacherTable.isEnabled()){
-            //Check if selected subject is on allowed subjects table
-            int row = assignedTeacherTable.getSelectedRow();
-            int selectedSubjectId = Integer.parseInt(assignedTeacherTable.getValueAt(row, 5).toString());
-
-            //Filter if user is not an admin
-            if(myVariables.getAccessLevel() != 5 && myVariables.getAccessLevel() != 4){
-                boolean matchFound = false;
-                for(int n=0;n<subjectTable.getRowCount();n++){
-                    int currentId = Integer.parseInt(subjectTable.getValueAt(n, 0).toString());
-                    if(selectedSubjectId == currentId){
-                        System.out.println("Selected subject is found on the list.");
-                        matchFound = true;
-                        break;
-                    }
-                }
-
-                if(!matchFound){
-                    Toolkit.getDefaultToolkit().beep();
-                    my.showMessage("This subject is not assigned to you.\nPlease [Refresh] your list below if you think this is an error.\nIf problem persists, please contact a REGISTRAR user.", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-            }else{
-                System.out.println("Admin account detected. All subjects are allowed to be assigned.");
-            }
-
-            if(subjectTeacherTab.getTabCount() <= 1){
-                subjectTeacherTab.addTab("Select Teacher", selectTeacherTab);
-                subjectTeacherTab.setSelectedIndex(1);
-            }
-        }else{
-            if(subjectTeacherTab.getTabCount() >= 2){
-                subjectTeacherTab.removeTabAt(1);
-            }
-        }
-    }//GEN-LAST:event_assignedTeacherTableMouseClicked
 
     
    
@@ -2663,14 +2501,80 @@ public class dashBoard extends javax.swing.JFrame {
         }
         my.clear_table_rows(assignedTeacherTable);
 
-        refreshListToEditHandler(evt);
+//        refreshListToEditHandler(evt);
 
         enableDisableAssignSubjectTeacherFields(false, false,false);
     }//GEN-LAST:event_btnSearchSectionHandler2
 
-    private void subjectTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subjectTableMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_subjectTableMouseClicked
+    private void assignedTeacherTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignedTeacherTableMouseClicked
+        if(evt.getClickCount() == 2 && assignedTeacherTable.isEnabled()){
+            //Check if selected subject is on allowed subjects table
+            int row = assignedTeacherTable.getSelectedRow();
+            int selectedSubjectId = Integer.parseInt(assignedTeacherTable.getValueAt(row, 5).toString());
+
+            //Filter if user is not an admin
+            if(myVariables.getAccessLevel() != 5 && myVariables.getAccessLevel() != 4){
+                boolean matchFound = false;
+                //                for(int n=0;n<subjectTable.getRowCount();n++){
+                    //                    int currentId = Integer.parseInt(subjectTable.getValueAt(n, 0).toString());
+                    //                    if(selectedSubjectId == currentId){
+                        //                        System.out.println("Selected subject is found on the list.");
+                        //                        matchFound = true;
+                        //                        break;
+                        //                    }
+                    //                }
+
+                if(!matchFound){
+                    Toolkit.getDefaultToolkit().beep();
+                    my.showMessage("This subject is not assigned to you.\nPlease [Refresh] your list below if you think this is an error.\nIf problem persists, please contact a REGISTRAR user.", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+            }else{
+                System.out.println("Admin account detected. All subjects are allowed to be assigned.");
+            }
+
+            if(subjectTeacherTab.getTabCount() <= 1){
+                subjectTeacherTab.addTab("Select Teacher", selectTeacherTab);
+                subjectTeacherTab.setSelectedIndex(1);
+            }
+        }else{
+            if(subjectTeacherTab.getTabCount() >= 2){
+                subjectTeacherTab.removeTabAt(1);
+            }
+        }
+    }//GEN-LAST:event_assignedTeacherTableMouseClicked
+
+    private void saveSubjectTeacherChanges(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSubjectTeacherChanges
+        //Get Values
+        int sectionRow = sectionsTable2.getSelectedRow();
+
+        String sectionId = sectionsTable2.getValueAt(sectionRow, 0).toString();
+        int count = assignedTeacherTable.getRowCount();
+
+        String [] rows = new String[count];
+        for(int n=0;n<count;n++){
+            String id = assignedTeacherTable.getValueAt(n, 0).toString();
+            String teacherId = assignedTeacherTable.getValueAt(n, 2).toString();
+            String subjectId = assignedTeacherTable.getValueAt(n, 5).toString();
+            //ID,Section ID,Teacher ID,Subject ID
+            rows[n] = id+","+sectionId+","+teacherId+","+subjectId;
+        }
+
+        if(my.update_multiple_values("teacherloads", "id,sectionId,teacherId,subjectId", "teacherId = VALUES(teacherId)", rows)){
+            playSuccess();
+            my.showMessage("Update Succesfull.", JOptionPane.INFORMATION_MESSAGE);
+            btnSearchSectionHandler2(evt);
+        }else{
+            playError();
+            my.showMessage("Update Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_saveSubjectTeacherChanges
+
+    private void btnEditSubjectTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditSubjectTeacherActionPerformed
+        enableDisableAssignSubjectTeacherFields(false, true, true);
+
+        assignedTeacherTable.setRowSelectionInterval(0, 0);
+    }//GEN-LAST:event_btnEditSubjectTeacherActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2790,7 +2694,7 @@ public class dashBoard extends javax.swing.JFrame {
             my.hideColumns(sectionsTable2, new int [] {0,2,5,7,9});
             my.hideColumns(assignedTeacherTable, new int [] {0,1,2,5});
             my.hideColumns(usersTable2, new int[] {0});
-            my.hideColumns(subjectTable, new int [] {0});
+//            my.hideColumns(subjectTable, new int [] {0});
         }
         
         //Set table fonts
@@ -2808,7 +2712,7 @@ public class dashBoard extends javax.swing.JFrame {
             sectionsTable2,
             assignedTeacherTable,
             usersTable2,
-            subjectTable,
+//            subjectTable,
         };
         //customizeTableColumnColors(sf1SectionTable, new int [] {0,1,2,3}, Color.RED,Color.WHITE,new Font("Segoe UI",Font.PLAIN,11),true);
         //customHeaders(sf1SectionTable, new int []{0,1,2,3}, Color.RED, Color.WHITE, new Font("Comic Sans MS", Font.BOLD, 12), true);
@@ -2878,7 +2782,7 @@ public class dashBoard extends javax.swing.JFrame {
             btnAssignTeacher,
             btnNone,
             
-            btnRefreshList,
+//            btnRefreshList,
         };
         
         JButton lightButtons [] = {
@@ -2916,7 +2820,7 @@ public class dashBoard extends javax.swing.JFrame {
         };
         
         JLabel formsHeaderLabels [] = {
-            jLabel4,jLabel12,jLabel14,jLabel16,
+            jLabel4,jLabel12,jLabel14,
         };
         JLabel textFieldHeaderLabels [] = {
             jLabel5,jLabel6,jLabel7,jLabel8,jLabel9,jLabel10,jLabel13,jLabel11,jLabel15,
@@ -3104,10 +3008,10 @@ public class dashBoard extends javax.swing.JFrame {
     columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(260);
     columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(260);
     
-    TableColumnModel columnModelSubjectTable = subjectTable.getColumnModel();
-    columnModelSubjectTable.getColumn(1).setPreferredWidth(260);
-    columnModelSubjectTable.getColumn(2).setPreferredWidth(260);
-    columnModelSubjectTable.getColumn(3).setPreferredWidth(260);
+//    TableColumnModel columnModelSubjectTable = subjectTable.getColumnModel();
+//    columnModelSubjectTable.getColumn(1).setPreferredWidth(260);
+//    columnModelSubjectTable.getColumn(2).setPreferredWidth(260);
+//    columnModelSubjectTable.getColumn(3).setPreferredWidth(260);
 
 
 
@@ -3124,7 +3028,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JButton btnEditSubjectTeacher;
     private javax.swing.JButton btnEnrollStudent;
     private javax.swing.JButton btnNone;
-    private javax.swing.JButton btnRefreshList;
     private javax.swing.JButton btnSaveSectionChanges;
     private javax.swing.JButton btnSaveSubjectTeacherChanges;
     private javax.swing.JButton btnSearchLoad;
@@ -3148,7 +3051,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -3177,7 +3079,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
@@ -3230,7 +3131,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable sectionsTable2;
     private javax.swing.JPanel selectTeacherTab;
     private javax.swing.JTable studentTable;
-    private javax.swing.JTable subjectTable;
     private javax.swing.JTabbedPane subjectTeacherTab;
     private javax.swing.JPanel tab1;
     private javax.swing.JLabel tab1Label;

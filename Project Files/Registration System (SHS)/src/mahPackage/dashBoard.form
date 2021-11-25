@@ -1084,7 +1084,7 @@
                                 <Component class="javax.swing.JTable" name="studentTable">
                                   <Properties>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="8" rowCount="4">
+                                      <Table columnCount="9" rowCount="4">
                                         <Column editable="false" title="ID (H)" type="java.lang.Object"/>
                                         <Column editable="false" title="LRN" type="java.lang.Object"/>
                                         <Column editable="false" title="Last Name" type="java.lang.Object"/>
@@ -1093,7 +1093,57 @@
                                         <Column editable="false" title="Gender" type="java.lang.Object"/>
                                         <Column editable="false" title="Initial Gen. Ave." type="java.lang.Object"/>
                                         <Column editable="false" title="Current Gr. Lvl" type="java.lang.Object"/>
+                                        <Column editable="false" title="Strand" type="java.lang.Object"/>
                                       </Table>
+                                    </Property>
+                                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                      <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                      </TableColumnModel>
                                     </Property>
                                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
@@ -1201,19 +1251,9 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="rbMale" min="-2" pref="78" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="rbFemale" min="-2" pref="78" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
-                                                      </Group>
                                                       <Group type="102" alignment="1" attributes="0">
                                                           <Group type="103" groupAlignment="1" attributes="0">
                                                               <Component id="tfSchoolId" alignment="0" max="32767" attributes="0"/>
@@ -1227,8 +1267,7 @@
                                                               <Component id="tfSchoolName" alignment="0" max="32767" attributes="0"/>
                                                               <Component id="jLabel37" alignment="0" max="32767" attributes="0"/>
                                                               <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="jLabel9" alignment="0" pref="305" max="32767" attributes="0"/>
                                                               <Component id="tfFname" alignment="0" max="32767" attributes="0"/>
                                                               <Component id="tfMname" alignment="0" max="32767" attributes="0"/>
                                                               <Component id="tfLName" alignment="0" max="32767" attributes="0"/>
@@ -1239,7 +1278,25 @@
                                                           </Group>
                                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                                       </Group>
+                                                      <Component id="jLabel100" alignment="0" max="32767" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="rbMale" min="-2" pref="78" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="rbFemale" min="-2" pref="78" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabel10" alignment="1" max="32767" attributes="0"/>
                                                   </Group>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="strandSelect" min="-2" pref="91" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -1266,14 +1323,18 @@
                                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="tfStudentLrn" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="strandSelect" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
                                                       <Component id="rbMale" alignment="3" min="-2" max="-2" attributes="0"/>
                                                       <Component id="rbFemale" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="31" max="32767" attributes="0"/>
                                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -1293,7 +1354,7 @@
                                                   <Component id="tfSchoolAddress" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="169" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -1500,6 +1561,26 @@
                                             <Property name="text" type="java.lang.String" value="Junior High Details"/>
                                           </Properties>
                                         </Component>
+                                        <Component class="javax.swing.JLabel" name="jLabel100">
+                                          <Properties>
+                                            <Property name="text" type="java.lang.String" value="Strand"/>
+                                          </Properties>
+                                        </Component>
+                                        <Component class="javax.swing.JComboBox" name="strandSelect">
+                                          <Properties>
+                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                              <StringArray count="4">
+                                                <StringItem index="0" value="ABM"/>
+                                                <StringItem index="1" value="HUMMS"/>
+                                                <StringItem index="2" value="STEM"/>
+                                                <StringItem index="3" value="GAS"/>
+                                              </StringArray>
+                                            </Property>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                          </AuxValues>
+                                        </Component>
                                       </SubComponents>
                                     </Container>
                                   </SubComponents>
@@ -1535,7 +1616,7 @@
                                                   <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="tfFirstName1" alignment="0" max="32767" attributes="0"/>
@@ -1551,11 +1632,11 @@
                                                       <Component id="btnSaveChanges" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="tfSchoolAddress1" alignment="1" max="32767" attributes="0"/>
                                                       <Component id="jLabel91" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel11" alignment="0" pref="244" max="32767" attributes="0"/>
                                                       <Component id="jLabel87" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="jLabel90" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="tfSchoolName1" alignment="0" max="32767" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
                                                           <Group type="103" groupAlignment="0" attributes="0">
                                                               <Group type="102" alignment="0" attributes="0">
                                                                   <Component id="rbMale1" min="-2" pref="78" max="-2" attributes="0"/>
@@ -1565,6 +1646,8 @@
                                                               <Component id="jLabel13" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
                                                               <Component id="tfSchoolId1" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                                               <Component id="tfInitialGrade1" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                                                              <Component id="jLabel101" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                                              <Component id="strandSelect1" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                                                           </Group>
                                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                       </Group>
@@ -1596,14 +1679,18 @@
                                                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="tfStudentLrn1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                                  <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="strandSelect1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
                                                       <Component id="rbMale1" alignment="3" min="-2" max="-2" attributes="0"/>
                                                       <Component id="rbFemale1" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="40" max="32767" attributes="0"/>
                                                   <Component id="jLabel93" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -1623,7 +1710,7 @@
                                                   <Component id="tfSchoolAddress1" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnSaveChanges" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -1828,6 +1915,26 @@
                                             <Property name="horizontalAlignment" type="int" value="0"/>
                                             <Property name="text" type="java.lang.String" value="Junior High Details"/>
                                           </Properties>
+                                        </Component>
+                                        <Component class="javax.swing.JLabel" name="jLabel101">
+                                          <Properties>
+                                            <Property name="text" type="java.lang.String" value="Strand"/>
+                                          </Properties>
+                                        </Component>
+                                        <Component class="javax.swing.JComboBox" name="strandSelect1">
+                                          <Properties>
+                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                              <StringArray count="4">
+                                                <StringItem index="0" value="ABM"/>
+                                                <StringItem index="1" value="HUMMS"/>
+                                                <StringItem index="2" value="STEM"/>
+                                                <StringItem index="3" value="GAS"/>
+                                              </StringArray>
+                                            </Property>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                          </AuxValues>
                                         </Component>
                                       </SubComponents>
                                     </Container>
@@ -2529,12 +2636,42 @@
                                   <Properties>
                                     <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="4" rowCount="20">
+                                      <Table columnCount="5" rowCount="20">
                                         <Column editable="false" title="ID (H)" type="java.lang.Integer"/>
                                         <Column editable="false" title="Subject Code" type="java.lang.Object"/>
                                         <Column editable="false" title="Description" type="java.lang.Object"/>
                                         <Column editable="false" title="Grade Level" type="java.lang.Object"/>
+                                        <Column editable="true" title="Semester" type="java.lang.Object"/>
                                       </Table>
+                                    </Property>
+                                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                      <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                      </TableColumnModel>
                                     </Property>
                                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
@@ -2604,21 +2741,23 @@
                                               <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="tfSubjectCode" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="tfSubjectDescription" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="jLabel41" alignment="0" pref="244" max="32767" attributes="0"/>
                                                   <Component id="btnAdd1" alignment="0" max="32767" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jLabel40" alignment="1" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                           <Component id="jcbGradeLevel" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel45" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                                          <Component id="jLabel45" alignment="0" pref="119" max="32767" attributes="0"/>
+                                                          <Component id="jLabel102" alignment="0" pref="119" max="32767" attributes="0"/>
+                                                          <Component id="semesterSelect" alignment="0" max="32767" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                   </Group>
-                                                  <Component id="jLabel40" alignment="1" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
@@ -2642,8 +2781,12 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jcbGradeLevel" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="semesterSelect" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="btnAdd1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="443" max="32767" attributes="0"/>
+                                              <EmptySpace pref="385" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -2736,6 +2879,24 @@
                                         <Property name="text" type="java.lang.String" value="Grade Level"/>
                                       </Properties>
                                     </Component>
+                                    <Component class="javax.swing.JLabel" name="jLabel102">
+                                      <Properties>
+                                        <Property name="text" type="java.lang.String" value="Semester"/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JComboBox" name="semesterSelect">
+                                      <Properties>
+                                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                          <StringArray count="2">
+                                            <StringItem index="0" value="1st semester"/>
+                                            <StringItem index="1" value="2nd semester"/>
+                                          </StringArray>
+                                        </Property>
+                                      </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                      </AuxValues>
+                                    </Component>
                                   </SubComponents>
                                 </Container>
                                 <Container class="javax.swing.JPanel" name="editSubjectTab">
@@ -2759,18 +2920,24 @@
                                               <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="tfSubjectCode1" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="jLabel48" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="tfSubjectDescription1" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="jLabel50" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="btnSaveChanges2" alignment="0" max="32767" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="jcbGradeLevel1" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jLabel49" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                                  <Component id="btnSaveChanges2" alignment="0" pref="244" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                              <Component id="jcbGradeLevel1" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="jLabel49" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="jLabel103" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="semesterSelect1" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                                          </Group>
                                                       </Group>
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                   </Group>
@@ -2796,9 +2963,13 @@
                                               <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jcbGradeLevel1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jLabel103" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="semesterSelect1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="btnSaveChanges2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace pref="392" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -2896,6 +3067,24 @@
                                       <Events>
                                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveChanges2saveSubjectChangesHandler"/>
                                       </Events>
+                                    </Component>
+                                    <Component class="javax.swing.JLabel" name="jLabel103">
+                                      <Properties>
+                                        <Property name="text" type="java.lang.String" value="Semester"/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JComboBox" name="semesterSelect1">
+                                      <Properties>
+                                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                          <StringArray count="2">
+                                            <StringItem index="0" value="1st semester"/>
+                                            <StringItem index="1" value="2nd semester"/>
+                                          </StringArray>
+                                        </Property>
+                                      </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                      </AuxValues>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -5118,7 +5307,7 @@
                                           <Font name="Segoe UI" size="14" style="1"/>
                                         </Property>
                                         <Property name="horizontalAlignment" type="int" value="0"/>
-                                        <Property name="text" type="java.lang.String" value="Select Subjec(s) to Add."/>
+                                        <Property name="text" type="java.lang.String" value="Select Subject(s) to Add."/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>

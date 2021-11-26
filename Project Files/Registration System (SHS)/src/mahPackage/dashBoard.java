@@ -300,8 +300,6 @@ public class dashBoard extends javax.swing.JFrame {
         tfSchoolAddress = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel100 = new javax.swing.JLabel();
-        strandSelect = new javax.swing.JComboBox<>();
         jScrollPane7 = new javax.swing.JScrollPane();
         editStudentTab = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -328,8 +326,6 @@ public class dashBoard extends javax.swing.JFrame {
         tfSchoolAddress1 = new javax.swing.JTextField();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
-        jLabel101 = new javax.swing.JLabel();
-        strandSelect1 = new javax.swing.JComboBox<>();
         personalInfoTab = new javax.swing.JPanel();
         jSplitPane2 = new javax.swing.JSplitPane();
         left2 = new javax.swing.JPanel();
@@ -1052,17 +1048,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         studentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID (H)", "LRN", "Last Name", "First Name", "Middle Name", "Gender", "Initial Gen. Ave.", "Current Gr. Lvl", "Strand"
+                "ID (H)", "LRN", "Last Name", "First Name", "Middle Name", "Gender", "Initial Gen. Ave.", "Current Gr. Lvl"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1267,10 +1263,6 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Junior High Details");
 
-        jLabel100.setText("Strand");
-
-        strandSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ABM", "HUMMS", "STEM", "GAS" }));
-
         javax.swing.GroupLayout addStudentTabLayout = new javax.swing.GroupLayout(addStudentTab);
         addStudentTab.setLayout(addStudentTabLayout);
         addStudentTabLayout.setHorizontalGroup(
@@ -1300,7 +1292,6 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfInitialGrade, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap())
-                    .addComponent(jLabel100, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(addStudentTabLayout.createSequentialGroup()
                         .addComponent(rbMale, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1308,11 +1299,7 @@ public class dashBoard extends javax.swing.JFrame {
                         .addGap(149, 149, 149))
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(addStudentTabLayout.createSequentialGroup()
-                .addGroup(addStudentTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(addStudentTabLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         addStudentTabLayout.setVerticalGroup(
@@ -1338,17 +1325,13 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfStudentLrn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel100)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addStudentTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbMale)
                     .addComponent(rbFemale))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel9)
@@ -1368,7 +1351,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(tfSchoolAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAdd)
-                .addGap(76, 76, 76))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         jScrollPane6.setViewportView(addStudentTab);
@@ -1504,10 +1487,6 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel93.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel93.setText("Junior High Details");
 
-        jLabel101.setText("Strand");
-
-        strandSelect1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ABM", "HUMMS", "STEM", "GAS" }));
-
         javax.swing.GroupLayout editStudentTabLayout = new javax.swing.GroupLayout(editStudentTab);
         editStudentTab.setLayout(editStudentTabLayout);
         editStudentTabLayout.setHorizontalGroup(
@@ -1543,9 +1522,7 @@ public class dashBoard extends javax.swing.JFrame {
                                 .addComponent(rbFemale1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfSchoolId1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfInitialGrade1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(strandSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfInitialGrade1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1572,17 +1549,13 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfStudentLrn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel101)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(strandSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(editStudentTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbMale1)
                     .addComponent(rbFemale1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel93)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel11)
@@ -1602,7 +1575,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(tfSchoolAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSaveChanges)
-                .addGap(35, 35, 35))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         jScrollPane7.setViewportView(editStudentTab);
@@ -3988,10 +3961,9 @@ public class dashBoard extends javax.swing.JFrame {
             tfStudentLrn1.setText(info[1]);
             tfInitialGrade1.setText(info[6]);
 
-            tfSchoolId1.setText(info[11]);
+            tfSchoolId1.setText(info[8]);
             tfSchoolName1.setText(info[9]);
             tfSchoolAddress1.setText(info[10]);
-            strandSelect1.setSelectedItem(info[8]);
 
             if(info[5].contains("f") || info[5].contains("F")){
                 rbFemale1.setSelected(true);
@@ -4377,7 +4349,6 @@ public class dashBoard extends javax.swing.JFrame {
             my.convertEscapeCharacters(tfSchoolId.getText().trim()).length() > 0 ?my.convertEscapeCharacters(tfSchoolId.getText().trim()) : " ",
             my.convertEscapeCharacters(tfSchoolName.getText().trim()).length() > 0 ?my.convertEscapeCharacters(tfSchoolName.getText().trim()) : " ",
             my.convertEscapeCharacters(tfSchoolAddress.getText().trim()).length() > 0 ?my.convertEscapeCharacters(tfSchoolAddress.getText().trim()) : " ",
-            strandSelect.getSelectedItem().toString(),
             "SHS"
         };
 
@@ -4432,7 +4403,7 @@ public class dashBoard extends javax.swing.JFrame {
             return;
         }
         //Add
-        if(my.add_values("students", "id,fName,mName,lName,lrn,sex,inGr,curGrLvl,schoolId,schoolName,schoolAddress,strand,dep_type", fields)){
+        if(my.add_values("students", "id,fName,mName,lName,lrn,sex,inGr,curGrLvl,schoolId,schoolName,schoolAddress,dep_type", fields)){
             playSuccess();
             my.showMessage("Student added successfully", JOptionPane.INFORMATION_MESSAGE);
         }else{
@@ -4891,7 +4862,6 @@ public class dashBoard extends javax.swing.JFrame {
             my.convertEscapeCharacters(tfSchoolId1.getText().trim()).length() > 0 ?my.convertEscapeCharacters(tfSchoolId1.getText().trim()) : " ",
             my.convertEscapeCharacters(tfSchoolName1.getText().trim()).length() > 0 ?my.convertEscapeCharacters(tfSchoolName1.getText().trim()) : " ",
             my.convertEscapeCharacters(tfSchoolAddress1.getText().trim()).length() > 0 ?my.convertEscapeCharacters(tfSchoolAddress1.getText().trim()) : " ",
-            strandSelect1.getSelectedItem().toString(),
         };
 
         //Validate Fields
@@ -4955,7 +4925,6 @@ public class dashBoard extends javax.swing.JFrame {
             "schoolId='"+fields[6]+"'",
             "schoolName='"+fields[7]+"'",
             "schoolAddress='"+fields[8]+"'",
-            "strand='"+fields[9]+"'",
         };
         //Update
         if(my.update_values("students", sets, "id = '"+studentId+"'")){
@@ -8115,8 +8084,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable importTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel11;
@@ -8315,8 +8282,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable selectedSubjectTable;
     private javax.swing.JComboBox<String> semesterSelect;
     private javax.swing.JComboBox<String> semesterSelect1;
-    private javax.swing.JComboBox<String> strandSelect;
-    private javax.swing.JComboBox<String> strandSelect1;
     private javax.swing.JTable studentTable;
     private javax.swing.JTable studentTable1;
     private javax.swing.JTabbedPane subjectLoadTabs;

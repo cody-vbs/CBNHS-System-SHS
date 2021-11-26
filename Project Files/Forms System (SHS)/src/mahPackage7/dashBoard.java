@@ -7052,10 +7052,10 @@ public class dashBoard extends javax.swing.JFrame {
             my.hideColumns(gradesTable, new int [] {0,1,2,3,8,9});
             
             my.hideColumns(gradesTable1, new int [] {0,1,2,3,8,9});
-            my.hideColumns(gradesTable2, new int [] {0,1,2,3});
-            my.hideColumns(gradesTable3, new int [] {0,1,2,3});
-            my.hideColumns(gradesTable4, new int [] {0,1,2,3});
-            my.hideColumns(gradesTable5, new int [] {0,1,2,3});
+            my.hideColumns(gradesTable2, new int [] {0,1,2,3,8,9});
+            my.hideColumns(gradesTable3, new int [] {0,1,2,3,8,9});
+            my.hideColumns(gradesTable4, new int [] {0,1,2,3,8,9});
+            my.hideColumns(gradesTable5, new int [] {0,1,2,3,8,9});
             
             my.hideColumns(sf7TeachersTable, new int [] {0,10});
             my.hideColumns(sf7AssignedSubjectsTable, new int [] {0,1,2,4});

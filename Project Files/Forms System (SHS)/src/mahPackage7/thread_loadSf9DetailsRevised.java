@@ -128,8 +128,8 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                 lbLoadingMessage.setText("Loading Subjects..."+(n+1)+" of "+subjectCount);
                 progressBar.setValue(n+1);
                 //Find Match Using subjectId
-                currSubjectId = Integer.parseInt(my.getValueAtColumn(subjectsResult[n], 1));
-                System.out.println(currSubjectId);
+                currSubjectId = Integer.parseInt(my.getValueAtColumn(subjectsResult[n], 0));
+                System.out.println("This is the current ID"+currSubjectId);
                 matchFound = false;
                 for (int x = 0; x < gradeCount; x++) {
                     foundSubjectId = Integer.parseInt(my.getValueAtColumn(result[x], 3));

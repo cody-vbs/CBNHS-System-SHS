@@ -546,6 +546,7 @@ public class myFunctions {
             url = url.replace(" ", "%20");
             url = url.replace("Ñ", "%25C3%2591");
             url = url.replace("ñ", "%25C3%25B1");
+            
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             // optional default is GET
@@ -574,7 +575,6 @@ public class myFunctions {
             
 
             //Read JSON response and print
-            
             JSONObject myResponse = new JSONObject(response.toString());
             JSONArray res;
             //Check for query errors
@@ -590,20 +590,14 @@ public class myFunctions {
                 return null;
             }
             
-            //Get column names
-            
-            
-            
             if(res.length() > 0){
                 //Get column names
                 JSONObject sample = res.getJSONObject(0);
                 cLine = "";
                 
                 //Display column index & name
-                if(myVariables.isDebugModeOn()){
-                    for(int n=0;n<sample.names().length();n++){
-                        System.out.println(n+" "+sample.names().getString(n));
-                    }
+                for(int n=0;n<sample.names().length();n++){
+                    System.out.println(n+" "+sample.names().getString(n));
                 }
                 
                 //Get values based on column name keys
@@ -618,7 +612,6 @@ public class myFunctions {
                 }
                 cLine = cLine.replace("%C3%91", "Ñ");
                 cLine = cLine.replace("%C3%B1", "ñ");
-                
                 lines = cLine.split("//");
                 return lines;
             }else{

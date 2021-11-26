@@ -102,7 +102,7 @@ public class myVariables {
     private static final int [] managedSubjectsWSubjectsContainedViewOrder = new int [] {13,5,8,10,3,1,14,0,6,15,4,9,12,11,7,2};
         
     private static final int [] attendanceOrder = new int [] {2,0,3,4,6,5,1};
-    private static final int [] subjectOrder = new int[] {2,3,1,0};
+    private static final int [] subjectOrder = new int[] {4,5,2,1,3,0};
     
     //School Form Views
     private static final int [] jhsf1Order= new int [] {18,12,8,7,1,13,19,5,15,20,22,6,14,4,9,10,0,3,16,2,11,17,21};

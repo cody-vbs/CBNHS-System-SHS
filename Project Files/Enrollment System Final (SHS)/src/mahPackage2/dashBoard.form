@@ -1468,7 +1468,7 @@
                             <Component class="javax.swing.JTable" name="enrollmentTable">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="10" rowCount="4">
+                                  <Table columnCount="11" rowCount="4">
                                     <Column editable="false" title="ID" type="java.lang.Object"/>
                                     <Column editable="false" title="LRN" type="java.lang.Object"/>
                                     <Column editable="false" title="Name" type="java.lang.Object"/>
@@ -1477,6 +1477,7 @@
                                     <Column editable="false" title="Adviser" type="java.lang.Object"/>
                                     <Column editable="false" title="Subject Load" type="java.lang.Object"/>
                                     <Column editable="false" title="Level" type="java.lang.Object"/>
+                                    <Column editable="false" title="Strand" type="java.lang.Object"/>
                                     <Column editable="false" title="School Year" type="java.lang.Object"/>
                                     <Column editable="false" title="Date" type="java.lang.Object"/>
                                   </Table>
@@ -1514,12 +1515,17 @@
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
@@ -1670,6 +1676,11 @@
                                                       </Group>
                                                       <Component id="btnEnrollStudent" max="32767" attributes="0"/>
                                                       <Component id="jScrollPane15" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel100" alignment="0" max="32767" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="strandSelect" min="-2" pref="91" max="-2" attributes="0"/>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
@@ -1698,9 +1709,13 @@
                                                   </Group>
                                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                                   <Component id="jScrollPane16" pref="204" max="32767" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="strandSelect" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="btnEnrollStudent" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -1898,6 +1913,26 @@
                                             </Component>
                                           </SubComponents>
                                         </Container>
+                                        <Component class="javax.swing.JLabel" name="jLabel100">
+                                          <Properties>
+                                            <Property name="text" type="java.lang.String" value="Strand"/>
+                                          </Properties>
+                                        </Component>
+                                        <Component class="javax.swing.JComboBox" name="strandSelect">
+                                          <Properties>
+                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                              <StringArray count="4">
+                                                <StringItem index="0" value="ABM"/>
+                                                <StringItem index="1" value="HUMMS"/>
+                                                <StringItem index="2" value="STEM"/>
+                                                <StringItem index="3" value="GAS"/>
+                                              </StringArray>
+                                            </Property>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                          </AuxValues>
+                                        </Component>
                                       </SubComponents>
                                     </Container>
                                   </SubComponents>

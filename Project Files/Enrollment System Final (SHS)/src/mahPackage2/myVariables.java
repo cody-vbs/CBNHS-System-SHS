@@ -68,7 +68,7 @@ public class myVariables {
     private static int [] subjectLoadsOrder = new int [] {0,3,2,1};
     private static int [] sectionsOrder = new int [] {9,0,4,6,5,10,1,2,11,7,8,3};
     
-    private static int [] enrollmentViewOrder = new int [] {15,7,3,0,9,16,1,5,8,11,4,2,17,10,6,12,13,14};
+    private static int [] enrollmentViewOrder = new int [] {16,7,3,0,9,16,1,5,8,11,4,2,17,12,6,13,10,14,15};
     private static int [] teacherLoadsViewOrder = new int [] {6,7,1,4,3,8,2,10,9,5,0};
     
     private static int [] sectionViewRev3Order = new int [] {8,0,2,4,5,6,3,1,7};

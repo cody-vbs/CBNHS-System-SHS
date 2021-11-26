@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2021 at 05:00 AM
+-- Generation Time: Nov 26, 2021 at 06:26 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -430,6 +430,7 @@ CREATE TABLE `enrollment` (
   `sectionId` int(11) NOT NULL,
   `dateEnrolled` datetime NOT NULL DEFAULT current_timestamp(),
   `remarks` varchar(1000) NOT NULL DEFAULT ' ! !',
+  `strand` varchar(10) DEFAULT NULL,
   `dep_type` varchar(10) NOT NULL DEFAULT 'JHS'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -437,28 +438,29 @@ CREATE TABLE `enrollment` (
 -- Dumping data for table `enrollment`
 --
 
-INSERT INTO `enrollment` (`id`, `studentId`, `sectionId`, `dateEnrolled`, `remarks`, `dep_type`) VALUES
-(2, 9, 4, '2021-09-28 22:45:09', ' ! !', 'SHS'),
-(3, 3, 4, '2021-09-29 09:16:53', ' ! !', 'SHS'),
-(4, 4, 4, '2021-09-29 09:17:41', ' ! !', 'SHS'),
-(5, 5, 4, '2021-09-29 09:17:53', ' ! !', 'SHS'),
-(6, 6, 4, '2021-09-29 09:18:10', ' ! !', 'SHS'),
-(7, 7, 4, '2021-09-29 09:18:18', ' ! !', 'SHS'),
-(8, 8, 4, '2021-09-29 09:18:26', ' ! !', 'SHS'),
-(9, 10, 4, '2021-09-29 09:18:43', ' ! !', 'SHS'),
-(10, 11, 4, '2021-09-29 09:18:58', ' ! !', 'SHS'),
-(11, 12, 4, '2021-09-29 09:19:09', ' ! !', 'SHS'),
-(12, 13, 4, '2021-09-29 09:19:18', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(13, 14, 4, '2021-09-29 09:19:34', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(14, 15, 4, '2021-09-29 09:19:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(15, 16, 4, '2021-09-29 09:19:53', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(16, 17, 4, '2021-09-29 09:20:03', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(17, 18, 4, '2021-09-29 09:20:14', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(18, 19, 4, '2021-09-29 09:20:25', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(19, 20, 4, '2021-09-29 09:20:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(20, 21, 4, '2021-09-29 09:20:52', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(21, 22, 4, '2021-09-29 09:21:02', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS'),
-(22, 23, 4, '2021-09-29 09:21:11', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'SHS');
+INSERT INTO `enrollment` (`id`, `studentId`, `sectionId`, `dateEnrolled`, `remarks`, `strand`, `dep_type`) VALUES
+(2, 9, 4, '2021-09-28 22:45:09', ' ! !', 'ABM', 'SHS'),
+(3, 3, 4, '2021-09-29 09:16:53', ' ! !', 'ABM', 'SHS'),
+(4, 4, 4, '2021-09-29 09:17:41', ' ! !', 'ABM', 'SHS'),
+(5, 5, 4, '2021-09-29 09:17:53', ' ! !', 'ABM', 'SHS'),
+(6, 6, 4, '2021-09-29 09:18:10', ' ! !', 'ABM', 'SHS'),
+(7, 7, 4, '2021-09-29 09:18:18', ' ! !', 'ABM', 'SHS'),
+(8, 8, 4, '2021-09-29 09:18:26', ' ! !', 'ABM', 'SHS'),
+(9, 10, 4, '2021-09-29 09:18:43', ' ! !', 'ABM', 'SHS'),
+(10, 11, 4, '2021-09-29 09:18:58', ' ! !', 'ABM', 'SHS'),
+(11, 12, 4, '2021-09-29 09:19:09', ' ! !', 'ABM', 'SHS'),
+(12, 13, 4, '2021-09-29 09:19:18', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(13, 14, 4, '2021-09-29 09:19:34', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(14, 15, 4, '2021-09-29 09:19:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(15, 16, 4, '2021-09-29 09:19:53', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(16, 17, 4, '2021-09-29 09:20:03', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(17, 18, 4, '2021-09-29 09:20:14', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(18, 19, 4, '2021-09-29 09:20:25', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(19, 20, 4, '2021-09-29 09:20:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(20, 21, 4, '2021-09-29 09:20:52', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(21, 22, 4, '2021-09-29 09:21:02', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(22, 23, 4, '2021-09-29 09:21:11', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
+(23, 4, 6, '2021-11-25 20:35:06', ' ! !', 'HUMMS', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -1155,7 +1157,6 @@ CREATE TABLE `students` (
   `schoolId` varchar(11) NOT NULL DEFAULT '000000',
   `schoolName` varchar(1000) NOT NULL DEFAULT ' ',
   `schoolAddress` varchar(1000) NOT NULL DEFAULT ' ',
-  `strand` varchar(10) NOT NULL,
   `dep_type` varchar(10) NOT NULL DEFAULT 'JHS'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1163,36 +1164,37 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `lrn`, `lName`, `fName`, `mName`, `sex`, `inGr`, `curGrLvl`, `schoolId`, `schoolName`, `schoolAddress`, `strand`, `dep_type`) VALUES
-(1, '123456789012', 'Paderogao', 'Phil Rey', 'Estrella', 'Male', 90.25, 7, '123456', 'Gregorio Moralizon Elementary School - I', 'Manay, Davao Oriental', 'ABM', 'JHS'),
-(3, '128384950293', 'Vir', 'Shayne', ' ', 'Female', 92, 12, '234567', 'Nabunturan', 'Assumption', 'STEM', 'SHS'),
-(4, '123456789876', 'Joanna', 'Ruth', ' ', 'Female', 88, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(5, '123456789879', 'Josiah', 'Renhil', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(6, '345632145678', 'Mae', 'Frencess', ' ', 'Female', 90, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(7, '345672145678', 'Jai', 'Jenicel', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(8, '345072145678', 'Charmel', 'Jance', ' ', 'Female', 90, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(9, '346772145678', 'Jay', 'Clark', ' ', 'Male', 90, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(10, '046772145678', 'Mar', 'Chris', ' ', 'Male', 87, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(11, '046772145878', 'Yoo', 'Dee', ' ', 'Male', 89, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(12, '903748234567', 'Yah', 'Leeey', ' ', 'Female', 94, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(13, '903748234568', 'Charlton', 'Mark', ' ', 'Male', 93, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(14, '903748234468', 'Ney', 'Syd', ' ', 'Male', 95, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(15, '903748234563', 'Thah', 'Jeph', ' ', 'Male', 93, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(16, '903748234565', 'Joey', 'Yeoj', ' ', 'Male', 90, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(17, '903748134565', 'Rey', 'Phil', ' ', 'Male', 95, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(18, '903748834565', 'Hil', 'Ren', ' ', 'Male', 88, 12, '987654', 'Davao High', 'Davao City', 'ABM', 'SHS'),
-(19, '234567890123', 'Odin', 'Rodel', ' ', 'Male', 87, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(20, '234567880123', 'Jan', 'Romeo', ' ', 'Male', 88, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(21, '234567800123', 'Zeyah', 'Khez', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(22, '234567820123', 'Kriz', 'Kim', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(23, '234567820124', 'Jane', 'Kyla', ' ', 'Female', 88, 12, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(24, '234567820324', 'Dave', 'Russel', ' ', 'Male', 88, 0, '234567', 'Assumption', 'Nabunturan', 'ABM', 'SHS'),
-(25, '783647234561', 'Sie', 'Bless', ' ', 'Female', 93, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'ABM', 'SHS'),
-(26, '783647234560', 'Sham', 'Kween', ' ', 'Female', 94, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'ABM', 'SHS'),
-(27, '783677234560', 'Hoy', 'Hoy', ' ', 'Female', 92, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'ABM', 'SHS'),
-(28, '783677224560', 'Dy', 'Cin', ' ', 'Female', 91, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'ABM', 'SHS'),
-(29, '783677224580', 'Ly', 'Ren', ' ', 'Male', 89, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'ABM', 'SHS'),
-(30, '874567325678', 'Yam', 'Lee', ' ', 'Male', 89, 0, '567842', 'Manat NHS', 'Manat, Nab', 'ABM', 'SHS');
+INSERT INTO `students` (`id`, `lrn`, `lName`, `fName`, `mName`, `sex`, `inGr`, `curGrLvl`, `schoolId`, `schoolName`, `schoolAddress`, `dep_type`) VALUES
+(1, '123456789012', 'Paderogao', 'Phil Rey', 'Estrella', 'Male', 90.25, 7, '123456', 'Gregorio Moralizon Elementary School - I', 'Manay, Davao Oriental', 'JHS'),
+(3, '128384950293', 'Vir', 'Shayne', ' ', 'Female', 92, 12, '234567', 'Nabunturan', 'Assumption', 'SHS'),
+(4, '123456789876', 'Joanna', 'Ruth', ' ', 'Female', 88, 11, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(5, '123456789879', 'Josiah', 'Renhil', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(6, '345632145678', 'Mae', 'Frencess', ' ', 'Female', 90, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(7, '345672145678', 'Jai', 'Jenicel', ' ', 'Male', 89, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(8, '345072145678', 'Charmel', 'Jance', ' ', 'Female', 90, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(9, '346772145678', 'Jay', 'Clark', ' ', 'Male', 90, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(10, '046772145678', 'Mar', 'Chris', ' ', 'Male', 87, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(11, '046772145878', 'Yoo', 'Dee', ' ', 'Male', 89, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(12, '903748234567', 'Yah', 'Leeey', ' ', 'Female', 94, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(13, '903748234568', 'Charlton', 'Mark', ' ', 'Male', 93, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(14, '903748234468', 'Ney', 'Syd', ' ', 'Male', 95, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(15, '903748234563', 'Thah', 'Jeph', ' ', 'Male', 93, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(16, '903748234565', 'Joey', 'Yeoj', ' ', 'Male', 90, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(17, '903748134565', 'Rey', 'Phil', ' ', 'Male', 95, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(18, '903748834565', 'Hil', 'Ren', ' ', 'Male', 88, 12, '987654', 'Davao High', 'Davao City', 'SHS'),
+(19, '234567890123', 'Odin', 'Rodel', ' ', 'Male', 87, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(20, '234567880123', 'Jan', 'Romeo', ' ', 'Male', 88, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(21, '234567800123', 'Zeyah', 'Khez', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(22, '234567820123', 'Kriz', 'Kim', ' ', 'Female', 89, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(23, '234567820124', 'Jane', 'Kyla', ' ', 'Female', 88, 12, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(24, '234567820324', 'Dave', 'Russel', ' ', 'Male', 88, 0, '234567', 'Assumption', 'Nabunturan', 'SHS'),
+(25, '783647234561', 'Sie', 'Bless', ' ', 'Female', 93, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
+(26, '783647234560', 'Sham', 'Kween', ' ', 'Female', 94, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
+(27, '783677234560', 'Hoy', 'Hoy', ' ', 'Female', 92, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
+(28, '783677224560', 'Dy', 'Cin', ' ', 'Female', 91, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
+(29, '783677224580', 'Ly', 'Ren', ' ', 'Male', 89, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
+(30, '874567325678', 'Yam', 'Lee', ' ', 'Male', 89, 0, '567842', 'Manat NHS', 'Manat, Nab', 'SHS'),
+(32, '123456789013', 'Ricafort', 'Angel', 'Kitz', 'Female', 90, 0, '2018-00324', 'Bosque', 'Bunawan', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -1205,7 +1207,7 @@ CREATE TABLE `subjects` (
   `subjectCode` varchar(200) NOT NULL,
   `description` varchar(500) NOT NULL,
   `gradeLevel` int(11) NOT NULL,
-  `sem` varchar(15) NOT NULL,
+  `sem` varchar(15) DEFAULT NULL,
   `dep_type` varchar(10) NOT NULL DEFAULT 'JHS'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1590,6 +1592,7 @@ CREATE TABLE `v_enrollment_shs` (
 ,`c_gradeLevel` int(11)
 ,`schoolYear` int(11)
 ,`dateEnrolled` datetime
+,`strand` varchar(10)
 );
 
 -- --------------------------------------------------------
@@ -1815,7 +1818,6 @@ CREATE TABLE `v_students_shs` (
 ,`schoolId` varchar(11)
 ,`schoolName` varchar(1000)
 ,`schoolAddress` varchar(1000)
-,`strand` varchar(10)
 );
 
 -- --------------------------------------------------------
@@ -2090,7 +2092,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `enrollment`.`dep_type` = 'SHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `enrollment`.`dep_type` = 'SHS' ;
 
 -- --------------------------------------------------------
 
@@ -2189,7 +2191,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_students_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_students_shs`  AS SELECT `students`.`id` AS `id`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `students`.`inGr` AS `inGr`, `students`.`curGrLvl` AS `curGrLvl`, `students`.`schoolId` AS `schoolId`, `students`.`schoolName` AS `schoolName`, `students`.`schoolAddress` AS `schoolAddress`, `students`.`strand` AS `strand` FROM `students` WHERE `students`.`dep_type` = 'SHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_students_shs`  AS SELECT `students`.`id` AS `id`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `students`.`inGr` AS `inGr`, `students`.`curGrLvl` AS `curGrLvl`, `students`.`schoolId` AS `schoolId`, `students`.`schoolName` AS `schoolName`, `students`.`schoolAddress` AS `schoolAddress` FROM `students` WHERE `students`.`dep_type` = 'SHS' ;
 
 -- --------------------------------------------------------
 
@@ -2431,7 +2433,7 @@ ALTER TABLE `booktemplates`
 -- AUTO_INCREMENT for table `enrollment`
 --
 ALTER TABLE `enrollment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `enrollment_static`
@@ -2491,7 +2493,7 @@ ALTER TABLE `sections`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `subjects`

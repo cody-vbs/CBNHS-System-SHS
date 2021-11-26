@@ -1072,10 +1072,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     int rowCount = sf10Table.getRowCount();
                     int sheetNumbers [] = new int [] {0,0,1,1,1};
                     String sectionHeaderAddressess [][] = {
-                        new String [] {"C,23","I,23","M,23","Q,23","U,23","C,24","E,24","J,24","N,24"},
-                        new String [] {"C,47","I,47","M,47","Q,47","U,47","C,48","E,48","J,48","N,48"},
-                        new String [] {"C,2","I,2","M,2","Q,2","U,2","C,3","E,3","J,3","N,3"},
-                        new String [] {"C,26","I,26","M,26","Q,26","U,26","C,27","E,27","J,27","N,27"},
+                        new String [] {"E,23","AF,23","M,23","Q,23","U,23","AS,23","AS,25","BA,23","N,24"},
+                        new String [] {"E,66","AF,66","M,47","Q,47","U,47","AS,66","AS,68","BA,66","N,48"},
+                        new String [] {"E,4","AF,4","M,2","Q,2","U,2","AS,4","AS,5","BA,4","N,3"},
+                        new String [] {"E,46","AF,46","M,26","Q,26","U,26","AS,46","AS,48","BA,46","N,27"},
                         new String [] {"C,50","I,50","M,50","Q,50","U,50","C,51","E,51","J,51","N,51"},
                     };
                     
@@ -1094,14 +1094,14 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         header sectionHeader [] = new header [] {
                             new header(schoolName, sectionHeaderAddressess[n][0]),
                             new header(schoolId, sectionHeaderAddressess[n][1]),
-                            new header(district, sectionHeaderAddressess[n][2]),
-                            new header(division, sectionHeaderAddressess[n][3]),
-                            new header(region, sectionHeaderAddressess[n][4]),
+                            //new header(district, sectionHeaderAddressess[n][2]),
+                            //new header(division, sectionHeaderAddressess[n][3]),
+                            //new header(region, sectionHeaderAddressess[n][4]),
                             
                             new header(gradeLevel, sectionHeaderAddressess[n][5]),
                             new header(sectionName, sectionHeaderAddressess[n][6]),
                             new header(schoolYear, sectionHeaderAddressess[n][7]),
-                            new header(adviserName, sectionHeaderAddressess[n][8]),
+                            //new header(adviserName, sectionHeaderAddressess[n][8]),
                         };
                         int headerLength = sectionHeader.length;
                         for (int x = 0; x < headerLength; x++) {
@@ -1357,23 +1357,21 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     break;
                 }case 10:{
                     //<editor-fold desc="SF10 Headers">
-                    String birthDate [] = this.birthDate.split("-");
+                    String birthDate = this.birthDate;
                     headers = new header[]{
-                        new header(lastName, "C,7"),
-                        new header(firstName, "H,7"),
-                        new header(extentionName, "O,7"),
-                        new header(middleName, "S,7"),
+                        new header(lastName, "F,8"),
+                        new header(firstName, "Y,8"),
+                        new header(extentionName, "O,8"),
+                        new header(middleName, "AZ,8"),
                         
-                        new header(lrn, "D,8"),
-                        new header(birthDate[1], "M,8"),
-                        new header(birthDate[2], "O,8"),
-                        new header(birthDate[0], "Q,8"),
-                        new header(gender, "T,8"),
+                        new header(lrn, "C,9"),
+                        new header(birthDate, "AA,9"),
+                        new header(gender, "AN,9"),
                         
-                        new header(elemGeneralAverage, "I,13"),
-                        new header(elemSchoolName, "D,14"),
-                        new header(elemShoolId, "L,14"),
-                        new header(elemSchoolAddress, "Q,14"),
+                        new header(elemGeneralAverage, "AH,13"),
+                        new header(elemSchoolName, "Z,14"),
+                        //new header(elemShoolId, "AP,16"),
+                        new header(elemSchoolAddress, "AW,14"),
                     };
                     //</editor-fold>
                     break;

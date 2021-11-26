@@ -4021,7 +4021,7 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel75.setText("Maximum of 5 Entries can be Selected.");
+        jLabel75.setText("Maximum of 4 Entries can be Selected.");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -6347,9 +6347,9 @@ public class dashBoard extends javax.swing.JFrame {
             return;
         }
         
-        if (sf10Table.getSelectedRowCount() > 5) {
+        if (sf10Table.getSelectedRowCount() > 4) {
             Toolkit.getDefaultToolkit().beep();
-            my.showMessage("Only a maximum of FIVE Sections can only be selected.", JOptionPane.WARNING_MESSAGE);
+            my.showMessage("Only a maximum of FOUR Sections can only be selected.", JOptionPane.WARNING_MESSAGE);
             return;
         }
         resetSf10Values(false, false, true, false, true);

@@ -1338,20 +1338,20 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     //<editor-fold desc="SF9 Headers">
                     headers = new header[]{
                         //Header Parts
-                        new header(schoolYear, "P,9"),
-                        new header(gradeLevel, "C,9"),
-                        new header(sectionName, "G,9"),
+                        new header(schoolYear, "Q,28"),
+                        new header(gradeLevel, "Q,26"),
+                        new header(sectionName, "T,26"),
                         //Form's Custom Fields
-                        new header(adviserName, "K,16"),
+                        //new header(adviserName, "K,16"),
                         
-                        new header(lrn, "C,8"),
-                        new header(studentName, "C,7"),
-                        new header(gender, "P,8"),
-                        new header(age, "L,8"),
+                        new header(lrn, "T,3"),
+                        new header(studentName, "Q,22"),
+                        new header(gender, "T,24"),
+                        new header(age, "Q,24"),
                         
-                        new header(sf9GeneralAverage, "N,35"),
-                        new header(sf9FailedSubjects, "F,44"),
-                        new header(sf9Remarks, "P,35"),
+                        //new header(sf9GeneralAverage, "N,35"),
+                        //new header(sf9FailedSubjects, "F,44"),
+                        //new header(sf9Remarks, "P,35"),
                     };
                     //</editor-fold>
                     break;

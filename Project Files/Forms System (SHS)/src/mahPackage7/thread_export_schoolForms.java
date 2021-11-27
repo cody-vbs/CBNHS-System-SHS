@@ -1119,10 +1119,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     int gradeCount;
                     int startingRows [] = new int [] {28,52,7,31,55};
                     String genAveEvaluationAddressess [] [] = new String [][] {
-                        new String [] {"Q,40","S,40"},
-                        new String [] {"Q,64","S,64"},
-                        new String [] {"Q,19","S,19"},
-                        new String [] {"Q,43","S,43"},
+                        new String [] {"BD,43","BI,43"},
+                        new String [] {"BD,86","BI,86"},
+                        new String [] {"BD,23","BI,23"},
+                        new String [] {"BD,66","BI,66"},
                         new String [] {"Q,67","S,67"},
                     };
                     String subjectName;

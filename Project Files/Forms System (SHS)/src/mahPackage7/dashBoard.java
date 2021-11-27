@@ -3549,17 +3549,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         enrolledStudentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Student ID", "LRN", "Name", "Gender", "Birth Date", "Section ID"
+                "ID", "Student ID", "LRN", "Name", "Gender", "Birth Date", "Section ID", "Strand"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3643,17 +3643,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         gradesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Date Updated"
+                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3679,7 +3679,8 @@ public class dashBoard extends javax.swing.JFrame {
             gradesTable.getColumnModel().getColumn(11).setResizable(false);
             gradesTable.getColumnModel().getColumn(11).setPreferredWidth(120);
             gradesTable.getColumnModel().getColumn(12).setResizable(false);
-            gradesTable.getColumnModel().getColumn(12).setPreferredWidth(150);
+            gradesTable.getColumnModel().getColumn(13).setResizable(false);
+            gradesTable.getColumnModel().getColumn(13).setPreferredWidth(150);
         }
 
         btnLoadGrades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/load_16px.png"))); // NOI18N
@@ -5987,7 +5988,7 @@ public class dashBoard extends javax.swing.JFrame {
         
         clearGrades();
         String where = "WHERE sectionId='"+sectionId+"' AND (lrn='"+toSearch+"' OR lName LIKE '%"+toSearch+"%' OR fName LIKE '%"+toSearch+"%' OR mName LIKE '%"+toSearch+"%')";
-        my.searchItem(where, enrolledStudentsTable, 8, null, new int [] {3,4,5}, true, true, lbSearchResult1, tfSearchEnrolledStudent, true);
+        my.searchItem(where, enrolledStudentsTable, 15, null, new int [] {3,4,5}, true, true, lbSearchResult1, tfSearchEnrolledStudent, true);
     }//GEN-LAST:event_btnSearchEnrolledStudentsearchEnrolledStudentsHandler
 
     private void enrolledStudentsTableloadStudentsAttendanceHandler(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enrolledStudentsTableloadStudentsAttendanceHandler
@@ -6237,6 +6238,7 @@ public class dashBoard extends javax.swing.JFrame {
         String lrn = enrolledStudentsTable.getValueAt(row, 2).toString();
         String studentName = enrolledStudentsTable.getValueAt(row, 3).toString();
         String sex = enrolledStudentsTable.getValueAt(row, 4).toString();
+        String strand = enrolledStudentsTable.getValueAt(row, 7).toString();
         
         try {
             dateOfBirth = enrolledStudentsTable.getValueAt(row, 5).toString();
@@ -6248,7 +6250,7 @@ public class dashBoard extends javax.swing.JFrame {
         
         my.runExportThread(
                 new JTable[]{gradesTable},
-                new String[]{lrn,studentName,sex,age},
+                new String[]{lrn,studentName,sex,strand,age},
                 new JTextField[]{tfSectionName5,tfAdviserName5,tfGradeLevel5,tfSchoolYear6,tfGeneralAverage,tfFailedSubjects,tfEvaluation}, 
                 new JButton[]{btnExportSf9,},
                 new boolean[]{}

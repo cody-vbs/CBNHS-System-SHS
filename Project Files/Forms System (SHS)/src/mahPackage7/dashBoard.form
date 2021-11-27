@@ -5947,7 +5947,7 @@
                     <Component class="javax.swing.JTable" name="enrolledStudentsTable">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="4">
+                          <Table columnCount="8" rowCount="4">
                             <Column editable="false" title="ID" type="java.lang.Object"/>
                             <Column editable="false" title="Student ID" type="java.lang.Object"/>
                             <Column editable="false" title="LRN" type="java.lang.Object"/>
@@ -5955,6 +5955,7 @@
                             <Column editable="false" title="Gender" type="java.lang.Object"/>
                             <Column editable="false" title="Birth Date" type="java.lang.Object"/>
                             <Column editable="false" title="Section ID" type="java.lang.Object"/>
+                            <Column editable="false" title="Strand" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -5980,6 +5981,11 @@
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="40" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
                               <Renderer/>
@@ -6213,7 +6219,7 @@
                         <Component class="javax.swing.JTable" name="gradesTable">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="13" rowCount="4">
+                              <Table columnCount="14" rowCount="4">
                                 <Column editable="false" title="Grade ID" type="java.lang.Object"/>
                                 <Column editable="false" title="Student ID" type="java.lang.Object"/>
                                 <Column editable="false" title="Section ID" type="java.lang.Object"/>
@@ -6226,6 +6232,7 @@
                                 <Column editable="false" title="Q4" type="java.lang.Object"/>
                                 <Column editable="false" title="GWA" type="java.lang.Object"/>
                                 <Column editable="false" title="Status" type="java.lang.Object"/>
+                                <Column editable="false" title="Semester" type="java.lang.Object"/>
                                 <Column editable="false" title="Date Updated" type="java.lang.Object"/>
                               </Table>
                             </Property>
@@ -6288,6 +6295,11 @@
                                   <Renderer/>
                                 </Column>
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="false">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>

@@ -282,6 +282,10 @@ public class myFunctions {
                 from = "v_enrollment_mini_wbdate";
                 order = myVariables.getEnrollmentViewMinWBdateOrder();
                 break;
+            }case 15:{
+                from = "v_enrollment_mini_wbdate_shs_wstrand";
+                order = myVariables.getEnrollmentViewMinWBdateSHSWStrandOrder();
+                break;
             }default:{
                 System.err.println("View table index out of bounds. Please check your index selected.");
                 return;

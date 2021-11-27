@@ -109,7 +109,7 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                 + "AND studentId='"+studentId+"' "
                 + "AND subjectCode NOT LIKE'ADV%' "
                 + "ORDER BY FIELD(subjectId,"+subjectIds+")";
-        String result [] = my.return_values("*", "form_sf9_view", where, myVariables.getJhsf9Order());
+        String result [] = my.return_values("*", "form_sf9_view_shs", where, myVariables.getShsf9Order());
         progressBar.setValue(2);
         Thread.sleep(pauseDelay);
         

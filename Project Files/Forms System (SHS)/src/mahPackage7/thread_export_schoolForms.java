@@ -73,6 +73,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         private String lrn;
         private String studentName;
         private String gender;
+        private String strand;
         private String age;
         //SF10
         private String firstName;
@@ -249,7 +250,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 lrn = stringsToUse[0];
                 studentName = stringsToUse[1].toUpperCase();
                 gender = stringsToUse[2];
-                age = stringsToUse[3];
+                strand = stringsToUse[3];
+                age = stringsToUse[4];
                 break;
             }case 10:{
                 //Global Variables
@@ -1048,10 +1050,13 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 }case 9:{
                     //<editor-fold desc="WRITE SF9">
                     int rowCount = sf9GradesTable.getRowCount();
-                    startingAddress = "A,";
-                    excelColumnsToSkip = "B,C,D,E,G,I,K,M,O,Q,R";
+                    startingAddress = "B,";
+                    excelColumnsToSkip = "";
                     
                     for (int n = 0; n < rowCount; n++) {
+                        int fscount = 0;
+                        int sscount = 0;
+                        
                         lbLoadingMessage.setText("Writing Tables...3/4 Grade "+(n+1)+" of "+rowCount);
                         
                         String subjectName = sf9GradesTable.getValueAt(n, 5).toString();
@@ -1059,9 +1064,19 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         
                         String line = my.get_table_row_values(n, sf9GradesTable);
                         line = my.setValueAtColumn(line, 5, subjectName);
-                        line = my.skipColumns(line, new int [] {0,1,2,3,4,12});
+                        line = my.skipColumns(line, new int [] {0,1,2,3,4,8,9,11,12,13});
                         
-                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(n+23));
+                        String sem = sf9GradesTable.getValueAt(n, 12).toString();
+                        
+                        //start is 7 for first sem & 23 for second sem
+                        if("1st semester".equals(sem)){
+                            my.writeExcelLine(sheetNumber+1, line, excelColumnsToSkip, startingAddress+(fscount+7));
+                            fscount++;
+                        }if("2nd semester".equals(sem)){
+                            my.writeExcelLine(sheetNumber+1, line, excelColumnsToSkip, startingAddress+(sscount+23));
+                            sscount++;
+                        }
+                        
                         Thread.sleep(threadDelay);
                     }
                     //</editor-fold>
@@ -1338,7 +1353,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     //<editor-fold desc="SF9 Headers">
                     headers = new header[]{
                         //Header Parts
-                        new header(schoolYear, "Q,28"),
+                        new header(schoolYear, "R,28"),
                         new header(gradeLevel, "Q,26"),
                         new header(sectionName, "T,26"),
                         //Form's Custom Fields
@@ -1347,6 +1362,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(lrn, "T,3"),
                         new header(studentName, "Q,22"),
                         new header(gender, "T,24"),
+                        new header(strand, "R,29"),
                         new header(age, "Q,24"),
                         
                         //new header(sf9GeneralAverage, "N,35"),

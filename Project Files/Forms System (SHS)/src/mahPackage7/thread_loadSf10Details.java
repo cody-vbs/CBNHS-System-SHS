@@ -99,6 +99,7 @@ public class thread_loadSf10Details extends SwingWorker<String, Object>{
             String adviserName;
             String subjectsContained;
             String where;
+            String strand;
 
             int [] selectedSections = sf10Table.getSelectedRows();
             int sectionCount = selectedSections.length;

@@ -532,6 +532,8 @@ public class dashBoard extends javax.swing.JFrame {
         tfInitialGrade = new javax.swing.JTextField();
         btnExportSf10 = new javax.swing.JButton();
         jLabel90 = new javax.swing.JLabel();
+        tfStrand = new javax.swing.JTextField();
+        jLabel122 = new javax.swing.JLabel();
         loadingDialog = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jpbProgressBar = new javax.swing.JProgressBar();
@@ -3967,17 +3969,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         sf10Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Student ID", "LRN", "Name", "Gender", "Section ID", "Section Name", "Adv ID", "Adviser Name", "Gender", "Load ID", "Load Name", "Grade", "Subjects Contained", "School Year", "Remarks", "Date Enrolled"
+                "ID", "Student ID", "LRN", "Name", "Gender", "Section ID", "Section Name", "Adv ID", "Adviser Name", "Gender", "Load ID", "Load Name", "Grade", "Subjects Contained", "School Year", "Remarks", "Date Enrolled", "Strand"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4062,17 +4064,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         gradesTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Date Updated"
+                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4097,8 +4099,8 @@ public class dashBoard extends javax.swing.JFrame {
             gradesTable1.getColumnModel().getColumn(10).setPreferredWidth(80);
             gradesTable1.getColumnModel().getColumn(11).setResizable(false);
             gradesTable1.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable1.getColumnModel().getColumn(12).setResizable(false);
-            gradesTable1.getColumnModel().getColumn(12).setPreferredWidth(150);
+            gradesTable1.getColumnModel().getColumn(13).setResizable(false);
+            gradesTable1.getColumnModel().getColumn(13).setPreferredWidth(150);
         }
 
         tfGeneralAverage1.setEditable(false);
@@ -4157,17 +4159,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         gradesTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Date Updated"
+                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4192,8 +4194,8 @@ public class dashBoard extends javax.swing.JFrame {
             gradesTable2.getColumnModel().getColumn(10).setPreferredWidth(80);
             gradesTable2.getColumnModel().getColumn(11).setResizable(false);
             gradesTable2.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable2.getColumnModel().getColumn(12).setResizable(false);
-            gradesTable2.getColumnModel().getColumn(12).setPreferredWidth(150);
+            gradesTable2.getColumnModel().getColumn(13).setResizable(false);
+            gradesTable2.getColumnModel().getColumn(13).setPreferredWidth(150);
         }
 
         jLabel94.setForeground(new java.awt.Color(255, 255, 255));
@@ -4252,17 +4254,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         gradesTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Date Updated"
+                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4287,8 +4289,8 @@ public class dashBoard extends javax.swing.JFrame {
             gradesTable3.getColumnModel().getColumn(10).setPreferredWidth(80);
             gradesTable3.getColumnModel().getColumn(11).setResizable(false);
             gradesTable3.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable3.getColumnModel().getColumn(12).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(12).setPreferredWidth(150);
+            gradesTable3.getColumnModel().getColumn(13).setResizable(false);
+            gradesTable3.getColumnModel().getColumn(13).setPreferredWidth(150);
         }
 
         jLabel97.setForeground(new java.awt.Color(255, 255, 255));
@@ -4347,17 +4349,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         gradesTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Date Updated"
+                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4382,8 +4384,8 @@ public class dashBoard extends javax.swing.JFrame {
             gradesTable4.getColumnModel().getColumn(10).setPreferredWidth(80);
             gradesTable4.getColumnModel().getColumn(11).setResizable(false);
             gradesTable4.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable4.getColumnModel().getColumn(12).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(12).setPreferredWidth(150);
+            gradesTable4.getColumnModel().getColumn(13).setResizable(false);
+            gradesTable4.getColumnModel().getColumn(13).setPreferredWidth(150);
         }
 
         jLabel100.setForeground(new java.awt.Color(255, 255, 255));
@@ -4442,17 +4444,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         gradesTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Date Updated"
+                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4477,8 +4479,8 @@ public class dashBoard extends javax.swing.JFrame {
             gradesTable5.getColumnModel().getColumn(10).setPreferredWidth(80);
             gradesTable5.getColumnModel().getColumn(11).setResizable(false);
             gradesTable5.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable5.getColumnModel().getColumn(12).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(12).setPreferredWidth(150);
+            gradesTable5.getColumnModel().getColumn(13).setResizable(false);
+            gradesTable5.getColumnModel().getColumn(13).setPreferredWidth(150);
         }
 
         jLabel103.setForeground(new java.awt.Color(255, 255, 255));
@@ -4629,6 +4631,11 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel90.setText("Export Options");
 
+        tfStrand.setEditable(false);
+        tfStrand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel122.setText("Strand");
+
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
@@ -4674,7 +4681,11 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)))
                     .addComponent(btnExportSf10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel90, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(tfStrand, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel122, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel28Layout.setVerticalGroup(
@@ -4717,6 +4728,10 @@ public class dashBoard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel122)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfStrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel77)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel86)
@@ -4740,7 +4755,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(jLabel90)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnExportSf10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         jScrollPane37.setViewportView(jPanel28);
@@ -6293,6 +6308,11 @@ public class dashBoard extends javax.swing.JFrame {
             tfSchoolName.setText(schoolName);
             tfSchoolAddress.setText(address);
             
+            String where = "WHERE studentId='"+studentId+"'";
+            String result[] = my.return_values("*", "form_sf10_view_shs", where, myVariables.getShsf10Order());
+            String strand = my.getValueAtColumn(result[0], 21);
+            tfStrand.setText(strand);
+            
             my.runSecondaryThread(7, true,
                     new JTable[]{sf10Table},
                     new String[]{studentId},
@@ -6335,7 +6355,7 @@ public class dashBoard extends javax.swing.JFrame {
                 new JTextField[]{tfFirstName,tfMiddleName,tfLastName,tfExtentionName,tfBirthdate,tfGender,tfLrn,
                     tfSchoolName,tfSchoolAddress,tfSchoolId,tfInitialGrade,
                     tfGeneralAverage1,tfGeneralAverage2,tfGeneralAverage3,tfGeneralAverage4,tfGeneralAverage5,
-                    tfEvaluation1,tfEvaluation2,tfEvaluation3,tfEvaluation4,tfEvaluation5,
+                    tfEvaluation1,tfEvaluation2,tfEvaluation3,tfEvaluation4,tfEvaluation5,tfStrand,
                 }, 
                 new JButton[]{btnExportSf10,},
                 new boolean[]{}
@@ -7507,6 +7527,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -7841,6 +7862,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTextField tfSectionName3;
     private javax.swing.JTextField tfSectionName4;
     private javax.swing.JTextField tfSectionName5;
+    private javax.swing.JTextField tfStrand;
     private javax.swing.JTextField tfTotalCount;
     private javax.swing.JTabbedPane tpRankingsTab;
     private javax.swing.JTabbedPane tpSelectSectionInstructions;

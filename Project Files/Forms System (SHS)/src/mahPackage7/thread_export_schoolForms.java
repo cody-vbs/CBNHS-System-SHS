@@ -266,6 +266,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 elemSchoolAddress = textFieldsToUse[8].getText().toUpperCase();
                 elemShoolId = textFieldsToUse[9].getText();
                 elemGeneralAverage = textFieldsToUse[10].getText();
+                strand = textFieldsToUse[21].getText();
                 //SF9 Variables
                 generalAverages = new String [] {
                     textFieldsToUse[11].getText(),
@@ -1070,10 +1071,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         
                         //start is 7 for first sem & 23 for second sem
                         if("1st semester".equals(sem)){
-                            my.writeExcelLine(sheetNumber+1, line, excelColumnsToSkip, startingAddress+(fscount+7));
+                            my.writeExcelLine(sheetNumber+1, line, excelColumnsToSkip, startingAddress+(fscount+6));
                             fscount++;
                         }if("2nd semester".equals(sem)){
-                            my.writeExcelLine(sheetNumber+1, line, excelColumnsToSkip, startingAddress+(sscount+23));
+                            my.writeExcelLine(sheetNumber+1, line, excelColumnsToSkip, startingAddress+(sscount+22));
                             sscount++;
                         }
                         
@@ -1087,10 +1088,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     int rowCount = sf10Table.getRowCount();
                     int sheetNumbers [] = new int [] {0,0,1,1,1};
                     String sectionHeaderAddressess [][] = {
-                        new String [] {"E,23","AF,23","M,23","Q,23","U,23","AS,23","AS,25","BA,23","N,24"},
-                        new String [] {"E,66","AF,66","M,47","Q,47","U,47","AS,66","AS,68","BA,66","N,48"},
-                        new String [] {"E,4","AF,4","M,2","Q,2","U,2","AS,4","AS,5","BA,4","N,3"},
-                        new String [] {"E,46","AF,46","M,26","Q,26","U,26","AS,46","AS,48","BA,46","N,27"},
+                        new String [] {"E,23","AF,23","G,25","Q,23","U,23","AS,23","AS,25","BA,23","N,24"},
+                        new String [] {"E,66","AF,66","G,68","Q,47","U,47","AS,66","AS,68","BA,66","N,48"},
+                        new String [] {"E,4","AF,4","G,5","Q,2","U,2","AS,4","AS,5","BA,4","N,3"},
+                        new String [] {"E,46","AF,46","G,48","Q,26","U,26","AS,46","AS,48","BA,46","N,27"},
                         new String [] {"C,50","I,50","M,50","Q,50","U,50","C,51","E,51","J,51","N,51"},
                     };
                     
@@ -1109,7 +1110,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         header sectionHeader [] = new header [] {
                             new header(schoolName, sectionHeaderAddressess[n][0]),
                             new header(schoolId, sectionHeaderAddressess[n][1]),
-                            //new header(district, sectionHeaderAddressess[n][2]),
+                            new header(strand, sectionHeaderAddressess[n][2]),
                             //new header(division, sectionHeaderAddressess[n][3]),
                             //new header(region, sectionHeaderAddressess[n][4]),
                             
@@ -1129,10 +1130,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     }
                     
                     //#2 Write Grade Tables
-                    startingAddress = "A,";
-                    excelColumnsToSkip = "B,C,D,E,F,G,H,J,L,N,P,R,T,U";
+                    startingAddress = "I";
+                    excelColumnsToSkip = "J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS";
                     int gradeCount;
-                    int startingRows [] = new int [] {28,52,7,31,55};
+                    int startingRows [] = new int [] {31,74,11,54,55};
                     String genAveEvaluationAddressess [] [] = new String [][] {
                         new String [] {"BD,43","BI,43"},
                         new String [] {"BD,86","BI,86"},
@@ -1158,7 +1159,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                             
                             String line = my.get_table_row_values(x, sf10GradeTables[n]);
                             line = my.setValueAtColumn(line, 5, subjectName);
-                            line = my.skipColumns(line, new int [] {0,1,2,3,4,12});
+                            line = my.skipColumns(line, new int [] {0,1,2,3,4,12,13});
                             
                             
                             my.writeExcelLine(sheetNumbers[n], line, excelColumnsToSkip, startingAddress+(startingRows[n]+x));

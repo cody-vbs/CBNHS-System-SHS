@@ -72,7 +72,7 @@ public class thread_loadSf10EnrolledSections extends SwingWorker<String, Object>
         lbLoadingMessage.setText("Connecting to Database...1/2");
         
         String where = "WHERE studentId='"+studentId+"'";
-        String [] result = my.return_values("*", "form_sf10_view", where, myVariables.getJhsf10Order());
+        String [] result = my.return_values("*", "form_sf10_view_shs", where, myVariables.getShsf10Order());
         progressBar.setValue(1);
         Thread.sleep(threadDelay);
         

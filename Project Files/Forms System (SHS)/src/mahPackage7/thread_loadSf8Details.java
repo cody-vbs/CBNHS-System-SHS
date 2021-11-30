@@ -30,6 +30,7 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
     private final JTable summaryTable;
     
     private final JTextField tfDateOfMeasurement;
+    private final JTextField tfStrand8;
     
     private final String sectionId;
     
@@ -56,6 +57,7 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
         sectionId = stringsToUse[0];
         
         tfDateOfMeasurement = textFieldsToUse[0];
+        tfStrand8 = textFieldsToUse[1];
         
         showStudentsWmissingRecords = booleansToUse[0];
         useFirstStudentForDateOfMeasurement = booleansToUse[1];
@@ -92,7 +94,7 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
             where+=" AND bmiId!='-1'";
         }
         
-        String [] result = my.return_values("*", "form_sf8_view",where , myVariables.getJhsf8Order());
+        String [] result = my.return_values("*", "form_sf8_view_shs",where , myVariables.getShsf8Order());
         Thread.sleep(pauseDelay);
         if(result != null){
             //Load Results
@@ -105,6 +107,7 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
                 
                 result[n] = my.toNameFormat(result[n], new int []{4,5,6});
                 my.add_table_row(result[n], sf8Table);
+                tfStrand8.setText(" ");
                 Thread.sleep(threadDelay);
             }
             
@@ -116,6 +119,8 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
         }
         return "Finished";
     }
+    
+    
 
     @Override
     protected void done() {
@@ -427,4 +432,6 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
             System.err.println("Dialog is null...skipping");
         }
     }
+    
+     
 }

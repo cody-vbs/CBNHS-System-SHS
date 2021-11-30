@@ -64,6 +64,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         private JTable sf8Table;
         private JTable sf8SummaryTable;
         private String dateOfMeasurement;
+        private String strand8;
         //SF9
         private JTable sf9GradesTable;
         private String sf9GeneralAverage;
@@ -228,6 +229,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 schoolYear = textFieldsToUse[3].getText();
                 //SF3 Variables
                 dateOfMeasurement = textFieldsToUse[4].getText();
+                strand8 = textFieldsToUse[5].getText();
                 sf8Table = tables[0];
                 sf8SummaryTable = tables[1];
                 break;
@@ -1347,6 +1349,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(district, "I,5"),
                         //Form's Custom Fields
                         new header(dateOfMeasurement, dateOfMearuringAddress[sheetNumber]),
+                        new header (strand8,"L,7" )
                     };
                     //</editor-fold>
                     break;

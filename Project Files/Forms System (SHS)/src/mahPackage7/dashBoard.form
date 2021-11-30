@@ -5395,8 +5395,6 @@
                                   </Group>
                                   <Component id="btnExportSf8" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel57" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel58" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfSectionName4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel62" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
                                   <Component id="tfAdviserName4" alignment="0" max="32767" attributes="0"/>
@@ -5405,6 +5403,22 @@
                                   <Component id="jLabel63" alignment="0" max="32767" attributes="0"/>
                                   <Component id="cbShowIncompleteStudents2" alignment="1" max="32767" attributes="0"/>
                                   <Component id="cbUseFirstStudentForDate" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel58" max="32767" attributes="0"/>
+                                              <EmptySpace min="68" pref="68" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="tfSectionName4" min="-2" pref="203" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel123" pref="203" max="32767" attributes="0"/>
+                                          <Component id="tfStrand8" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -5418,9 +5432,15 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfSectionName4" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfSectionName4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfStrand8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -5674,6 +5694,16 @@
                           <Image iconType="3" name="/mahPackage7/icons/icons8_checked_checkbox_20px.png"/>
                         </Property>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel123">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Track/Strand"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfStrand8">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfStrand8ActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

@@ -5761,7 +5761,7 @@ public class dashBoard extends javax.swing.JFrame {
                     String where2 = "";
                     where2 = "WHERE sectionId='"+sectionId+"' "
                             + "AND studentId='"+studentId+"' ";
-                    String result2 [] = my.return_values("*", "form_sf9_view", where2, myVariables.getJhsf9Order());
+                    String result2 [] = my.return_values("*", "form_sf9_view_shs", where2, myVariables.getShsf9Order());
 
                     //computing general average
                     int generalAverage = 0;
@@ -5863,7 +5863,7 @@ public class dashBoard extends javax.swing.JFrame {
                     String where2 = "";
                     where2 = "WHERE sectionId='"+sectionId+"' "
                             + "AND studentId='"+studentId+"' ";
-                    String result2 [] = my.return_values("*", "form_sf9_view", where2, myVariables.getJhsf9Order());
+                    String result2 [] = my.return_values("*", "form_sf9_view_shs", where2, myVariables.getShsf9Order());
 
                     //computing general average
                     int generalAverage = 0;

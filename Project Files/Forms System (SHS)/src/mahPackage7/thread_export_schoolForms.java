@@ -1140,48 +1140,46 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         Thread.sleep(threadDelay);
                     }
                     
-                    //#2 Write Grade Tables
-                    startingAddress = "I";
-                    excelColumnsToSkip = "J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS";
-                    int gradeCount;
-                    int startingRows [] = new int [] {31,74,11,54,55};
-                    String genAveEvaluationAddressess [] [] = new String [][] {
-                        new String [] {"BD,43","BI,43"},
-                        new String [] {"BD,86","BI,86"},
-                        new String [] {"BD,23","BI,23"},
-                        new String [] {"BD,66","BI,66"},
-                        new String [] {"Q,67","S,67"},
-                    };
-                    String subjectName;
+                    //writing of grades here
+                    startingAddress = "I,";
+                    excelColumnsToSkip = "J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AU,AV,AW,AX,AZ,BA,BB,BC,BE,BF,BG,BH";
+                    int stratingRow [] = new int [] {31,74,11,54};
+                    int sfs = 0; //para mag change starting row
+                    int sss = 1; //para mag change starting row
+                    int sheetCount = 0;
                     
-                    for (int n = 0; n < rowCount; n++) {
-                        lbLoadingMessage.setText("Writing Tables...3/4 Table "+(n+1)+" of "+rowCount);
-                        gradeCount = sf10GradeTables[n].getRowCount();
-                        
-                        if(gradeCount < 1){
-                            System.err.println("No Grades on this table index "+n+"...Skipping");
-                            continue;
-                        }
-                        //Write grade on Table[n]
-                        for (int x = 0; x < gradeCount; x++) {
-                            lbLoadingMessage.setText("Writing Tables...3/4 Table "+(n+1)+" of "+rowCount+" Grade "+(x+1)+"/"+gradeCount);
-                            subjectName = sf10GradeTables[n].getValueAt(x, 5).toString();
-                            subjectName = my.removeSubjectGrade(subjectName, " ");
+                    for (int n = 0; n < rowCount; n++) { //loop for tables
+                        int gradeCount = sf10GradeTables[n].getRowCount(); //get grade count
+                        for (int x = 0; x < gradeCount; x++) { //loop for grades
+                            int fscount = 0; //1st sem grade count
+                            int sscount = 0; //2nd sem grade count
                             
+                            String subjectName = sf10GradeTables[n].getValueAt(x, 5).toString();
+                            subjectName = my.removeSubjectGrade(subjectName, " ");
+
                             String line = my.get_table_row_values(x, sf10GradeTables[n]);
                             line = my.setValueAtColumn(line, 5, subjectName);
-                            line = my.skipColumns(line, new int [] {0,1,2,3,4,12,13});
+                            line = my.skipColumns(line, new int [] {0,1,2,3,4,8,9,12,13});
                             
+                            String sem = sf10GradeTables[n].getValueAt(x, 12).toString();
                             
-                            my.writeExcelLine(sheetNumbers[n], line, excelColumnsToSkip, startingAddress+(startingRows[n]+x));
-                            Thread.sleep(10);
+                            //start is 7 for first sem & 23 for second sem
+                            if("1st semester".equals(sem)){
+                                my.writeExcelLine(sheetNumbers[sheetCount], line, excelColumnsToSkip, startingAddress+(fscount+stratingRow[sfs]));
+                                fscount++;
+                            }if("2nd semester".equals(sem)){
+                                my.writeExcelLine(sheetNumbers[sheetCount], line, excelColumnsToSkip, startingAddress+(sscount+stratingRow[sss]));
+                                sscount++;
+                            }
+                            Thread.sleep(threadDelay);
                         }
-                        //Write General Average & Evaluation
-                        my.writeExcelSingleData(sheetNumbers[n], generalAverages[n], genAveEvaluationAddressess[n][0]);
-                        my.writeExcelSingleData(sheetNumbers[n], evaluations[n], genAveEvaluationAddressess[n][1]);
-                        Thread.sleep(threadDelay);
+                        sheetCount++;
+                        sfs++;
+                        sfs++;
+                        sss++;
+                        sss++;
                     }
-                    //</editor-fold>
+ 
                     break;
                 }default:{
                     

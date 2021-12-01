@@ -483,27 +483,6 @@ public class dashBoard extends javax.swing.JFrame {
         tfGeneralAverage2 = new javax.swing.JTextField();
         tfEvaluation2 = new javax.swing.JTextField();
         jLabel95 = new javax.swing.JLabel();
-        sectionPanel3 = new javax.swing.JPanel();
-        jScrollPane39 = new javax.swing.JScrollPane();
-        gradesTable3 = new javax.swing.JTable();
-        jLabel97 = new javax.swing.JLabel();
-        tfGeneralAverage3 = new javax.swing.JTextField();
-        tfEvaluation3 = new javax.swing.JTextField();
-        jLabel98 = new javax.swing.JLabel();
-        sectionPanel4 = new javax.swing.JPanel();
-        jScrollPane40 = new javax.swing.JScrollPane();
-        gradesTable4 = new javax.swing.JTable();
-        jLabel100 = new javax.swing.JLabel();
-        tfGeneralAverage4 = new javax.swing.JTextField();
-        tfEvaluation4 = new javax.swing.JTextField();
-        jLabel101 = new javax.swing.JLabel();
-        sectionPanel5 = new javax.swing.JPanel();
-        jScrollPane41 = new javax.swing.JScrollPane();
-        gradesTable5 = new javax.swing.JTable();
-        jLabel103 = new javax.swing.JLabel();
-        tfGeneralAverage5 = new javax.swing.JTextField();
-        tfEvaluation5 = new javax.swing.JTextField();
-        jLabel104 = new javax.swing.JLabel();
         jScrollPane37 = new javax.swing.JScrollPane();
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
@@ -4047,7 +4026,7 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel75.setText("Maximum of 5 Entries can be Selected.");
+        jLabel75.setText("Maximum of 2 Entries can be Selected.");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -4272,291 +4251,6 @@ public class dashBoard extends javax.swing.JFrame {
         );
 
         tpSf10DetailsTab.addTab("SECTION_2", sectionPanel2);
-
-        sectionPanel3.setBackground(new java.awt.Color(249, 239, 227));
-
-        gradesTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        gradesTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        gradesTable3.getTableHeader().setReorderingAllowed(false);
-        jScrollPane39.setViewportView(gradesTable3);
-        if (gradesTable3.getColumnModel().getColumnCount() > 0) {
-            gradesTable3.getColumnModel().getColumn(4).setPreferredWidth(80);
-            gradesTable3.getColumnModel().getColumn(5).setPreferredWidth(200);
-            gradesTable3.getColumnModel().getColumn(6).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(6).setPreferredWidth(50);
-            gradesTable3.getColumnModel().getColumn(7).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(7).setPreferredWidth(50);
-            gradesTable3.getColumnModel().getColumn(8).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(8).setPreferredWidth(50);
-            gradesTable3.getColumnModel().getColumn(9).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(9).setPreferredWidth(50);
-            gradesTable3.getColumnModel().getColumn(10).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(10).setPreferredWidth(80);
-            gradesTable3.getColumnModel().getColumn(11).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable3.getColumnModel().getColumn(13).setResizable(false);
-            gradesTable3.getColumnModel().getColumn(13).setPreferredWidth(150);
-        }
-
-        jLabel97.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel97.setText("General Average");
-
-        tfGeneralAverage3.setEditable(false);
-        tfGeneralAverage3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        tfEvaluation3.setEditable(false);
-        tfEvaluation3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel98.setText("Remarks");
-
-        javax.swing.GroupLayout sectionPanel3Layout = new javax.swing.GroupLayout(sectionPanel3);
-        sectionPanel3.setLayout(sectionPanel3Layout);
-        sectionPanel3Layout.setHorizontalGroup(
-            sectionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sectionPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sectionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
-                    .addGroup(sectionPanel3Layout.createSequentialGroup()
-                        .addGroup(sectionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tfGeneralAverage3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel97, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(sectionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfEvaluation3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        sectionPanel3Layout.setVerticalGroup(
-            sectionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sectionPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sectionPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sectionPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel97)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfGeneralAverage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sectionPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel98)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfEvaluation3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        tpSf10DetailsTab.addTab("SECTION_3", sectionPanel3);
-
-        sectionPanel4.setBackground(new java.awt.Color(249, 239, 227));
-
-        gradesTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        gradesTable4.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        gradesTable4.getTableHeader().setReorderingAllowed(false);
-        jScrollPane40.setViewportView(gradesTable4);
-        if (gradesTable4.getColumnModel().getColumnCount() > 0) {
-            gradesTable4.getColumnModel().getColumn(4).setPreferredWidth(80);
-            gradesTable4.getColumnModel().getColumn(5).setPreferredWidth(200);
-            gradesTable4.getColumnModel().getColumn(6).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(6).setPreferredWidth(50);
-            gradesTable4.getColumnModel().getColumn(7).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(7).setPreferredWidth(50);
-            gradesTable4.getColumnModel().getColumn(8).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(8).setPreferredWidth(50);
-            gradesTable4.getColumnModel().getColumn(9).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(9).setPreferredWidth(50);
-            gradesTable4.getColumnModel().getColumn(10).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(10).setPreferredWidth(80);
-            gradesTable4.getColumnModel().getColumn(11).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable4.getColumnModel().getColumn(13).setResizable(false);
-            gradesTable4.getColumnModel().getColumn(13).setPreferredWidth(150);
-        }
-
-        jLabel100.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel100.setText("General Average");
-
-        tfGeneralAverage4.setEditable(false);
-        tfGeneralAverage4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        tfEvaluation4.setEditable(false);
-        tfEvaluation4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel101.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel101.setText("Remarks");
-
-        javax.swing.GroupLayout sectionPanel4Layout = new javax.swing.GroupLayout(sectionPanel4);
-        sectionPanel4.setLayout(sectionPanel4Layout);
-        sectionPanel4Layout.setHorizontalGroup(
-            sectionPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sectionPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sectionPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane40, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
-                    .addGroup(sectionPanel4Layout.createSequentialGroup()
-                        .addGroup(sectionPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tfGeneralAverage4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel100, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(sectionPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfEvaluation4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        sectionPanel4Layout.setVerticalGroup(
-            sectionPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sectionPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane40, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sectionPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sectionPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel100)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfGeneralAverage4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sectionPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel101)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfEvaluation4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        tpSf10DetailsTab.addTab("SECTION_4", sectionPanel4);
-
-        sectionPanel5.setBackground(new java.awt.Color(249, 239, 227));
-
-        gradesTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Grade ID", "Student ID", "Section ID", "Subject ID", "Code", "Description", "Q1", "Q2", "Q3", "Q4", "GWA", "Status", "Semester", "Date Updated"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        gradesTable5.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        gradesTable5.getTableHeader().setReorderingAllowed(false);
-        jScrollPane41.setViewportView(gradesTable5);
-        if (gradesTable5.getColumnModel().getColumnCount() > 0) {
-            gradesTable5.getColumnModel().getColumn(4).setPreferredWidth(80);
-            gradesTable5.getColumnModel().getColumn(5).setPreferredWidth(200);
-            gradesTable5.getColumnModel().getColumn(6).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(6).setPreferredWidth(50);
-            gradesTable5.getColumnModel().getColumn(7).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(7).setPreferredWidth(50);
-            gradesTable5.getColumnModel().getColumn(8).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(8).setPreferredWidth(50);
-            gradesTable5.getColumnModel().getColumn(9).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(9).setPreferredWidth(50);
-            gradesTable5.getColumnModel().getColumn(10).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(10).setPreferredWidth(80);
-            gradesTable5.getColumnModel().getColumn(11).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(11).setPreferredWidth(120);
-            gradesTable5.getColumnModel().getColumn(13).setResizable(false);
-            gradesTable5.getColumnModel().getColumn(13).setPreferredWidth(150);
-        }
-
-        jLabel103.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel103.setText("General Average");
-
-        tfGeneralAverage5.setEditable(false);
-        tfGeneralAverage5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        tfEvaluation5.setEditable(false);
-        tfEvaluation5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel104.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel104.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel104.setText("Remarks");
-
-        javax.swing.GroupLayout sectionPanel5Layout = new javax.swing.GroupLayout(sectionPanel5);
-        sectionPanel5.setLayout(sectionPanel5Layout);
-        sectionPanel5Layout.setHorizontalGroup(
-            sectionPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sectionPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sectionPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
-                    .addGroup(sectionPanel5Layout.createSequentialGroup()
-                        .addGroup(sectionPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tfGeneralAverage5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel103, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(sectionPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel104, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfEvaluation5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        sectionPanel5Layout.setVerticalGroup(
-            sectionPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sectionPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sectionPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sectionPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel103)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfGeneralAverage5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sectionPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel104)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfEvaluation5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        tpSf10DetailsTab.addTab("SECTION_5", sectionPanel5);
 
         jSplitPane9.setLeftComponent(tpSf10DetailsTab);
 
@@ -6373,12 +6067,12 @@ public class dashBoard extends javax.swing.JFrame {
         }
         
         my.runExportThread(
-                new JTable[]{sf10Table,gradesTable1,gradesTable2,gradesTable3,gradesTable4,gradesTable5,},
+                new JTable[]{sf10Table,gradesTable1,gradesTable2,},
                 new String[]{},
                 new JTextField[]{tfFirstName,tfMiddleName,tfLastName,tfExtentionName,tfBirthdate,tfGender,tfLrn,
                     tfSchoolName,tfSchoolAddress,tfSchoolId,tfInitialGrade,
-                    tfGeneralAverage1,tfGeneralAverage2,tfGeneralAverage3,tfGeneralAverage4,tfGeneralAverage5,
-                    tfEvaluation1,tfEvaluation2,tfEvaluation3,tfEvaluation4,tfEvaluation5,tfStrand,
+                    tfGeneralAverage1,tfGeneralAverage2,
+                    tfEvaluation1,tfEvaluation2,tfStrand,
                 }, 
                 new JButton[]{btnExportSf10,},
                 new boolean[]{}
@@ -6392,18 +6086,18 @@ public class dashBoard extends javax.swing.JFrame {
             return;
         }
         
-        if (sf10Table.getSelectedRowCount() > 5) {
+        if (sf10Table.getSelectedRowCount() > 2) {
             Toolkit.getDefaultToolkit().beep();
-            my.showMessage("Only a maximum of FIVE Sections can only be selected.", JOptionPane.WARNING_MESSAGE);
+            my.showMessage("Only a maximum of TWO Sections can only be selected.", JOptionPane.WARNING_MESSAGE);
             return;
         }
         resetSf10Values(false, false, true, false, true);
         
         my.runThirdThread(2, true,
-                new JTable[]{sf10Table,gradesTable1,gradesTable2,gradesTable3,gradesTable4,gradesTable5},
+                new JTable[]{sf10Table,gradesTable1,gradesTable2},
                 new String[]{},
-                new JTextField[]{tfGeneralAverage1,tfGeneralAverage2,tfGeneralAverage3,tfGeneralAverage4,tfGeneralAverage5,
-                    tfEvaluation1,tfEvaluation2,tfEvaluation3,tfEvaluation4,tfEvaluation5,
+                new JTextField[]{tfGeneralAverage1,tfGeneralAverage2,
+                    tfEvaluation1,tfEvaluation2,
                 },
                 new JButton[]{btnExportSf10},
                 new boolean[]{},
@@ -6977,28 +6671,16 @@ public class dashBoard extends javax.swing.JFrame {
         if(clearSectionTables){
             my.clear_table_rows(gradesTable1);
             my.clear_table_rows(gradesTable2);
-            my.clear_table_rows(gradesTable3);
-            my.clear_table_rows(gradesTable4);
-            my.clear_table_rows(gradesTable5);
             
             tfGeneralAverage1.setText(" ");
             tfGeneralAverage2.setText(" ");
-            tfGeneralAverage3.setText(" ");
-            tfGeneralAverage4.setText(" ");
-            tfGeneralAverage5.setText(" ");
             
             tfEvaluation1.setText(" ");
             tfEvaluation2.setText(" ");
-            tfEvaluation3.setText(" ");
-            tfEvaluation4.setText(" ");
-            tfEvaluation5.setText(" ");
         }
         if(clearSectionTitles){
             tpSf10DetailsTab.setTitleAt(0, "SECTION_1");
             tpSf10DetailsTab.setTitleAt(1, "SECTION_2");
-            tpSf10DetailsTab.setTitleAt(2, "SECTION_3");
-            tpSf10DetailsTab.setTitleAt(3, "SECTION_4");
-            tpSf10DetailsTab.setTitleAt(4, "SECTION_5");
         }
         if(clearValues){
             tfFirstName.setText("");
@@ -7102,9 +6784,6 @@ public class dashBoard extends javax.swing.JFrame {
             
             my.hideColumns(gradesTable1, new int [] {0,1,2,3,8,9});
             my.hideColumns(gradesTable2, new int [] {0,1,2,3,8,9});
-            my.hideColumns(gradesTable3, new int [] {0,1,2,3,8,9});
-            my.hideColumns(gradesTable4, new int [] {0,1,2,3,8,9});
-            my.hideColumns(gradesTable5, new int [] {0,1,2,3,8,9});
             
             my.hideColumns(sf7TeachersTable, new int [] {0,10});
             my.hideColumns(sf7AssignedSubjectsTable, new int [] {0,1,2,4});
@@ -7125,7 +6804,7 @@ public class dashBoard extends javax.swing.JFrame {
             
             sf7TeachersTable,sf7AssignedSubjectsTable,
             
-            enrolledStudentsTable1,sf10Table,gradesTable1,gradesTable2,gradesTable3,gradesTable4,gradesTable5,
+            enrolledStudentsTable1,sf10Table,gradesTable1,gradesTable2,
         };
         //customizeTableColumnColors(sf1SectionTable, new int [] {0,1,2,3}, Color.RED,Color.WHITE,new Font("Segoe UI",Font.PLAIN,11),true);
         //customHeaders(sf1SectionTable, new int []{0,1,2,3}, Color.RED, Color.WHITE, new Font("Comic Sans MS", Font.BOLD, 12), true);
@@ -7302,7 +6981,7 @@ public class dashBoard extends javax.swing.JFrame {
         };
         JLabel labels [] = {
             lbSearchResult,lbSearchResult1,lbSearchResult2,jLabel75,
-            jLabel91,jLabel92,jLabel94,jLabel95,jLabel97,jLabel98,jLabel100,jLabel101,jLabel103,jLabel104,
+            jLabel91,jLabel92,jLabel94,jLabel95,
         };
         
         JLabel formsHeaderLabels [] = {
@@ -7372,8 +7051,8 @@ public class dashBoard extends javax.swing.JFrame {
             
             tfSchoolYear7,tfCurriculum,tfDateOfMeasurement,
             
-            tfGeneralAverage1,tfGeneralAverage2,tfGeneralAverage3,tfGeneralAverage4,tfGeneralAverage5,
-            tfEvaluation1,tfEvaluation2,tfEvaluation3,tfEvaluation4,tfEvaluation5,
+            tfGeneralAverage1,tfGeneralAverage2,
+            tfEvaluation1,tfEvaluation2,
             
             tfStrand8,
         };
@@ -7516,9 +7195,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable gradesTable;
     private javax.swing.JTable gradesTable1;
     private javax.swing.JTable gradesTable2;
-    private javax.swing.JTable gradesTable3;
-    private javax.swing.JTable gradesTable4;
-    private javax.swing.JTable gradesTable5;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -7532,11 +7208,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
-    private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
@@ -7650,8 +7322,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -7720,10 +7390,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane37;
     private javax.swing.JScrollPane jScrollPane38;
-    private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane40;
-    private javax.swing.JScrollPane jScrollPane41;
     private javax.swing.JScrollPane jScrollPane42;
     private javax.swing.JScrollPane jScrollPane43;
     private javax.swing.JScrollPane jScrollPane44;
@@ -7795,9 +7462,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel right2;
     private javax.swing.JPanel sectionPanel1;
     private javax.swing.JPanel sectionPanel2;
-    private javax.swing.JPanel sectionPanel3;
-    private javax.swing.JPanel sectionPanel4;
-    private javax.swing.JPanel sectionPanel5;
     private javax.swing.JPanel selectFormPanel;
     private javax.swing.JPanel selectSectionTab;
     private javax.swing.JPanel sf10Tab;
@@ -7846,9 +7510,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTextField tfEvaluation;
     private javax.swing.JTextField tfEvaluation1;
     private javax.swing.JTextField tfEvaluation2;
-    private javax.swing.JTextField tfEvaluation3;
-    private javax.swing.JTextField tfEvaluation4;
-    private javax.swing.JTextField tfEvaluation5;
     private javax.swing.JTextField tfExtentionName;
     private javax.swing.JTextField tfFailedSubjects;
     private javax.swing.JTextField tfFemaleCount;
@@ -7857,9 +7518,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTextField tfGeneralAverage;
     private javax.swing.JTextField tfGeneralAverage1;
     private javax.swing.JTextField tfGeneralAverage2;
-    private javax.swing.JTextField tfGeneralAverage3;
-    private javax.swing.JTextField tfGeneralAverage4;
-    private javax.swing.JTextField tfGeneralAverage5;
     private javax.swing.JTextField tfGradeLevel;
     private javax.swing.JTextField tfGradeLevel1;
     private javax.swing.JTextField tfGradeLevel2;

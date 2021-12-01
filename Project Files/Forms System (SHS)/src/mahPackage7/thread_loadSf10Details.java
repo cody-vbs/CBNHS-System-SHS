@@ -52,25 +52,16 @@ public class thread_loadSf10Details extends SwingWorker<String, Object>{
         sf10Table = tablesToUse[0];
         sectionTables = new JTable[]{
             tablesToUse[1],
-            tablesToUse[2],
-            tablesToUse[3],
-            tablesToUse[4],
-            tablesToUse[5]
+            tablesToUse[2]
         };
         
         tfGeneralAverageFields = new JTextField[]{
             textFieldsToUse[0],
             textFieldsToUse[1],
-            textFieldsToUse[2],
-            textFieldsToUse[3],
-            textFieldsToUse[4],
         };
         tfEvaluationFields = new JTextField[]{
-            textFieldsToUse[5],
-            textFieldsToUse[6],
-            textFieldsToUse[7],
-            textFieldsToUse[8],
-            textFieldsToUse[9],
+            textFieldsToUse[2],
+            textFieldsToUse[3],
         };
         btnExportSf10 = buttonsToUse[0];
         tpGradeDetailsPane = tabsToUse[0];

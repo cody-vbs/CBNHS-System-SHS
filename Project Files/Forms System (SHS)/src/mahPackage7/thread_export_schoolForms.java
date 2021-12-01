@@ -268,26 +268,20 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 elemSchoolAddress = textFieldsToUse[8].getText().toUpperCase();
                 elemShoolId = textFieldsToUse[9].getText();
                 elemGeneralAverage = textFieldsToUse[10].getText();
-                strand = textFieldsToUse[21].getText();
+                strand = textFieldsToUse[15].getText();
                 //SF9 Variables
                 generalAverages = new String [] {
                     textFieldsToUse[11].getText(),
-                    textFieldsToUse[12].getText(),
-                    textFieldsToUse[13].getText(),
-                    textFieldsToUse[14].getText(),
-                    textFieldsToUse[15].getText()
+                    textFieldsToUse[12].getText()
                 };
                 evaluations = new String [] {
-                    textFieldsToUse[16].getText().toUpperCase(),
-                    textFieldsToUse[17].getText().toUpperCase(),
-                    textFieldsToUse[18].getText().toUpperCase(),
-                    textFieldsToUse[19].getText().toUpperCase(),
-                    textFieldsToUse[20].getText().toUpperCase(),
+                    textFieldsToUse[13].getText().toUpperCase(),
+                    textFieldsToUse[14].getText().toUpperCase(),
                 };
                 
                 sf10Table = tables[0];
                 sf10GradeTables = new JTable[] {
-                    tables[1],tables[2],tables[3],tables[4],tables[5]
+                    tables[1],tables[2]
                 };
                 break;
             }default:{
@@ -1088,14 +1082,17 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     //<editor-fold desc="WRITE SF10">
                     //#1 Write Section Headers
                     int rowCount = sf10Table.getRowCount();
-                    int sheetNumbers [] = new int [] {0,0,1,1,1};
+                    int sheetNumbers [] = new int [] {0,1};
                     String sectionHeaderAddressess [][] = {
-                        new String [] {"E,23","AF,23","G,25","Q,23","U,23","AS,23","AS,25","BA,23","N,24"},
-                        new String [] {"E,66","AF,66","G,68","Q,47","U,47","AS,66","AS,68","BA,66","N,48"},
-                        new String [] {"E,4","AF,4","G,5","Q,2","U,2","AS,4","AS,5","BA,4","N,3"},
-                        new String [] {"E,46","AF,46","G,48","Q,26","U,26","AS,46","AS,48","BA,46","N,27"},
-                        new String [] {"C,50","I,50","M,50","Q,50","U,50","C,51","E,51","J,51","N,51"},
+                        new String [] {"E,23","AF,23","G,25","Q,23","U,23","AS,23","AS,25","BA,23","BK,23"},
+                        new String [] {"E,66","AF,66","G,68","Q,47","U,47","AS,66","AS,68","BA,66","BK,66"},
+                        new String [] {"E,4","AF,4","G,5","Q,2","U,2","AS,4","AS,5","BA,4","BK,4"},
+                        new String [] {"E,46","AF,46","G,48","Q,26","U,26","AS,46","AS,48","BA,46","BK,46"},
                     };
+                    
+                    //sem placers
+                    int fs = 0;
+                    int ss = 1;
                     
                     for (int n = 0; n < rowCount; n++) {
                         lbLoadingMessage.setText("Writing Tables...3/4 Section "+(n+1)+" of "+rowCount);
@@ -1110,23 +1107,35 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         
                         //Prepare Headers
                         header sectionHeader [] = new header [] {
-                            new header(schoolName, sectionHeaderAddressess[n][0]),
-                            new header(schoolId, sectionHeaderAddressess[n][1]),
-                            new header(strand, sectionHeaderAddressess[n][2]),
-                            //new header(division, sectionHeaderAddressess[n][3]),
-                            //new header(region, sectionHeaderAddressess[n][4]),
+                            new header(schoolName, sectionHeaderAddressess[fs][0]),
+                            new header(schoolId, sectionHeaderAddressess[fs][1]),
+                            new header(strand, sectionHeaderAddressess[fs][2]),
+                            new header(gradeLevel, sectionHeaderAddressess[fs][5]),
+                            new header(sectionName, sectionHeaderAddressess[fs][6]),
+                            new header(schoolYear, sectionHeaderAddressess[fs][7]),
+                            new header("1st", sectionHeaderAddressess[fs][8]),
                             
-                            new header(gradeLevel, sectionHeaderAddressess[n][5]),
-                            new header(sectionName, sectionHeaderAddressess[n][6]),
-                            new header(schoolYear, sectionHeaderAddressess[n][7]),
-                            //new header(adviserName, sectionHeaderAddressess[n][8]),
+                            new header(schoolName, sectionHeaderAddressess[ss][0]),
+                            new header(schoolId, sectionHeaderAddressess[ss][1]),
+                            new header(strand, sectionHeaderAddressess[ss][2]),
+                            new header(gradeLevel, sectionHeaderAddressess[ss][5]),
+                            new header(sectionName, sectionHeaderAddressess[ss][6]),
+                            new header(schoolYear, sectionHeaderAddressess[ss][7]),
+                            new header("2nd", sectionHeaderAddressess[ss][8]),
                         };
+                        
                         int headerLength = sectionHeader.length;
                         for (int x = 0; x < headerLength; x++) {
                             lbLoadingMessage.setText("Writing Tables...3/4 Section "+(n+1)+" of "+rowCount+" Header "+(x+1)+"/"+headerLength);
                             my.writeExcelSingleData(sheetNumbers[n], sectionHeader[x].getData(),sectionHeader[x].getExcelAddress());
                             Thread.sleep(10);
                         }
+                        
+                        //9999 iq code
+                        fs++;
+                        fs++;
+                        ss++;
+                        ss++;
                         
                         Thread.sleep(threadDelay);
                     }

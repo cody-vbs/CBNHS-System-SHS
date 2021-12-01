@@ -148,7 +148,7 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                     }
                 }
                 if(!matchFound){
-                    String toWrite = "-1@@-1@@-1@@"+my.skipColumns(subjectsResult[n], new int []{3})+" @@ @@ @@ @@ @@INCOMPLETE@@MISSING@@";
+                    String toWrite = "-1@@-1@@-1@@"+my.skipColumns(subjectsResult[n], new int []{3,4,5})+" @@ @@ @@ @@ @@INCOMPLETE@@ @@MISSING@@";
                     my.add_table_row(toWrite, sf9Table);
                 }
                 Thread.sleep(threadDelay);

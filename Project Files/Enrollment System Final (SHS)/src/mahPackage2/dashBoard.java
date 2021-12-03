@@ -300,6 +300,8 @@ public class dashBoard extends javax.swing.JFrame {
         studentTable = new javax.swing.JTable();
         jLabel100 = new javax.swing.JLabel();
         strandSelect = new javax.swing.JComboBox<>();
+        semesterSelect = new javax.swing.JComboBox<>();
+        jLabel101 = new javax.swing.JLabel();
         assignSubjectTeacherTab = new javax.swing.JPanel();
         jSplitPane3 = new javax.swing.JSplitPane();
         left2 = new javax.swing.JPanel();
@@ -1112,17 +1114,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         enrollmentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "LRN", "Name", "Gender", "Section", "Adviser", "Subject Load", "Level", "Strand", "School Year", "Date"
+                "ID", "LRN", "Name", "Gender", "Section", "Adviser", "Subject Load", "Level", "Strand", "Semester", "School Year", "Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1142,7 +1144,7 @@ public class dashBoard extends javax.swing.JFrame {
             enrollmentTable.getColumnModel().getColumn(6).setPreferredWidth(50);
             enrollmentTable.getColumnModel().getColumn(7).setPreferredWidth(50);
             enrollmentTable.getColumnModel().getColumn(8).setResizable(false);
-            enrollmentTable.getColumnModel().getColumn(9).setPreferredWidth(70);
+            enrollmentTable.getColumnModel().getColumn(10).setPreferredWidth(70);
         }
 
         btnSearchStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/search_24px.png"))); // NOI18N
@@ -1325,6 +1327,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         strandSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ABM", "HUMMS", "STEM", "GAS" }));
 
+        semesterSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st semester", "2nd semester" }));
+
+        jLabel101.setText("Semester");
+
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
@@ -1349,8 +1355,11 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(btnEnrollStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel100, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(semesterSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1380,8 +1389,12 @@ public class dashBoard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel101)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(semesterSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnEnrollStudent)
-                .addGap(138, 138, 138))
+                .addGap(64, 64, 64))
         );
 
         jScrollPane5.setViewportView(jPanel24);
@@ -1906,6 +1919,7 @@ public class dashBoard extends javax.swing.JFrame {
         String studentId = studentTable.getValueAt(studentRow, 0).toString();
         String sectionId = sectionsTable1.getValueAt(sectionRow, 0).toString();
         String strand = strandSelect.getSelectedItem().toString();
+        String sem = semesterSelect.getSelectedItem().toString();
 
         //Check if student is already enrolled to the same section
         String duplicate [] = my.return_values("*", "enrollment", "WHERE studentId='"+studentId+"' AND sectionId ='"+sectionId+"'",new int [] {0,1,2,3});
@@ -1959,10 +1973,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         if(my.getConfirmation("Enroll this student? \n"+studentName+" to "+sectionName+"?")){
             String fields [] = {
-                "null",studentId,sectionId,"now()",remarks,strand,"SHS"
+                "null",studentId,sectionId,"now()",remarks,strand,sem,"SHS"
             };
 
-            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks,strand,dep_type", fields)){
+            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks,strand,sem,dep_type", fields)){
                 //Update current grade level
                 String sets [] = {"curGrLvl='"+sectionGradeLevel+"'"};
                 if(my.update_values("students", sets, "id='"+studentId+"'")){
@@ -2975,6 +2989,8 @@ public class dashBoard extends javax.swing.JFrame {
     columnModel.getColumn(6).setPreferredWidth(180);
     columnModel.getColumn(7).setPreferredWidth(180);
     columnModel.getColumn(8).setPreferredWidth(180);
+    columnModel.getColumn(9).setPreferredWidth(180);
+
     
     TableColumnModel columnModelStudentTable = studentTable.getColumnModel();
     columnModelStudentTable.getColumn(1).setPreferredWidth(150);
@@ -3065,6 +3081,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -3149,6 +3166,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable sectionsTable1;
     private javax.swing.JTable sectionsTable2;
     private javax.swing.JPanel selectTeacherTab;
+    private javax.swing.JComboBox<String> semesterSelect;
     private javax.swing.JComboBox<String> strandSelect;
     private javax.swing.JTable studentTable;
     private javax.swing.JTabbedPane subjectTeacherTab;

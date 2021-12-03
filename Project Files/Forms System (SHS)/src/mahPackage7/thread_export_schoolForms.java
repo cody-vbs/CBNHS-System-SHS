@@ -107,6 +107,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
     private String principalName;
     private String representativeName;
     private String superIntendentName;
+    private String strandName;
+    private String semester;
     //Functions Variables
     long threadDelay = 100;
     long pauseDelay = 500;
@@ -1202,6 +1204,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
             for (int n = 0; n < headerCount; n++) {
                 lbLoadingMessage.setText("Writing Headers...2/4 Header "+(n+1)+" of "+headerCount);
                 my.writeExcelSingleData(sheetNumber, headers[n].getData(), headers[n].getExcelAddress());
+                my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[8].getExcelAddress());
+                my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[9].getExcelAddress());
                 Thread.sleep(threadDelay);
             }
             Thread.sleep(pauseDelay);
@@ -1230,6 +1234,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolYear, "K,4"),
                         new header(gradeLevel, "M,4"),
                         new header(sectionName, "O,4"),
+                        new header (strandName, "K,5"),
+                        new header (semester , "O,5"),
                         //Form's Custom Fields
                         new header(maleCount, mCount[sheetNumber]),
                         new header(femaleCount, fCount[sheetNumber]),

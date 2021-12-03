@@ -32,7 +32,7 @@ import javazoom.jl.player.Player;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class dashBoard extends javax.swing.JFrame {
     myFunctions my;
@@ -290,23 +290,25 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         tfSearchStudent1 = new javax.swing.JTextField();
         btnSearchStudent1 = new javax.swing.JButton();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        studentTable = new javax.swing.JTable();
         jScrollPane16 = new javax.swing.JScrollPane();
         sectionsTable1 = new javax.swing.JTable();
         tfSearchSection1 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         btnSearchSection1 = new javax.swing.JButton();
         btnEnrollStudent = new javax.swing.JButton();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        studentTable = new javax.swing.JTable();
+        jLabel100 = new javax.swing.JLabel();
+        strandSelect = new javax.swing.JComboBox<>();
         assignSubjectTeacherTab = new javax.swing.JPanel();
         jSplitPane3 = new javax.swing.JSplitPane();
         left2 = new javax.swing.JPanel();
         jcbSchoolYear3 = new javax.swing.JComboBox<>();
         lbSearchResult2 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        sectionsTable2 = new javax.swing.JTable();
         tfSearchSection2 = new javax.swing.JTextField();
         btnSearchSection2 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        sectionsTable2 = new javax.swing.JTable();
         right2 = new javax.swing.JPanel();
         subjectTeacherTab = new javax.swing.JTabbedPane();
         detailsTab = new javax.swing.JPanel();
@@ -319,10 +321,6 @@ public class dashBoard extends javax.swing.JFrame {
         assignedTeacherTable = new javax.swing.JTable();
         btnSaveSubjectTeacherChanges = new javax.swing.JButton();
         btnEditSubjectTeacher = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        subjectTable = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
-        btnRefreshList = new javax.swing.JButton();
         selectTeacherTab = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
@@ -331,10 +329,11 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         tfSearchUser2 = new javax.swing.JTextField();
         btnSearchUser2 = new javax.swing.JButton();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        usersTable2 = new javax.swing.JTable();
         btnAssignTeacher = new javax.swing.JButton();
         btnNone = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        usersTable2 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         logout = new javax.swing.JMenuItem();
@@ -681,7 +680,7 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         usersTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        usersTable.setPreferredSize(null);
+        usersTable.setMinimumSize(new java.awt.Dimension(45, 64));
         usersTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane11.setViewportView(usersTable);
         if (usersTable.getColumnModel().getColumnCount() > 0) {
@@ -834,7 +833,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         addNewSectionPanelLayout.setVerticalGroup(
             addNewSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
 
         sectionsTab.addTab("Add Section", addNewSectionPanel);
@@ -896,7 +895,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         usersTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        usersTable1.setPreferredSize(null);
         usersTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane13.setViewportView(usersTable1);
         if (usersTable1.getColumnModel().getColumnCount() > 0) {
@@ -934,7 +932,7 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("Select Curriculum");
+        jLabel10.setText("Select Subject Load");
 
         loadsTable1.setAutoCreateRowSorter(true);
         loadsTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -1062,7 +1060,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         editSectionPanelLayout.setVerticalGroup(
             editSectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
 
         sectionsTab.addTab("Edit Section", editSectionPanel);
@@ -1072,12 +1070,12 @@ public class dashBoard extends javax.swing.JFrame {
         rightLayout.setHorizontalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightLayout.createSequentialGroup()
-                .addComponent(sectionsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                .addComponent(sectionsTab)
                 .addGap(0, 0, 0))
         );
         rightLayout.setVerticalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sectionsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+            .addComponent(sectionsTab)
         );
 
         jSplitPane1.setRightComponent(right);
@@ -1114,17 +1112,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         enrollmentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "LRN", "Name", "Gender", "Section", "Adviser", "Curriculum", "Level", "School Year", "Date"
+                "ID", "LRN", "Name", "Gender", "Section", "Adviser", "Subject Load", "Level", "Strand", "School Year", "Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1140,9 +1138,11 @@ public class dashBoard extends javax.swing.JFrame {
         if (enrollmentTable.getColumnModel().getColumnCount() > 0) {
             enrollmentTable.getColumnModel().getColumn(1).setPreferredWidth(100);
             enrollmentTable.getColumnModel().getColumn(3).setPreferredWidth(50);
+            enrollmentTable.getColumnModel().getColumn(6).setResizable(false);
             enrollmentTable.getColumnModel().getColumn(6).setPreferredWidth(50);
             enrollmentTable.getColumnModel().getColumn(7).setPreferredWidth(50);
-            enrollmentTable.getColumnModel().getColumn(8).setPreferredWidth(70);
+            enrollmentTable.getColumnModel().getColumn(8).setResizable(false);
+            enrollmentTable.getColumnModel().getColumn(9).setPreferredWidth(70);
         }
 
         btnSearchStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/search_24px.png"))); // NOI18N
@@ -1242,33 +1242,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane15.setMinimumSize(new java.awt.Dimension(469, 419));
-
-        studentTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID (H)", "LRN", "Name", "Gender", "Curr. Grade"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        studentTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        studentTable.setMinimumSize(new java.awt.Dimension(469, 419));
-        studentTable.setPreferredSize(new java.awt.Dimension(700, 419));
-        studentTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane15.setViewportView(studentTable);
-
         jScrollPane16.setMinimumSize(new java.awt.Dimension(469, 419));
 
         sectionsTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -1325,19 +1298,45 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
+        studentTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID (H)", "LRN", "Name", "Gender", "Curr. Grade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        studentTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        studentTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane15.setViewportView(studentTable);
+
+        jLabel100.setText("Strand");
+
+        strandSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ABM", "HUMMS", "STEM", "GAS" }));
+
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 173, Short.MAX_VALUE))
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel24Layout.createSequentialGroup()
                         .addComponent(tfSearchStudent1)
@@ -1347,7 +1346,12 @@ public class dashBoard extends javax.swing.JFrame {
                         .addComponent(tfSearchSection1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearchSection1))
-                    .addComponent(btnEnrollStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnEnrollStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel100, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
@@ -1361,9 +1365,9 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnSearchStudent1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tfSearchStudent1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1371,9 +1375,13 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(tfSearchSection1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel100)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(strandSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnEnrollStudent)
-                .addGap(208, 208, 208))
+                .addGap(138, 138, 138))
         );
 
         jScrollPane5.setViewportView(jPanel24);
@@ -1426,44 +1434,6 @@ public class dashBoard extends javax.swing.JFrame {
         lbSearchResult2.setForeground(new java.awt.Color(255, 255, 255));
         lbSearchResult2.setText("Search using the search bar...");
 
-        jScrollPane6.setPreferredSize(new java.awt.Dimension(770, 64));
-
-        sectionsTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Section Name", "Adv ID", "Adviser", "Gender", "Lod ID", "Curriculum", "Level", "School Year", "Subjects Contained"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        sectionsTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        sectionsTable2.setPreferredSize(new java.awt.Dimension(770, 64));
-        sectionsTable2.getTableHeader().setReorderingAllowed(false);
-        sectionsTable2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loadSubjectsContainedHandler(evt);
-            }
-        });
-        jScrollPane6.setViewportView(sectionsTable2);
-        if (sectionsTable2.getColumnModel().getColumnCount() > 0) {
-            sectionsTable2.getColumnModel().getColumn(1).setPreferredWidth(100);
-            sectionsTable2.getColumnModel().getColumn(3).setPreferredWidth(150);
-            sectionsTable2.getColumnModel().getColumn(4).setPreferredWidth(50);
-            sectionsTable2.getColumnModel().getColumn(7).setPreferredWidth(50);
-            sectionsTable2.getColumnModel().getColumn(8).setPreferredWidth(50);
-        }
-
         tfSearchSection2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchSectionHandler2(evt);
@@ -1477,6 +1447,34 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
+        sectionsTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Section Name", "Adv ID", "Adviser", "Gender", "Lod ID", "Subject Load", "Level", "School Year", "Subjects Contained"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        sectionsTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        sectionsTable2.getTableHeader().setReorderingAllowed(false);
+        sectionsTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sectionsTable2MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(sectionsTable2);
+
         javax.swing.GroupLayout left2Layout = new javax.swing.GroupLayout(left2);
         left2.setLayout(left2Layout);
         left2Layout.setHorizontalGroup(
@@ -1484,9 +1482,9 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(left2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6)
                     .addGroup(left2Layout.createSequentialGroup()
-                        .addComponent(lbSearchResult2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                        .addComponent(lbSearchResult2, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jcbSchoolYear3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1572,7 +1570,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         assignedTeacherTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        assignedTeacherTable.setPreferredSize(null);
         assignedTeacherTable.getTableHeader().setReorderingAllowed(false);
         assignedTeacherTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1604,49 +1601,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        subjectTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Code", "Name", "Grade"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        subjectTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        subjectTable.setPreferredSize(new java.awt.Dimension(900, 64));
-        subjectTable.getTableHeader().setReorderingAllowed(false);
-        subjectTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                subjectTableMouseClicked(evt);
-            }
-        });
-        jScrollPane10.setViewportView(subjectTable);
-        if (subjectTable.getColumnModel().getColumnCount() > 0) {
-            subjectTable.getColumnModel().getColumn(1).setPreferredWidth(50);
-            subjectTable.getColumnModel().getColumn(3).setPreferredWidth(50);
-        }
-
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Allowed Subjects To Edit");
-
-        btnRefreshList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/icons8_sync_16px.png"))); // NOI18N
-        btnRefreshList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshListToEditHandler(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1659,16 +1613,11 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 218, Short.MAX_VALUE)
                         .addComponent(btnEditSubjectTeacher)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSaveSubjectTeacherChanges))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRefreshList)))
+                        .addComponent(btnSaveSubjectTeacherChanges)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1679,18 +1628,12 @@ public class dashBoard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSaveSubjectTeacherChanges)
                     .addComponent(btnEditSubjectTeacher))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(btnRefreshList))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(169, 169, 169))
         );
 
         jScrollPane7.setViewportView(jPanel3);
@@ -1699,7 +1642,7 @@ public class dashBoard extends javax.swing.JFrame {
         detailsTab.setLayout(detailsTabLayout);
         detailsTabLayout.setHorizontalGroup(
             detailsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
         detailsTabLayout.setVerticalGroup(
             detailsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1750,6 +1693,22 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
+        btnAssignTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/icons8_ok_16px.png"))); // NOI18N
+        btnAssignTeacher.setText("Assign Teacher");
+        btnAssignTeacher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignTeacherHandler2(evt);
+            }
+        });
+
+        btnNone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/icons8_delete_bin_16px.png"))); // NOI18N
+        btnNone.setText("Assign None");
+        btnNone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNoneActionPerformed(evt);
+            }
+        });
+
         usersTable2.setAutoCreateRowSorter(true);
         usersTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1771,33 +1730,25 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
         usersTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        usersTable2.setPreferredSize(new java.awt.Dimension(900, 64));
         usersTable2.getTableHeader().setReorderingAllowed(false);
-        usersTable2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                assignTeacherHandler(evt);
-            }
-        });
         jScrollPane17.setViewportView(usersTable2);
-        if (usersTable2.getColumnModel().getColumnCount() > 0) {
-            usersTable2.getColumnModel().getColumn(3).setHeaderValue("Access Level");
-        }
 
-        btnAssignTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/icons8_ok_16px.png"))); // NOI18N
-        btnAssignTeacher.setText("Assign Teacher");
-        btnAssignTeacher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignTeacherHandler2(evt);
-            }
-        });
-
-        btnNone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage2/icons/icons8_delete_bin_16px.png"))); // NOI18N
-        btnNone.setText("Assign None");
-        btnNone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNoneActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 510, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel11Layout.createSequentialGroup()
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1809,14 +1760,14 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(tfSearchUser2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearchUser2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 230, Short.MAX_VALUE)
                         .addComponent(btnNone)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAssignTeacher)))
@@ -1835,7 +1786,7 @@ public class dashBoard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfSearchUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAssignTeacher)
@@ -1849,7 +1800,7 @@ public class dashBoard extends javax.swing.JFrame {
         selectTeacherTab.setLayout(selectTeacherTabLayout);
         selectTeacherTabLayout.setHorizontalGroup(
             selectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane9)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
         selectTeacherTabLayout.setVerticalGroup(
             selectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1875,7 +1826,7 @@ public class dashBoard extends javax.swing.JFrame {
         assignSubjectTeacherTab.setLayout(assignSubjectTeacherTabLayout);
         assignSubjectTeacherTabLayout.setHorizontalGroup(
             assignSubjectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
+            .addComponent(jSplitPane3)
         );
         assignSubjectTeacherTabLayout.setVerticalGroup(
             assignSubjectTeacherTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1954,6 +1905,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         String studentId = studentTable.getValueAt(studentRow, 0).toString();
         String sectionId = sectionsTable1.getValueAt(sectionRow, 0).toString();
+        String strand = strandSelect.getSelectedItem().toString();
 
         //Check if student is already enrolled to the same section
         String duplicate [] = my.return_values("*", "enrollment", "WHERE studentId='"+studentId+"' AND sectionId ='"+sectionId+"'",new int [] {0,1,2,3});
@@ -1977,10 +1929,11 @@ public class dashBoard extends javax.swing.JFrame {
         int currentGradeLevel = Integer.parseInt(studentTable.getValueAt(studentRow, 4).toString());
         int sectionGradeLevel = Integer.parseInt(sectionsTable1.getValueAt(sectionRow, 3).toString());
         String remarks = " ! !";
+        
 
         if(currentGradeLevel == 0){
             if(sectionGradeLevel != 11){
-                if(!my.getConfirmation("This student should be enrolled to a GRADE 11 section.\nContinue?")){
+                 if(!my.getConfirmation("This student should be enrolled to a GRADE "+(currentGradeLevel)+" year level.\nContinue?")){
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("Enrollment Cancelled.", JOptionPane.PLAIN_MESSAGE);
                     return;
@@ -1992,7 +1945,7 @@ public class dashBoard extends javax.swing.JFrame {
         }
         }else{
             if(currentGradeLevel+1 != sectionGradeLevel){
-                if(!my.getConfirmation("This student should be enrolled to a GRADE "+(currentGradeLevel)+" section.\nContinue?")){
+                if(!my.getConfirmation("This student should be enrolled to a GRADE "+(currentGradeLevel)+" year level.\nContinue?")){
                     Toolkit.getDefaultToolkit().beep();
                     my.showMessage("Enrollment Cancelled.", JOptionPane.PLAIN_MESSAGE);
                     return;
@@ -2006,10 +1959,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         if(my.getConfirmation("Enroll this student? \n"+studentName+" to "+sectionName+"?")){
             String fields [] = {
-                "null",studentId,sectionId,"now()",remarks
+                "null",studentId,sectionId,"now()",remarks,strand,"SHS"
             };
 
-            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks", fields)){
+            if(my.add_values("enrollment", "id,studentId,sectionId,dateEnrolled,remarks,strand,dep_type", fields)){
                 //Update current grade level
                 String sets [] = {"curGrLvl='"+sectionGradeLevel+"'"};
                 if(my.update_values("students", sets, "id='"+studentId+"'")){
@@ -2085,7 +2038,9 @@ public class dashBoard extends javax.swing.JFrame {
         }
         where +=(jcbSchoolYear2.getSelectedIndex()!=0?"AND schoolYear='"+yearFilter+"'":"");
 
-        String [] result = my.return_values("*", "v_enrollment", where, myVariables.getEnrollmentViewOrder());
+        String [] result = my.return_values("*", "v_enrollment_shs", where, myVariables.getEnrollmentViewOrder());
+        
+        
 
         my.clear_table_rows(enrollmentTable);
         if(result != null){
@@ -2122,7 +2077,7 @@ public class dashBoard extends javax.swing.JFrame {
         }
         if(currIndex == -1){
             Toolkit.getDefaultToolkit().beep();
-            my.showMessage("Please select a Curriculum", JOptionPane.WARNING_MESSAGE);
+            my.showMessage("Please select a Subject Load", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -2314,12 +2269,6 @@ public class dashBoard extends javax.swing.JFrame {
         assignTeacher(false);
     }//GEN-LAST:event_assignTeacherHandler2
 
-    private void assignTeacherHandler(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignTeacherHandler
-        if(evt.getClickCount() == 2){
-            assignTeacher(false);
-        }
-    }//GEN-LAST:event_assignTeacherHandler
-
     private void searchUserHandler2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchUserHandler2
         String toSearch = my.convertEscapeCharacters(tfSearchUser2.getText().trim());
         String where = "WHERE user_level='1' ";
@@ -2338,149 +2287,74 @@ public class dashBoard extends javax.swing.JFrame {
         my.searchItem(where, usersTable2, 3, new int[]{5,6}, new int[]{1,2,3}, true, true, null, tfSearchUser2, true);
     }//GEN-LAST:event_searchUserHandler2
 
-    private void refreshListToEditHandler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshListToEditHandler
-        int userId = myVariables.getUserLoggedInId();
-        String [] result = my.return_values("*", "userdetails", "WHERE userId='"+userId+"'", myVariables.getUsersPersonalInfoOrder());
-
-        if(myVariables.getAccessLevel() == 5){
-            jLabel16.setText("Allowed Subjects To Edit (Ignored by Admin)");
-        }else{
-            jLabel16.setText("Allowed Subjects To Edit");
-        }
-
-        if(result != null){
-            String managedSubjects = my.getValueAtColumn(result[0], 9);
-            if(managedSubjects.contains("NONE")){
-                my.clear_table_rows(subjectTable);
-                return;
-            }
-
-            managedSubjects = managedSubjects.replace(':', ',');
-
-            int length = managedSubjects.length();
-            if(managedSubjects.charAt(length-1) == ','){
-                System.err.println("Comma found...Deleting");
-                managedSubjects = managedSubjects.substring(0, length-1);
-            }
-
-            String [] subjects = my.return_values("*", "subjects", "WHERE id IN ("+managedSubjects+")", myVariables.getSubjectOrder());
-
-            my.clear_table_rows(subjectTable);
-            if(subjects != null){
-                for(String n : subjects){
-                    my.add_table_row(n, subjectTable);
-                }
-            }
-        }else{
-            my.clear_table_rows(subjectTable);
-        }
-    }//GEN-LAST:event_refreshListToEditHandler
-
-    private void subjectTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subjectTableMouseClicked
+    
+   
+    private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_subjectTableMouseClicked
+        myCards.removeAll();
+        myCards.add(manageSectionsTab);
+        myCards.repaint();
+        myCards.revalidate();
 
-    private void btnEditSubjectTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditSubjectTeacherActionPerformed
-        enableDisableAssignSubjectTeacherFields(false, true, true);
+        tab1.setBackground(Color.decode("#FDE8F0"));
 
-        assignedTeacherTable.setRowSelectionInterval(0, 0);
-    }//GEN-LAST:event_btnEditSubjectTeacherActionPerformed
+        tab2.setBackground(Color.decode("#FBB9D3"));
+        tab3.setBackground(Color.decode("#FBB9D3"));
+      
+    }//GEN-LAST:event_tab1MouseClicked
 
-    private void saveSubjectTeacherChanges(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSubjectTeacherChanges
-        //Get Values
-        int sectionRow = sectionsTable2.getSelectedRow();
+    private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
+        // TODO add your handling code here:
+        myCards.removeAll();
+        myCards.add(assignSubjectTeacherTab);
+        myCards.repaint();
+        myCards.revalidate();
 
-        String sectionId = sectionsTable2.getValueAt(sectionRow, 0).toString();
-        int count = assignedTeacherTable.getRowCount();
+        tab3.setBackground(Color.decode("#FDE8F0"));
 
-        String [] rows = new String[count];
-        for(int n=0;n<count;n++){
-            String id = assignedTeacherTable.getValueAt(n, 0).toString();
-            String teacherId = assignedTeacherTable.getValueAt(n, 2).toString();
-            String subjectId = assignedTeacherTable.getValueAt(n, 5).toString();
-            //ID,Section ID,Teacher ID,Subject ID
-            rows[n] = id+","+sectionId+","+teacherId+","+subjectId;
+        tab1.setBackground(Color.decode("#FBB9D3"));
+        tab2.setBackground(Color.decode("#FBB9D3"));
+        
+    }//GEN-LAST:event_tab3MouseClicked
+
+    private void jcbSchoolYear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSchoolYear2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbSchoolYear2ActionPerformed
+
+    private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
+        // TODO add your handling code here:
+        myCards.removeAll();
+        myCards.add(manageEnroleesTab);
+        myCards.repaint();
+        myCards.revalidate();
+
+        tab2.setBackground(Color.decode("#FDE8F0"));
+
+        tab1.setBackground(Color.decode("#FBB9D3"));
+        tab3.setBackground(Color.decode("#FBB9D3"));
+    }//GEN-LAST:event_tab2MouseClicked
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        Toolkit.getDefaultToolkit().beep();
+        ImageIcon ic = my.getImgIcn(myVariables.getMsgUrlIconWarning());
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to end your current session ?","Confirm",dialogButton,JOptionPane.WARNING_MESSAGE,ic);
+        
+        if(dialogResult == JOptionPane.YES_OPTION){
+            this.setVisible(false);
+            new login().setVisible(true);
         }
+    }//GEN-LAST:event_logoutActionPerformed
 
-        if(my.update_multiple_values("teacherloads", "id,sectionId,teacherId,subjectId", "teacherId = VALUES(teacherId)", rows)){
-            playSuccess();
-            my.showMessage("Update Succesfull.", JOptionPane.INFORMATION_MESSAGE);
-            btnSearchSectionHandler2(evt);
-        }else{
-            playError();
-            my.showMessage("Update Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_saveSubjectTeacherChanges
-
-    private void assignedTeacherTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignedTeacherTableMouseClicked
-        if(evt.getClickCount() == 2 && assignedTeacherTable.isEnabled()){
-            //Check if selected subject is on allowed subjects table
-            int row = assignedTeacherTable.getSelectedRow();
-            int selectedSubjectId = Integer.parseInt(assignedTeacherTable.getValueAt(row, 5).toString());
-
-            //Filter if user is not an admin
-            if(myVariables.getAccessLevel() != 5 && myVariables.getAccessLevel() != 4){
-                boolean matchFound = false;
-                for(int n=0;n<subjectTable.getRowCount();n++){
-                    int currentId = Integer.parseInt(subjectTable.getValueAt(n, 0).toString());
-                    if(selectedSubjectId == currentId){
-                        System.out.println("Selected subject is found on the list.");
-                        matchFound = true;
-                        break;
-                    }
-                }
-
-                if(!matchFound){
-                    Toolkit.getDefaultToolkit().beep();
-                    my.showMessage("This subject is not assigned to you.\nPlease [Refresh] your list below if you think this is an error.\nIf problem persists, please contact a REGISTRAR user.", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-            }else{
-                System.out.println("Admin account detected. All subjects are allowed to be assigned.");
-            }
-
-            if(subjectTeacherTab.getTabCount() <= 1){
-                subjectTeacherTab.addTab("Select Teacher", selectTeacherTab);
-                subjectTeacherTab.setSelectedIndex(1);
-            }
-        }else{
-            if(subjectTeacherTab.getTabCount() >= 2){
-                subjectTeacherTab.removeTabAt(1);
-            }
-        }
-    }//GEN-LAST:event_assignedTeacherTableMouseClicked
-
-    private void btnSearchSectionHandler2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSectionHandler2
-        String toSearch = tfSearchSection2.getText();
-        String schoolYear = jcbSchoolYear3.getSelectedItem().toString();
-
-        String where = "";
-
-        if(jcbSchoolYear3.getSelectedIndex() == 0){
-            where = "WHERE sectionName LIKE '%"+toSearch+"%'";
-        }else{
-            where = "WHERE sectionName LIKE '%"+toSearch+"%' AND schoolYear="+schoolYear;
-        }
-
-        my.searchItem(where, sectionsTable2, 4,null, new int [] {3,4,5}, true, true, lbSearchResult2, tfSearchSection2, true);
-        if(subjectTeacherTab.getTabCount() > 1){
-            subjectTeacherTab.removeTabAt(1);
-        }
-        my.clear_table_rows(assignedTeacherTable);
-
-        refreshListToEditHandler(evt);
-
-        enableDisableAssignSubjectTeacherFields(false, false,false);
-    }//GEN-LAST:event_btnSearchSectionHandler2
-
-    private void loadSubjectsContainedHandler(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loadSubjectsContainedHandler
+    private void sectionsTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sectionsTable2MouseClicked
+        // TODO add your handling code here:
         if(evt.getClickCount() == 2){
             int row = sectionsTable2.getSelectedRow();
             String subjectsContained = "";
             subjectsContained = sectionsTable2.getValueAt(row, 9) == null?null : sectionsTable2.getValueAt(row, 9).toString();
 
             if(subjectsContained == null || subjectsContained.length() <= 0){
-                Toolkit.getDefaultToolkit().beep();
                 my.showMessage("This section has no subjects added to it.\nPlease contact your curriculum head if you think this is an error.", JOptionPane.WARNING_MESSAGE);
                 my.clear_table_rows(assignedTeacherTable);
                 return;
@@ -2517,18 +2391,15 @@ public class dashBoard extends javax.swing.JFrame {
                 }
 
                 if(my.add_multiple_values("teacherLoads", "id,sectionId,teacherId,subjectId", values)){
-                    playSuccess();
                     my.showMessage("Finalizing Completed. You can now assign Subject Teachers to this section.", JOptionPane.INFORMATION_MESSAGE);
 
                     btnSearchSectionHandler2(my.getButtonPressedEvent(btnSearchSection2));
                     return;
                 }else{
-                    playError();
                     my.showMessage("Finalizing Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }else{
-                Toolkit.getDefaultToolkit().beep();
                 my.showMessage("Finalizing canceled.", JOptionPane.PLAIN_MESSAGE);
             }
             return;
@@ -2595,17 +2466,14 @@ public class dashBoard extends javax.swing.JFrame {
                 }
 
                 if(my.update_multiple_values("teacherloads", "id,sectionId,teacherId,subjectId", "teacherId = VALUES(teacherId)", values)){
-                    playSuccess();
                     my.showMessage("Finalizing Completed. You can now assign Subject Teachers to this section.", JOptionPane.INFORMATION_MESSAGE);
                     btnSearchSectionHandler2(new ActionEvent(btnSearchSection2,ActionEvent.ACTION_FIRST, ""));
                     return;
                 }else{
-                    playError();
                     my.showMessage("Finalizing Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }else{
-                Toolkit.getDefaultToolkit().beep();
                 my.showMessage("Finalizing canceled.", JOptionPane.PLAIN_MESSAGE);
             }
             break;
@@ -2631,67 +2499,100 @@ public class dashBoard extends javax.swing.JFrame {
                 subjectTeacherTab.removeTabAt(1);
             }
         }
-    }//GEN-LAST:event_loadSubjectsContainedHandler
+    }//GEN-LAST:event_sectionsTable2MouseClicked
 
-    
-   
-    private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
-        // TODO add your handling code here:
-        myCards.removeAll();
-        myCards.add(manageSectionsTab);
-        myCards.repaint();
-        myCards.revalidate();
+    private void btnSearchSectionHandler2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSectionHandler2
+        String toSearch = tfSearchSection2.getText();
+        String schoolYear = jcbSchoolYear3.getSelectedItem().toString();
 
-        tab1.setBackground(Color.decode("#FDE8F0"));
+        String where = "";
 
-        tab2.setBackground(Color.decode("#FBB9D3"));
-        tab3.setBackground(Color.decode("#FBB9D3"));
-      
-    }//GEN-LAST:event_tab1MouseClicked
-
-    private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-        // TODO add your handling code here:
-        myCards.removeAll();
-        myCards.add(assignSubjectTeacherTab);
-        myCards.repaint();
-        myCards.revalidate();
-
-        tab3.setBackground(Color.decode("#FDE8F0"));
-
-        tab1.setBackground(Color.decode("#FBB9D3"));
-        tab2.setBackground(Color.decode("#FBB9D3"));
-        
-    }//GEN-LAST:event_tab3MouseClicked
-
-    private void jcbSchoolYear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSchoolYear2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcbSchoolYear2ActionPerformed
-
-    private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-        // TODO add your handling code here:
-        myCards.removeAll();
-        myCards.add(manageEnroleesTab);
-        myCards.repaint();
-        myCards.revalidate();
-
-        tab2.setBackground(Color.decode("#FDE8F0"));
-
-        tab1.setBackground(Color.decode("#FBB9D3"));
-        tab3.setBackground(Color.decode("#FBB9D3"));
-    }//GEN-LAST:event_tab2MouseClicked
-
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-        Toolkit.getDefaultToolkit().beep();
-        ImageIcon ic = my.getImgIcn(myVariables.getMsgUrlIconWarning());
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to end your current session ?","Confirm",dialogButton,JOptionPane.WARNING_MESSAGE,ic);
-        
-        if(dialogResult == JOptionPane.YES_OPTION){
-            this.setVisible(false);
-            new login().setVisible(true);
+        if(jcbSchoolYear3.getSelectedIndex() == 0){
+            where = "WHERE sectionName LIKE '%"+toSearch+"%'";
+        }else{
+            where = "WHERE sectionName LIKE '%"+toSearch+"%' AND schoolYear="+schoolYear;
         }
-    }//GEN-LAST:event_logoutActionPerformed
+
+        my.searchItem(where, sectionsTable2, 4,null, new int [] {3,4,5}, true, true, lbSearchResult2, tfSearchSection2, true);
+        if(subjectTeacherTab.getTabCount() > 1){
+            subjectTeacherTab.removeTabAt(1);
+        }
+        my.clear_table_rows(assignedTeacherTable);
+
+//        refreshListToEditHandler(evt);
+
+        enableDisableAssignSubjectTeacherFields(false, false,false);
+    }//GEN-LAST:event_btnSearchSectionHandler2
+
+    private void assignedTeacherTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assignedTeacherTableMouseClicked
+        if(evt.getClickCount() == 2 && assignedTeacherTable.isEnabled()){
+            //Check if selected subject is on allowed subjects table
+            int row = assignedTeacherTable.getSelectedRow();
+            int selectedSubjectId = Integer.parseInt(assignedTeacherTable.getValueAt(row, 5).toString());
+
+            //Filter if user is not an admin
+            if(myVariables.getAccessLevel() != 5 && myVariables.getAccessLevel() != 4){
+                boolean matchFound = false;
+                //                for(int n=0;n<subjectTable.getRowCount();n++){
+                    //                    int currentId = Integer.parseInt(subjectTable.getValueAt(n, 0).toString());
+                    //                    if(selectedSubjectId == currentId){
+                        //                        System.out.println("Selected subject is found on the list.");
+                        //                        matchFound = true;
+                        //                        break;
+                        //                    }
+                    //                }
+
+                if(!matchFound){
+                    Toolkit.getDefaultToolkit().beep();
+                    my.showMessage("This subject is not assigned to you.\nPlease [Refresh] your list below if you think this is an error.\nIf problem persists, please contact a REGISTRAR user.", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+            }else{
+                System.out.println("Admin account detected. All subjects are allowed to be assigned.");
+            }
+
+            if(subjectTeacherTab.getTabCount() <= 1){
+                subjectTeacherTab.addTab("Select Teacher", selectTeacherTab);
+                subjectTeacherTab.setSelectedIndex(1);
+            }
+        }else{
+            if(subjectTeacherTab.getTabCount() >= 2){
+                subjectTeacherTab.removeTabAt(1);
+            }
+        }
+    }//GEN-LAST:event_assignedTeacherTableMouseClicked
+
+    private void saveSubjectTeacherChanges(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSubjectTeacherChanges
+        //Get Values
+        int sectionRow = sectionsTable2.getSelectedRow();
+
+        String sectionId = sectionsTable2.getValueAt(sectionRow, 0).toString();
+        int count = assignedTeacherTable.getRowCount();
+
+        String [] rows = new String[count];
+        for(int n=0;n<count;n++){
+            String id = assignedTeacherTable.getValueAt(n, 0).toString();
+            String teacherId = assignedTeacherTable.getValueAt(n, 2).toString();
+            String subjectId = assignedTeacherTable.getValueAt(n, 5).toString();
+            //ID,Section ID,Teacher ID,Subject ID
+            rows[n] = id+","+sectionId+","+teacherId+","+subjectId;
+        }
+
+        if(my.update_multiple_values("teacherloads", "id,sectionId,teacherId,subjectId", "teacherId = VALUES(teacherId)", rows)){
+            playSuccess();
+            my.showMessage("Update Succesfull.", JOptionPane.INFORMATION_MESSAGE);
+            btnSearchSectionHandler2(evt);
+        }else{
+            playError();
+            my.showMessage("Update Failed. Please make sure you are connected to the school network.", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_saveSubjectTeacherChanges
+
+    private void btnEditSubjectTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditSubjectTeacherActionPerformed
+        enableDisableAssignSubjectTeacherFields(false, true, true);
+
+        assignedTeacherTable.setRowSelectionInterval(0, 0);
+    }//GEN-LAST:event_btnEditSubjectTeacherActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2811,7 +2712,7 @@ public class dashBoard extends javax.swing.JFrame {
             my.hideColumns(sectionsTable2, new int [] {0,2,5,7,9});
             my.hideColumns(assignedTeacherTable, new int [] {0,1,2,5});
             my.hideColumns(usersTable2, new int[] {0});
-            my.hideColumns(subjectTable, new int [] {0});
+//            my.hideColumns(subjectTable, new int [] {0});
         }
         
         //Set table fonts
@@ -2829,7 +2730,7 @@ public class dashBoard extends javax.swing.JFrame {
             sectionsTable2,
             assignedTeacherTable,
             usersTable2,
-            subjectTable,
+//            subjectTable,
         };
         //customizeTableColumnColors(sf1SectionTable, new int [] {0,1,2,3}, Color.RED,Color.WHITE,new Font("Segoe UI",Font.PLAIN,11),true);
         //customHeaders(sf1SectionTable, new int []{0,1,2,3}, Color.RED, Color.WHITE, new Font("Comic Sans MS", Font.BOLD, 12), true);
@@ -2899,7 +2800,7 @@ public class dashBoard extends javax.swing.JFrame {
             btnAssignTeacher,
             btnNone,
             
-            btnRefreshList,
+//            btnRefreshList,
         };
         
         JButton lightButtons [] = {
@@ -2937,7 +2838,7 @@ public class dashBoard extends javax.swing.JFrame {
         };
         
         JLabel formsHeaderLabels [] = {
-            jLabel4,jLabel12,jLabel14,jLabel16,
+            jLabel4,jLabel12,jLabel14,
         };
         JLabel textFieldHeaderLabels [] = {
             jLabel5,jLabel6,jLabel7,jLabel8,jLabel9,jLabel10,jLabel13,jLabel11,jLabel15,
@@ -3088,14 +2989,21 @@ public class dashBoard extends javax.swing.JFrame {
     columnModelSectionsTable1.getColumn(4).setPreferredWidth(180);
     
     TableColumnModel columnModelUsersTable1 = usersTable1.getColumnModel();
-    columnModelUsersTable1.getColumn(1).setPreferredWidth(180);
-    columnModelUsersTable1.getColumn(2).setPreferredWidth(150);
-    columnModelUsersTable1.getColumn(3).setPreferredWidth(180);
+    columnModelUsersTable1.getColumn(1).setPreferredWidth(260);
+    columnModelUsersTable1.getColumn(2).setPreferredWidth(260);
+    columnModelUsersTable1.getColumn(3).setPreferredWidth(260);
+    
+     TableColumnModel columnModelUsersTable2 = usersTable2.getColumnModel();
+    columnModelUsersTable2.getColumn(0).setPreferredWidth(260);
+    columnModelUsersTable2.getColumn(1).setPreferredWidth(260);
+    columnModelUsersTable2.getColumn(2).setPreferredWidth(260);
+    columnModelUsersTable2.getColumn(3).setPreferredWidth(260);
+
     
     TableColumnModel columnModelUsersTable = usersTable.getColumnModel();
-    columnModelUsersTable.getColumn(1).setPreferredWidth(150);
-    columnModelUsersTable.getColumn(2).setPreferredWidth(150);
-    columnModelUsersTable.getColumn(3).setPreferredWidth(150);
+    columnModelUsersTable.getColumn(1).setPreferredWidth(260);
+    columnModelUsersTable.getColumn(2).setPreferredWidth(260);
+    columnModelUsersTable.getColumn(3).setPreferredWidth(260);
 
     TableColumnModel columnModelSectionsTable2 = sectionsTable2.getColumnModel();
     columnModelSectionsTable2.getColumn(1).setPreferredWidth(150);
@@ -3109,14 +3017,19 @@ public class dashBoard extends javax.swing.JFrame {
     columnModelSectionsTable2.getColumn(9).setPreferredWidth(180);
     
     TableColumnModel columnModelAssignedTeacherTable = assignedTeacherTable.getColumnModel();
-    columnModelAssignedTeacherTable.getColumn(1).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(2).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(3).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(4).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(5).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(6).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(150);
-    columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(150);
+    columnModelAssignedTeacherTable.getColumn(1).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(2).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(3).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(4).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(5).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(6).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(7).setPreferredWidth(260);
+    columnModelAssignedTeacherTable.getColumn(8).setPreferredWidth(260);
+    
+//    TableColumnModel columnModelSubjectTable = subjectTable.getColumnModel();
+//    columnModelSubjectTable.getColumn(1).setPreferredWidth(260);
+//    columnModelSubjectTable.getColumn(2).setPreferredWidth(260);
+//    columnModelSubjectTable.getColumn(3).setPreferredWidth(260);
 
 
 
@@ -3133,7 +3046,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JButton btnEditSubjectTeacher;
     private javax.swing.JButton btnEnrollStudent;
     private javax.swing.JButton btnNone;
-    private javax.swing.JButton btnRefreshList;
     private javax.swing.JButton btnSaveSectionChanges;
     private javax.swing.JButton btnSaveSubjectTeacherChanges;
     private javax.swing.JButton btnSearchLoad;
@@ -3152,12 +3064,12 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable enrollmentTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -3175,6 +3087,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
@@ -3185,7 +3098,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
@@ -3237,8 +3149,8 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable sectionsTable1;
     private javax.swing.JTable sectionsTable2;
     private javax.swing.JPanel selectTeacherTab;
+    private javax.swing.JComboBox<String> strandSelect;
     private javax.swing.JTable studentTable;
-    private javax.swing.JTable subjectTable;
     private javax.swing.JTabbedPane subjectTeacherTab;
     private javax.swing.JPanel tab1;
     private javax.swing.JLabel tab1Label;

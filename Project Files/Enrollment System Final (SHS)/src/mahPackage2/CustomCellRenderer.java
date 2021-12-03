@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class CustomCellRenderer extends DefaultTableCellRenderer{
     Color bkgndColor, fgndColor,selectFC,selectBC;

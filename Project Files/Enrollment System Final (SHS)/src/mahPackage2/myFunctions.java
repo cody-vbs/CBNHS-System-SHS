@@ -84,7 +84,7 @@ public class myFunctions {
     //</editor-fold>
     //<editor-fold desc="TABLE FUNCTIONS">
     /**
-    * By: <b>Phil Rey E. Paderogao</b>
+    * By: <b>Syd</b>
     * <p>
     * Searches an <b>ITEM_TO_SEARCH</b> from the database from the selected TABLE_INDEX. <b>LODI</b>
     * 
@@ -157,6 +157,7 @@ public class myFunctions {
             
             if(resultText!= null){
                 resultText.setText("Showing "+result.length+" result(s) for '"+searchField.getText()+"'.");
+                System.out.println(result.length);
             }
         }else{
             showMessage("No Results found.", JOptionPane.PLAIN_MESSAGE);
@@ -166,7 +167,7 @@ public class myFunctions {
         }
     }
     /**
-    * By: <b>Phil Rey E. Paderogao</b>
+    * By: <b>Syd</b>
     * <p>
     * Centers all of the <b>TABLE_NAME's</b> Headers & columns
     * 
@@ -178,7 +179,7 @@ public class myFunctions {
         centerAllColumns(tableName, cellRenderer);
     }
     /**
-    * By: <b>Phil Rey E. Paderogao</b>
+    * By: <b>Syd</b>
     * <p>
     * Centers all of the <b>TABLE_NAME's</b> Headers and with a selected number of columns to center
     * 
@@ -664,7 +665,7 @@ public class myFunctions {
         return toConvert;
     }
     public String multipleColumnSearch(String columnValues, String columnValuesOnDisplay, String logOperatorPerColumn, String toSearch){
-        String [] values = toSearch.split(",");                         //Paderogao,Phil Rey,Estrella
+        String [] values = toSearch.split(",");                         //Ricafort,Sydney,Pacana
         String [] columns = columnValues.split(",");                    //lName,fName,mName
         String [] logicalOperators = logOperatorPerColumn.split(",");   //=,=,LIKE
         int valLength = values.length;

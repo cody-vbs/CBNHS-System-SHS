@@ -16,7 +16,7 @@ import javax.swing.JProgressBar;
 
 /**
  *
- * @author Phil Rey
+ * @author Syd
  */
 public class myVariables {
     private static boolean debugModeOn = false;
@@ -83,7 +83,7 @@ public class myVariables {
     private static final int [] subjectLoadsOrder = new int [] {0,3,2,1};
     private static final int [] sectionsOrder = new int [] {9,0,4,6,5,10,1,2,11,7,8,3};
     
-    private static final int [] enrollmentViewOrder = new int [] {15,7,3,0,9,16,1,5,8,11,4,2,17,10,6,12,13,14};
+    private static int [] enrollmentViewOrder = new int [] {16,7,3,0,9,16,1,5,8,11,4,2,17,12,6,13,10,14,15};
     private static final int [] enrollmentViewMinimalOrder = new int [] {5,0,4,1,2,7,3,6};
     private static final int [] teacherLoadsViewOrder = new int [] {6,7,1,4,3,8,2,10,9,5,0};
     private static final int [] managedSubjectsViewOrder = new int [] {10,4,6,8,2,1,11,0,5,12,3,7,9};
@@ -93,7 +93,7 @@ public class myVariables {
     private static final int [] sf2StudentListViewOrder = new int [] {4,5,0,2,6,1,3};
     private static final int [] sf2StudentListViewOrderRev2 = new int [] {4,5,0,2,6,1,3,7};
     private static final int [] attendanceOrder = new int [] {2,0,3,4,6,5,1};
-    private static final int [] subjectOrder = new int[] {2,3,1,0};
+    private static final int [] subjectOrder = new int[] {3,4,1,0,2};
     private static final int [] booksViewOrder = new int [] {14,21,8,0,4,23,1,3,9,12,7,5,19,24,2,17,26,20,16,18,25,13,22,6,15,10,11};
     
     //Icons

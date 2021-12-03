@@ -439,7 +439,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         //Remove Unnecessary Columns
                         line = my.skipColumns(line, new int [] {0,1,2});
                         //Write to excel file
-                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(n+7));
+                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(n+8));
                         
                         Thread.sleep(threadDelay);
                     }

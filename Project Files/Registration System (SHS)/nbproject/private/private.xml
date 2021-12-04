@@ -2,6 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
             <file>file:/C:/Users/syd/Documents/NetBeansProjects/Registration%20System%20(SHS)/src/mahPackage/thread_registerSf1.java</file>
             <file>file:/C:/Users/syd/Documents/NetBeansProjects/Registration%20System%20(SHS)/src/mahPackage/logs.png</file>
@@ -17,5 +20,6 @@
             <file>file:/C:/Users/syd/Documents/NetBeansProjects/Registration%20System%20(SHS)/src/mahPackage/custom_styledButtonUI.java</file>
             <file>file:/C:/Users/syd/Documents/NetBeansProjects/Registration%20System%20(SHS)/src/mahPackage/myFunctions.java</file>
         </group>
+>>>>>>> master
     </open-files>
 </project-private>

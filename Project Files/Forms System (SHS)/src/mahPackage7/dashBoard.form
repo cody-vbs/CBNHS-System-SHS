@@ -1708,20 +1708,27 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Component id="jdcFirstDayOfFridate" min="-2" pref="117" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel101" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="tfMaleCount" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                              <Component id="jLabel10" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                              <Component id="jdcFirstDayOfFridate" min="-2" pref="117" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="tfMaleCount" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                                      <Component id="jLabel10" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="tfFemaleCount" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                                      <Component id="jLabel11" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="tfTotalCount" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                              <Component id="jLabel12" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                              <Component id="semesterSelect" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="tfFemaleCount" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                              <Component id="jLabel11" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="tfTotalCount" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1752,13 +1759,17 @@
                                       <Component id="tfGradeLevel" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="tfSchoolYear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jdcFirstDayOfFridate" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="semesterSelect" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
@@ -1779,7 +1790,7 @@
                                   <Component id="btnLoadStudents" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnExportSf1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="153" max="32767" attributes="0"/>
+                                  <EmptySpace pref="75" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1940,6 +1951,24 @@
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
                             <Property name="horizontalAlignment" type="int" value="0"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="semesterSelect">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="1st semester"/>
+                                <StringItem index="1" value="2nd semester"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel101">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Semester"/>
                           </Properties>
                         </Component>
                       </SubComponents>

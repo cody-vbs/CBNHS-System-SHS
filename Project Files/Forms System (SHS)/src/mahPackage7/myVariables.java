@@ -29,6 +29,8 @@ public class myVariables {
     private static String divisionRepresentative = "Default_Representative";
     private static String divisionSuperintendent = "Default_Superintendent";
     private static String schoolAddress = "Default_School_Address";
+    private static String strandName = "Default_Strand_Name";
+    private static String sem = "Default_SEM";
     
     private static int processingSpeed = 0;
     //Fonts
@@ -106,7 +108,7 @@ public class myVariables {
     private static final int [] subjectOrder = new int[] {4,5,2,1,3,0};
     
     //School Form Views
-    private static final int [] jhsf1Order= new int [] {18,12,8,7,1,13,19,5,15,20,22,6,14,4,9,10,0,3,16,2,11,17,21};
+    private static final int [] jhsf1Order= new int [] {4,15,10,14,1,5,21,12,19,22,24,13,7,11,16,17,0,3,20,2,18,8,23,6,9};
     private static final int [] jhsf2Order= new int [] {5,6,0,1,2,7,3,4,8};
     private static final int [] jhsf3Order= new int [] {4,5,0,1,2,6,3};
     private static final int [] jhsf5MinimalOrder=new int [] {11,4,8,7,3,0,9,12,2,13,1,10,5,6};
@@ -816,6 +818,26 @@ public class myVariables {
     public static void setDivisionSuperintendent(String divisionSuperintendent) {
         myVariables.divisionSuperintendent = divisionSuperintendent;
     }
+
+    public static String getStrandName() {
+        return strandName;
+    }
+
+    public static void setStrandName(String strandName) {
+        myVariables.strandName = strandName;
+    }
+
+    public static String getSem() {
+        return sem;
+    }
+
+    public static void setSem(String sem) {
+        myVariables.sem = sem;
+    }
+    
+    
+    
+    
     
     public static long [] getProcessingSpeedValue(){
         switch (getProcessingSpeed()){

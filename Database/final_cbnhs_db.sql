@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 06:26 AM
+-- Generation Time: Dec 11, 2021 at 03:21 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -431,6 +431,7 @@ CREATE TABLE `enrollment` (
   `dateEnrolled` datetime NOT NULL DEFAULT current_timestamp(),
   `remarks` varchar(1000) NOT NULL DEFAULT ' ! !',
   `strand` varchar(10) DEFAULT NULL,
+  `sem` varchar(15) DEFAULT NULL,
   `dep_type` varchar(10) NOT NULL DEFAULT 'JHS'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -438,29 +439,29 @@ CREATE TABLE `enrollment` (
 -- Dumping data for table `enrollment`
 --
 
-INSERT INTO `enrollment` (`id`, `studentId`, `sectionId`, `dateEnrolled`, `remarks`, `strand`, `dep_type`) VALUES
-(2, 9, 4, '2021-09-28 22:45:09', ' ! !', 'ABM', 'SHS'),
-(3, 3, 4, '2021-09-29 09:16:53', ' ! !', 'ABM', 'SHS'),
-(4, 4, 4, '2021-09-29 09:17:41', ' ! !', 'ABM', 'SHS'),
-(5, 5, 4, '2021-09-29 09:17:53', ' ! !', 'ABM', 'SHS'),
-(6, 6, 4, '2021-09-29 09:18:10', ' ! !', 'ABM', 'SHS'),
-(7, 7, 4, '2021-09-29 09:18:18', ' ! !', 'ABM', 'SHS'),
-(8, 8, 4, '2021-09-29 09:18:26', ' ! !', 'ABM', 'SHS'),
-(9, 10, 4, '2021-09-29 09:18:43', ' ! !', 'ABM', 'SHS'),
-(10, 11, 4, '2021-09-29 09:18:58', ' ! !', 'ABM', 'SHS'),
-(11, 12, 4, '2021-09-29 09:19:09', ' ! !', 'ABM', 'SHS'),
-(12, 13, 4, '2021-09-29 09:19:18', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(13, 14, 4, '2021-09-29 09:19:34', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(14, 15, 4, '2021-09-29 09:19:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(15, 16, 4, '2021-09-29 09:19:53', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(16, 17, 4, '2021-09-29 09:20:03', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(17, 18, 4, '2021-09-29 09:20:14', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(18, 19, 4, '2021-09-29 09:20:25', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(19, 20, 4, '2021-09-29 09:20:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(20, 21, 4, '2021-09-29 09:20:52', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(21, 22, 4, '2021-09-29 09:21:02', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(22, 23, 4, '2021-09-29 09:21:11', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', 'SHS'),
-(23, 4, 6, '2021-11-25 20:35:06', ' ! !', 'HUMMS', 'SHS');
+INSERT INTO `enrollment` (`id`, `studentId`, `sectionId`, `dateEnrolled`, `remarks`, `strand`, `sem`, `dep_type`) VALUES
+(2, 9, 4, '2021-09-28 22:45:09', ' ! !', 'ABM', '1st semester', 'SHS'),
+(3, 3, 4, '2021-09-29 09:16:53', ' ! !', 'ABM', '1st semester', 'SHS'),
+(4, 4, 4, '2021-09-29 09:17:41', ' ! !', 'ABM', '1st semester', 'SHS'),
+(5, 5, 4, '2021-09-29 09:17:53', ' ! !', 'ABM', '1st semester', 'SHS'),
+(6, 6, 4, '2021-09-29 09:18:10', ' ! !', 'ABM', '1st semester', 'SHS'),
+(7, 7, 4, '2021-09-29 09:18:18', ' ! !', 'ABM', '1st semester', 'SHS'),
+(8, 8, 4, '2021-09-29 09:18:26', ' ! !', 'ABM', '1st semester', 'SHS'),
+(9, 10, 4, '2021-09-29 09:18:43', ' ! !', 'ABM', '1st semester', 'SHS'),
+(10, 11, 4, '2021-09-29 09:18:58', ' ! !', 'ABM', '1st semester', 'SHS'),
+(11, 12, 4, '2021-09-29 09:19:09', ' ! !', 'ABM', '1st semester', 'SHS'),
+(12, 13, 4, '2021-09-29 09:19:18', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '2nd semester', 'SHS'),
+(13, 14, 4, '2021-09-29 09:19:34', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(14, 15, 4, '2021-09-29 09:19:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(15, 16, 4, '2021-09-29 09:19:53', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(16, 17, 4, '2021-09-29 09:20:03', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(17, 18, 4, '2021-09-29 09:20:14', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(18, 19, 4, '2021-09-29 09:20:25', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(19, 20, 4, '2021-09-29 09:20:43', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(20, 21, 4, '2021-09-29 09:20:52', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(21, 22, 4, '2021-09-29 09:21:02', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(22, 23, 4, '2021-09-29 09:21:11', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
+(23, 4, 6, '2021-11-25 20:35:06', ' ! !', 'HUMMS', '1st semester', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -502,6 +503,13 @@ CREATE TABLE `finalgrades` (
   `dateUpdated` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `finalgrades`
+--
+
+INSERT INTO `finalgrades` (`id`, `sectionId`, `studentId`, `generalAverage`, `actionTaken`, `failedSubjects`, `dateUpdated`) VALUES
+(1, 6, 4, 88, 'Passed', '', '2021-11-27 00:38:45');
+
 -- --------------------------------------------------------
 
 --
@@ -532,6 +540,40 @@ CREATE TABLE `form_sf1_view` (
 ,`rltnshp` varchar(100)
 ,`contact` varchar(20)
 ,`remarks` varchar(1000)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `form_sf1_view_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf1_view_shs` (
+`id` int(11)
+,`studentId` int(11)
+,`sectionId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
+,`bDate` date
+,`age` int(11)
+,`mTongue` varchar(500)
+,`ip` varchar(500)
+,`rlgn` varchar(500)
+,`houseN` varchar(1000)
+,`brgy` varchar(200)
+,`mncpl` varchar(200)
+,`prvnce` varchar(200)
+,`fathersName` varchar(500)
+,`mothersName` varchar(500)
+,`gName` varchar(500)
+,`rltnshp` varchar(100)
+,`contact` varchar(20)
+,`remarks` varchar(1000)
+,`strand` varchar(10)
+,`sem` varchar(15)
 );
 
 -- --------------------------------------------------------
@@ -711,6 +753,29 @@ CREATE TABLE `form_sf9_view` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `form_sf9_view_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf9_view_shs` (
+`id` int(11)
+,`studentId` int(11)
+,`sectionId` int(11)
+,`subjectId` int(11)
+,`subjectCode` varchar(200)
+,`description` varchar(500)
+,`firstQuarter` varchar(11)
+,`secondQuarter` varchar(11)
+,`thirdQuarter` varchar(11)
+,`fourthQuarter` varchar(11)
+,`gwa` varchar(11)
+,`status` varchar(100)
+,`sem` varchar(15)
+,`dateUpdated` datetime
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `form_sf10_view`
 -- (See below for the actual view)
 --
@@ -736,6 +801,37 @@ CREATE TABLE `form_sf10_view` (
 ,`schoolYear` int(11)
 ,`remarks` varchar(1000)
 ,`dateEnrolled` datetime
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `form_sf10_view_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf10_view_shs` (
+`id` int(11)
+,`studentId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
+,`sectionId` int(11)
+,`sectionName` varchar(50)
+,`adviserId` int(11)
+,`user_Lname` varchar(200)
+,`user_Fname` varchar(200)
+,`user_Mname` varchar(200)
+,`gender` varchar(12)
+,`loadId` int(11)
+,`loadName` varchar(200)
+,`gradeLevel` int(11)
+,`subjectsContained` varchar(500)
+,`schoolYear` int(11)
+,`remarks` varchar(1000)
+,`dateEnrolled` datetime
+,`strand` varchar(10)
 );
 
 -- --------------------------------------------------------
@@ -772,7 +868,31 @@ INSERT INTO `grades` (`id`, `studentId`, `sectionId`, `subjectId`, `firstQuarter
 (7, 3, 3, 66, '90', '', '', '', '22', 'Closed:Open:Open:Open:Incomplete:', '2021-09-27 19:57:07'),
 (8, 13, 4, 68, '92', '', '', '', '23', 'Closed:Open:Open:Open:Incomplete:', '2021-09-29 09:41:52'),
 (9, 18, 4, 68, '93', '', '', '', '23', 'Closed:Open:Open:Open:Incomplete:', '2021-09-29 09:42:43'),
-(10, 20, 4, 68, '94', '', '', '', '23', 'Closed:Open:Open:Open:Incomplete:', '2021-09-29 09:41:52');
+(10, 20, 4, 68, '94', '', '', '', '23', 'Closed:Open:Open:Open:Incomplete:', '2021-09-29 09:41:52'),
+(11, 13, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 22:44:43'),
+(12, 4, 6, 65, '87', '88', '', '', '87', 'Open:Open:Passed:', '2021-11-26 23:06:59'),
+(13, 18, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:02:33'),
+(14, 7, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:02:35'),
+(15, 20, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:02:36'),
+(16, 9, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:02:43'),
+(17, 16, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:02:45'),
+(18, 10, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:02:47'),
+(19, 14, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:03:18'),
+(20, 4, 6, 69, '90', '87', '', '', '88', 'Open:Open:Passed:', '2021-11-26 23:06:07'),
+(21, 4, 6, 70, '90', '90', '', '', '90', 'Open:Open:Passed:', '2021-11-26 23:06:38'),
+(22, 21, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:07:41'),
+(23, 12, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:07:49'),
+(24, 3, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:07:54'),
+(25, 19, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:08:02'),
+(26, 17, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:09:02'),
+(27, 15, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-26 23:09:07'),
+(28, 6, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:27'),
+(29, 22, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:32'),
+(30, 5, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:38'),
+(31, 4, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:43'),
+(32, 11, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:51'),
+(33, 23, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:58'),
+(34, 8, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:35:03');
 
 -- --------------------------------------------------------
 
@@ -1325,7 +1445,7 @@ INSERT INTO `teacherloads` (`id`, `sectionId`, `teacherId`, `subjectId`, `timeSt
 (23, 4, 23, 68, '07:00:00', '08:00:00'),
 (24, 4, 23, 71, '07:00:00', '08:00:00'),
 (25, 4, 21, 72, '07:00:00', '08:00:00'),
-(26, 4, -1, 73, '07:00:00', '08:00:00'),
+(26, 4, 23, 73, '07:00:00', '08:00:00'),
 (27, 4, 20, 74, '07:00:00', '08:00:00');
 
 -- --------------------------------------------------------
@@ -1570,6 +1690,25 @@ CREATE TABLE `v_enrollment_mini_wbdate_shs` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `v_enrollment_mini_wbdate_shs_wstrand`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_enrollment_mini_wbdate_shs_wstrand` (
+`id` int(11)
+,`studentId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
+,`bDate` varchar(10)
+,`sectionId` int(11)
+,`strand` varchar(10)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `v_enrollment_shs`
 -- (See below for the actual view)
 --
@@ -1593,6 +1732,7 @@ CREATE TABLE `v_enrollment_shs` (
 ,`schoolYear` int(11)
 ,`dateEnrolled` datetime
 ,`strand` varchar(10)
+,`sem` varchar(15)
 );
 
 -- --------------------------------------------------------
@@ -1935,6 +2075,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `form_sf1_view_shs`
+--
+DROP TABLE IF EXISTS `form_sf1_view_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf1_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `enrollment`.`sectionId` AS `sectionId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `personalinfo`.`bDate` AS `bDate`, `personalinfo`.`age` AS `age`, `personalinfo`.`mTongue` AS `mTongue`, `personalinfo`.`ip` AS `ip`, `personalinfo`.`rlgn` AS `rlgn`, `personalinfo`.`houseN` AS `houseN`, `personalinfo`.`brgy` AS `brgy`, `personalinfo`.`mncpl` AS `mncpl`, `personalinfo`.`prvnce` AS `prvnce`, `personalinfo`.`fName` AS `fathersName`, `personalinfo`.`mName` AS `mothersName`, `personalinfo`.`gName` AS `gName`, `personalinfo`.`rltnshp` AS `rltnshp`, `personalinfo`.`contact` AS `contact`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `form_sf2_view`
 --
 DROP TABLE IF EXISTS `form_sf2_view`;
@@ -2007,11 +2156,29 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `form_sf9_view_shs`
+--
+DROP TABLE IF EXISTS `form_sf9_view_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf9_view_shs`  AS SELECT `grades`.`id` AS `id`, `grades`.`studentId` AS `studentId`, `grades`.`sectionId` AS `sectionId`, `grades`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `grades`.`firstQuarter` AS `firstQuarter`, `grades`.`secondQuarter` AS `secondQuarter`, `grades`.`thirdQuarter` AS `thirdQuarter`, `grades`.`fourthQuarter` AS `fourthQuarter`, `grades`.`gwa` AS `gwa`, `grades`.`status` AS `status`, `subjects`.`sem` AS `sem`, `grades`.`dateUpdated` AS `dateUpdated` FROM (`grades` left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) ORDER BY `grades`.`sectionId` DESC, `grades`.`studentId` ASC ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `form_sf10_view`
 --
 DROP TABLE IF EXISTS `form_sf10_view`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `loadName`, `loads`.`c_gradeLevel` AS `gradeLevel`, `loads`.`d_subjectsContained` AS `subjectsContained`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`dateEnrolled` AS `dateEnrolled` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `enrollment`.`studentId` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`schoolYear` ASC, `enrollment`.`dateEnrolled` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `form_sf10_view_shs`
+--
+DROP TABLE IF EXISTS `form_sf10_view_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `loadName`, `loads`.`c_gradeLevel` AS `gradeLevel`, `loads`.`d_subjectsContained` AS `subjectsContained`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `enrollment`.`studentId` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`schoolYear` ASC, `enrollment`.`dateEnrolled` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2088,11 +2255,20 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `v_enrollment_mini_wbdate_shs_wstrand`
+--
+DROP TABLE IF EXISTS `v_enrollment_mini_wbdate_shs_wstrand`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs_wstrand`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`strand` AS `strand` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `v_enrollment_shs`
 --
 DROP TABLE IF EXISTS `v_enrollment_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `enrollment`.`dep_type` = 'SHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `enrollment`.`dep_type` = 'SHS' ;
 
 -- --------------------------------------------------------
 
@@ -2445,13 +2621,13 @@ ALTER TABLE `enrollment_static`
 -- AUTO_INCREMENT for table `finalgrades`
 --
 ALTER TABLE `finalgrades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `grades_static`

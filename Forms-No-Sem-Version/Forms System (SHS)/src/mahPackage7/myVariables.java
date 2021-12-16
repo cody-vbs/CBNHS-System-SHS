@@ -116,7 +116,9 @@ public class myVariables {
     private static final int [] jhsf7TeachersOrder= new int [] {10,6,5,3,12,0,7,11,2,4,8,1,9};
     private static final int [] jhsf7LoadsOrder= new int [] {5,2,6,0,8,7,3,1,4};
     private static final int [] jhsf8Order= new int [] {12,7,6,4,0,9,13,10,3,1,15,5,16,14,17,8,2,11};
-    private static final int [] shsf8Order= new int [] {13,7,6,4,0,9,14,11,3,1,16,5,17,15,18,8,2,12,10};
+  //  private static final int [] shsf8Order= new int [] {13,7,6,4,0,9,14,11,3,1,16,5,17,15,18,8,2,12,10};
+    private static final int [] shsf8Order= new int [] {14,7,6,4,0,9,15,11,3,1,17,5,18,16,19,8,2,12,10,13};
+    private static final int [] shsf8Order2= new int [] {14,7,6,4,0,9,15,11,3,1,17,5,18,16,19,8,2,12,10,13};
     private static final int [] jhsf9Order= new int [] {9,7,3,5,11,2,0,10,1,4,8,12,6};
     private static final int [] shsf9Order= new int [] {10,7,3,5,12,2,0,11,1,4,8,13,9,6};
     private static final int [] jhsf10Order= new int [] {17,9,5,0,12,18,2,7,10,14,6,3,19,1,13,8,11,4,15,20,16};
@@ -747,6 +749,10 @@ public class myVariables {
      public static int[] getShsf8Order() {
         return shsf8Order;
     }
+    //strand8 
+    public static int[] getShsf8Order2() {
+        return shsf8Order2;
+    } 
      
     public static void setSelectAllSectionsForSf6(boolean selectAllSectionsForSf6) {    
         myVariables.selectAllSectionsForSf6 = selectAllSectionsForSf6;

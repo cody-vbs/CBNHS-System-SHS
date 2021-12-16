@@ -74,6 +74,10 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
         long [] threadSpeeds = myVariables.getProcessingSpeedValue();
         threadDelay = threadSpeeds[0];
         pauseDelay = threadSpeeds[1];
+        //strand8
+         my.getStrandFromSectionID("form_sf8_view_shs","WHERE sectionId='"+sectionId+"'",myVariables.getShsf8Order2());
+         String getStrand8 = myVariables.getStrandName();     
+         tfStrand8.setText(getStrand8);
     }
     
     @Override
@@ -107,7 +111,7 @@ public class thread_loadSf8Details extends SwingWorker<String, Object>{
                 
                 result[n] = my.toNameFormat(result[n], new int []{4,5,6});
                 my.add_table_row(result[n], sf8Table);
-                tfStrand8.setText(" ");
+      
                 Thread.sleep(threadDelay);
             }
             

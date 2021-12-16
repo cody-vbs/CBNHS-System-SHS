@@ -993,8 +993,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         //Get line
                         String line = my.get_table_row_values(n, sf8Table);
                         gender = my.getValueAtColumn(line, 6);
-                        line = (n+1)+"@@"+my.skipColumns(line, new int[]{0,1,2,6,7,15});
-                        
+                        line = (n+1)+"@@"+my.skipColumns(line, new int[]{0,1,2,6,7,15,16,17}); //0,1,2,6,7,15
                         if(!firstFemaleFound){
                             if(gender.contains("Female")){
                                 firstFemaleFound = true;
@@ -1349,7 +1348,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 }case 8:{
                     //<editor-fold desc="SF8 Headers">
                     String [] dateOfMearuringAddress = new String [] {"A,34","A,44","A,54","A,64","A,74","A,84","A,94"};
-                    
+                    String word="dateko";
                     headers = new header[]{
                         //Header Parts
                         new header(schoolId, "C,7"),
@@ -1361,6 +1360,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(sectionName, "H,7"),
                         new header(district, "I,5"),
                         //Form's Custom Fields
+                      
                         new header(dateOfMeasurement, dateOfMearuringAddress[sheetNumber]),
                         new header (strand8,"L,7" )
                     };

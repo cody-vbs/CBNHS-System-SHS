@@ -3366,6 +3366,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         jLabel123.setText("Track/Strand");
 
+        tfStrand8.setEditable(false);
         tfStrand8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfStrand8ActionPerformed(evt);
@@ -3475,17 +3476,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         sf8Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Student ID", "Section ID", "LRN", "Name", "Birth Date", "Gender", "BMI ID", "Age", "Weight", "Height", "Height^2", "BMI", "Nutritional Status", "Height-For-Age", "Date Recorded"
+                "Id", "Student ID", "Section ID", "LRN", "Name", "Birth Date", "Gender", "BMI ID", "Age", "Weight", "Height", "Height^2", "BMI", "Nutritional Status", "Height-For-Age", "Date Recorded", "strand", "sem"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -6783,7 +6784,8 @@ public class dashBoard extends javax.swing.JFrame {
             my.hideColumns(sf3Table, new int [] {0,1,2});
             my.hideColumns(sf3BooksTable, new int [] {0,3});
             my.hideColumns(sf5Table, new int [] {0,1,2,3,7});
-            my.hideColumns(sf8Table, new int [] {0,1,2,7});
+       //   my.hideColumns(sf8Table, new int [] {0,1,2,7});
+            my.hideColumns(sf8Table, new int [] {0,1,2,7,16,17});
             
             my.hideColumns(grade11RankingTable, new int [] {0,1,3,4,5,7,11});
             my.hideColumns(grade12RankingTable, new int [] {0,1,3,4,5,7,11});
@@ -7005,7 +7007,7 @@ public class dashBoard extends javax.swing.JFrame {
             jLabel47,jLabel48,jLabel49,jLabel50,jLabel55,jLabel58,jLabel59,jLabel60,jLabel61,
             jLabel71,jLabel7,jLabel73,jLabel74,jLabel66,jLabel67,jLabel69,
             jLabel78,jLabel79,jLabel80,jLabel81,jLabel82,jLabel83,jLabel84,jLabel86,jLabel87,
-            jLabel88,jLabel89,jLabel102,jLabel105,jLabel106,jLabel109,jLabel115,
+            jLabel88,jLabel89,jLabel102,jLabel105,jLabel106,jLabel109,jLabel115,jLabel123,
             
         };
         

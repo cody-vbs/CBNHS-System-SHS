@@ -1358,11 +1358,13 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolYear, "O,7"),
                         new header(gradeLevel, "F,7"),
                         new header(sectionName, "H,7"),
+                        new header (strand8,"L,7" ),
                         new header(district, "I,5"),
                         //Form's Custom Fields
                       
                         new header(dateOfMeasurement, dateOfMearuringAddress[sheetNumber]),
-                        new header (strand8,"L,7" )
+                       
+                        
                     };
                     //</editor-fold>
                     break;

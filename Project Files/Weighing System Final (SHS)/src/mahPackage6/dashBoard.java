@@ -243,7 +243,7 @@ public class dashBoard extends javax.swing.JFrame {
         //Hide Table Columns
         if(!myVariables.isDebugModeOn()){
             my.hideColumns(assignedTeacherTable, new int [] {0,1,3,6});
-            my.hideColumns(enrolledStudentsTable, new int [] {0,1,6});
+            my.hideColumns(enrolledStudentsTable, new int [] {0,1,6,7});
             
             my.hideColumns(bmiChartMaleTable, new int [] {0});
             my.hideColumns(bmiChartFemaleTable, new int [] {0});
@@ -348,6 +348,7 @@ public class dashBoard extends javax.swing.JFrame {
             jLabel12,jLabel23,jLabel15,jLabel17,jLabel22,jLabel24,jLabel19,
             jLabel20,jLabel5,jLabel6,jLabel7,jLabel8,jLabel13,jLabel25,jLabel26,
             jLabel9,jLabel11,lbNutritionalStatus,lbHeightForAge,jLabel27,
+            jLabel33, jLabel30,
         };
         
         for (JLabel n : titleHeaderLabels) {
@@ -384,7 +385,7 @@ public class dashBoard extends javax.swing.JFrame {
         JTextField forms [] = {
             tfAge,tfWeight,tfHeight,tfBmi,tfHeightSquared,tfBmiForAge,
             tfHeightForAge,tfTestAge,tfTestHeight,tfTestHeightSq,tfTestWeight,
-            tfTestBmi,
+            tfTestBmi,tfstrandM6,
         };
         for(JSpinner n : spinners){
             n.setFont(myVariables.TEXTFIELD_FONT);
@@ -399,6 +400,7 @@ public class dashBoard extends javax.swing.JFrame {
         for(JTextField n : forms){
             n.setFont(myVariables.TEXTFIELD_FONT);
         }
+        semesterSelectM6.setFont(myVariables.TEXTFIELD_FONT);
     }
     private void loadYearDropDowns(int numberOfYears){
         JComboBox [] yearDropDowns = {
@@ -480,6 +482,10 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         tfBmi = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        semesterSelectM6 = new javax.swing.JComboBox<>();
+        jLabel33 = new javax.swing.JLabel();
+        tfstrandM6 = new javax.swing.JTextField();
         referenceChartsDialog = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
@@ -667,17 +673,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         enrolledStudentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Student ID", "LRN", "Name", "Gender", "Birth Date", "Section ID"
+                "ID", "Student ID", "LRN", "Name", "Gender", "Birth Date", "Section ID", "strand", "semester"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -717,7 +723,7 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(tfSearchEnrolledStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearchEnrolledStudent))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -814,6 +820,19 @@ public class dashBoard extends javax.swing.JFrame {
 
         tfBmi.setEditable(false);
 
+        jLabel30.setText("Semester");
+
+        semesterSelectM6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester" }));
+
+        jLabel33.setText("Strand");
+
+        tfstrandM6.setEditable(false);
+        tfstrandM6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfstrandM6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -828,7 +847,6 @@ public class dashBoard extends javax.swing.JFrame {
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbBmiRecordId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -850,26 +868,47 @@ public class dashBoard extends javax.swing.JFrame {
                                     .addComponent(tfBmi)
                                     .addComponent(tfHeightSquared))
                                 .addGap(26, 26, 26))))
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnSaveEvaluationChanges, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfHeightForAge, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jdcDateOfMeasurement, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfBmiForAge, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnEvaluate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(1, 1, 1)))
+                                .addGap(1, 1, 1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(12, 12, 12))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jdcDateOfMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(132, 132, 132)
+                                        .addComponent(tfstrandM6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(25, 25, 25))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(26, 26, 26))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 30, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(semesterSelectM6, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 75, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -878,19 +917,28 @@ public class dashBoard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(lbBmiRecordId))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdcDateOfMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(lbBmiRecordId))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel30))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(semesterSelectM6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel33))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jdcDateOfMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfstrandM6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -931,12 +979,12 @@ public class dashBoard extends javax.swing.JFrame {
         right.setLayout(rightLayout);
         rightLayout.setHorizontalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 448, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         rightLayout.setVerticalGroup(
             rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rightLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -946,11 +994,11 @@ public class dashBoard extends javax.swing.JFrame {
         viewStudentsTab.setLayout(viewStudentsTabLayout);
         viewStudentsTabLayout.setHorizontalGroup(
             viewStudentsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)
         );
         viewStudentsTabLayout.setVerticalGroup(
             viewStudentsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
         );
 
         referenceChartsDialog.setBackground(new java.awt.Color(255, 255, 204));
@@ -1178,7 +1226,7 @@ public class dashBoard extends javax.swing.JFrame {
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(right1Layout.createSequentialGroup()
                                 .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, Short.MAX_VALUE)
                                     .addComponent(tfTestHeight))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfTestHeightSq, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1845,7 +1893,7 @@ public void myInitComponents() {
 
     private void searchEnrolledStudentHandler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEnrolledStudentHandler
         int row = assignedTeacherTable.getSelectedRow();
-
+        String semM6=semesterSelectM6.getSelectedItem().toString();
         if(row == -1){
              Toolkit.getDefaultToolkit().beep();
             my.showMessage("Please select a section first.", JOptionPane.WARNING_MESSAGE);
@@ -1854,8 +1902,15 @@ public void myInitComponents() {
 
         String sectionId = assignedTeacherTable.getValueAt(row, 1).toString();
         String toSearch = tfSearchEnrolledStudent.getText();
+        
+        //strand
+            my.getStrandFromSectionID("v_enrollment_mini_wbdate_shs_wsem","WHERE sectionId='"+sectionId+"'",myVariables.getEnrollmentViewMinWBdateOrderShs2());
+           String getStrandM6 = myVariables.getStrandName();     
+           tfstrandM6.setText(getStrandM6);
+          
+           
 
-        String where = "WHERE sectionId='"+sectionId+"' AND (lrn='"+toSearch+"' OR lName LIKE '%"+toSearch+"%')";
+        String where = "WHERE sectionId='"+sectionId+"' AND sem='"+semM6+"' AND (lrn='"+toSearch+"' OR lName LIKE '%"+toSearch+"%')";
         my.searchItem(where, enrolledStudentsTable, 8, null, new int [] {3,4,5}, true, true, lbSearchResult1, tfSearchEnrolledStudent, true);
         clearBmiFields(true, false, false);
     }//GEN-LAST:event_searchEnrolledStudentHandler
@@ -2031,6 +2086,10 @@ public void myInitComponents() {
             new login().setVisible(true);
         }
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void tfstrandM6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfstrandM6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfstrandM6ActionPerformed
     private void clearBmiFields(boolean clearFields,boolean enableDisableEvaluateBtn,boolean enableDisableSaveBtn){
         if(clearFields){
             lbBmiRecordId.setText("--Please Select A Student--");
@@ -2153,8 +2212,10 @@ public void myInitComponents() {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
@@ -2205,6 +2266,7 @@ public void myInitComponents() {
     private javax.swing.JPanel right;
     private javax.swing.JPanel right1;
     private javax.swing.JPanel selectSectionTab;
+    private javax.swing.JComboBox<String> semesterSelectM6;
     private javax.swing.JPanel tab1;
     private javax.swing.JTextField tfAge;
     private javax.swing.JTextField tfBmi;
@@ -2220,6 +2282,7 @@ public void myInitComponents() {
     private javax.swing.JTextField tfTestHeightSq;
     private javax.swing.JTextField tfTestWeight;
     private javax.swing.JTextField tfWeight;
+    private javax.swing.JTextField tfstrandM6;
     private javax.swing.JPanel viewStudentsTab;
     // End of variables declaration//GEN-END:variables
 }

@@ -62,6 +62,10 @@ public class myVariables {
     
     private static String yearSelected,monthSelected,daySelected;
     
+    //strandM6
+    private static String strandName = "Default_Strand_Name";
+    
+    
     
     //Table Orders
     private static final int [] usersOrder = new int [] {6,4,3,7,1,2,0,5};
@@ -81,6 +85,8 @@ public class myVariables {
     private static final int [] enrollmentViewOrder = new int [] {15,7,3,0,9,16,1,5,8,11,4,2,17,10,6,12,13,14};
     private static final int [] enrollmentViewMinimalOrder = new int [] {5,0,4,1,2,7,3,6};
     private static final int [] enrollmentViewMinWBdateOrder = new int [] {6,0,5,1,2,8,4,3,7};
+    private static final int [] enrollmentViewMinWBdateOrderShs = new int [] {8,0,6,1,2,10,5,4,9,3,7};
+    private static final int [] enrollmentViewMinWBdateOrderShs2 = new int [] {8,0,6,1,2,10,5,4,9,3,7};
     private static final int [] teacherLoadsViewOrder = new int [] {6,7,1,4,3,8,2,10,9,5,0};
     private static final int [] managedSubjectsViewOrder = new int [] {10,4,6,8,2,1,11,0,5,12,3,7,9};
     private static final int [] managedSubjectsWTemplateViewOrder = new int [] {13,5,8,10,3,2,14,1,7,15,4,9,12,0,11,6};
@@ -369,7 +375,12 @@ public class myVariables {
     public static int[] getEnrollmentViewMinWBdateOrder() {
         return enrollmentViewMinWBdateOrder;
     }
-
+     public static int[] getEnrollmentViewMinWBdateOrderShs() {
+        return enrollmentViewMinWBdateOrderShs;
+    }
+      public static int[] getEnrollmentViewMinWBdateOrderShs2() {
+        return enrollmentViewMinWBdateOrderShs2;
+    }
     public static String getWeighingWindowIcon() {
         return weighingWindowIcon;
     }
@@ -578,6 +589,16 @@ public class myVariables {
     public static String getUsersPrsnlInfIcon() {
         return usersPrsnlInfIcon;
     }
+    
+    //strand
+    public static String getStrandName() {
+        return strandName;
+    }
+
+    public static void setStrandName(String strandName) {
+        myVariables.strandName = strandName;
+    }
+
     //</editor-fold>
 }
 

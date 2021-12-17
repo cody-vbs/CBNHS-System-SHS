@@ -24,6 +24,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -225,8 +226,9 @@ public class myFunctions {
                 order = myVariables.getAttendanceOrder();
                 break;
             }case 8:{
-                from = "v_enrollment_mini_wbdate_shs";
-                order = myVariables.getEnrollmentViewMinWBdateOrder();
+            //  from = "v_enrollment_mini_wbdate_shs";
+              from = "v_enrollment_mini_wbdate_shs_wsem";
+              order = myVariables.getEnrollmentViewMinWBdateOrderShs();
                 break;
             }default:{
                 System.err.println("View table index out of bounds. Please check your index selected.");
@@ -1378,7 +1380,56 @@ public class myFunctions {
             throw new RuntimeException(e);
         }
     }
-    
+        
+     public void getStrandFromSectionID(String from,String where, int view_order[]){
+        //default table order
+        int order [] = view_order;
+        Arrays.sort(order);
+        String  [] result = return_values("*", from, where,order);
+        
+        String finalStrand = "";
+        
+        StringBuilder sb = new StringBuilder();
+        
+         for (int x =0;x<result.length;x++){
+             sb.append(result[x]);
+         }
+         
+        if(sb.toString().contains("ABM")){
+             finalStrand = "ABM";
+         }
+        if (sb.toString().contains("HUMMS")){
+             finalStrand = "HUMMS";
+         }
+        if(sb.toString().contains("STEM")){
+             finalStrand = "STEM";
+         }
+        if(sb.toString().contains("TVL")){
+             finalStrand = "TVL";
+         }
+        if(sb.toString().contains("ABM") && sb.toString().contains("STEM")){
+             finalStrand = "ABM/STEM";
+         }
+        if(sb.toString().contains("ABM") && sb.toString().contains("HUMMS")){
+             finalStrand = "ABM/HUMMS";
+         }
+        if(sb.toString().contains("ABM") && sb.toString().contains("TVL")){
+             finalStrand = "ABM/TVL";
+         }
+        if(sb.toString().contains("HUMMS") && sb.toString().contains("STEM")){
+             finalStrand = "HUMMS/STEM";
+         }
+        if(sb.toString().contains("HUMMS") && sb.toString().contains("TVL")){
+             finalStrand = "HUMMS/TVL";
+         }if (sb.toString().contains("STEM") && sb.toString().contains("TVL")){
+             finalStrand = "STEM/TVL";
+         }
+        
+         //setter method
+         myVariables.setStrandName(finalStrand);
+
+    }
+     
     
     
 }

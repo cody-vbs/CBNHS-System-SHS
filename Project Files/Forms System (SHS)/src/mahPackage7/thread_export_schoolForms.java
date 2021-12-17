@@ -65,6 +65,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         private JTable sf8SummaryTable;
         private String dateOfMeasurement;
         private String strand8;
+        private String sem8;
         //SF9
         private JTable sf9GradesTable;
         private String sf9GeneralAverage;
@@ -107,6 +108,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
     private String principalName;
     private String representativeName;
     private String superIntendentName;
+    private String strandName;
+    private String semester;
     //Functions Variables
     long threadDelay = 100;
     long pauseDelay = 500;
@@ -230,6 +233,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 //SF3 Variables
                 dateOfMeasurement = textFieldsToUse[4].getText();
                 strand8 = textFieldsToUse[5].getText();
+                sem8 =   stringsToUse[0];
                 sf8Table = tables[0];
                 sf8SummaryTable = tables[1];
                 break;
@@ -437,7 +441,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         //Remove Unnecessary Columns
                         line = my.skipColumns(line, new int [] {0,1,2});
                         //Write to excel file
-                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(n+7));
+                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(n+8));
                         
                         Thread.sleep(threadDelay);
                     }
@@ -991,7 +995,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         //Get line
                         String line = my.get_table_row_values(n, sf8Table);
                         gender = my.getValueAtColumn(line, 6);
-                        line = (n+1)+"@@"+my.skipColumns(line, new int[]{0,1,2,6,7,15});
+                     line = (n+1)+"@@"+my.skipColumns(line, new int[]{0,1,2,6,7,15,16,17});
                         
                         if(!firstFemaleFound){
                             if(gender.contains("Female")){
@@ -1202,6 +1206,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
             for (int n = 0; n < headerCount; n++) {
                 lbLoadingMessage.setText("Writing Headers...2/4 Header "+(n+1)+" of "+headerCount);
                 my.writeExcelSingleData(sheetNumber, headers[n].getData(), headers[n].getExcelAddress());
+                my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[8].getExcelAddress());
+                my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[9].getExcelAddress());
                 Thread.sleep(threadDelay);
             }
             Thread.sleep(pauseDelay);
@@ -1230,6 +1236,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolYear, "K,4"),
                         new header(gradeLevel, "M,4"),
                         new header(sectionName, "O,4"),
+                        new header (strandName, "K,5"),
+                        new header (semester , "O,5"),
                         //Form's Custom Fields
                         new header(maleCount, mCount[sheetNumber]),
                         new header(femaleCount, fCount[sheetNumber]),
@@ -1354,9 +1362,12 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(gradeLevel, "F,7"),
                         new header(sectionName, "H,7"),
                         new header(district, "I,5"),
+                        new header (strand8,"L,7" ),
+                        new header (sem8,"Q,5" ), //wala ni pulos,white color text ni tungod sa write header dictator kayo
+                        new header (sem8,"Q,7" ),
                         //Form's Custom Fields
                         new header(dateOfMeasurement, dateOfMearuringAddress[sheetNumber]),
-                        new header (strand8,"L,7" )
+                    
                     };
                     //</editor-fold>
                     break;

@@ -115,6 +115,8 @@ public class myVariables {
     private static final int [] jhsf5FullOrder=new int [] {15,6,8,14,10,13,4,3,16,9,5,0,11,17,2,18,1,12,7};
     private static final int [] jhsf7TeachersOrder= new int [] {10,6,5,3,12,0,7,11,2,4,8,1,9};
     private static final int [] jhsf7LoadsOrder= new int [] {5,2,6,0,8,7,3,1,4};
+    //form7
+    private static final int [] shsf7LoadsOrder= new int [] {7,3,8,0,10,9,4,2,6,5,1}; 
     private static final int [] jhsf8Order= new int [] {12,7,6,4,0,9,13,10,3,1,15,5,16,14,17,8,2,11};
   //  private static final int [] shsf8Order= new int [] {13,7,6,4,0,9,14,11,3,1,16,5,17,15,18,8,2,12,10};
     private static final int [] shsf8Order= new int [] {14,7,6,4,0,9,15,11,3,1,17,5,18,16,19,8,2,12,10,13};
@@ -798,6 +800,11 @@ public class myVariables {
     public static int[] getJhsf7LoadsOrder() {
         return jhsf7LoadsOrder;
     }
+    
+    public static int[] getShsf7LoadsOrder() {
+        return shsf7LoadsOrder;
+    }
+    
     
     public static String getLateCommerIcon() {
         return lateCommerIcon;

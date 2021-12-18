@@ -26,6 +26,7 @@ public class thread_loadSf7Details extends SwingWorker<String, Object>{
     JTable loadsTable;
     
     String schoolYear;
+    String sem7;
     
     JButton btnLoadTeachers;
     JButton btnExportSf7;
@@ -47,6 +48,8 @@ public class thread_loadSf7Details extends SwingWorker<String, Object>{
         loadsTable = tablesToUse[1];
         
         schoolYear = stringsToUse[0];
+        //form7
+        sem7 = stringsToUse[1];
         
         btnLoadTeachers = buttonsToUse[0];
         btnExportSf7 = buttonsToUse[1];
@@ -85,7 +88,7 @@ public class thread_loadSf7Details extends SwingWorker<String, Object>{
         }else{
             where = "WHERE user_level<5";
         }
-        String [] result = my.return_values("*", "form_sf7view_teachers", where, myVariables.getJhsf7TeachersOrder());
+        String [] result = my.return_values("*", "form_sf7view_teachers_shs", where, myVariables.getJhsf7TeachersOrder());
         progressBar.setValue(1);
         Thread.sleep(pauseDelay);
         if(result != null){
@@ -113,8 +116,17 @@ public class thread_loadSf7Details extends SwingWorker<String, Object>{
                 progressBar.setValue(n+1);
                 
                 userId = teachersTable.getValueAt(n, 0).toString();
+             
+
+                if (sem7 == "All"){
+               
                 where = "WHERE teacherId='"+userId+"' AND schoolYear='"+schoolYear+"'";
-                String loadsResult[] = my.return_values("*", "form_sf7view_loads", where, myVariables.getJhsf7LoadsOrder());
+                }else {
+                where = "WHERE teacherId='"+userId+"' AND sem='"+sem7+"' AND schoolYear='"+schoolYear+"'";
+                }
+                System.out.println(sem7);
+                
+                String loadsResult[] = my.return_values("*", "form_sf7view_loads_shs", where, myVariables.getShsf7LoadsOrder());
                 
                 Thread.sleep(threadDelay);
                 

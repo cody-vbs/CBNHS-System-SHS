@@ -60,6 +60,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         private JTable sf7AssignedSubjectsTable;
         private boolean useSubjectCodeAsSubjectName;
         private boolean useAcronyms;
+        private String sem7;
         //SF8
         private JTable sf8Table;
         private JTable sf8SummaryTable;
@@ -220,6 +221,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 schoolYear = stringsToUse[0];
                 //Sf7 Variables
                 sf7Table = tables[0];
+                sem7 =   stringsToUse[1];
+                
                 sf7AssignedSubjectsTable = tables[1];
                 useSubjectCodeAsSubjectName = booleans[0];
                 useAcronyms = booleans[1];
@@ -1206,8 +1209,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
             for (int n = 0; n < headerCount; n++) {
                 lbLoadingMessage.setText("Writing Headers...2/4 Header "+(n+1)+" of "+headerCount);
                 my.writeExcelSingleData(sheetNumber, headers[n].getData(), headers[n].getExcelAddress());
-                my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[8].getExcelAddress());
-                my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[9].getExcelAddress());
+       //         my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[8].getExcelAddress());
+       //         my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[9].getExcelAddress());
                 Thread.sleep(threadDelay);
             }
             Thread.sleep(pauseDelay);
@@ -1343,6 +1346,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolName, "C,6"),
                         new header(district, "K,6"),
                         new header(schoolYear, "Q,6"),
+                        new header(sem7, "M,6"),
                         //Form's Custom Fields
                         new header(myVariables.getPrincipal().toUpperCase(), shclHead[sheetNumber]),
                     };

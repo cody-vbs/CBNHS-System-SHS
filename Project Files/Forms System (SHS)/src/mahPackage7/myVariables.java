@@ -109,7 +109,8 @@ public class myVariables {
     
     //School Form Views
     private static final int [] jhsf1Order= new int [] {4,15,10,14,1,5,21,12,19,22,24,13,7,11,16,17,0,3,20,2,18,8,23,6,9};
-    private static final int [] jhsf2Order= new int [] {5,6,0,1,2,7,3,4,8};
+    private static final int [] jhsf2Order= new int [] {7,8,0,1,2,9,4,5,10,3,6};
+    
     private static final int [] jhsf3Order= new int [] {4,5,0,1,2,6,3};
     private static final int [] jhsf5MinimalOrder=new int [] {11,4,8,7,3,0,9,12,2,13,1,10,5,6};
     private static final int [] jhsf5FullOrder=new int [] {15,6,8,14,10,13,4,3,16,9,5,0,11,17,2,18,1,12,7};

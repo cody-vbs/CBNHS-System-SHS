@@ -173,6 +173,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 adviserName = textFieldsToUse[1].getText().toUpperCase();
                 gradeLevel = textFieldsToUse[2].getText();
                 schoolYear = textFieldsToUse[3].getText();
+                
                 //SF2 Variables
                 sf2WeekdaysTable = tables[0];
                 sf2Table = tables[1];
@@ -1264,6 +1265,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolName, "C,4"),
                         new header(schoolYear, "I,3"),
                         new header(gradeLevel, "R,4"),
+                        //new header(Strand, "AB,3"),
+                        //new header(Semester, "AD,3"),
                         new header(sectionName, "AB,4"),
                         //Form's Custom Fields
                         new header(sf2MonthSelected, monthSelected[sheetNumber]),

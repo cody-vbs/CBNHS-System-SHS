@@ -186,7 +186,7 @@ public class myFunctions {
                 order = myVariables.getJhsf1Order();
                 break;
             }case 11:{
-                from = "form_sf2_view";
+                from = "form_sf2_view_shs";
                 order = myVariables.getJhsf2Order();
                 break;
             }case 12:{

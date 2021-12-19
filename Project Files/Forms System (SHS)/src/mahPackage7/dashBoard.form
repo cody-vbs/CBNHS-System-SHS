@@ -3963,7 +3963,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jSplitPane6" alignment="0" pref="1070" max="32767" attributes="0"/>
+              <Component id="jSplitPane6" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -4149,20 +4149,14 @@
                         <Component class="javax.swing.JTable" name="sf6Table">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="16" rowCount="4">
+                              <Table columnCount="10" rowCount="4">
                                 <Column editable="false" title="Summary Table" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr7 M" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr7 F" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr7 T" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr8 M" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr8 F" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr8 T" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr9 M" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr9 F" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr9 T" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr10 M" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr10 F" type="java.lang.Object"/>
-                                <Column editable="false" title="Gr10 T" type="java.lang.Object"/>
+                                <Column editable="false" title="Gr11 M" type="java.lang.Object"/>
+                                <Column editable="false" title="Gr11 F" type="java.lang.Object"/>
+                                <Column editable="false" title="Gr11 T" type="java.lang.Object"/>
+                                <Column editable="false" title="Gr12 M" type="java.lang.Object"/>
+                                <Column editable="false" title="Gr12 F" type="java.lang.Object"/>
+                                <Column editable="false" title="Gr12 T" type="java.lang.Object"/>
                                 <Column editable="false" title="Male" type="java.lang.Object"/>
                                 <Column editable="false" title="Female" type="java.lang.Object"/>
                                 <Column editable="false" title="Total" type="java.lang.Object"/>
@@ -4172,36 +4166,6 @@
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>

@@ -60,8 +60,7 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
         
         rankingTable7 = tablesToUse[4];
         rankingTable8 = tablesToUse[5];
-        rankingTable9 = tablesToUse[6];
-        rankingTable10 = tablesToUse[7];
+        
         
         sectionId = stringsToUse[0];
         gradeLevel = stringsToUse[1];
@@ -242,14 +241,14 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
             //Get proper Indeces based on grade level
             int countIndeces [] = null;
             switch(Integer.parseInt(gradeLevel)){
-                case 7:{
-                    countIndeces = new int[]{1,2,3,13,14,15};break;
-                }case 8:{
-                    countIndeces = new int[]{4,5,6,13,14,15};break;
-                }case 9:{
-                    countIndeces = new int[]{7,8,9,13,14,15};break;
-                }case 10:{
-                    countIndeces = new int[]{10,11,12,13,14,15};break;
+                case 11:{
+                    countIndeces = new int[]{1,2,3,7,8,9};break;
+                }case 12:{
+                    countIndeces = new int[]{4,5,6,7,8,9};break;
+//                }case 9:{
+//                    countIndeces = new int[]{7,8,9,13,14,15};break;
+//                }case 10:{
+//                    countIndeces = new int[]{10,11,12,13,14,15};break;
                 }
             }
             progressBar.setValue(1);
@@ -381,12 +380,12 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
                     }
                 }
                 //Update final counters
-                currMale = Integer.parseInt(sf6Table.getValueAt(n, 13).toString());
-                currFemale = Integer.parseInt(sf6Table.getValueAt(n, 14).toString());
+                currMale = Integer.parseInt(sf6Table.getValueAt(n, 7).toString());
+                currFemale = Integer.parseInt(sf6Table.getValueAt(n, 8).toString());
                 
-                sf6Table.setValueAt(currMale+male, n, 13);
-                sf6Table.setValueAt(currFemale+female, n, 14);
-                sf6Table.setValueAt(currMale+male+currFemale+female, n, 15);
+                sf6Table.setValueAt(currMale+male, n, 7);
+                sf6Table.setValueAt(currFemale+female, n, 8);
+                sf6Table.setValueAt(currMale+male+currFemale+female, n, 9);
             }
             progressBar.setValue(5);
             lbLoadingMessage.setText("Updating SF6 Summary... Step 5 of 5");
@@ -576,18 +575,18 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
             
             JTable tableToUse = null;
             switch(gradeLevel){
-                case 7:{
+                case 11:{
                     tableToUse = rankingTable7;
                     break;
-                }case 8:{
+                }case 12:{
                     tableToUse = rankingTable8;
                     break;
-                }case 9:{
-                    tableToUse = rankingTable9;
-                    break;
-                }case 10:{
-                    tableToUse = rankingTable10;
-                    break;
+//                }case 9:{
+//                    tableToUse = rankingTable9;
+//                    break;
+//                }case 10:{
+//                    tableToUse = rankingTable10;
+//                    break;
                 }
             }
             if(generalAverage >= 75){

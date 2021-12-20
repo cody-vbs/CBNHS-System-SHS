@@ -57,7 +57,7 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
 
     public thread_loadSf6Details(JTable [] tablesToUse,String [] stringsToUse,JTextField [] textFieldsToUse,JButton [] buttonsToUse,boolean [] booleansToUse) {
         my = new myFunctions(true);
-        sectionsTable = tablesToUse[8];
+        sectionsTable = tablesToUse[6];
         
         waitForSecondThreadToFinish = booleansToUse[2];
         allSectionSelected = booleansToUse[3];
@@ -73,8 +73,7 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
         
         rankingTable7 = tablesToUse[4];
         rankingTable8 = tablesToUse[5];
-        rankingTable9 = tablesToUse[6];
-        rankingTable10 = tablesToUse[7];
+        
         
         showIncompleteRecords = booleansToUse[0];
         compareToRankings = booleansToUse[1];

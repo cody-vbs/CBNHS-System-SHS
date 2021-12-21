@@ -36,6 +36,9 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
     JTable rankingTable9;
     JTable rankingTable10;
     
+    JTextField tfStrand5;
+    
+    String sem5;
     String sectionId;
     String gradeLevel;
     
@@ -61,6 +64,8 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
         rankingTable7 = tablesToUse[4];
         rankingTable8 = tablesToUse[5];
         
+        tfStrand5 = textFieldsToUse[0];
+        sem5 = stringsToUse[2];
         
         sectionId = stringsToUse[0];
         gradeLevel = stringsToUse[1];
@@ -81,6 +86,11 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
         long [] threadSpeeds = myVariables.getProcessingSpeedValue();
         threadDelay = threadSpeeds[0];
         pauseDelay = threadSpeeds[1];
+    
+        my.getStrandFromSectionID("form_sf5_viewminimal_shs", "WHERE sectionId='"+sectionId+"'", myVariables.getShsf5MinimalOrder2());
+        String getStrand5 = myVariables.getStrandName();
+        tfStrand5.setText(getStrand5);
+                
     }
 
     @Override
@@ -104,8 +114,15 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
             
             //Get Students From Database
             lbLoadingMessage.setText("Connecting To Database...");
-            String result [] = my.return_values("*", "form_sf5_viewminimal", "WHERE sectionId='"+sectionId+"'", myVariables.getJhsf5MinimalOrder());
+            String where1 = "";
+            if(sem5=="All"){
+               where1 = "Where sectionId='"+sectionId+"'"; 
+            }else{
+               where1 = "Where sectionId='"+sectionId+"' AND sem = '"+sem5+"'";
+            }
             
+            String result [] = my.return_values("*", "form_sf5_viewminimal_shs", where1, myVariables.getShsf5MinimalOrder());
+                                    
             if(result==null){
                 if(sf6Table == null){
                     my.showMessage("This section's students does not have grades submitted yet.", JOptionPane.ERROR_MESSAGE);

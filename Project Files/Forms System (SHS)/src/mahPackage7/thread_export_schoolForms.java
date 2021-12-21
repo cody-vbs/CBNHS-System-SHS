@@ -53,6 +53,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         private JTable sf5SummaryTable;
         private JTable sf5LevelOfProgressTable;
         private String sf5Curriculum;
+        private String strand5;
+        private String sem5;
         //SF6
         private JTable sf6Table;
         //SF7
@@ -206,7 +208,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 schoolYear = textFieldsToUse[3].getText();
                 //SF5 Variables
                 sf5Curriculum = my.getCurriculumNameOnly(textFieldsToUse[4].getText(), ",", 0, true);
-                
+                strand5 = textFieldsToUse[5].getText();
+                sem5 = stringsToUse[0];
                 sf5Table = tables[0];
                 sf5SummaryTable = tables[1];
                 sf5LevelOfProgressTable = tables[2];
@@ -717,9 +720,9 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     String fCount = my.get_table_row_values(rowCount+1, sf5Table);
                     String tCount = my.get_table_row_values(rowCount+2, sf5Table);
                     
-                    mCount = my.skipColumns(mCount, new int[]{0,1,2,3,6,7,11});
-                    fCount = my.skipColumns(fCount, new int[]{0,1,2,3,6,7,11});
-                    tCount = my.skipColumns(tCount, new int[]{0,1,2,3,6,7,11});
+                    mCount = my.skipColumns(mCount, new int[]{0,1,2,3,6,7,11,12,13});
+                    fCount = my.skipColumns(fCount, new int[]{0,1,2,3,6,7,11,12,13});
+                    tCount = my.skipColumns(tCount, new int[]{0,1,2,3,6,7,11,12,13});
                     //</editor-fold>
                     
                     //#1 Write Sf5 Table
@@ -732,7 +735,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         //Get line
                         String line = my.get_table_row_values(n, sf5Table);
                         gender = my.getValueAtColumn(line, 6);
-                        line = my.skipColumns(line, new int[]{0,1,2,3,6,7,11});
+                        line = my.skipColumns(line, new int[]{0,1,2,3,6,7,11,12,13});
                         
                         if(!firstFemaleFound){
                             if(gender.contains("Female")){
@@ -1337,7 +1340,9 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolYear, "G,5"),
                         new header(gradeLevel, "J,6"),
                         new header(sectionName, "L,6"),
-                        new header(sf5Curriculum, "J,5"),
+                        new header(sf5Curriculum, "J,4"),
+                        new header(strand5,"L,5"),
+                        new header(sem5,"J,5"),
                         //Form's Custom Fields
                         new header(adviserName, "J,29"),
                     };

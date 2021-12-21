@@ -3359,6 +3359,25 @@ public class dashBoard extends javax.swing.JFrame {
             
             String previousStatuses[] = enrolledStudentsTable1.getValueAt(rowId[x], 12).toString().split(":");
             
+            String fg = enrolledStudentsTable1.getValueAt(x, 7).toString();
+            String sg = enrolledStudentsTable1.getValueAt(x, 8).toString();
+            String ga = enrolledStudentsTable1.getValueAt(x, 11).toString();
+            
+            if("".equals(fg)){
+                icount++;
+                continue;
+            }
+            
+            if("".equals(sg)){
+                icount++;
+                continue;
+            }
+            
+            if("".equals(ga)){
+                icount++;
+                continue;
+            }
+            
             if(myVariables.getAccessLevel() != 5){
                 if(status == "Submitted"){
                     if(!"Open".equals(previousStatuses[rbIndexToUpdate])){
@@ -3439,6 +3458,25 @@ public class dashBoard extends javax.swing.JFrame {
             String updatedStatus = "secret";
             
             String previousStatuses [] = enrolledStudentsTable1.getValueAt(x, 12).toString().split(":");
+            
+            String fg = enrolledStudentsTable1.getValueAt(x, 7).toString();
+            String sg = enrolledStudentsTable1.getValueAt(x, 8).toString();
+            String ga = enrolledStudentsTable1.getValueAt(x, 11).toString();
+            
+            if("".equals(fg)){
+                icount++;
+                continue;
+            }
+            
+            if("".equals(sg)){
+                icount++;
+                continue;
+            }
+            
+            if("".equals(ga)){
+                icount++;
+                continue;
+            }
             
             if(myVariables.getAccessLevel() != 5){
                 if(status == "Submitted"){

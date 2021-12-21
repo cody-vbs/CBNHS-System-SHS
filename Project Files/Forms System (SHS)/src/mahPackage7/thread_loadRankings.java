@@ -78,13 +78,13 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
             
             // ang algo dire di nako ma trace kay way unod ang database
             String [] result = null;
-            for(int n=7;n<11;n++){
+            for(int n=11;n<12;n++){
                 progressBar.setMaximum(4);
-                progressBar.setValue(n-6);
-                lbLoadingMessage.setText("Connecting to Database..."+(n-6)+"/4");
+                progressBar.setValue(n-10);
+                lbLoadingMessage.setText("Connecting to Database..."+(n-10)+"/4");
                 
                 String where =  "WHERE gradeLevel='"+n+"' AND schoolYear='"+schoolYear+
-                        "' AND actionTaken='Promoted' AND generalAverage>=75 ORDER BY generalAverage DESC LIMIT 0,"+studentsToShow;
+                        "' AND actionTaken='Passed' AND generalAverage>=75 ORDER BY generalAverage DESC LIMIT 0,"+studentsToShow;
                 result = my.return_values("*", "form_sf5_viewfull", where, myVariables.getJhsf5FullOrder());
                 
                 Thread.sleep(pauseDelay);
@@ -100,15 +100,15 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
                         result[x] = my.toNameFormat(result[x], new int [] {11,12,13});
                         result[x] = my.toNameFormat(result[x], new int [] {6,7,8});
                         
-                        my.add_table_row(result[x], rankingTables[n-7]);
+                        my.add_table_row(result[x], rankingTables[n-11]);
                         
                         Thread.sleep(threadDelay);
                     }
                     
                     //Insert Rankings
-                    for(int x=0;x<rankingTables[n-7].getRowCount();x++){
+                    for(int x=0;x<rankingTables[n-11].getRowCount();x++){
                         try {
-                            rankingTables[n-7].setValueAt(x+1, x, 15);
+                            rankingTables[n-11].setValueAt(x+1, x, 15);
                         } catch (Exception e) {
                         }
                     }

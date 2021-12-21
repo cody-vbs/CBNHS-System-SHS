@@ -3256,7 +3256,6 @@ public class dashBoard extends javax.swing.JFrame {
                 continue;
             }
         }
-        
         playSuccess();
         my.showMessage("Initialized Empty Records Complete!", JOptionPane.INFORMATION_MESSAGE);
         loadStudentsAndGrades();

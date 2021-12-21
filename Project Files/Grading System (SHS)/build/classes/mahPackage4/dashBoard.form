@@ -190,7 +190,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jSplitPane2" alignment="0" pref="755" max="32767" attributes="0"/>
+              <Component id="jSplitPane2" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -1023,13 +1023,15 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane5" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" pref="735" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="pbProgressBar" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbMessage" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="gradesIntAll" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnRefreshStudents" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1041,13 +1043,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="lbMessage" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="pbProgressBar" min="-2" pref="11" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="btnRefreshStudents" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="btnRefreshStudents" pref="34" max="32767" attributes="0"/>
+                              <Component id="gradesIntAll" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane5" pref="292" max="32767" attributes="0"/>
@@ -1188,6 +1191,14 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshStudentsActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="gradesIntAll">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Initialized Empty Records"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gradesIntAllActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

@@ -254,6 +254,7 @@ public class dashBoard extends javax.swing.JFrame {
         pbProgressBar = new javax.swing.JProgressBar();
         lbMessage = new javax.swing.JLabel();
         btnRefreshStudents = new javax.swing.JButton();
+        gradesIntAll = new javax.swing.JButton();
         viewStudentsTab = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         left = new javax.swing.JPanel();
@@ -1017,6 +1018,13 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
+        gradesIntAll.setText("Initialized Empty Records");
+        gradesIntAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gradesIntAllActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout right2Layout = new javax.swing.GroupLayout(right2);
         right2.setLayout(right2Layout);
         right2Layout.setHorizontalGroup(
@@ -1024,12 +1032,14 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(right2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(right2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
                     .addGroup(right2Layout.createSequentialGroup()
                         .addGroup(right2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pbProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gradesIntAll)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRefreshStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1037,12 +1047,13 @@ public class dashBoard extends javax.swing.JFrame {
             right2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, right2Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(right2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(right2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(right2Layout.createSequentialGroup()
                         .addComponent(lbMessage)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pbProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnRefreshStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRefreshStudents, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(gradesIntAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1054,7 +1065,7 @@ public class dashBoard extends javax.swing.JFrame {
         viewStudentsTab2.setLayout(viewStudentsTab2Layout);
         viewStudentsTab2Layout.setHorizontalGroup(
             viewStudentsTab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+            .addComponent(jSplitPane2)
         );
         viewStudentsTab2Layout.setVerticalGroup(
             viewStudentsTab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3226,6 +3237,25 @@ public class dashBoard extends javax.swing.JFrame {
     private void rbQuarter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbQuarter2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbQuarter2ActionPerformed
+
+    private void gradesIntAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradesIntAllActionPerformed
+        // TODO add your handling code here:
+        int rowcount = enrolledStudentsTable1.getRowCount();
+        int row = assignedTeacherTable.getSelectedRow();
+        
+        for(int x=0;x<rowcount;x++){
+            String haveStatus = enrolledStudentsTable1.getValueAt(x, 12).toString();
+            String studentId = enrolledStudentsTable1.getValueAt(x, 1).toString();
+            String sectionId = enrolledStudentsTable1.getValueAt(x, 5).toString();
+            String subjectId = assignedTeacherTable.getValueAt(row, 6).toString();
+            String [] toSend = {"null,'"+studentId+"','"+sectionId+"','"+subjectId+"','Open:Open:Incomplete:',now()",};
+            my.add_values("grades", "id,studentId,sectionId,subjectId,status,dateUpdated", toSend);
+        }
+        
+        playSuccess();
+        my.showMessage("Initialized Empty Records Complete!", JOptionPane.INFORMATION_MESSAGE);
+        loadStudentsAndGrades();
+    }//GEN-LAST:event_gradesIntAllActionPerformed
     
     
     public static void main(String args[]) {
@@ -4131,7 +4161,7 @@ public class dashBoard extends javax.swing.JFrame {
         };
         
         JButton whtButtons [] = {
-            btnRefreshStudents,
+            btnRefreshStudents,gradesIntAll,
         };
         
         Cursor tempC;
@@ -4345,6 +4375,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JTable enrolledStudentsTable1;
     private javax.swing.JPanel gradeDetailsTab;
     private javax.swing.JTabbedPane gradeTabs;
+    private javax.swing.JButton gradesIntAll;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel importDialog;
     private javax.swing.JTable importedGradeDetailsTable;

@@ -29,8 +29,8 @@ public class myVariables {
     private static String divisionRepresentative = "Default_Representative";
     private static String divisionSuperintendent = "Default_Superintendent";
     private static String schoolAddress = "Default_School_Address";
-    private static String strandName = "Default_Strand_Name";
-    private static String sem = "Default_SEM";
+    private static String strandName = "N/A";
+    private static String sem = "N/A";
     
     private static int processingSpeed = 0;
     //Fonts
@@ -108,9 +108,10 @@ public class myVariables {
     private static final int [] subjectOrder = new int[] {4,5,2,1,3,0};
     
     //School Form Views
-    private static final int [] jhsf1Order= new int [] {4,15,10,14,1,5,21,12,19,22,24,13,7,11,16,17,0,3,20,2,18,8,23,6,9};
+    private static final int [] shsf1Order= new int [] {4,15,10,14,1,5,21,12,19,22,24,13,7,11,16,17,0,3,20,2,18,8,23,6,9};
     private static final int [] jhsf2Order= new int [] {7,8,0,1,2,9,4,5,10,3,6};
-    private static final int [] jhsf3Order= new int [] {4,5,0,1,2,6,3};
+    
+    private static final int [] shsf3Order= new int [] {4,5,0,1,2,6,3};
     private static final int [] jhsf5MinimalOrder=new int [] {11,4,8,7,3,0,9,12,2,13,1,10,5,6};
     private static final int [] jhsf5FullOrder=new int [] {15,6,8,14,10,13,4,3,16,9,5,0,11,17,2,18,1,12,7};
     private static final int [] jhsf7TeachersOrder= new int [] {10,6,5,3,12,0,7,11,2,4,8,1,9};
@@ -304,8 +305,8 @@ public class myVariables {
         myVariables.sectionSelected = sectionSelected;
     }
 
-    public static int[] getJhsf1Order() {
-        return jhsf1Order;
+    public static int[] getShsf1Order() {
+        return shsf1Order;
     }
     
     public static int[] getUsersOrder() {
@@ -423,8 +424,8 @@ public class myVariables {
         return permanentRecordIcon;
     }
     
-    public static int[] getJhsf3Order() {
-        return jhsf3Order;
+    public static int[] getShsf3Order() {
+        return shsf3Order;
     }
 
     public static boolean isSelectAllSectionsForSf4() {
@@ -784,9 +785,7 @@ public class myVariables {
     public static int[] getShsf10Order() {
         return shsf10Order;
     }
-    public static int[] getShsf2Order() {
-        return jhsf2Order;
-    }
+
     public static int[] getJhsf9Order() {
         return jhsf9Order;
     }
@@ -850,6 +849,10 @@ public class myVariables {
     public static void setSem(String sem) {
         myVariables.sem = sem;
     }
+    
+    
+    
+    
     
     public static long [] getProcessingSpeedValue(){
         switch (getProcessingSpeed()){

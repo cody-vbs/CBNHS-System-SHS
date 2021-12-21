@@ -47,7 +47,6 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
     private JTextField tfAdviserName;
     private JTextField tfGradeLevel;
     private JTextField tfSchoolYear;
-    private JTextField tfStrand2;
     
     //Main Variables
     private JTable dateTable;
@@ -89,15 +88,11 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
         missingValuesSubstitute = stringsToUse[4];
         
         tfSchoolDays = textFieldsToUse[0];
-        
-        
-        if(textFieldsToUse.length>2){
+        if(textFieldsToUse.length>1){
             tfSectionName = textFieldsToUse[1];
             tfAdviserName = textFieldsToUse[2];
             tfGradeLevel = textFieldsToUse[3];
             tfSchoolYear = textFieldsToUse[4];
-        }else{
-            tfStrand2 = textFieldsToUse[1];
         }
         
         this.waitForMainThreadToFinish = booleansToUse[0];
@@ -144,13 +139,7 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                     btnExport.setEnabled(false);
                 }
             }
-            //Load Strand
-            try{
-                my.getStrandFromSectionID("form_sf2_view_shs","WHERE sectionId='"+sectionId+"'",myVariables.getShsf2Order());
-                tfStrand2.setText(myVariables.getStrandName()); 
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+            
             
             tableName.setEnabled(false);
             showCustomDialog("Loading Attendances...", dialogPanel, false, 420, 220, false);
@@ -209,7 +198,7 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                     }
 
                     Thread.sleep(pauseDelay);
-                    
+
                     //Get attendaces of student from database
                     String where = "WHERE studentId='"+studentId+"' AND "
                             + "sectionId='"+sectionId+"' AND "
@@ -228,7 +217,7 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                     boolean matchFound;
                     int currentSchoolDays = 0;
                     if(attendanceResults != null){
-                        for(int x=8;x<32;x++){  //Loop Dates
+                        for(int x=7;x<32;x++){  //Loop Dates
                             lbLoadingMessage.setText("Processing Student "+(n+1)+" of "+studCount+". Date "+(x-6)+" of 25");
                             try {
                                 currentDateSelected = Integer.parseInt(dateTable.getValueAt(0, x).toString());
@@ -279,7 +268,7 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                             Thread.sleep(threadDelay);
                         }
                     }else{
-                        for(int x=8;x<32;x++){  //Loop Dates
+                        for(int x=7;x<32;x++){  //Loop Dates
                             try {
                                 currentDateSelected = Integer.parseInt(dateTable.getValueAt(0, x).toString());
                             } catch (Exception e) {
@@ -779,8 +768,8 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                     Thread.sleep(threadDelay);
                 }
                 //Put results to column
-                tableName.setValueAt(absent, n, 33);
-                tableName.setValueAt(tardy, n, 34);
+                tableName.setValueAt(absent, n, 32);
+                tableName.setValueAt(tardy, n, 33);
                 
                 Thread.sleep(pauseDelay);
             }

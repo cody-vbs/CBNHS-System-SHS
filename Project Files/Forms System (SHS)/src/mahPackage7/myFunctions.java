@@ -183,7 +183,7 @@ public class myFunctions {
                 break;
             }case 10:{
                 from = "form_sf1_view_shs";
-                order = myVariables.getJhsf1Order();
+                order = myVariables.getShsf1Order();
                 break;
             }case 11:{
                 from = "form_sf2_view_shs";
@@ -194,8 +194,8 @@ public class myFunctions {
                 order = myVariables.getManagedSubjectsWTemplateViewOrder();
                 break;
             }case 13:{
-                from = "form_sf3_view";
-                order = myVariables.getJhsf3Order();
+                from = "form_sf3_view_shs";
+                order = myVariables.getShsf3Order();
                 break;
             }case 14:{
                 from = "v_managedsubjects_wsubjectscontained";

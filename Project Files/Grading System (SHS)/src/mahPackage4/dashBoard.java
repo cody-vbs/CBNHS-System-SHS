@@ -3244,12 +3244,17 @@ public class dashBoard extends javax.swing.JFrame {
         int row = assignedTeacherTable.getSelectedRow();
         
         for(int x=0;x<rowcount;x++){
-            String haveStatus = enrolledStudentsTable1.getValueAt(x, 12).toString();
-            String studentId = enrolledStudentsTable1.getValueAt(x, 1).toString();
-            String sectionId = enrolledStudentsTable1.getValueAt(x, 5).toString();
-            String subjectId = assignedTeacherTable.getValueAt(row, 6).toString();
-            String [] toSend = {"null,'"+studentId+"','"+sectionId+"','"+subjectId+"','Open:Open:Incomplete:',now()",};
-            my.add_values("grades", "id,studentId,sectionId,subjectId,status,dateUpdated", toSend);
+            String status = enrolledStudentsTable1.getValueAt(x, 12).toString();
+            System.out.print(status);
+            if("--".equals(status)){
+                String studentId = enrolledStudentsTable1.getValueAt(x, 1).toString();
+                String sectionId = enrolledStudentsTable1.getValueAt(x, 5).toString();
+                String subjectId = assignedTeacherTable.getValueAt(row, 6).toString();
+                String [] toSend = {"null,'"+studentId+"','"+sectionId+"','"+subjectId+"','Open:Open:Incomplete:',now()",};
+                my.add_values("grades", "id,studentId,sectionId,subjectId,status,dateUpdated", toSend);
+            }else{
+                continue;
+            }
         }
         
         playSuccess();

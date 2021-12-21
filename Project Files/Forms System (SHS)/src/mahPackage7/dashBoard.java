@@ -576,6 +576,7 @@ public class dashBoard extends javax.swing.JFrame {
         btnRefreshRankings = new javax.swing.JButton();
         jcbRankingSchoolYear = new javax.swing.JComboBox<>();
         jcbRankingNumberOfStudents = new javax.swing.JComboBox<>();
+        jcbRankingStrand = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         logout = new javax.swing.JMenuItem();
@@ -4989,6 +4990,8 @@ public class dashBoard extends javax.swing.JFrame {
 
         jcbRankingNumberOfStudents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Top 10", "Top 20" }));
 
+        jcbRankingStrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "STEM", "ABM", "HUMMS", "GAS", "TVL" }));
+
         javax.swing.GroupLayout rankingsDialogLayout = new javax.swing.GroupLayout(rankingsDialog);
         rankingsDialog.setLayout(rankingsDialogLayout);
         rankingsDialogLayout.setHorizontalGroup(
@@ -4997,6 +5000,8 @@ public class dashBoard extends javax.swing.JFrame {
             .addGroup(rankingsDialogLayout.createSequentialGroup()
                 .addComponent(jLabel51)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jcbRankingStrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcbRankingNumberOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcbRankingSchoolYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5013,7 +5018,8 @@ public class dashBoard extends javax.swing.JFrame {
                         .addGroup(rankingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRefreshRankings)
                             .addComponent(jcbRankingSchoolYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcbRankingNumberOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jcbRankingNumberOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbRankingStrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE))
@@ -5695,11 +5701,13 @@ public class dashBoard extends javax.swing.JFrame {
                 break;
             }
         }
+        
         String schoolYear = jcbRankingSchoolYear.getSelectedItem().toString();
+        String strand = jcbRankingStrand.getSelectedItem().toString();
         
         my.runSecondaryThread(4, true, 
                 new JTable[]{grade11RankingTable,grade12RankingTable},
-                new String []{numberOfStudentsToShow,schoolYear},
+                new String []{numberOfStudentsToShow,schoolYear,strand},
                 new JTextField[]{},
                 new JButton[]{btnRefreshRankings},
                 new boolean[]{}
@@ -7592,6 +7600,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcbMissingValues3;
     private javax.swing.JComboBox<String> jcbRankingNumberOfStudents;
     private javax.swing.JComboBox<String> jcbRankingSchoolYear;
+    private javax.swing.JComboBox<String> jcbRankingStrand;
     private javax.swing.JComboBox<String> jcbSchoolYear1;
     private javax.swing.JComboBox<String> jcbSchoolYear2;
     private com.toedter.calendar.JDateChooser jdcCutOffDate;

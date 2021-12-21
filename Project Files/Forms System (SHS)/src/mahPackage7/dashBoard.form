@@ -8440,6 +8440,8 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jcbRankingStrand" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jcbRankingNumberOfStudents" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jcbRankingSchoolYear" min="-2" max="-2" attributes="0"/>
@@ -8459,6 +8461,7 @@
                                               <Component id="btnRefreshRankings" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jcbRankingSchoolYear" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jcbRankingNumberOfStudents" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jcbRankingStrand" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -8778,6 +8781,23 @@
                             </Property>
                           </Properties>
                           <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="jcbRankingStrand">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="5">
+                                <StringItem index="0" value="STEM"/>
+                                <StringItem index="1" value="ABM"/>
+                                <StringItem index="2" value="HUMMS"/>
+                                <StringItem index="3" value="GAS"/>
+                                <StringItem index="4" value="TVL"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="dashBoard_jcbRankingStrand"/>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>

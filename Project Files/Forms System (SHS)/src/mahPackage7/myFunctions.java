@@ -2317,6 +2317,23 @@ public class myFunctions {
             throw new RuntimeException(e);
         }
     }
+    // call this method if condition contains tvl
+    private String getTvlDecription(String tvl){
+        String temp = "";
+        
+        String tempArr[] = tvl.toString().split("@@");
+        String tvlStrand = tempArr[6];
+        
+        //split the tvl to get the tvl desc
+        String temp2Arr[] = tvlStrand.split("-");
+        //set the final description of tvl
+        temp = temp2Arr[1];
+        //set the value
+        myVariables.setTvl_dec(temp);
+        
+        
+        return temp;
+    }
     
     
      public void getStrandFromSectionID(String from,String where, int view_order[]){
@@ -2326,15 +2343,16 @@ public class myFunctions {
         String  [] result = return_values("*", from, where,order);
         
         String finalStrand = "";
+       
         
         StringBuilder sb = new StringBuilder();
         
          for (int x =0;x<result.length;x++){
-             sb.append(result[x]);
+             sb.append(result[x]);             
          }
          
         if(sb.toString().contains("ABM")){
-             finalStrand = "ABM";
+             finalStrand = "ABM";   
          }
         if (sb.toString().contains("HUMMS")){
              finalStrand = "HUMMS";
@@ -2344,6 +2362,7 @@ public class myFunctions {
          }
         if(sb.toString().contains("TVL")){
              finalStrand = "TVL";
+             getTvlDecription(sb.toString());
          }
         if(sb.toString().contains("ABM") && sb.toString().contains("STEM")){
              finalStrand = "ABM/STEM";
@@ -2353,14 +2372,17 @@ public class myFunctions {
          }
         if(sb.toString().contains("ABM") && sb.toString().contains("TVL")){
              finalStrand = "ABM/TVL";
+             getTvlDecription(sb.toString());
          }
         if(sb.toString().contains("HUMMS") && sb.toString().contains("STEM")){
              finalStrand = "HUMMS/STEM";
          }
         if(sb.toString().contains("HUMMS") && sb.toString().contains("TVL")){
              finalStrand = "HUMMS/TVL";
+             getTvlDecription(sb.toString());
          }if (sb.toString().contains("STEM") && sb.toString().contains("TVL")){
              finalStrand = "STEM/TVL";
+             getTvlDecription(sb.toString());
          }
         
          //setter method

@@ -31,6 +31,7 @@ public class myVariables {
     private static String schoolAddress = "Default_School_Address";
     private static String strandName = "N/A";
     private static String sem = "N/A";
+    private static String tvl_dec = "N/A";
     
     private static int processingSpeed = 0;
     //Fonts
@@ -849,6 +850,16 @@ public class myVariables {
     public static void setSem(String sem) {
         myVariables.sem = sem;
     }
+
+    public static String getTvl_dec() {
+        return tvl_dec;
+    }
+
+    public static void setTvl_dec(String tvl_dec) {
+        myVariables.tvl_dec = tvl_dec;
+    }
+    
+    
     
     
     

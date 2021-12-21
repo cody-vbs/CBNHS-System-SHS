@@ -5864,6 +5864,10 @@ public class dashBoard extends javax.swing.JFrame {
                     //computing general average
                     int generalAverage = 0;
                     for(int x = 0; x < result2.length; x++){
+                        String rgwa = my.getValueAtColumn(result2[x], 10);
+                        if("".equals(rgwa)){
+                            continue;
+                        }
                         generalAverage += Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                     }
                     generalAverage = generalAverage/result2.length;
@@ -5874,6 +5878,10 @@ public class dashBoard extends javax.swing.JFrame {
                     //checking failed subjects
                     String failedSubjects2 = "";
                     for(int x = 0; x < result2.length; x++){
+                        String rgwa = my.getValueAtColumn(result2[x], 10);
+                        if("".equals(rgwa)){
+                            continue;
+                        }
                         int temp = Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                         if(temp < 75){
                             String subjectCode = my.getValueAtColumn(result2[x], 3);
@@ -5966,6 +5974,10 @@ public class dashBoard extends javax.swing.JFrame {
                     //computing general average
                     int generalAverage = 0;
                     for(int x = 0; x < result2.length; x++){
+                        String rgwa = my.getValueAtColumn(result2[x], 10);
+                        if("".equals(rgwa)){
+                            continue;
+                        }
                         generalAverage += Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                     }
                     generalAverage = generalAverage/result2.length;
@@ -5975,6 +5987,10 @@ public class dashBoard extends javax.swing.JFrame {
                     //checking failed subjects
                     String failedSubjects2 = "";
                     for(int x = 0; x < result2.length; x++){
+                        String rgwa = my.getValueAtColumn(result2[x], 10);
+                        if("".equals(rgwa)){
+                            continue;
+                        }
                         int temp = Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                         if(temp < 75){
                             String subjectCode = my.getValueAtColumn(result2[x], 3);

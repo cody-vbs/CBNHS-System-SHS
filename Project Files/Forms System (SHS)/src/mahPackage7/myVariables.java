@@ -118,6 +118,7 @@ public class myVariables {
     private static final int [] shsf5MinimalOrder2=new int [] {13,4,8,7,3,0,9,14,2,15,1,10,5,6,11,12};
     
     private static final int [] jhsf5FullOrder=new int [] {15,6,8,14,10,13,4,3,16,9,5,0,11,17,2,18,1,12,7};
+    private static final int [] shsf5FullOrder=new int [] {17,9,8,15,10,14,4,3,18,9,5,0,11,19,12,2,20,1,13,7,16};
     private static final int [] jhsf7TeachersOrder= new int [] {10,6,5,3,12,0,7,11,2,4,8,1,9};
     private static final int [] jhsf7LoadsOrder= new int [] {5,2,6,0,8,7,3,1,4};
     //form7
@@ -785,6 +786,10 @@ public class myVariables {
     
     public static int[] getJhsf5FullOrder() {
         return jhsf5FullOrder;
+    }
+    
+    public static int[] getShsf5FullOrder() {
+        return shsf5FullOrder;
     }
 
     public static int[] getJhsf10Order() {

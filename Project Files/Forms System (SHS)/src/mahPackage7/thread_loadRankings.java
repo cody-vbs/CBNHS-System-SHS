@@ -32,6 +32,7 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
     String numberOfStudentsToShow;
     String schoolYear;
     String strand;
+    String sem;
         
     JButton btnLoadRankings;
     //Dialog Properties
@@ -50,6 +51,7 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
         numberOfStudentsToShow = stringsToUse[0];
         schoolYear = stringsToUse[1];
         strand = stringsToUse[2];
+        sem = stringsToUse[3];
         
         btnLoadRankings = buttonsToUse[0];
         //For Loading Screen
@@ -85,8 +87,10 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
                 progressBar.setValue(n-10);
                 lbLoadingMessage.setText("Connecting to Database..."+(n-10)+"/4");
                 
-                String where =  "WHERE gradeLevel='"+n+"' AND schoolYear='"+schoolYear+"' AND strand='"+strand+"' AND actionTaken='Passed' AND generalAverage>=75 ORDER BY generalAverage DESC LIMIT 0,"+studentsToShow;
-                result = my.return_values("*", "form_sf5_viewfull_shs", where, myVariables.getJhsf5FullOrder());
+                //actionTaken originaly is "Promoted"
+                String where =  "WHERE gradeLevel='"+n+"' AND schoolYear='"+schoolYear+"' AND strand='"+strand+"' AND sem='"+sem+"' "
+                        + "AND actionTaken='Passed' AND generalAverage>=75 ORDER BY generalAverage DESC LIMIT 0,"+studentsToShow;
+                result = my.return_values("*", "form_sf5_viewfull_shs", where, myVariables.getShsf5FullOrder());
                 
                 Thread.sleep(pauseDelay);
                 
@@ -109,7 +113,7 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
                     //Insert Rankings
                     for(int x=0;x<rankingTables[n-11].getRowCount();x++){
                         try {
-                            rankingTables[n-11].setValueAt(x+1, x, 15);
+                            rankingTables[n-11].setValueAt(x+1, x, 17);
                         } catch (Exception e) {
                         }
                     }

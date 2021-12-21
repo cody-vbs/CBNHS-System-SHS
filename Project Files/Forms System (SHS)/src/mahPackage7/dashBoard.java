@@ -577,6 +577,7 @@ public class dashBoard extends javax.swing.JFrame {
         jcbRankingSchoolYear = new javax.swing.JComboBox<>();
         jcbRankingNumberOfStudents = new javax.swing.JComboBox<>();
         jcbRankingStrand = new javax.swing.JComboBox<>();
+        jcbRankingSemester = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         logout = new javax.swing.JMenuItem();
@@ -4899,17 +4900,17 @@ public class dashBoard extends javax.swing.JFrame {
 
         grade11RankingTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Section ID", "Section Name", "School Year", "Grade", "Adviser ID", "Adviser Name", "Student ID", "LRN", "Student Name", "Gender", "Remarks", "General Average", "Action Taken", "Date Updated", "Rank"
+                "ID", "Section ID", "Section Name", "School Year", "Grade", "Adviser ID", "Adviser Name", "Student ID", "LRN", "Student Name", "Strand", "Gender", "Remarks", "General Average", "Action Taken", "Date Updated", "Semester", "Rank"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4925,29 +4926,31 @@ public class dashBoard extends javax.swing.JFrame {
             grade11RankingTable.getColumnModel().getColumn(4).setResizable(false);
             grade11RankingTable.getColumnModel().getColumn(6).setPreferredWidth(200);
             grade11RankingTable.getColumnModel().getColumn(9).setPreferredWidth(200);
-            grade11RankingTable.getColumnModel().getColumn(12).setResizable(false);
-            grade11RankingTable.getColumnModel().getColumn(12).setPreferredWidth(150);
-            grade11RankingTable.getColumnModel().getColumn(13).setPreferredWidth(120);
-            grade11RankingTable.getColumnModel().getColumn(14).setResizable(false);
-            grade11RankingTable.getColumnModel().getColumn(14).setPreferredWidth(150);
+            grade11RankingTable.getColumnModel().getColumn(10).setResizable(false);
+            grade11RankingTable.getColumnModel().getColumn(13).setResizable(false);
+            grade11RankingTable.getColumnModel().getColumn(13).setPreferredWidth(150);
+            grade11RankingTable.getColumnModel().getColumn(14).setPreferredWidth(120);
             grade11RankingTable.getColumnModel().getColumn(15).setResizable(false);
+            grade11RankingTable.getColumnModel().getColumn(15).setPreferredWidth(150);
+            grade11RankingTable.getColumnModel().getColumn(16).setResizable(false);
+            grade11RankingTable.getColumnModel().getColumn(17).setResizable(false);
         }
 
         tpRankingsTab.addTab("Grade 11", jScrollPane22);
 
         grade12RankingTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Section ID", "Section Name", "School Year", "Grade", "Adviser ID", "Adviser Name", "Student ID", "LRN", "Student Name", "Gender", "Remarks", "General Average", "Action Taken", "Date Updated", "Rank"
+                "ID", "Section ID", "Section Name", "School Year", "Grade", "Adviser ID", "Adviser Name", "Student ID", "LRN", "Student Name", "Strand", "Gender", "Remarks", "General Average", "Action Taken", "Date Updated", "Semester", "Rank"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4963,12 +4966,14 @@ public class dashBoard extends javax.swing.JFrame {
             grade12RankingTable.getColumnModel().getColumn(4).setResizable(false);
             grade12RankingTable.getColumnModel().getColumn(6).setPreferredWidth(200);
             grade12RankingTable.getColumnModel().getColumn(9).setPreferredWidth(200);
-            grade12RankingTable.getColumnModel().getColumn(12).setResizable(false);
-            grade12RankingTable.getColumnModel().getColumn(12).setPreferredWidth(150);
-            grade12RankingTable.getColumnModel().getColumn(13).setPreferredWidth(120);
-            grade12RankingTable.getColumnModel().getColumn(14).setResizable(false);
-            grade12RankingTable.getColumnModel().getColumn(14).setPreferredWidth(150);
+            grade12RankingTable.getColumnModel().getColumn(10).setResizable(false);
+            grade12RankingTable.getColumnModel().getColumn(13).setResizable(false);
+            grade12RankingTable.getColumnModel().getColumn(13).setPreferredWidth(150);
+            grade12RankingTable.getColumnModel().getColumn(14).setPreferredWidth(120);
             grade12RankingTable.getColumnModel().getColumn(15).setResizable(false);
+            grade12RankingTable.getColumnModel().getColumn(15).setPreferredWidth(150);
+            grade12RankingTable.getColumnModel().getColumn(16).setResizable(false);
+            grade12RankingTable.getColumnModel().getColumn(17).setResizable(false);
         }
 
         tpRankingsTab.addTab("Grade 12", jScrollPane26);
@@ -4992,6 +4997,8 @@ public class dashBoard extends javax.swing.JFrame {
 
         jcbRankingStrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "STEM", "ABM", "HUMMS", "GAS", "TVL" }));
 
+        jcbRankingSemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester" }));
+
         javax.swing.GroupLayout rankingsDialogLayout = new javax.swing.GroupLayout(rankingsDialog);
         rankingsDialog.setLayout(rankingsDialogLayout);
         rankingsDialogLayout.setHorizontalGroup(
@@ -5003,6 +5010,8 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(jcbRankingStrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcbRankingNumberOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcbRankingSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcbRankingSchoolYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -5019,7 +5028,8 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(btnRefreshRankings)
                             .addComponent(jcbRankingSchoolYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jcbRankingNumberOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcbRankingStrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jcbRankingStrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbRankingSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE))
@@ -5704,10 +5714,11 @@ public class dashBoard extends javax.swing.JFrame {
         
         String schoolYear = jcbRankingSchoolYear.getSelectedItem().toString();
         String strand = jcbRankingStrand.getSelectedItem().toString();
+        String sem = jcbRankingSemester.getSelectedItem().toString();
         
         my.runSecondaryThread(4, true, 
                 new JTable[]{grade11RankingTable,grade12RankingTable},
-                new String []{numberOfStudentsToShow,schoolYear,strand},
+                new String []{numberOfStudentsToShow,schoolYear,strand,sem},
                 new JTextField[]{},
                 new JButton[]{btnRefreshRankings},
                 new boolean[]{}
@@ -6935,8 +6946,8 @@ public class dashBoard extends javax.swing.JFrame {
             my.hideColumns(sf5Table, new int [] {0,1,2,3,7,12,});
             my.hideColumns(sf8Table, new int [] {0,1,2,7,16,17});
             
-            my.hideColumns(grade11RankingTable, new int [] {0,1,3,4,5,7,11});
-            my.hideColumns(grade12RankingTable, new int [] {0,1,3,4,5,7,11});
+            my.hideColumns(grade11RankingTable, new int [] {0,1,3,4,5,7,10,12,16});
+            my.hideColumns(grade12RankingTable, new int [] {0,1,3,4,5,7,10,12,16});
             
             my.hideColumns(enrolledStudentsTable, new int []{0,1,6});
             my.hideColumns(gradesTable, new int [] {0,1,2,3,8,9});
@@ -7600,6 +7611,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcbMissingValues3;
     private javax.swing.JComboBox<String> jcbRankingNumberOfStudents;
     private javax.swing.JComboBox<String> jcbRankingSchoolYear;
+    private javax.swing.JComboBox<String> jcbRankingSemester;
     private javax.swing.JComboBox<String> jcbRankingStrand;
     private javax.swing.JComboBox<String> jcbSchoolYear1;
     private javax.swing.JComboBox<String> jcbSchoolYear2;

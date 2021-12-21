@@ -7255,7 +7255,7 @@ public class dashBoard extends javax.swing.JFrame {
         };
         JComboBox [] dropDowns = {
             jcbMissingValues,jcbMissingValues1,jcbMissingValues2,jcbRankingNumberOfStudents,
-            jcbMissingValues3,
+            jcbMissingValues3,jcbRankingStrand,jcbRankingSemester,
         };
         int startingYear = 2019;
         

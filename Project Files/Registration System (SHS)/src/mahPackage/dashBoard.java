@@ -634,7 +634,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         jLabel95.setText("Select Excel File Format");
 
-        jcbFileFormats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HiSRMS-SF1 JHS (Default)", "LIS-SF1 JHS v2014.2.1.1" }));
+        jcbFileFormats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HiSRMS-SF1 SHS (Default)", "LIS-SF1 SHS v2014.2.1.1" }));
 
         tfFileLocation.setEditable(false);
 

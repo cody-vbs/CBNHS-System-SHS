@@ -3985,7 +3985,7 @@ public class dashBoard extends javax.swing.JFrame {
         String toSearch = my.convertEscapeCharacters(tfSearchStudent.getText().trim());
         String where = "WHERE lrn='"+toSearch+"' ";
 
-        if(myVariables.getAccessLevel() <5){
+        if(myVariables.getAccessLevel() <4){
             if(toSearch.contains(",")){
                 String additionalQuery;
                 additionalQuery = my.multipleColumnSearch("lName,fName,mName", "Last Name,First Name,Mname","LIKE,LIKE,LIKE",toSearch);
@@ -4014,7 +4014,7 @@ public class dashBoard extends javax.swing.JFrame {
         
         counter = 0;
 
-        if(myVariables.getAccessLevel() <5){
+        if(myVariables.getAccessLevel() <4){
             if(toSearch.contains(",")){
                 String additionalQuery;
                 additionalQuery = my.multipleColumnSearch("lName,fName,mName", "Last Name,First Name,Mname","LIKE,LIKE,LIKE",toSearch);
@@ -4955,7 +4955,7 @@ public class dashBoard extends javax.swing.JFrame {
         String toSearch = my.convertEscapeCharacters(tfSearchStudent1.getText().trim());
         String where = "WHERE lrn='"+toSearch+"' ";
 
-        if(myVariables.getAccessLevel() <5){
+        if(myVariables.getAccessLevel() <4){
             if(toSearch.contains(",")){
                 String additionalQuery;
                 additionalQuery = my.multipleColumnSearch("lName,fName,mName", "Last Name,First Name,Mname","LIKE,LIKE,LIKE",toSearch);
@@ -4978,7 +4978,7 @@ public class dashBoard extends javax.swing.JFrame {
         String toSearch = my.convertEscapeCharacters(tfSearchStudent1.getText().trim());
         String where = "WHERE lrn='"+toSearch+"' ";
 
-        if(myVariables.getAccessLevel() <5){
+        if(myVariables.getAccessLevel() < 4){
             if(toSearch.contains(",")){
                 String additionalQuery;
                 additionalQuery = my.multipleColumnSearch("lName,fName,mName", "Last Name,First Name,Mname","LIKE,LIKE,LIKE",toSearch);

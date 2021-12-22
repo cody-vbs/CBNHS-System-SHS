@@ -92,7 +92,6 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
         //<editor-fold desc="Load Subjects Only">
         lbLoadingMessage.setText("Connecting to Database...1/2");
         where = "WHERE id IN("+subjectIds+") "
-                + "AND subjectCode NOT LIKE'ADV%' "
                 + "ORDER BY FIELD(id,"+subjectIds+")";
         String subjectsResult [] = my.return_values("*", "subjects", where, myVariables.getSubjectOrder());
         
@@ -107,7 +106,6 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
         lbLoadingMessage.setText("Connecting to Database...2/2");
         where = "WHERE sectionId='"+sectionId+"' "
                 + "AND studentId='"+studentId+"' "
-                + "AND subjectCode NOT LIKE'ADV%' "
                 + "ORDER BY FIELD(subjectId,"+subjectIds+")";
         String result [] = my.return_values("*", "form_sf9_view_shs", where, myVariables.getShsf9Order());
         progressBar.setValue(2);
@@ -125,11 +123,13 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
             progressBar.setValue(0);
             
             for (int n = 0; n < subjectCount; n++) {
+                System.out.println("Pass "+(n+1));
                 lbLoadingMessage.setText("Loading Subjects..."+(n+1)+" of "+subjectCount);
                 progressBar.setValue(n+1);
                 //Find Match Using subjectId
                 currSubjectId = Integer.parseInt(my.getValueAtColumn(subjectsResult[n], 0));
                 System.out.println("This is the current ID"+currSubjectId);
+                System.out.println(subjectsResult[n]);
                 matchFound = false;
                 for (int x = 0; x < gradeCount; x++) {
                     foundSubjectId = Integer.parseInt(my.getValueAtColumn(result[x], 3));
@@ -140,12 +140,10 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                         try {
                             result[x] = my.setValueAtColumn(result[x], 11, temp[2].toUpperCase());
                         } catch (Exception e) {System.err.println("Invalid Status Found");}
-                        
-                        System.out.println(result[x]);
-
                         my.add_table_row(result[x], sf9Table);
                         break;
                     }
+                    System.out.println(result[x]);
                 }
                 if(!matchFound){
                     String toWrite = "-1@@-1@@-1@@"+my.skipColumns(subjectsResult[n], new int []{3,4,5})+" @@ @@ @@ @@ @@INCOMPLETE@@ @@MISSING@@";

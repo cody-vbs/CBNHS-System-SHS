@@ -1195,7 +1195,6 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         int fscount = 0; //1st sem grade count
                         int sscount = 0; //2nd sem grade count
                         for (int x = 0; x < gradeCount; x++) { //loop for grades
-                            
                             String subjectName = sf10GradeTables[n].getValueAt(x, 5).toString();
                             subjectName = my.removeSubjectGrade(subjectName, " ");
 

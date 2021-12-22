@@ -1258,11 +1258,11 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
             switch(myVariables.getFormSelected()){
                 case 1:{
                     //<editor-fold desc="SF1 Headers">
-                    String mCount [] = new String [] {"L,20","L,30","L,40","L,50","L,60","L,70","L,80"};
-                    String fCount [] = new String [] {"L,21","L,31","L,41","L,51","L,61","L,71","L,81"};
-                    String tCount [] = new String [] {"L,22","L,32","L,42","L,52","L,62","L,72","L,82"};
-                    String advName []= new String [] {"N,20","N,30","N,40","N,50","N,60","N,70","N,80"};
-                    String prncplName []= new String [] {"Q,20","Q,30","Q,40","Q,50","Q,60","Q,70","Q,80"};
+                    String mCount [] = new String [] {"L,22","L,32","L,42","L,52","L,62","L,72","L,82"};
+                    String fCount [] = new String [] {"L,23","L,33","L,43","L,53","L,63","L,73","L,83"};
+                    String tCount [] = new String [] {"L,24","L,34","L,44","L,54","L,64","L,74","L,84"};
+                    String advName []= new String [] {"N,23","N,33","N,43","N,53","N,63","N,73","N,83"};
+                    String prncplName []= new String [] {"Q,23","Q,33","Q,43","Q,53","Q,63","Q,73","Q,83"};
                     headers = new header[]{
                         //Header Parts
                         new header(schoolId, "C,3"),

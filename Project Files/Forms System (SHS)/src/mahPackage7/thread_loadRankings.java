@@ -82,7 +82,7 @@ public class thread_loadRankings extends SwingWorker<String, Object>{
             
             // ang algo dire di nako ma trace kay way unod ang database
             String [] result = null;
-            for(int n=11;n<12;n++){
+            for(int n=11;n<13;n++){
                 progressBar.setMaximum(4);
                 progressBar.setValue(n-10);
                 lbLoadingMessage.setText("Connecting to Database..."+(n-10)+"/4");

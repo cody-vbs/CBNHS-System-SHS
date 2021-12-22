@@ -16,15 +16,15 @@ public class myVariables {
     
     private static String ipAddress = "";
     private static String ipAddressOnly = "";
-    private static String schoolName;
-    private static String schoolId;
-    private static String region;
-    private static String division;
-    private static String district;
-    private static String principal;
-    private static String divisionRepresentative;
-    private static String divisionSuperintendent;
-    private static String schoolAddress;
+    private static String schoolName = "";
+    private static String schoolId = "";
+    private static String region = "";
+    private static String division = "";
+    private static String district = "";
+    private static String principal = "";
+    private static String divisionRepresentative = "";
+    private static String divisionSuperintendent = "";
+    private static String schoolAddress = "";
     
     private static int loadingSpeed = 0;
     //Fonts

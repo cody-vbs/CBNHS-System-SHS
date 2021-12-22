@@ -1,4 +1,4 @@
-[0] ip_address=192.168.43.100
+[0] ip_address=localhost
 [1] school_name=Crossing Bayabas National High School
 [2] school_address=Neptune Street, Crossing Bayabas, Toril, Davao City
 [3] school_id=304356

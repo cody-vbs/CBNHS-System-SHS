@@ -1212,19 +1212,19 @@ public class mainMenu extends javax.swing.JFrame {
         boolean opened = false;
         switch(index){
             case 1:{
-                opened = my.runExeFile("modules/registration.exe",false);
+                opened = my.runExeFile("modules/Registration_System_Final.jar",false);
                 break;
             }case 2:{
-                opened = my.runExeFile("modules/enrollment.exe",false);
+                opened = my.runExeFile("modules/Enrollment_System_Final.exe",false);
                 break;
             }case 3:{
-                opened = my.runExeFile("modules/attendance.exe",false);
+                opened = my.runExeFile("modules/Attendance_System_Final.jar",false);
                 break;
             }case 4:{
-                opened = my.runExeFile("modules/weighing.exe",false);
+                opened = my.runExeFile("modules/Weighing_System_Final__SHS_.exe",false);
                 break;
             }case 5:{
-                opened = my.runExeFile("modules/bookKeeping.exe",false);
+                opened = my.runExeFile("modules/Book_Keeping_System.exe",false);
                 break;
             }case 6:{
                 opened = my.runExeFile("modules/grading.exe",false);

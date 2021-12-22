@@ -1091,9 +1091,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     startingAddress = "B,";
                     excelColumnsToSkip = "";
                     
+                    int fscount = 0;
+                    int sscount = 0;
+                    
                     for (int n = 0; n < rowCount; n++) {
-                        int fscount = 0;
-                        int sscount = 0;
                         
                         lbLoadingMessage.setText("Writing Tables...3/4 Grade "+(n+1)+" of "+rowCount);
                         
@@ -1191,9 +1192,9 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     
                     for (int n = 0; n < rowCount; n++) { //loop for tables
                         int gradeCount = sf10GradeTables[n].getRowCount(); //get grade count
+                        int fscount = 0; //1st sem grade count
+                        int sscount = 0; //2nd sem grade count
                         for (int x = 0; x < gradeCount; x++) { //loop for grades
-                            int fscount = 0; //1st sem grade count
-                            int sscount = 0; //2nd sem grade count
                             
                             String subjectName = sf10GradeTables[n].getValueAt(x, 5).toString();
                             subjectName = my.removeSubjectGrade(subjectName, " ");

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2021 at 01:20 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Dec 22, 2021 at 05:56 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -674,6 +674,36 @@ CREATE TABLE `form_sf5_viewfull` (
 ,`generalAverage` double
 ,`actionTaken` varchar(30)
 ,`dateUpdated` datetime
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `form_sf5_viewfull_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf5_viewfull_shs` (
+`id` int(11)
+,`sectionId` int(11)
+,`sectionName` varchar(50)
+,`schoolYear` int(11)
+,`gradeLevel` int(11)
+,`adviserId` int(11)
+,`user_Lname` varchar(200)
+,`user_Fname` varchar(200)
+,`user_Mname` varchar(200)
+,`studentId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`strand` varchar(10)
+,`sex` varchar(10)
+,`remarks` varchar(1000)
+,`generalAverage` double
+,`actionTaken` varchar(30)
+,`dateUpdated` datetime
+,`sem` varchar(15)
 );
 
 -- --------------------------------------------------------
@@ -2295,6 +2325,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `form_sf5_viewfull`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewfull`  AS SELECT `finalgrades`.`id` AS `id`, `finalgrades`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`c_gradeLevel` AS `gradeLevel`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`dateUpdated` AS `dateUpdated` FROM (((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `form_sf5_viewfull_shs`
+--
+DROP TABLE IF EXISTS `form_sf5_viewfull_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewfull_shs`  AS SELECT `finalgrades`.`id` AS `id`, `finalgrades`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`c_gradeLevel` AS `gradeLevel`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `enrollment`.`strand` AS `strand`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`dateUpdated` AS `dateUpdated`, `enrollment`.`sem` AS `sem` FROM (((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 

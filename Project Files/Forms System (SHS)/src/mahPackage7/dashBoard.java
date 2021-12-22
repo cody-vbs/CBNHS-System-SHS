@@ -333,6 +333,8 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jcbMissingValues3 = new javax.swing.JComboBox<>();
         jLabel105 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        semesterSelect1 = new javax.swing.JComboBox<>();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane13 = new javax.swing.JScrollPane();
         sf3Table = new javax.swing.JTable();
@@ -2391,6 +2393,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         jLabel105.setText("Values For Remarks");
 
+        jLabel103.setText("Semester");
+
+        semesterSelect1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st semester", "2nd semester" }));
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -2404,7 +2410,7 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnExportSf3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLoadStudents3, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                    .addComponent(btnLoadStudents3, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2424,7 +2430,12 @@ public class dashBoard extends javax.swing.JFrame {
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tfSchoolYear2)
                                     .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)))
-                            .addComponent(jcbMissingValues2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jcbMissingValues2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel103)
+                                    .addComponent(semesterSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -2458,9 +2469,13 @@ public class dashBoard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel40)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel103))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jcbMissingValues2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbMissingValues2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(semesterSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel105)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2576,7 +2591,7 @@ public class dashBoard extends javax.swing.JFrame {
         sf3Tab.setLayout(sf3TabLayout);
         sf3TabLayout.setHorizontalGroup(
             sf3TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1076, Short.MAX_VALUE)
+            .addComponent(jSplitPane5)
         );
         sf3TabLayout.setVerticalGroup(
             sf3TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5552,6 +5567,8 @@ public class dashBoard extends javax.swing.JFrame {
         }catch(Exception e){
             e.printStackTrace();
         }
+         
+         myVariables.setSem(semesterSelect1.getSelectedItem().toString());
         
         my.runSecondaryThread(2, true,
                 new JTable[]{sf3Table,sf3BooksTable},
@@ -5649,13 +5666,18 @@ public class dashBoard extends javax.swing.JFrame {
         boolean compareToRankings = cbCompareToRankings.isSelected();
         
         String sem5 = semesterSelect5.getSelectedItem().toString();
-        my.runSecondaryThread(3, false, 
+        try{
+             my.runSecondaryThread(3, false, 
                 new JTable[]{sf5Table,sf5SummaryTable,sf5LevelOfProgress,null/*sf6Table*/,grade11RankingTable,grade12RankingTable}, 
                 new String[]{sectionId,gradeLevel,sem5}, 
                 new JTextField[]{tfStrand5},
                 new JButton[]{btnLoadStudents4,btnExportSf5},
                 new boolean[]{showIncompleteStudents,compareToRankings}
-        );
+            );
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+       
     }//GEN-LAST:event_btnLoadStudents4ActionPerformed
 
     private void sf5TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sf5TableMouseClicked
@@ -5864,10 +5886,6 @@ public class dashBoard extends javax.swing.JFrame {
                     //computing general average
                     int generalAverage = 0;
                     for(int x = 0; x < result2.length; x++){
-                        String rgwa = my.getValueAtColumn(result2[x], 10);
-                        if("".equals(rgwa)){
-                            continue;
-                        }
                         generalAverage += Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                     }
                     generalAverage = generalAverage/result2.length;
@@ -5878,10 +5896,6 @@ public class dashBoard extends javax.swing.JFrame {
                     //checking failed subjects
                     String failedSubjects2 = "";
                     for(int x = 0; x < result2.length; x++){
-                        String rgwa = my.getValueAtColumn(result2[x], 10);
-                        if("".equals(rgwa)){
-                            continue;
-                        }
                         int temp = Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                         if(temp < 75){
                             String subjectCode = my.getValueAtColumn(result2[x], 3);
@@ -5974,10 +5988,6 @@ public class dashBoard extends javax.swing.JFrame {
                     //computing general average
                     int generalAverage = 0;
                     for(int x = 0; x < result2.length; x++){
-                        String rgwa = my.getValueAtColumn(result2[x], 10);
-                        if("".equals(rgwa)){
-                            continue;
-                        }
                         generalAverage += Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                     }
                     generalAverage = generalAverage/result2.length;
@@ -5987,10 +5997,6 @@ public class dashBoard extends javax.swing.JFrame {
                     //checking failed subjects
                     String failedSubjects2 = "";
                     for(int x = 0; x < result2.length; x++){
-                        String rgwa = my.getValueAtColumn(result2[x], 10);
-                        if("".equals(rgwa)){
-                            continue;
-                        }
                         int temp = Integer.parseInt(my.getValueAtColumn(result2[x], 10));
                         if(temp < 75){
                             String subjectCode = my.getValueAtColumn(result2[x], 3);
@@ -7403,6 +7409,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
@@ -7663,6 +7670,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel selectFormPanel;
     private javax.swing.JPanel selectSectionTab;
     private javax.swing.JComboBox<String> semesterSelect;
+    private javax.swing.JComboBox<String> semesterSelect1;
     private javax.swing.JComboBox<String> semesterSelect5;
     private javax.swing.JComboBox<String> semesterSelect7;
     private javax.swing.JComboBox<String> semesterSelect8;

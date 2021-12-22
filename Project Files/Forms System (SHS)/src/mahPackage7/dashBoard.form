@@ -3347,7 +3347,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jSplitPane5" alignment="0" pref="1076" max="32767" attributes="0"/>
+              <Component id="jSplitPane5" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -3399,7 +3399,7 @@
                                   <Component id="jLabel33" max="32767" attributes="0"/>
                                   <Component id="jScrollPane15" pref="0" max="32767" attributes="0"/>
                                   <Component id="btnExportSf3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnLoadStudents3" alignment="0" pref="449" max="32767" attributes="0"/>
+                                  <Component id="btnLoadStudents3" alignment="0" pref="577" max="32767" attributes="0"/>
                                   <Component id="jLabel34" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel37" alignment="0" max="32767" attributes="0"/>
@@ -3422,7 +3422,14 @@
                                                   <Component id="jLabel35" pref="110" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="jcbMissingValues2" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jcbMissingValues2" min="-2" pref="138" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel103" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="semesterSelect1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
@@ -3463,9 +3470,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel103" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jcbMissingValues2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jcbMissingValues2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="semesterSelect1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel105" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -3730,6 +3743,24 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Values For Remarks"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel103">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Semester"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="semesterSelect1">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="1st semester"/>
+                            <StringItem index="1" value="2nd semester"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>

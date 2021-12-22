@@ -101,7 +101,7 @@ public class thread_loadSf3Details extends SwingWorker<String, Object>{
                 if(!loadBooks(result)){
                     throw new InterruptedException("Interrupted bt user.");
                 }
-                my.searchItemThread("", "WHERE sectionId='"+sectionId+"'", sf3Table, 13, new int[]{3,4,5}, new boolean[]{true,false}, null, null, null);
+                my.searchItemThread("", "WHERE sectionId='"+sectionId+"' & sem = '" + myVariables.getSem() + "'" , sf3Table, 13, new int[]{3,4,5}, new boolean[]{true,false}, null, null, null);
                 //<editor-fold desc="Wait for search students to finish">
                 if(waitForMainThreadToFinish){
                     while (true) {                    

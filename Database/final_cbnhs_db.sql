@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2021 at 08:20 AM
+-- Generation Time: Dec 22, 2021 at 01:20 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -633,6 +633,24 @@ CREATE TABLE `form_sf3_view` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `form_sf3_view_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf3_view_shs` (
+`id` int(11)
+,`sectionId` int(11)
+,`studentId` int(11)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
+,`strand` varchar(10)
+,`sem` varchar(15)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `form_sf5_viewfull`
 -- (See below for the actual view)
 --
@@ -679,6 +697,31 @@ CREATE TABLE `form_sf5_viewminimal` (
 ,`actionTaken` varchar(30)
 ,`failedSubjects` varchar(1000)
 ,`dateUpdated` datetime
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `form_sf5_viewminimal_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf5_viewminimal_shs` (
+`id` int(11)
+,`sectionId` int(11)
+,`gradeLevel` int(11)
+,`studentId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
+,`remarks` varchar(1000)
+,`generalAverage` double
+,`actionTaken` varchar(30)
+,`failedSubjects` varchar(1000)
+,`dateUpdated` datetime
+,`strand` varchar(10)
+,`sem` varchar(15)
 );
 
 -- --------------------------------------------------------
@@ -923,6 +966,22 @@ CREATE TABLE `form_sf10_view_shs` (
 ,`remarks` varchar(1000)
 ,`dateEnrolled` datetime
 ,`strand` varchar(10)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `form_sf13_view_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf13_view_shs` (
+`id` int(11)
+,`sectionId` int(11)
+,`studentId` int(11)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
 );
 
 -- --------------------------------------------------------
@@ -2222,6 +2281,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `form_sf3_view_shs`
+--
+DROP TABLE IF EXISTS `form_sf3_view_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf3_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`studentId` AS `studentId`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `form_sf5_viewfull`
 --
 DROP TABLE IF EXISTS `form_sf5_viewfull`;
@@ -2236,6 +2304,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `form_sf5_viewminimal`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewminimal`  AS SELECT `finalgrades`.`id` AS `id`, `sections`.`id` AS `sectionId`, `loads`.`c_gradeLevel` AS `gradeLevel`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`failedSubjects` AS `failedSubjects`, `finalgrades`.`dateUpdated` AS `dateUpdated` FROM ((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `form_sf5_viewminimal_shs`
+--
+DROP TABLE IF EXISTS `form_sf5_viewminimal_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewminimal_shs`  AS SELECT `finalgrades`.`id` AS `id`, `sections`.`id` AS `sectionId`, `loads`.`c_gradeLevel` AS `gradeLevel`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`failedSubjects` AS `failedSubjects`, `finalgrades`.`dateUpdated` AS `dateUpdated`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2326,6 +2403,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `form_sf10_view_shs`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `loadName`, `loads`.`c_gradeLevel` AS `gradeLevel`, `loads`.`d_subjectsContained` AS `subjectsContained`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `enrollment`.`studentId` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`schoolYear` ASC, `enrollment`.`dateEnrolled` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `form_sf13_view_shs`
+--
+DROP TABLE IF EXISTS `form_sf13_view_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf13_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`studentId` AS `studentId`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 

@@ -113,6 +113,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
     private String superIntendentName;
     private String strandName;
     private String semester;
+    private String tvlCourse;
     //Functions Variables
     long threadDelay = 100;
     long pauseDelay = 500;
@@ -452,6 +453,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         //print sem and strand on excel
                         my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[8].getExcelAddress());
                         my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[9].getExcelAddress());
+                        my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[10].getExcelAddress());
                         
                         Thread.sleep(threadDelay);
                     }
@@ -619,6 +621,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                      //print sem and strand on excel
                     my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[5].getExcelAddress());
                     my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[6].getExcelAddress());
+                    my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[7].getExcelAddress());
                     
                     //#2 Write Sf3 Table
                     rowCount = sf3Table.getRowCount()-3;
@@ -652,6 +655,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                                  //print sem and strand on excel
                                 my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[5].getExcelAddress());
                                 my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[6].getExcelAddress());
+                                my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[7].getExcelAddress());
                                 
                                 row++;
                                 Thread.sleep(threadDelay);
@@ -663,6 +667,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                          //print sem and strand on excel
                         my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[5].getExcelAddress());
                         my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[6].getExcelAddress());
+                        my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[7].getExcelAddress());
                         Thread.sleep(threadDelay);
                         
                         //If there is no female and is last row
@@ -674,6 +679,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                                  //print sem and strand on excel
                                 my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[5].getExcelAddress());
                                 my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[6].getExcelAddress());
+                                my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[7].getExcelAddress());
                                 Thread.sleep(threadDelay);
                             }
                         }
@@ -687,6 +693,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                      //print sem and strand on excel
                     my.writeExcelSingleData(sheetNumber,myVariables.getStrandName(), headers[5].getExcelAddress());
                     my.writeExcelSingleData(sheetNumber,myVariables.getSem(), headers[6].getExcelAddress());
+                    my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[7].getExcelAddress());
                     
                     //</editor-fold>
                     break;
@@ -741,20 +748,23 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                             if(gender.contains("Female")){
                                 firstFemaleFound = true;
                                 //System.err.println(mCount);
-                                my.writeExcelLine(sheetNumber, mCount, excelColumnsToSkip, startingAddress+(row+8));
+                                my.writeExcelLine(sheetNumber, mCount, excelColumnsToSkip, startingAddress+(row+9));
+                                my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[10].getExcelAddress());
                                 row++;
                                 Thread.sleep(threadDelay);
                                 continue;
                             }
                         }
-                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(row+8));
+                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(row+9));
+                        my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[10].getExcelAddress());
                         row++;
                         n++;
                         Thread.sleep(threadDelay);
                     }
                     //Write Female & Total Counters
-                    my.writeExcelLine(sheetNumber, fCount, excelColumnsToSkip, startingAddress+(row+8));
-                    my.writeExcelLine(sheetNumber, tCount, excelColumnsToSkip, startingAddress+(row+8+1));
+                    my.writeExcelLine(sheetNumber, fCount, excelColumnsToSkip, startingAddress+(row+9));
+                    my.writeExcelLine(sheetNumber, tCount, excelColumnsToSkip, startingAddress+(row+9+1));
+                    my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[10].getExcelAddress());
                     
                     //#2 Write Summary Table
                     startingAddress2 = "K,";
@@ -768,6 +778,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         line = my.skipColumns(line, new int [] {0});
                         
                         my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress2+(n+10));
+                        my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[10].getExcelAddress());
                         Thread.sleep(threadDelay);
                     }
                     
@@ -788,7 +799,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         String line = my.get_table_row_values(n, sf5LevelOfProgressTable);
                         line = my.skipColumns(line, new int [] {0});
                         
-                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress2+(row+16));
+                        my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress2+(row+17));
+                        my.writeExcelSingleData(sheetNumber,myVariables.getTvl_dec(), headers[10].getExcelAddress());
                         
                         n++;
                         row++;
@@ -1079,10 +1091,9 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     startingAddress = "B,";
                     excelColumnsToSkip = "";
                     
-                    int fscount = 0;
-                    int sscount = 0;
-                    
                     for (int n = 0; n < rowCount; n++) {
+                        int fscount = 0;
+                        int sscount = 0;
                         
                         lbLoadingMessage.setText("Writing Tables...3/4 Grade "+(n+1)+" of "+rowCount);
                         
@@ -1180,9 +1191,10 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                     
                     for (int n = 0; n < rowCount; n++) { //loop for tables
                         int gradeCount = sf10GradeTables[n].getRowCount(); //get grade count
-                        int fscount = 0; //1st sem grade count
-                        int sscount = 0; //2nd sem grade count
                         for (int x = 0; x < gradeCount; x++) { //loop for grades
+                            int fscount = 0; //1st sem grade count
+                            int sscount = 0; //2nd sem grade count
+                            
                             String subjectName = sf10GradeTables[n].getValueAt(x, 5).toString();
                             subjectName = my.removeSubjectGrade(subjectName, " ");
 
@@ -1263,6 +1275,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(sectionName, "O,4"),
                         new header (strandName, "K,5"),
                         new header (semester , "O,5"),
+                        new header(tvlCourse, "K,6"),
                         //Form's Custom Fields
                         new header(maleCount, mCount[sheetNumber]),
                         new header(femaleCount, fCount[sheetNumber]),
@@ -1309,7 +1322,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(gradeLevel, "P,4"),
                         new header(sectionName, "T,4"),
                         new header(strandName,"O,3"),
-                        new header(semester,"R,3"),
+                        new header(semester,"T,3"),
+                        new header(tvlCourse, "R,3"),
                         //Form's Custom Fields
                         new header(adviserName, advName[sheetNumber]),
                     };
@@ -1343,6 +1357,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(sf5Curriculum, "J,4"),
                         new header(strand5,"L,5"),
                         new header(sem5,"J,5"),
+                        new header(tvlCourse, "J,7"),
                         //Form's Custom Fields
                         new header(adviserName, "J,29"),
                     };

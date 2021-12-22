@@ -87,9 +87,13 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
         threadDelay = threadSpeeds[0];
         pauseDelay = threadSpeeds[1];
     
-        my.getStrandFromSectionID("form_sf5_viewminimal_shs", "WHERE sectionId='"+sectionId+"'", myVariables.getShsf5MinimalOrder2());
-        String getStrand5 = myVariables.getStrandName();
-        tfStrand5.setText(getStrand5);
+       try{
+            my.getStrandFromSectionID("form_sf5_viewminimal_shs", "WHERE sectionId='"+sectionId+"'", myVariables.getShsf5MinimalOrder2());
+            String getStrand5 = myVariables.getStrandName();
+            tfStrand5.setText(getStrand5);
+       }catch(Exception e){
+           e.printStackTrace();
+       }
                 
     }
 

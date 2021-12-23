@@ -5158,8 +5158,8 @@ public class dashBoard extends javax.swing.JFrame {
         String sectionId = assignedTeacherTable.getValueAt(row, 1).toString();
         String sem = semesterSelect.getSelectedItem().toString();
         
-        my.getStrandFromSectionID("form_sf1_view_shs","WHERE sectionId='"+sectionId+"'");
-        my.getSemFromSectionID("form_sf1_view_shs","WHERE sectionId='"+sectionId+"'");
+        my.getStrandFromSectionID("form_sf1_view_shs","WHERE sectionId='"+sectionId+"'",myVariables.getShsf10Order());
+        my.getSemFromSectionID("form_sf1_view_shs","WHERE sectionId='"+sectionId+"'",myVariables.getShsf10Order());
 
 
         

@@ -2319,9 +2319,9 @@ public class myFunctions {
     }
     
     
-     public void getStrandFromSectionID(String from,String where){
+     public void getStrandFromSectionID(String from,String where, int view_order[]){
         //default table order
-        int order [] = new myVariables().getJhsf10Order();
+        int order [] = view_order;
         Arrays.sort(order);
         String  [] result = return_values("*", from, where,order);
         
@@ -2369,9 +2369,9 @@ public class myFunctions {
     }
      
      
-     public void getSemFromSectionID(String from,String where){
+     public void getSemFromSectionID(String from,String where, int view_order[]){
         //default table order
-        int order [] = new myVariables().getJhsf10Order();
+        int order [] = view_order;
         Arrays.sort(order);
         String  [] result = return_values("*", from, where,order);
         

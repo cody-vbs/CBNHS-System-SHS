@@ -126,7 +126,7 @@ public class thread_loadSf5Details extends SwingWorker<String, Object>{
             }
             
             String result [] = my.return_values("*", "form_sf5_viewminimal_shs", where1, myVariables.getShsf5MinimalOrder());
-                                    
+            
             if(result==null){
                 if(sf6Table == null){
                     my.showMessage("This section's students does not have grades submitted yet.", JOptionPane.ERROR_MESSAGE);

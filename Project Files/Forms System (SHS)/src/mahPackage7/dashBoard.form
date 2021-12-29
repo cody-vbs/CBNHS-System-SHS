@@ -4721,11 +4721,10 @@
                             <Component class="javax.swing.JComboBox" name="semesterSelect5">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="4">
+                                  <StringArray count="3">
                                     <StringItem index="0" value="1st Semester"/>
                                     <StringItem index="1" value="2nd Semester"/>
                                     <StringItem index="2" value="All"/>
-                                    <StringItem index="3" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -4781,11 +4780,8 @@
                                           <Component id="tfSchoolYear4" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                           <Component id="jLabel55" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                           <Component id="btnExportSf6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btnLoadStudents5" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="cbShowIncompleteStudents1" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="cbCompareToRankings1" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="btnLoadStudents5" alignment="0" pref="388" max="32767" attributes="0"/>
+                                          <Component id="cbShowIncompleteStudents1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -4804,9 +4800,7 @@
                                       <Component id="tfSchoolYear4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="cbShowIncompleteStudents1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbCompareToRankings1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                       <Component id="btnLoadStudents5" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnExportSf6" min="-2" max="-2" attributes="0"/>
@@ -4869,21 +4863,6 @@
                                   <Connection code="myVariables.TEXTFIELD_HEADER_FONT" type="code"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Show Students With Incomplete Records?"/>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/mahPackage7/icons/icons8_unchecked_checkbox_20px.png"/>
-                                </Property>
-                                <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/mahPackage7/icons/icons8_checked_checkbox_20px.png"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JCheckBox" name="cbCompareToRankings1">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                  <Connection code="myVariables.TEXTFIELD_HEADER_FONT" type="code"/>
-                                </Property>
-                                <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Search for Honor Students?"/>
                                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                                   <Image iconType="3" name="/mahPackage7/icons/icons8_unchecked_checkbox_20px.png"/>
                                 </Property>

@@ -59,8 +59,8 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
         my = new myFunctions(true);
         sectionsTable = tablesToUse[6];
         
-        waitForSecondThreadToFinish = booleansToUse[2];
-        allSectionSelected = booleansToUse[3];
+        waitForSecondThreadToFinish = booleansToUse[1];
+        allSectionSelected = booleansToUse[2];
         
         btnLoadStudents = buttonsToUse[0];
         btnExportSf6 = buttonsToUse[1];
@@ -76,7 +76,6 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
         
         
         showIncompleteRecords = booleansToUse[0];
-        compareToRankings = booleansToUse[1];
         
         //For Loading Screen
         jFrameName = myVariables.getCurrentLoadingFrame();
@@ -113,6 +112,82 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
         //Load Empty Counters
         if(!loadEmptyCounters()){throw new InterruptedException("Interrupted By User");}
         
+        //values
+        int g11Mp = 0;
+        int g11Fp = 0;
+        int g11Tp = 0;
+        int g11Mc = 0;
+        int g11Fc = 0;
+        int g11Tc = 0;
+        int g11Mr = 0;
+        int g11Fr = 0;
+        int g11Tr = 0;
+        int g11M74b = 0;
+        int g11F74b = 0;
+        int g11T74b = 0;
+        int g11M7579 = 0;
+        int g11F7579 = 0;
+        int g11T7579 = 0;
+        int g11M8084 = 0;
+        int g11F8084 = 0;
+        int g11T8084 = 0;
+        int g11M8589 = 0;
+        int g11F8589 = 0;
+        int g11T8589 = 0;
+        int g11M90100 = 0;
+        int g11F90100 = 0;
+        int g11T90100 = 0;
+        
+        int g12Mp = 0;
+        int g12Fp = 0;
+        int g12Tp = 0;
+        int g12Mc = 0;
+        int g12Fc = 0;
+        int g12Tc = 0;
+        int g12Mr = 0;
+        int g12Fr = 0;
+        int g12Tr = 0;
+        int g12M74b = 0;
+        int g12F74b = 0;
+        int g12T74b = 0;
+        int g12M7579 = 0;
+        int g12F7579 = 0;
+        int g12T7579 = 0;
+        int g12M8084 = 0;
+        int g12F8084 = 0;
+        int g12T8084 = 0;
+        int g12M8589 = 0;
+        int g12F8589 = 0;
+        int g12T8589 = 0;
+        int g12M90100 = 0;
+        int g12F90100 = 0;
+        int g12T90100 = 0;
+        
+        int maleTp = 0;
+        int femaleTp = 0;
+        int totalP = 0;
+        int maleTc = 0;
+        int femaleTc = 0;
+        int totalC = 0;
+        int maleTr = 0;
+        int femaleTr = 0;
+        int totalR = 0;
+        int maleT74b = 0;
+        int femaleT74b = 0;
+        int total74b = 0;
+        int maleT7579 = 0;
+        int femaleT7579 = 0;
+        int total7579 = 0;
+        int maleT8084 = 0;
+        int femaleT8084 = 0;
+        int total8084 = 0;
+        int maleT8589 = 0;
+        int femaleT8589 = 0;
+        int total8589 = 0;
+        int maleT90100 = 0;
+        int femaleT90100 = 0;
+        int total90100 = 0;
+        
         //Prepare Section IDs
         for(int n=0;n<sectionCount;n++){
             showCustomDialog("Loading Sf6 Details...", dialogPanel, false, 420, 220, false);
@@ -122,29 +197,205 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
             
             sectionId = sectionsTable.getValueAt(allSectionSelected? n : selectedSections[n], 1).toString();
             gradeLevel = sectionsTable.getValueAt(allSectionSelected? n : selectedSections[n], 9).toString();
+            System.err.println("Section ID: "+sectionId+" Grade: "+gradeLevel);
             
-            Thread.sleep(pauseDelay);
-            my.runSecondaryThread(3, false, 
-                    new JTable[]{sf5Table,sf5SummaryTable,sf5LevelOfProgress,sf6Table,rankingTable7,rankingTable8,rankingTable9,rankingTable10}, 
-                    new String[]{sectionId,gradeLevel}, 
-                    new JTextField[]{},
-                    new JButton[]{null,null},
-                    new boolean[]{showIncompleteRecords,compareToRankings}
-            );
+            String where = "where sectionId='"+sectionId+"'"; 
+            String result [] = my.return_values("*", "form_sf5_viewminimal_shs", where, myVariables.getShsf5MinimalOrder());
+            int studCount = result.length;
             
-            if(waitForSecondThreadToFinish){
-                System.err.println("Waiting for SecondThread to Finish first...");
-                while (true) {                
-                    if(myFunctions.getSecondThread() == null){
-                        break;
+            for(int x=0;x<studCount;x++){
+                lbLoadingMessage.setText("Loading Student... "+(x+1)+" of "+sectionCount);
+                int grade = Integer.parseInt(my.getValueAtColumn(result[x], 10));
+                int glevel = Integer.parseInt(my.getValueAtColumn(result[x], 2));
+                String status = my.getValueAtColumn(result[x], 11);
+                if("Incomplete".equals(status)){
+                    if(showIncompleteRecords){
+                        //do nothing lol
+                    }
+                    else{
+                        continue;
+                    }
+                }
+                String gender = my.getValueAtColumn(result[x], 8);
+                if(status.contains("Promoted")){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11Fp++;
+                        }if(12 == glevel){
+                            g12Fp++;
+                        }
                     }else{
-                        if(!myFunctions.getSecondThread().isAlive()){
-                            break;
+                        if(11 == glevel){
+                            g11Mp++;
+                        }if(12 == glevel){
+                            g12Mp++;
+                        }
+                    }
+                }if(status.contains("Conditional")){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11Fc++;
+                        }if(12 == glevel){
+                            g12Fc++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11Mc++;
+                        }if(12 == glevel){
+                            g12Mc++;
+                        }
+                    }
+                }if(status.contains("Retained")){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11Fr++;
+                        }if(12 == glevel){
+                            g12Fr++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11Mr++;
+                        }if(12 == glevel){
+                            g12Mr++;
+                        }
+                    }
+                }
+                if(grade <= 74){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11F74b++;
+                        }if(12 == glevel){
+                            g12F74b++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11M74b++;
+                        }if(12 == glevel){
+                            g12M74b++;
+                        }
+                    }
+                }if(grade > 74 && grade <= 79){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11F7579++;
+                        }if(12 == glevel){
+                            g12F7579++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11M7579++;
+                        }if(12 == glevel){
+                            g12M7579++;
+                        }
+                    }
+                }if(grade > 79 && grade <= 84){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11F8084++;
+                        }if(12 == glevel){
+                            g12F8084++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11M8084++;
+                        }if(12 == glevel){
+                            g12M8084++;
+                        }
+                    }
+                }if(grade > 84 && grade <= 89){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11F8589++;
+                        }if(12 == glevel){
+                            g12F8589++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11M8589++;
+                        }if(12 == glevel){
+                            g12M8589++;
+                        }
+                    }
+                }if(grade > 89 && grade <= 100){
+                    if(gender.contains("Female")){
+                        if(11 == glevel){
+                            g11F90100++;
+                        }if(12 == glevel){
+                            g12F90100++;
+                        }
+                    }else{
+                        if(11 == glevel){
+                            g11M90100++;
+                        }if(12 == glevel){
+                            g12M90100++;
                         }
                     }
                 }
             }
         }
+        
+        //add nato dre
+        g11Tp = g11Mp+g11Fp;
+        g11Tc = g11Mc+g11Fc;
+        g11Tr = g11Mr+g11Fr;
+        g11T74b = g11M74b+g11F74b;
+        g11T7579 = g11M7579+g11F7579;
+        g11T8084 = g11M8084+g11F8084;
+        g11T8589 = g11M8589+g11F8589;
+        g11T90100 = g11M90100+g11M90100;
+        g12Tp = g12Mp+g12Fp;
+        g12Tc = g12Mc+g12Fc;
+        g12Tr = g12Mr+g12Fr;
+        g12T74b = g12M74b+g12F74b;
+        g12T7579 = g12M7579+g12F7579;
+        g12T8084 = g12M8084+g12F8084;
+        g12T8589 = g12M8589+g12F8589;
+        g12T90100 = g12M90100+g12M90100;
+        maleTp = g11Mp+g12Mp;
+        femaleTp = g11Fp+g12Fp;
+        totalP = maleTp+femaleTp;
+        maleTc = g11Mc+g12Mc;
+        femaleTc = g11Fc+g12Fc;
+        totalC = maleTc+femaleTc;
+        maleTr = g11Mr+g12Mr;
+        femaleTr = g11Fr+g12Fr;
+        totalR = maleTr+femaleTr;
+        maleT74b = g11M74b+g12M74b;
+        femaleT74b = g11F74b+g12F74b;
+        total74b = maleT74b+femaleT74b;
+        maleT7579 = g11M7579+g12M7579;
+        femaleT7579 = g11F7579+g12F7579;
+        total7579 = maleT7579+femaleT7579;
+        maleT8084 = g11M8084+g12M8084;
+        femaleT8084 = g11F8084+g12F8084;
+        total8084 = maleT8084+femaleT8084;
+        maleT8589 = g11M8589+g12M8589;
+        femaleT8589 = g11F8589+g12F8589;
+        total8589 = maleT8589+femaleT8589;
+        maleT90100 = g11M90100+g12M90100;
+        femaleT90100 = g11F90100+g12F90100;
+        total90100 = maleT90100+femaleT90100;
+        
+        //algo to output values to sf6table
+        my.clear_table_rows(sf6Table);
+        String [] counters = {
+                "PROMOTED@@"+g11Mp+"@@"+g11Fp+"@@"+g11Tp+"@@"+g12Mp+"@@"+g12Fp+"@@"+g11Tp+"@@"+maleTp+"@@"+femaleTp+"@@"+totalP+"@@",
+                "CONDITIONAL@@"+g11Mc+"@@"+g11Fc+"@@"+g11Tc+"@@"+g12Mc+"@@"+g12Fc+"@@"+g11Tc+"@@"+maleTc+"@@"+femaleTc+"@@"+totalC+"@@",
+                "RETAINED@@"+g11Mr+"@@"+g11Fr+"@@"+g11Tr+"@@"+g12Mr+"@@"+g12Fr+"@@"+g11Tr+"@@"+maleTr+"@@"+femaleTr+"@@"+totalR+"@@",
+                "Below 74@@"+g11M74b+"@@"+g11F74b+"@@"+g11T74b+"@@"+g12M74b+"@@"+g12F74b+"@@"+g12T74b+"@@"+maleT74b+"@@"+femaleT74b+"@@"+total74b+"@@",
+                "75 - 79@@"+g11M7579+"@@"+g11F7579+"@@"+g11T7579+"@@"+g12M7579+"@@"+g12F7579+"@@"+g12T7579+"@@"+maleT7579+"@@"+femaleT7579+"@@"+total7579+"@@",
+                "80 - 84@@"+g11M8084+"@@"+g11F8084+"@@"+g11T8084+"@@"+g12M8084+"@@"+g12F8084+"@@"+g12T8084+"@@"+maleT8084+"@@"+femaleT8084+"@@"+total8084+"@@",
+                "85 - 89@@"+g11M8589+"@@"+g11F8589+"@@"+g11T8589+"@@"+g12M8589+"@@"+g12F8589+"@@"+g12T8589+"@@"+maleT8589+"@@"+femaleT8589+"@@"+total8589+"@@",
+                "90 - 100@@"+g11M90100+"@@"+g11F90100+"@@"+g11T90100+"@@"+g12M90100+"@@"+g12F90100+"@@"+g12T90100+"@@"+maleT90100+"@@"+femaleT90100+"@@"+total90100+"@@",
+                "TOTAL@@0@@0@@0@@0@@0@@0@@0@@0@@0@@0@@0@@0@@0@@0@@0@@",
+        };
+        
+        for(int n=0;n<counters.length;n++){
+            lbLoadingMessage.setText("Loading Counters... "+(n+1)+" of "+counters.length);
+                progressBar.setValue(n+1);
+            my.add_table_row(counters[n], sf6Table);
+        }
+        
         btnExportSf6.setEnabled(true);
         return "Finished Successfully";
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -175,7 +426,7 @@ public class thread_loadSf6Details extends SwingWorker<String, Object>{
             progressBar.setValue(0);
             
             for(int n=0;n<counters.length;n++){
-                lbLoadingMessage.setText("Loading Empty Counters... "+(n+1)+" of "+counters.length);
+                lbLoadingMessage.setText("Loading Counters... "+(n+1)+" of "+counters.length);
                 progressBar.setValue(n+1);
                 
                 my.add_table_row(counters[n], sf6Table);

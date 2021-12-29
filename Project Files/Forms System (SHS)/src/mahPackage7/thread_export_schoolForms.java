@@ -812,12 +812,12 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 }case 6:{
                     //<editor-fold desc="WRITE SF6">
                     int rowCount = sf6Table.getRowCount();
-                    startingAddress = "B,";
-                    excelColumnsToSkip = "N,O,P,Q,R,S";
+                    startingAddress = "N,";
+                    excelColumnsToSkip = "";
                     int [] rowsToSkip = new int [] {13};
                     
                     int row = 0;
-                    for (int n = 0; n < rowCount; ) {
+                    for (int n = 0; n < rowCount-1; ) {
                         lbLoadingMessage.setText("Writing Tables...3/4 Summary "+(n+1)+" of "+rowCount);
                         
                         if(my.isInsideArray(row+10, rowsToSkip)){
@@ -826,9 +826,14 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         }
                         
                         String line = my.get_table_row_values(n, sf6Table);
-                        line = my.skipColumns(line, new int [] {0});
+                        line = my.skipColumns(line, new int [] {0,7,8,9});
                         
                         my.writeExcelLine(sheetNumber, line, excelColumnsToSkip, startingAddress+(row+10));
+                        
+                        //to skip row
+                        if(n == 2){
+                            row++;
+                        }
                         
                         row++;
                         n++;

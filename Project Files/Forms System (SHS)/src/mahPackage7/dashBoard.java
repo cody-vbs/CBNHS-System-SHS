@@ -382,7 +382,6 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         cbShowIncompleteStudents1 = new javax.swing.JCheckBox();
-        cbCompareToRankings1 = new javax.swing.JCheckBox();
         btnLoadStudents5 = new javax.swing.JButton();
         btnExportSf6 = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
@@ -2829,7 +2828,7 @@ public class dashBoard extends javax.swing.JFrame {
         tfCurriculum.setEditable(false);
         tfCurriculum.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        semesterSelect5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester", "All", " " }));
+        semesterSelect5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester", "All" }));
 
         tfStrand5.setBackground(new java.awt.Color(240, 240, 240));
 
@@ -2977,12 +2976,6 @@ public class dashBoard extends javax.swing.JFrame {
         cbShowIncompleteStudents1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_unchecked_checkbox_20px.png"))); // NOI18N
         cbShowIncompleteStudents1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_checked_checkbox_20px.png"))); // NOI18N
 
-        cbCompareToRankings1.setFont(myVariables.TEXTFIELD_HEADER_FONT);
-        cbCompareToRankings1.setSelected(true);
-        cbCompareToRankings1.setText("Search for Honor Students?");
-        cbCompareToRankings1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_unchecked_checkbox_20px.png"))); // NOI18N
-        cbCompareToRankings1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_checked_checkbox_20px.png"))); // NOI18N
-
         btnLoadStudents5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_sync_16px.png"))); // NOI18N
         btnLoadStudents5.setText("Load Students");
         btnLoadStudents5.addActionListener(new java.awt.event.ActionListener() {
@@ -3018,10 +3011,8 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(tfSchoolYear4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExportSf6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLoadStudents5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cbShowIncompleteStudents1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cbCompareToRankings1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnLoadStudents5, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                    .addComponent(cbShowIncompleteStudents1))
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
@@ -3037,9 +3028,7 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(tfSchoolYear4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbShowIncompleteStudents1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbCompareToRankings1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(39, 39, 39)
                 .addComponent(btnLoadStudents5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnExportSf6)
@@ -5814,14 +5803,13 @@ public class dashBoard extends javax.swing.JFrame {
 
     private void btnLoadStudents5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadStudents5ActionPerformed
         boolean showIncompleteStudents = cbShowIncompleteStudents1.isSelected();
-        boolean compareToRankings = cbCompareToRankings1.isSelected();
         
         my.runThirdThread(1, true, 
                 new JTable[]{sf5Table,sf5SummaryTable,sf5LevelOfProgress,sf6Table,grade11RankingTable,grade12RankingTable,assignedTeacherTable},
                 new String[]{},
                 new JTextField[]{},
                 new JButton[]{btnLoadStudents5,btnExportSf6},
-                new boolean[]{showIncompleteStudents,compareToRankings,true,myVariables.isSelectAllSectionsForSf6()},
+                new boolean[]{showIncompleteStudents,true,myVariables.isSelectAllSectionsForSf6()},
                 null
         );
     }//GEN-LAST:event_btnLoadStudents5ActionPerformed
@@ -7392,7 +7380,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel card2;
     private javax.swing.JPanel cards;
     private javax.swing.JCheckBox cbCompareToRankings;
-    private javax.swing.JCheckBox cbCompareToRankings1;
     private javax.swing.JCheckBox cbRemoveTeachersWNoSubjects;
     private javax.swing.JCheckBox cbShowIncompleteStudents;
     private javax.swing.JCheckBox cbShowIncompleteStudents1;

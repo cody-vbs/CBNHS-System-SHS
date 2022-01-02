@@ -2071,7 +2071,7 @@ public class dashBoard extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -6354,7 +6354,7 @@ public class dashBoard extends javax.swing.JFrame {
         
         counter4 = 0;
 
-        if(myVariables.getAccessLevel() <5){
+        if(myVariables.getAccessLevel() < 4){
             if(toSearch.contains(",")){
                 String additionalQuery;
                 additionalQuery = my.multipleColumnSearch("user_Lname,user_Fname,user_Mname", "Last Name,First Name,Mname","LIKE,LIKE,LIKE",toSearch);

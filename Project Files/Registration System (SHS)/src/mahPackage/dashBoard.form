@@ -2578,7 +2578,7 @@
                                         <Column editable="false" title="Subject Code" type="java.lang.Object"/>
                                         <Column editable="false" title="Description" type="java.lang.Object"/>
                                         <Column editable="false" title="Grade Level" type="java.lang.Object"/>
-                                        <Column editable="true" title="Semester" type="java.lang.Object"/>
+                                        <Column editable="false" title="Semester" type="java.lang.Object"/>
                                       </Table>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

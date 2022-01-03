@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 05:06 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jan 03, 2022 at 07:37 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -366,7 +365,8 @@ INSERT INTO `books` (`id`, `bookCode`, `bookName`, `gradeLevel`) VALUES
 (3, 'Basic Cal12', 'Basic Calculus', 12),
 (4, 'MIL12', 'Media and Information Literacy', 12),
 (5, 'ACC 11', 'Accounting 11', 11),
-(6, 'ACC 12', 'Accounting 12', 12);
+(6, 'ACC 12', 'Accounting 12', 12),
+(7, 'OCR11', 'Introduction to Oral  ommunication', 11);
 
 -- --------------------------------------------------------
 
@@ -417,7 +417,8 @@ INSERT INTO `booktemplates` (`id`, `templateName`, `gradeLevel`, `booksContained
 (1, 'STEM 11', 11, '1:2:'),
 (2, 'STEM 12', 12, '3:4:'),
 (3, 'ABM 11', 11, '5:1:'),
-(4, 'ABM 12', 12, '6:4:');
+(4, 'ABM 12', 12, '6:4:'),
+(5, 'GAS 11', 11, '1:7:');
 
 -- --------------------------------------------------------
 
@@ -462,7 +463,18 @@ INSERT INTO `enrollment` (`id`, `studentId`, `sectionId`, `dateEnrolled`, `remar
 (20, 21, 4, '2021-09-29 09:20:52', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
 (21, 22, 4, '2021-09-29 09:21:02', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
 (22, 23, 4, '2021-09-29 09:21:11', 'T/I: 2021-09-29!T/I: 2021-09-29!', 'ABM', '1st semester', 'SHS'),
-(23, 4, 6, '2021-11-25 20:35:06', ' ! !', 'HUMMS', '1st semester', 'SHS');
+(23, 4, 6, '2021-11-25 20:35:06', ' ! !', 'HUMMS', '1st semester', 'SHS'),
+(24, 33, 7, '2021-12-22 01:12:06', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(25, 34, 7, '2021-12-22 01:12:29', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(26, 35, 7, '2021-12-22 01:12:51', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(27, 36, 7, '2021-12-22 01:13:17', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(28, 37, 7, '2021-12-22 01:13:47', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(29, 9, 5, '2021-12-22 01:14:45', ' ! !', 'STEM', '1st semester', 'SHS'),
+(30, 38, 7, '2021-12-22 01:16:03', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(31, 39, 7, '2021-12-22 01:16:25', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(32, 40, 7, '2021-12-22 01:16:48', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(33, 41, 7, '2021-12-22 01:17:16', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'GAS', '1st semester', 'SHS'),
+(34, 42, 7, '2021-12-22 01:21:45', 'T/I: 2021-12-22!T/I: 2021-12-22!', 'ABM', '1st semester', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -642,6 +654,36 @@ CREATE TABLE `form_sf5_viewfull` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `form_sf5_viewfull_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf5_viewfull_shs` (
+`id` int(11)
+,`sectionId` int(11)
+,`sectionName` varchar(50)
+,`schoolYear` int(11)
+,`gradeLevel` int(11)
+,`adviserId` int(11)
+,`user_Lname` varchar(200)
+,`user_Fname` varchar(200)
+,`user_Mname` varchar(200)
+,`studentId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`strand` varchar(10)
+,`sex` varchar(10)
+,`remarks` varchar(1000)
+,`generalAverage` double
+,`actionTaken` varchar(30)
+,`dateUpdated` datetime
+,`sem` varchar(15)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `form_sf5_viewminimal`
 -- (See below for the actual view)
 --
@@ -660,6 +702,31 @@ CREATE TABLE `form_sf5_viewminimal` (
 ,`actionTaken` varchar(30)
 ,`failedSubjects` varchar(1000)
 ,`dateUpdated` datetime
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `form_sf5_viewminimal_shs`
+-- (See below for the actual view)
+--
+CREATE TABLE `form_sf5_viewminimal_shs` (
+`id` int(11)
+,`sectionId` int(11)
+,`gradeLevel` int(11)
+,`studentId` int(11)
+,`lrn` varchar(12)
+,`lName` varchar(100)
+,`fName` varchar(100)
+,`mName` varchar(100)
+,`sex` varchar(10)
+,`remarks` varchar(1000)
+,`generalAverage` double
+,`actionTaken` varchar(30)
+,`failedSubjects` varchar(1000)
+,`dateUpdated` datetime
+,`strand` varchar(10)
+,`sem` varchar(15)
 );
 
 -- --------------------------------------------------------
@@ -964,7 +1031,10 @@ INSERT INTO `grades` (`id`, `studentId`, `sectionId`, `subjectId`, `firstQuarter
 (31, 4, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:43'),
 (32, 11, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:51'),
 (33, 23, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:34:58'),
-(34, 8, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:35:03');
+(34, 8, 4, 71, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-11-27 00:35:03'),
+(35, 35, 7, 69, '', '', '', '', '', 'Open:Open:Incomplete:', '2021-12-22 01:35:28'),
+(36, 35, 7, 75, '90', '98', '', '', '94', 'Open:Open:Passed:', '2021-12-22 01:38:10'),
+(37, 38, 7, 75, '87', '94', '', '', '', 'Open:Open:Incomplete:', '2021-12-22 01:38:21');
 
 -- --------------------------------------------------------
 
@@ -1240,7 +1310,8 @@ INSERT INTO `loads` (`a_id`, `b_loadName`, `c_gradeLevel`, `d_subjectsContained`
 (2, 'STEM - 12', 12, '68:71:72:73:74:', 'SHS'),
 (3, 'STEM - 11', 11, '65:69:70:', 'SHS'),
 (4, 'ABM - 11', 11, '66:69:70:', 'SHS'),
-(5, 'ABM - 12', 12, '67:71:72:73:74:', 'SHS');
+(5, 'ABM - 12', 12, '67:71:72:73:74:', 'SHS'),
+(6, 'GAS - 11', 11, '69:70:75:79:', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -1277,7 +1348,7 @@ INSERT INTO `personalinfo` (`id`, `stdId`, `bDate`, `age`, `mTongue`, `ip`, `rlg
 (2, 4, '2004-12-17', 17, 'Bisaya', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:20:51'),
 (3, 5, '2004-06-18', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:21:19'),
 (4, 6, '2004-10-26', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:21:48'),
-(5, 7, '2004-10-16', 0, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:28:57'),
+(5, 7, '2004-10-16', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 10:39:25'),
 (6, 8, '2004-10-16', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:22:40'),
 (7, 9, '2004-10-16', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:22:52'),
 (8, 10, '2004-10-16', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:23:11'),
@@ -1301,7 +1372,29 @@ INSERT INTO `personalinfo` (`id`, `stdId`, `bDate`, `age`, `mTongue`, `ip`, `rlg
 (26, 28, '2004-10-16', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:27:12'),
 (27, 29, '2004-10-16', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:27:24'),
 (28, 30, '0000-00-00', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-09-29 10:27:38'),
-(29, 31, '0000-00-00', 0, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-11-15 15:56:40');
+(29, 31, '0000-00-00', 0, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-11-15 15:56:40'),
+(30, 32, '2004-10-10', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 10:40:24'),
+(31, 33, '2004-11-11', 17, 'bisaya', 'none', 'roman catholic', '3456', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 21:46:58'),
+(32, 34, '2004-11-11', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 21:47:46'),
+(33, 35, '2004-11-11', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 21:52:38'),
+(34, 36, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 21:53:15'),
+(35, 37, '2004-11-11', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 21:57:17'),
+(36, 38, '2004-11-11', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 21:57:43'),
+(37, 39, '2004-11-11', 17, 'LANGUAGE', 'INDIGENOUS PEOPLE', 'RELIGION', 'HOUSE NUM', 'BRGY', 'MUNICIPAL', 'PROVINCE', 'FATHER NAME', 'MOTHER NAME', 'GUARDIAN NAME', 'RELATIONSHIP', 'CONTACT', '2021-12-21 21:59:16'),
+(38, 41, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 21:59:34'),
+(39, 42, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 21:59:48'),
+(40, 40, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:00:30'),
+(41, 43, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:01:47'),
+(42, 53, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:02:20'),
+(43, 52, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:02:37'),
+(44, 44, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:07:11'),
+(45, 45, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:07:30'),
+(46, 46, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:08:05'),
+(47, 47, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:11:17'),
+(48, 48, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 22:11:29'),
+(49, 49, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 23:47:15'),
+(50, 50, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 23:47:30'),
+(51, 51, '2004-11-11', 17, '', '', '', '', '', '', '', '', '', '', '', '', '2021-12-21 23:47:53');
 
 -- --------------------------------------------------------
 
@@ -1329,7 +1422,8 @@ INSERT INTO `sections` (`id`, `sectionName`, `adviserId`, `loadId`, `bookTemplat
 (3, 'Grade 11 - Rose', 21, 4, 3, 2021, 'SHS'),
 (4, 'Grade 12 - Sunflower', 23, 2, 2, 2021, 'SHS'),
 (5, 'Grade 12 - Gumamela', 22, 5, 4, 2021, 'SHS'),
-(6, 'Grade 11 - Santan', 20, 3, 1, 2021, 'SHS');
+(6, 'Grade 11 - Santan', 20, 3, 1, 2021, 'SHS'),
+(7, 'Grade 11 - Daisy', 26, 6, 5, 2021, 'SHS');
 
 -- --------------------------------------------------------
 
@@ -1386,7 +1480,28 @@ INSERT INTO `students` (`id`, `lrn`, `lName`, `fName`, `mName`, `sex`, `inGr`, `
 (28, '783677224560', 'Dy', 'Cin', ' ', 'Female', 91, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
 (29, '783677224580', 'Ly', 'Ren', ' ', 'Male', 89, 0, '567453', 'Mainit NHS', 'Mainit, Nab', 'SHS'),
 (30, '874567325678', 'Yam', 'Lee', ' ', 'Male', 89, 0, '567842', 'Manat NHS', 'Manat, Nab', 'SHS'),
-(32, '123456789013', 'Ricafort', 'Angel', 'Kitz', 'Female', 90, 0, '2018-00324', 'Bosque', 'Bunawan', 'SHS');
+(32, '123456789013', 'Ricafort', 'Angel', 'Kitz', 'Female', 90, 0, '2018-00324', 'Bosque', 'Bunawan', 'SHS'),
+(33, '623336622013', 'Crane', 'Staci', ' ', 'Female', 97, 11, '12345', 'NNCHS', 'Nabunturan', 'SHS'),
+(34, '802403491494', 'Mccann', 'Mara', ' ', 'Female', 99, 11, '12356', 'NNCHS', 'tagum', 'SHS'),
+(35, '565433921251', 'Ashley', 'Galen ', ' ', 'Male', 88, 11, '45621', 'TNCHS', 'TAGUM', 'SHS'),
+(36, '187419696045', 'Barrett', 'Tamika ', ' ', 'Female', 89, 11, '35678', 'TNCHS', 'TAGUM', 'SHS'),
+(37, '395457928399', 'Evans', 'Kaitlin ', ' ', 'Female', 87, 11, '67895', 'TNCHS', 'TAGUM', 'SHS'),
+(38, '459002179745', 'Burton', 'Shad ', ' ', 'Male', 97, 11, '88865', 'TNCHS', 'TAGUM', 'SHS'),
+(39, '112385772572', 'Glass', 'Clayton', ' ', 'Male', 99, 11, '33421', 'TNCHS', 'TAGUM', 'SHS'),
+(40, '153888119269', 'Mcknight', 'Tiana', ' ', 'Female', 88, 11, '66543', 'TCNHS', 'TAGUM', 'SHS'),
+(41, '804935606798', 'Sierra', 'Caine', ' ', 'Male', 87, 11, '87651', 'TCNHS', 'TAGUM', 'SHS'),
+(42, '251349649195', 'Curry', 'Tarik', ' ', 'Male', 86, 11, '99854', 'TCNHS', 'TAGUM', 'SHS'),
+(43, '158712135006', 'Webber', 'Izabella', ' ', 'Female', 96, 0, '97854', 'TCNHS', 'TAGUM', 'SHS'),
+(44, '644391910021', 'Doherty', 'Eleni', ' ', 'Female', 88, 0, '98660', 'TCNHS', 'TAGUM', 'SHS'),
+(45, '473949801417', 'Lynn', 'Maisha', ' ', 'Female', 93, 0, '56554', 'TCNHS', 'TAGUM', 'SHS'),
+(46, '686568262234', 'Macgregor', 'Raphael', ' ', 'Male', 86, 0, '99328', 'TCNHS', 'TAGUM', 'SHS'),
+(47, '540664817391', 'Whelan', 'Akaash', ' ', 'Male', 87, 0, '99552', 'TCNHS', 'TAGUM', 'SHS'),
+(48, '321848177272', 'Morley', 'Poppie', ' ', 'Male', 83, 0, '99667', 'TCNHS', 'TAGUM', 'SHS'),
+(49, '174055331457', 'Castaneda', 'Horace', ' ', 'Male', 89, 0, '77432', 'TCNHS', 'TAGUM', 'SHS'),
+(50, '399161090273', 'Lozano', 'Lavinia', ' ', 'Male', 90, 0, '60007', 'TCNHS', 'TAGUM', 'SHS'),
+(51, '779586726563', 'Charlton', 'Drew', ' ', 'Male', 98, 0, '90087', 'TCNHS', 'TAGUM', 'SHS'),
+(52, '653804672155', 'Bush', 'Archibald', ' ', 'Male', 89, 0, '90055', 'TCNHS', 'TAGUM', 'SHS'),
+(53, '850919917567', 'Quinn', 'Matias', ' ', 'Female', 96, 0, '44400', 'TCNHS', 'TAGUM', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -1470,7 +1585,8 @@ INSERT INTO `subjects` (`id`, `subjectCode`, `description`, `gradeLevel`, `sem`,
 (72, 'PR12', 'Practical Research 12', 12, '1st semester', 'SHS'),
 (73, 'PROB12', 'Probability & Statistics 12', 12, '1st semester', 'SHS'),
 (74, 'PE12', 'Physical Education 12', 12, '1st semester', 'SHS'),
-(75, 'Math11', 'Mathematics', 11, '1st semester', 'SHS');
+(75, 'Math11', 'Mathematics', 11, '1st semester', 'SHS'),
+(79, 'ADV11', 'Oral Communication 11', 11, '1st semester', 'SHS');
 
 -- --------------------------------------------------------
 
@@ -1518,7 +1634,18 @@ INSERT INTO `teacherloads` (`id`, `sectionId`, `teacherId`, `subjectId`, `timeSt
 (24, 4, 23, 71, '07:00:00', '08:00:00'),
 (25, 4, 21, 72, '07:00:00', '08:00:00'),
 (26, 4, 23, 73, '07:00:00', '08:00:00'),
-(27, 4, 20, 74, '07:00:00', '08:00:00');
+(27, 4, 20, 74, '07:00:00', '08:00:00'),
+(31, 7, -1, 69, '07:00:00', '08:00:00'),
+(32, 7, -1, 70, '07:00:00', '08:00:00'),
+(33, 7, 22, 75, '07:00:00', '08:00:00'),
+(34, 7, 26, 79, '07:00:00', '08:00:00'),
+(35, 2, -1, 68, '07:00:00', '08:00:00'),
+(36, 2, -1, 71, '07:00:00', '08:00:00'),
+(37, 2, -1, 72, '07:00:00', '08:00:00'),
+(38, 2, -1, 73, '07:00:00', '08:00:00'),
+(39, 2, -1, 74, '07:00:00', '08:00:00'),
+(40, 5, -1, 73, '07:00:00', '08:00:00'),
+(41, 5, -1, 74, '07:00:00', '08:00:00');
 
 -- --------------------------------------------------------
 
@@ -1546,7 +1673,9 @@ CREATE TABLE `userdetails` (
 INSERT INTO `userdetails` (`id`, `userId`, `employeeNumber`, `fundSource`, `position`, `nature`, `degree`, `major`, `minor`, `managedSubjects`) VALUES
 (1, 19, 'TIN NUMBER', 'FUND SOURCE', 'POSITION', 'NATURE', 'DEGREE', 'MAJOR', 'MINOR', '70:'),
 (2, 25, 'TIN NUMBER', 'FUND SOURCE', 'POSITION', 'NATURE', 'DEGREE', 'MAJOR', 'MINOR', '71:'),
-(3, 21, 'TIN NUMBER', 'FUND SOURCE', 'POSITION', 'NATURE', 'DEGREE', 'MAJOR', 'MINOR', 'NONE');
+(3, 21, 'TIN NUMBER', 'FUND SOURCE', 'POSITION', 'NATURE', 'DEGREE', 'MAJOR', 'MINOR', 'NONE'),
+(4, 26, 'TIN NUMBER', 'FUND SOURCE', 'POSITION', 'NATURE', 'DEGREE', 'MAJOR', 'MINOR', 'NONE'),
+(5, 28, 'TIN NUMBER', 'FUND SOURCE', 'POSITION', 'NATURE', 'DEGREE', 'MAJOR', 'MINOR', '72:71:');
 
 -- --------------------------------------------------------
 
@@ -1587,7 +1716,7 @@ INSERT INTO `users` (`id`, `user_Lname`, `user_Fname`, `user_Mname`, `gender`, `
 (14, 'Filonzo', 'Ferdinand', 'Wika', 'Male', 'ferdi', 'password', 2, 'JHS'),
 (15, 'Englesias', 'Edgar', 'Poe', 'Male', 'edgar', 'password', 2, 'JHS'),
 (16, 'Paderogao', 'Phil Rey', 'Estrella', 'Male', 'admin', 'password', 5, 'SHS'),
-(17, 'Sabu', 'Kim', '', 'Male', 'kim', 'sabu_99Kim', 4, 'SHS'),
+(17, 'Sabu', 'Kim', '', 'Male', 'kim', 'password', 4, 'SHS'),
 (18, 'Lee', 'Ikjun', '', 'Male', 'ikjun', 'hOspital_25', 3, 'SHS'),
 (19, 'Cycle', 'Motor', '', 'Male', 'motor', 'cycle_Honda0', 2, 'SHS'),
 (20, 'Mak', 'Mak', '', 'Male', 'mak', 'makMak_1', 1, 'SHS'),
@@ -1595,7 +1724,11 @@ INSERT INTO `users` (`id`, `user_Lname`, `user_Fname`, `user_Mname`, `gender`, `
 (22, 'Jan', 'Jan', '', 'Male', 'jan', 'janJan_3', 1, 'SHS'),
 (23, 'Sen', 'Sen', '', 'Female', 'sen', 'senSen_4', 1, 'SHS'),
 (24, 'Jen', 'Jen', '', 'Female', 'jen', 'jenJen_5', 1, 'SHS'),
-(25, 'Speaker', 'Bluetooth', '', 'Male', 'blue', 'blueTooth_1', 2, 'SHS');
+(25, 'Speaker', 'Bluetooth', '', 'Male', 'blue', 'blueTooth_1', 2, 'SHS'),
+(26, 'Rogers', 'Steve', '', 'Male', 'captain', 'America!123', 1, 'SHS'),
+(27, 'Istrar', 'Reg', '', 'Male', 'reg', 'Registrar!123', 4, 'SHS'),
+(28, 'Head', 'Dep', '', 'Female', 'dep', 'Dephead!123', 2, 'SHS'),
+(29, 'Head', 'Curr', '', 'Male', 'curr', 'Currhead!123', 3, 'SHS');
 
 -- --------------------------------------------------------
 
@@ -2162,7 +2295,7 @@ CREATE TABLE `v_users_shs` (
 --
 DROP TABLE IF EXISTS `form_sf1_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf1_view`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`enrollment`.`sectionId` AS `sectionId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`personalinfo`.`bDate` AS `bDate`,`personalinfo`.`age` AS `age`,`personalinfo`.`mTongue` AS `mTongue`,`personalinfo`.`ip` AS `ip`,`personalinfo`.`rlgn` AS `rlgn`,`personalinfo`.`houseN` AS `houseN`,`personalinfo`.`brgy` AS `brgy`,`personalinfo`.`mncpl` AS `mncpl`,`personalinfo`.`prvnce` AS `prvnce`,`personalinfo`.`fName` AS `fathersName`,`personalinfo`.`mName` AS `mothersName`,`personalinfo`.`gName` AS `gName`,`personalinfo`.`rltnshp` AS `rltnshp`,`personalinfo`.`contact` AS `contact`,`enrollment`.`remarks` AS `remarks` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf1_view`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `enrollment`.`sectionId` AS `sectionId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `personalinfo`.`bDate` AS `bDate`, `personalinfo`.`age` AS `age`, `personalinfo`.`mTongue` AS `mTongue`, `personalinfo`.`ip` AS `ip`, `personalinfo`.`rlgn` AS `rlgn`, `personalinfo`.`houseN` AS `houseN`, `personalinfo`.`brgy` AS `brgy`, `personalinfo`.`mncpl` AS `mncpl`, `personalinfo`.`prvnce` AS `prvnce`, `personalinfo`.`fName` AS `fathersName`, `personalinfo`.`mName` AS `mothersName`, `personalinfo`.`gName` AS `gName`, `personalinfo`.`rltnshp` AS `rltnshp`, `personalinfo`.`contact` AS `contact`, `enrollment`.`remarks` AS `remarks` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2171,7 +2304,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf1_view_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf1_view_shs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`enrollment`.`sectionId` AS `sectionId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`personalinfo`.`bDate` AS `bDate`,`personalinfo`.`age` AS `age`,`personalinfo`.`mTongue` AS `mTongue`,`personalinfo`.`ip` AS `ip`,`personalinfo`.`rlgn` AS `rlgn`,`personalinfo`.`houseN` AS `houseN`,`personalinfo`.`brgy` AS `brgy`,`personalinfo`.`mncpl` AS `mncpl`,`personalinfo`.`prvnce` AS `prvnce`,`personalinfo`.`fName` AS `fathersName`,`personalinfo`.`mName` AS `mothersName`,`personalinfo`.`gName` AS `gName`,`personalinfo`.`rltnshp` AS `rltnshp`,`personalinfo`.`contact` AS `contact`,`enrollment`.`remarks` AS `remarks`,`enrollment`.`strand` AS `strand`,`enrollment`.`sem` AS `sem` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) where `enrollment`.`dep_type` = 'SHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf1_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `enrollment`.`sectionId` AS `sectionId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `personalinfo`.`bDate` AS `bDate`, `personalinfo`.`age` AS `age`, `personalinfo`.`mTongue` AS `mTongue`, `personalinfo`.`ip` AS `ip`, `personalinfo`.`rlgn` AS `rlgn`, `personalinfo`.`houseN` AS `houseN`, `personalinfo`.`brgy` AS `brgy`, `personalinfo`.`mncpl` AS `mncpl`, `personalinfo`.`prvnce` AS `prvnce`, `personalinfo`.`fName` AS `fathersName`, `personalinfo`.`mName` AS `mothersName`, `personalinfo`.`gName` AS `gName`, `personalinfo`.`rltnshp` AS `rltnshp`, `personalinfo`.`contact` AS `contact`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2180,7 +2313,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf2_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf2_view`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`studentId` AS `studentId`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`dateEnrolled` AS `dateEnrolled`,`enrollment`.`remarks` AS `remarks` from (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf2_view`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`studentId` AS `studentId`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`remarks` AS `remarks` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2189,7 +2322,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf3_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf3_view`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`studentId` AS `studentId`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex` from (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf3_view`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`studentId` AS `studentId`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2198,7 +2331,16 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf5_viewfull`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewfull`  AS  select `finalgrades`.`id` AS `id`,`finalgrades`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`sections`.`schoolYear` AS `schoolYear`,`loads`.`c_gradeLevel` AS `gradeLevel`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`finalgrades`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`remarks` AS `remarks`,`finalgrades`.`generalAverage` AS `generalAverage`,`finalgrades`.`actionTaken` AS `actionTaken`,`finalgrades`.`dateUpdated` AS `dateUpdated` from (((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) order by `loads`.`c_gradeLevel`,`finalgrades`.`sectionId`,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewfull`  AS SELECT `finalgrades`.`id` AS `id`, `finalgrades`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`c_gradeLevel` AS `gradeLevel`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`dateUpdated` AS `dateUpdated` FROM (((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `form_sf5_viewfull_shs`
+--
+DROP TABLE IF EXISTS `form_sf5_viewfull_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewfull_shs`  AS SELECT `finalgrades`.`id` AS `id`, `finalgrades`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`c_gradeLevel` AS `gradeLevel`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `enrollment`.`strand` AS `strand`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`dateUpdated` AS `dateUpdated`, `enrollment`.`sem` AS `sem` FROM (((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2207,7 +2349,16 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf5_viewminimal`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewminimal`  AS  select `finalgrades`.`id` AS `id`,`sections`.`id` AS `sectionId`,`loads`.`c_gradeLevel` AS `gradeLevel`,`finalgrades`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`remarks` AS `remarks`,`finalgrades`.`generalAverage` AS `generalAverage`,`finalgrades`.`actionTaken` AS `actionTaken`,`finalgrades`.`failedSubjects` AS `failedSubjects`,`finalgrades`.`dateUpdated` AS `dateUpdated` from ((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) order by `loads`.`c_gradeLevel`,`finalgrades`.`sectionId`,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewminimal`  AS SELECT `finalgrades`.`id` AS `id`, `sections`.`id` AS `sectionId`, `loads`.`c_gradeLevel` AS `gradeLevel`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`failedSubjects` AS `failedSubjects`, `finalgrades`.`dateUpdated` AS `dateUpdated` FROM ((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `form_sf5_viewminimal_shs`
+--
+DROP TABLE IF EXISTS `form_sf5_viewminimal_shs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf5_viewminimal_shs`  AS SELECT `finalgrades`.`id` AS `id`, `sections`.`id` AS `sectionId`, `loads`.`c_gradeLevel` AS `gradeLevel`, `finalgrades`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`remarks` AS `remarks`, `finalgrades`.`generalAverage` AS `generalAverage`, `finalgrades`.`actionTaken` AS `actionTaken`, `finalgrades`.`failedSubjects` AS `failedSubjects`, `finalgrades`.`dateUpdated` AS `dateUpdated`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((((`finalgrades` left join `sections` on(`finalgrades`.`sectionId` = `sections`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) left join `students` on(`finalgrades`.`studentId` = `students`.`id`)) left join `enrollment` on(`enrollment`.`studentId` = `finalgrades`.`studentId` and `enrollment`.`sectionId` = `finalgrades`.`sectionId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `loads`.`c_gradeLevel` ASC, `finalgrades`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2216,7 +2367,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf7view_loads`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_loads`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`teacherId` AS `teacherId`,`teacherloads`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`sections`.`schoolYear` AS `schoolYear` from ((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) order by `teacherloads`.`teacherId` desc,`subjects`.`gradeLevel`,`sections`.`schoolYear`,`sections`.`sectionName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_loads`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`teacherId` AS `teacherId`, `teacherloads`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `sections`.`schoolYear` AS `schoolYear` FROM ((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) ORDER BY `teacherloads`.`teacherId` DESC, `subjects`.`gradeLevel` ASC, `sections`.`schoolYear` ASC, `sections`.`sectionName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2225,7 +2376,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf7view_loads_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_loads_shs`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`teacherId` AS `teacherId`,`teacherloads`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`sections`.`dep_type` AS `dep_type`,`subjects`.`sem` AS `sem` from ((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) where `sections`.`dep_type` = 'SHS' order by `teacherloads`.`teacherId` desc,`subjects`.`gradeLevel`,`sections`.`schoolYear`,`sections`.`sectionName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_loads_shs`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`teacherId` AS `teacherId`, `teacherloads`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `sections`.`dep_type` AS `dep_type`, `subjects`.`sem` AS `sem` FROM ((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) WHERE `sections`.`dep_type` = 'SHS' ORDER BY `teacherloads`.`teacherId` DESC, `subjects`.`gradeLevel` ASC, `sections`.`schoolYear` ASC, `sections`.`sectionName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2234,7 +2385,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf7view_teachers`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_teachers`  AS  select `users`.`id` AS `id`,ifnull(`userdetails`.`employeeNumber`,' ') AS `employeeNumber`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,ifnull(`userdetails`.`fundSource`,' ') AS `fundSource`,ifnull(`userdetails`.`position`,' ') AS `position`,ifnull(`userdetails`.`nature`,' ') AS `nature`,ifnull(`userdetails`.`degree`,' ') AS `degree`,ifnull(`userdetails`.`major`,' ') AS `major`,ifnull(`userdetails`.`minor`,' ') AS `minor`,`users`.`user_level` AS `user_level` from (`users` left join `userdetails` on(`users`.`id` = `userdetails`.`userId`)) order by `users`.`user_Lname`,`users`.`user_Fname`,`users`.`user_Mname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_teachers`  AS SELECT `users`.`id` AS `id`, ifnull(`userdetails`.`employeeNumber`,' ') AS `employeeNumber`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, ifnull(`userdetails`.`fundSource`,' ') AS `fundSource`, ifnull(`userdetails`.`position`,' ') AS `position`, ifnull(`userdetails`.`nature`,' ') AS `nature`, ifnull(`userdetails`.`degree`,' ') AS `degree`, ifnull(`userdetails`.`major`,' ') AS `major`, ifnull(`userdetails`.`minor`,' ') AS `minor`, `users`.`user_level` AS `user_level` FROM (`users` left join `userdetails` on(`users`.`id` = `userdetails`.`userId`)) ORDER BY `users`.`user_Lname` ASC, `users`.`user_Fname` ASC, `users`.`user_Mname` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2243,7 +2394,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf7view_teachers_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_teachers_shs`  AS  select `users`.`id` AS `id`,ifnull(`userdetails`.`employeeNumber`,' ') AS `employeeNumber`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,ifnull(`userdetails`.`fundSource`,' ') AS `fundSource`,ifnull(`userdetails`.`position`,' ') AS `position`,ifnull(`userdetails`.`nature`,' ') AS `nature`,ifnull(`userdetails`.`degree`,' ') AS `degree`,ifnull(`userdetails`.`major`,' ') AS `major`,ifnull(`userdetails`.`minor`,' ') AS `minor`,`users`.`user_level` AS `user_level` from (`users` left join `userdetails` on(`users`.`id` = `userdetails`.`userId`)) where `users`.`dep_type` = 'SHS' order by `users`.`user_Lname`,`users`.`user_Fname`,`users`.`user_Mname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf7view_teachers_shs`  AS SELECT `users`.`id` AS `id`, ifnull(`userdetails`.`employeeNumber`,' ') AS `employeeNumber`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, ifnull(`userdetails`.`fundSource`,' ') AS `fundSource`, ifnull(`userdetails`.`position`,' ') AS `position`, ifnull(`userdetails`.`nature`,' ') AS `nature`, ifnull(`userdetails`.`degree`,' ') AS `degree`, ifnull(`userdetails`.`major`,' ') AS `major`, ifnull(`userdetails`.`minor`,' ') AS `minor`, `users`.`user_level` AS `user_level` FROM (`users` left join `userdetails` on(`users`.`id` = `userdetails`.`userId`)) WHERE `users`.`dep_type` = 'SHS' ORDER BY `users`.`user_Lname` ASC, `users`.`user_Fname` ASC, `users`.`user_Mname` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2252,7 +2403,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf8_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf8_view`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`enrollment`.`sectionId` AS `sectionId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,date_format(`personalinfo`.`bDate`,'%m/%d/%Y') AS `bDate`,`students`.`sex` AS `sex`,ifnull(`bmi`.`id`,-1) AS `bmiId`,ifnull(`bmi`.`age`,'0: 0') AS `age`,ifnull(`bmi`.`weight`,0) AS `weight`,ifnull(`bmi`.`height`,'0.0') AS `height`,ifnull(`bmi`.`heightSq`,'0.0000') AS `heightSq`,ifnull(`bmi`.`bmi`,'0.0') AS `bmi`,ifnull(`bmi`.`bmiForAge`,'No Record') AS `bmiForAge`,ifnull(`bmi`.`heightForAge`,'No Record') AS `heightForAge`,ifnull(`bmi`.`dateExamined`,current_timestamp()) AS `dateExamined` from (((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) left join `bmi` on(`enrollment`.`studentId` = `bmi`.`studentId` and `enrollment`.`sectionId` = `bmi`.`sectionId`)) order by `enrollment`.`sectionId`,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf8_view`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `enrollment`.`sectionId` AS `sectionId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, date_format(`personalinfo`.`bDate`,'%m/%d/%Y') AS `bDate`, `students`.`sex` AS `sex`, ifnull(`bmi`.`id`,-1) AS `bmiId`, ifnull(`bmi`.`age`,'0: 0') AS `age`, ifnull(`bmi`.`weight`,0) AS `weight`, ifnull(`bmi`.`height`,'0.0') AS `height`, ifnull(`bmi`.`heightSq`,'0.0000') AS `heightSq`, ifnull(`bmi`.`bmi`,'0.0') AS `bmi`, ifnull(`bmi`.`bmiForAge`,'No Record') AS `bmiForAge`, ifnull(`bmi`.`heightForAge`,'No Record') AS `heightForAge`, ifnull(`bmi`.`dateExamined`,current_timestamp()) AS `dateExamined` FROM (((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) left join `bmi` on(`enrollment`.`studentId` = `bmi`.`studentId` and `enrollment`.`sectionId` = `bmi`.`sectionId`)) ORDER BY `enrollment`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2261,7 +2412,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf8_view_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf8_view_shs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`enrollment`.`sectionId` AS `sectionId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,date_format(`personalinfo`.`bDate`,'%m/%d/%Y') AS `bDate`,`students`.`sex` AS `sex`,ifnull(`bmi`.`id`,-1) AS `bmiId`,ifnull(`bmi`.`age`,'0: 0') AS `age`,ifnull(`bmi`.`weight`,0) AS `weight`,ifnull(`bmi`.`height`,'0.0') AS `height`,ifnull(`bmi`.`heightSq`,'0.0000') AS `heightSq`,ifnull(`bmi`.`bmi`,'0.0') AS `bmi`,ifnull(`bmi`.`bmiForAge`,'No Record') AS `bmiForAge`,ifnull(`bmi`.`heightForAge`,'No Record') AS `heightForAge`,ifnull(`bmi`.`dateExamined`,current_timestamp()) AS `dateExamined`,`enrollment`.`strand` AS `strand`,`enrollment`.`sem` AS `sem` from (((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) left join `bmi` on(`enrollment`.`studentId` = `bmi`.`studentId` and `enrollment`.`sectionId` = `bmi`.`sectionId`)) where `enrollment`.`dep_type` = 'SHS' order by `enrollment`.`sectionId`,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf8_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `enrollment`.`sectionId` AS `sectionId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, date_format(`personalinfo`.`bDate`,'%m/%d/%Y') AS `bDate`, `students`.`sex` AS `sex`, ifnull(`bmi`.`id`,-1) AS `bmiId`, ifnull(`bmi`.`age`,'0: 0') AS `age`, ifnull(`bmi`.`weight`,0) AS `weight`, ifnull(`bmi`.`height`,'0.0') AS `height`, ifnull(`bmi`.`heightSq`,'0.0000') AS `heightSq`, ifnull(`bmi`.`bmi`,'0.0') AS `bmi`, ifnull(`bmi`.`bmiForAge`,'No Record') AS `bmiForAge`, ifnull(`bmi`.`heightForAge`,'No Record') AS `heightForAge`, ifnull(`bmi`.`dateExamined`,current_timestamp()) AS `dateExamined`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM (((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) left join `bmi` on(`enrollment`.`studentId` = `bmi`.`studentId` and `enrollment`.`sectionId` = `bmi`.`sectionId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` ASC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2270,7 +2421,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf9_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf9_view`  AS  select `grades`.`id` AS `id`,`grades`.`studentId` AS `studentId`,`grades`.`sectionId` AS `sectionId`,`grades`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`grades`.`firstQuarter` AS `firstQuarter`,`grades`.`secondQuarter` AS `secondQuarter`,`grades`.`thirdQuarter` AS `thirdQuarter`,`grades`.`fourthQuarter` AS `fourthQuarter`,`grades`.`gwa` AS `gwa`,`grades`.`status` AS `status`,`grades`.`dateUpdated` AS `dateUpdated` from (`grades` left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) order by `grades`.`sectionId` desc,`grades`.`studentId` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf9_view`  AS SELECT `grades`.`id` AS `id`, `grades`.`studentId` AS `studentId`, `grades`.`sectionId` AS `sectionId`, `grades`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `grades`.`firstQuarter` AS `firstQuarter`, `grades`.`secondQuarter` AS `secondQuarter`, `grades`.`thirdQuarter` AS `thirdQuarter`, `grades`.`fourthQuarter` AS `fourthQuarter`, `grades`.`gwa` AS `gwa`, `grades`.`status` AS `status`, `grades`.`dateUpdated` AS `dateUpdated` FROM (`grades` left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) ORDER BY `grades`.`sectionId` DESC, `grades`.`studentId` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2279,7 +2430,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf9_view_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf9_view_shs`  AS  select `grades`.`id` AS `id`,`grades`.`studentId` AS `studentId`,`grades`.`sectionId` AS `sectionId`,`grades`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`grades`.`firstQuarter` AS `firstQuarter`,`grades`.`secondQuarter` AS `secondQuarter`,`grades`.`thirdQuarter` AS `thirdQuarter`,`grades`.`fourthQuarter` AS `fourthQuarter`,`grades`.`gwa` AS `gwa`,`grades`.`status` AS `status`,`subjects`.`sem` AS `sem`,`grades`.`dateUpdated` AS `dateUpdated` from (`grades` left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) order by `grades`.`sectionId` desc,`grades`.`studentId` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf9_view_shs`  AS SELECT `grades`.`id` AS `id`, `grades`.`studentId` AS `studentId`, `grades`.`sectionId` AS `sectionId`, `grades`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `grades`.`firstQuarter` AS `firstQuarter`, `grades`.`secondQuarter` AS `secondQuarter`, `grades`.`thirdQuarter` AS `thirdQuarter`, `grades`.`fourthQuarter` AS `fourthQuarter`, `grades`.`gwa` AS `gwa`, `grades`.`status` AS `status`, `subjects`.`sem` AS `sem`, `grades`.`dateUpdated` AS `dateUpdated` FROM (`grades` left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) ORDER BY `grades`.`sectionId` DESC, `grades`.`studentId` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2288,7 +2439,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf10_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `loadName`,`loads`.`c_gradeLevel` AS `gradeLevel`,`loads`.`d_subjectsContained` AS `subjectsContained`,`sections`.`schoolYear` AS `schoolYear`,`enrollment`.`remarks` AS `remarks`,`enrollment`.`dateEnrolled` AS `dateEnrolled` from ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) order by `enrollment`.`studentId` desc,`loads`.`c_gradeLevel`,`sections`.`schoolYear`,`enrollment`.`dateEnrolled` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `loadName`, `loads`.`c_gradeLevel` AS `gradeLevel`, `loads`.`d_subjectsContained` AS `subjectsContained`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`dateEnrolled` AS `dateEnrolled` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `enrollment`.`studentId` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`schoolYear` ASC, `enrollment`.`dateEnrolled` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2297,7 +2448,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `form_sf10_view_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view_shs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `loadName`,`loads`.`c_gradeLevel` AS `gradeLevel`,`loads`.`d_subjectsContained` AS `subjectsContained`,`sections`.`schoolYear` AS `schoolYear`,`enrollment`.`remarks` AS `remarks`,`enrollment`.`dateEnrolled` AS `dateEnrolled`,`enrollment`.`strand` AS `strand` from ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) order by `enrollment`.`studentId` desc,`loads`.`c_gradeLevel`,`sections`.`schoolYear`,`enrollment`.`dateEnrolled` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `form_sf10_view_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `loadName`, `loads`.`c_gradeLevel` AS `gradeLevel`, `loads`.`d_subjectsContained` AS `subjectsContained`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`remarks` AS `remarks`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `enrollment`.`studentId` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`schoolYear` ASC, `enrollment`.`dateEnrolled` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2306,7 +2457,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`enrollment`.`dateEnrolled` AS `dateEnrolled` from ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2315,7 +2466,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_jhs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`enrollment`.`dateEnrolled` AS `dateEnrolled` from ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) where `enrollment`.`dep_type` = 'JHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_jhs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `enrollment`.`dep_type` = 'JHS' ;
 
 -- --------------------------------------------------------
 
@@ -2324,7 +2475,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_minimal`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_minimal`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`remarks` AS `remarks` from (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_minimal`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`remarks` AS `remarks` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2333,7 +2484,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_minimal_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_minimal_jhs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`remarks` AS `remarks` from (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) where `enrollment`.`dep_type` = 'JHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_minimal_jhs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`remarks` AS `remarks` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) WHERE `enrollment`.`dep_type` = 'JHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2342,7 +2493,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_minimal_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_minimal_shs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`remarks` AS `remarks` from (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) where `enrollment`.`dep_type` = 'SHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_minimal_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`remarks` AS `remarks` FROM (`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2351,7 +2502,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_mini_wbdate`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`personalinfo`.`bDate` AS `bDate`,`enrollment`.`sectionId` AS `sectionId` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `personalinfo`.`bDate` AS `bDate`, `enrollment`.`sectionId` AS `sectionId` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2360,7 +2511,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_mini_wbdate_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_jhs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`,`enrollment`.`sectionId` AS `sectionId` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) where `enrollment`.`dep_type` = 'JHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_jhs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`, `enrollment`.`sectionId` AS `sectionId` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'JHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2369,7 +2520,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_mini_wbdate_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`,`enrollment`.`sectionId` AS `sectionId` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) where `enrollment`.`dep_type` = 'SHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`, `enrollment`.`sectionId` AS `sectionId` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2378,7 +2529,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_mini_wbdate_shs_wsem`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs_wsem`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`strand` AS `strand`,`enrollment`.`sem` AS `sem` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) where `enrollment`.`dep_type` = 'SHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs_wsem`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2387,7 +2538,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_mini_wbdate_shs_wstrand`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs_wstrand`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`,`enrollment`.`sectionId` AS `sectionId`,`enrollment`.`strand` AS `strand` from ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) where `enrollment`.`dep_type` = 'SHS' order by `enrollment`.`sectionId` desc,`students`.`sex` desc,`students`.`lName`,`students`.`fName`,`students`.`mName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_mini_wbdate_shs_wstrand`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, ifnull(`personalinfo`.`bDate`,'NOT SET') AS `bDate`, `enrollment`.`sectionId` AS `sectionId`, `enrollment`.`strand` AS `strand` FROM ((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `personalinfo` on(`enrollment`.`studentId` = `personalinfo`.`stdId`)) WHERE `enrollment`.`dep_type` = 'SHS' ORDER BY `enrollment`.`sectionId` DESC, `students`.`sex` DESC, `students`.`lName` ASC, `students`.`fName` ASC, `students`.`mName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2396,7 +2547,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_enrollment_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_shs`  AS  select `enrollment`.`id` AS `id`,`enrollment`.`studentId` AS `studentId`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`enrollment`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`enrollment`.`dateEnrolled` AS `dateEnrolled`,`enrollment`.`strand` AS `strand`,`enrollment`.`sem` AS `sem` from ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) where `enrollment`.`dep_type` = 'SHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_enrollment_shs`  AS SELECT `enrollment`.`id` AS `id`, `enrollment`.`studentId` AS `studentId`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `enrollment`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `enrollment`.`dateEnrolled` AS `dateEnrolled`, `enrollment`.`strand` AS `strand`, `enrollment`.`sem` AS `sem` FROM ((((`enrollment` left join `students` on(`enrollment`.`studentId` = `students`.`id`)) left join `sections` on(`enrollment`.`sectionId` = `sections`.`id`)) left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `enrollment`.`dep_type` = 'SHS' ;
 
 -- --------------------------------------------------------
 
@@ -2405,7 +2556,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_grades`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_grades`  AS  select `grades`.`id` AS `id`,`grades`.`sectionId` AS `sectionId`,`grades`.`studentId` AS `studentId`,`teacherloads`.`teacherId` AS `teacherId`,ifnull(`users`.`user_Lname`,'None') AS `user_Lname`,ifnull(`users`.`user_Fname`,'None') AS `user_Fname`,ifnull(`users`.`user_Mname`,'None') AS `user_Mname`,ifnull(`users`.`gender`,'None') AS `gender`,`grades`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`grades`.`gwa` AS `gwa`,`grades`.`status` AS `status`,`grades`.`dateUpdated` AS `dateUpdated` from (((`grades` left join `teacherloads` on(`grades`.`subjectId` = `teacherloads`.`subjectId`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) order by `grades`.`sectionId`,`grades`.`subjectId`,`grades`.`studentId` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_grades`  AS SELECT `grades`.`id` AS `id`, `grades`.`sectionId` AS `sectionId`, `grades`.`studentId` AS `studentId`, `teacherloads`.`teacherId` AS `teacherId`, ifnull(`users`.`user_Lname`,'None') AS `user_Lname`, ifnull(`users`.`user_Fname`,'None') AS `user_Fname`, ifnull(`users`.`user_Mname`,'None') AS `user_Mname`, ifnull(`users`.`gender`,'None') AS `gender`, `grades`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `grades`.`gwa` AS `gwa`, `grades`.`status` AS `status`, `grades`.`dateUpdated` AS `dateUpdated` FROM (((`grades` left join `teacherloads` on(`grades`.`subjectId` = `teacherloads`.`subjectId`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`subjects`.`id` = `grades`.`subjectId`)) ORDER BY `grades`.`sectionId` ASC, `grades`.`subjectId` ASC, `grades`.`studentId` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2414,7 +2565,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_loads_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loads_jhs`  AS  select `loads`.`a_id` AS `a_id`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`loads`.`d_subjectsContained` AS `d_subjectsContained` from `loads` where `loads`.`dep_type` = 'JHS' order by `loads`.`b_loadName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loads_jhs`  AS SELECT `loads`.`a_id` AS `a_id`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `loads`.`d_subjectsContained` AS `d_subjectsContained` FROM `loads` WHERE `loads`.`dep_type` = 'JHS' ORDER BY `loads`.`b_loadName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2423,7 +2574,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_loads_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loads_shs`  AS  select `loads`.`a_id` AS `a_id`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`loads`.`d_subjectsContained` AS `d_subjectsContained` from `loads` where `loads`.`dep_type` = 'SHS' order by `loads`.`b_loadName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loads_shs`  AS SELECT `loads`.`a_id` AS `a_id`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `loads`.`d_subjectsContained` AS `d_subjectsContained` FROM `loads` WHERE `loads`.`dep_type` = 'SHS' ORDER BY `loads`.`b_loadName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2432,7 +2583,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_managedsubjects`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_managedsubjects`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`teacherloads`.`teacherId` AS `teacherId`,ifnull(`users`.`user_Lname`,'None') AS `user_Lname`,ifnull(`users`.`user_Fname`,'None') AS `user_Fname`,ifnull(`users`.`user_Mname`,'None') AS `user_Mname`,ifnull(`users`.`gender`,'None') AS `gender`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`sections`.`schoolYear` AS `schoolYear` from (((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) order by `sections`.`schoolYear` desc,`subjects`.`gradeLevel`,`sections`.`sectionName`,`users`.`user_Lname`,`users`.`user_Fname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_managedsubjects`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `teacherloads`.`teacherId` AS `teacherId`, ifnull(`users`.`user_Lname`,'None') AS `user_Lname`, ifnull(`users`.`user_Fname`,'None') AS `user_Fname`, ifnull(`users`.`user_Mname`,'None') AS `user_Mname`, ifnull(`users`.`gender`,'None') AS `gender`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `sections`.`schoolYear` AS `schoolYear` FROM (((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) ORDER BY `sections`.`schoolYear` DESC, `subjects`.`gradeLevel` ASC, `sections`.`sectionName` ASC, `users`.`user_Lname` ASC, `users`.`user_Fname` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2441,7 +2592,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_managedsubjects_wbooktemplate`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_managedsubjects_wbooktemplate`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`teacherloads`.`teacherId` AS `teacherId`,ifnull(`users`.`user_Lname`,'None') AS `user_Lname`,ifnull(`users`.`user_Fname`,'None') AS `user_Fname`,ifnull(`users`.`user_Mname`,'None') AS `user_Mname`,ifnull(`users`.`gender`,'None') AS `gender`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`sections`.`bookTemplateId` AS `bookTemplateId`,ifnull(`booktemplates`.`templateName`,'None') AS `templateName`,ifnull(`booktemplates`.`booksContained`,'None') AS `booksContained` from ((((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) left join `booktemplates` on(`sections`.`bookTemplateId` = `booktemplates`.`id`)) order by `sections`.`schoolYear` desc,`subjects`.`gradeLevel`,`sections`.`sectionName`,`users`.`user_Lname`,`users`.`user_Fname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_managedsubjects_wbooktemplate`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `teacherloads`.`teacherId` AS `teacherId`, ifnull(`users`.`user_Lname`,'None') AS `user_Lname`, ifnull(`users`.`user_Fname`,'None') AS `user_Fname`, ifnull(`users`.`user_Mname`,'None') AS `user_Mname`, ifnull(`users`.`gender`,'None') AS `gender`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `sections`.`bookTemplateId` AS `bookTemplateId`, ifnull(`booktemplates`.`templateName`,'None') AS `templateName`, ifnull(`booktemplates`.`booksContained`,'None') AS `booksContained` FROM ((((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) left join `booktemplates` on(`sections`.`bookTemplateId` = `booktemplates`.`id`)) ORDER BY `sections`.`schoolYear` DESC, `subjects`.`gradeLevel` ASC, `sections`.`sectionName` ASC, `users`.`user_Lname` ASC, `users`.`user_Fname` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2450,7 +2601,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_managedsubjects_wsubjectscontained`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_managedsubjects_wsubjectscontained`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`sectionId` AS `sectionId`,`sections`.`sectionName` AS `sectionName`,`teacherloads`.`teacherId` AS `teacherId`,ifnull(`users`.`user_Lname`,'None') AS `user_Lname`,ifnull(`users`.`user_Fname`,'None') AS `user_Fname`,ifnull(`users`.`user_Mname`,'None') AS `user_Mname`,ifnull(`users`.`gender`,'None') AS `gender`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`loads`.`a_id` AS `loadId`,`loads`.`b_loadName` AS `loadName`,`loads`.`d_subjectsContained` AS `subjectsContained` from ((((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) order by `sections`.`schoolYear` desc,`subjects`.`gradeLevel`,`sections`.`sectionName`,`users`.`user_Lname`,`users`.`user_Fname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_managedsubjects_wsubjectscontained`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`sectionId` AS `sectionId`, `sections`.`sectionName` AS `sectionName`, `teacherloads`.`teacherId` AS `teacherId`, ifnull(`users`.`user_Lname`,'None') AS `user_Lname`, ifnull(`users`.`user_Fname`,'None') AS `user_Fname`, ifnull(`users`.`user_Mname`,'None') AS `user_Mname`, ifnull(`users`.`gender`,'None') AS `gender`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`a_id` AS `loadId`, `loads`.`b_loadName` AS `loadName`, `loads`.`d_subjectsContained` AS `subjectsContained` FROM ((((`teacherloads` left join `sections` on(`teacherloads`.`sectionId` = `sections`.`id`)) left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `sections`.`schoolYear` DESC, `subjects`.`gradeLevel` ASC, `sections`.`sectionName` ASC, `users`.`user_Lname` ASC, `users`.`user_Fname` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2459,7 +2610,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_sections`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_sections`  AS  select `sections`.`id` AS `id`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`loads`.`d_subjectsContained` AS `d_subjectsContained` from ((`sections` left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) order by `sections`.`schoolYear` desc,`loads`.`c_gradeLevel`,`sections`.`sectionName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_sections`  AS SELECT `sections`.`id` AS `id`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`d_subjectsContained` AS `d_subjectsContained` FROM ((`sections` left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) ORDER BY `sections`.`schoolYear` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`sectionName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2468,7 +2619,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_sections_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_sections_jhs`  AS  select `sections`.`id` AS `id`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`loads`.`d_subjectsContained` AS `d_subjectsContained` from ((`sections` left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) where `sections`.`dep_type` = 'JHS' order by `sections`.`schoolYear` desc,`loads`.`c_gradeLevel`,`sections`.`sectionName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_sections_jhs`  AS SELECT `sections`.`id` AS `id`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`d_subjectsContained` AS `d_subjectsContained` FROM ((`sections` left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `sections`.`dep_type` = 'JHS' ORDER BY `sections`.`schoolYear` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`sectionName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2477,7 +2628,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_sections_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_sections_shs`  AS  select `sections`.`id` AS `id`,`sections`.`sectionName` AS `sectionName`,`sections`.`adviserId` AS `adviserId`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`sections`.`loadId` AS `loadId`,`loads`.`b_loadName` AS `b_loadName`,`loads`.`c_gradeLevel` AS `c_gradeLevel`,`sections`.`schoolYear` AS `schoolYear`,`loads`.`d_subjectsContained` AS `d_subjectsContained` from ((`sections` left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) where `sections`.`dep_type` = 'SHS' order by `sections`.`schoolYear` desc,`loads`.`c_gradeLevel`,`sections`.`sectionName` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_sections_shs`  AS SELECT `sections`.`id` AS `id`, `sections`.`sectionName` AS `sectionName`, `sections`.`adviserId` AS `adviserId`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `sections`.`loadId` AS `loadId`, `loads`.`b_loadName` AS `b_loadName`, `loads`.`c_gradeLevel` AS `c_gradeLevel`, `sections`.`schoolYear` AS `schoolYear`, `loads`.`d_subjectsContained` AS `d_subjectsContained` FROM ((`sections` left join `users` on(`sections`.`adviserId` = `users`.`id`)) left join `loads` on(`sections`.`loadId` = `loads`.`a_id`)) WHERE `sections`.`dep_type` = 'SHS' ORDER BY `sections`.`schoolYear` DESC, `loads`.`c_gradeLevel` ASC, `sections`.`sectionName` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2486,7 +2637,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_students_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_students_jhs`  AS  select `students`.`id` AS `id`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`students`.`inGr` AS `inGr`,`students`.`curGrLvl` AS `curGrLvl`,`students`.`schoolId` AS `schoolId`,`students`.`schoolName` AS `schoolName`,`students`.`schoolAddress` AS `schoolAddress` from `students` where `students`.`dep_type` = 'JHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_students_jhs`  AS SELECT `students`.`id` AS `id`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `students`.`inGr` AS `inGr`, `students`.`curGrLvl` AS `curGrLvl`, `students`.`schoolId` AS `schoolId`, `students`.`schoolName` AS `schoolName`, `students`.`schoolAddress` AS `schoolAddress` FROM `students` WHERE `students`.`dep_type` = 'JHS' ;
 
 -- --------------------------------------------------------
 
@@ -2495,7 +2646,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_students_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_students_shs`  AS  select `students`.`id` AS `id`,`students`.`lrn` AS `lrn`,`students`.`lName` AS `lName`,`students`.`fName` AS `fName`,`students`.`mName` AS `mName`,`students`.`sex` AS `sex`,`students`.`inGr` AS `inGr`,`students`.`curGrLvl` AS `curGrLvl`,`students`.`schoolId` AS `schoolId`,`students`.`schoolName` AS `schoolName`,`students`.`schoolAddress` AS `schoolAddress` from `students` where `students`.`dep_type` = 'SHS' ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_students_shs`  AS SELECT `students`.`id` AS `id`, `students`.`lrn` AS `lrn`, `students`.`lName` AS `lName`, `students`.`fName` AS `fName`, `students`.`mName` AS `mName`, `students`.`sex` AS `sex`, `students`.`inGr` AS `inGr`, `students`.`curGrLvl` AS `curGrLvl`, `students`.`schoolId` AS `schoolId`, `students`.`schoolName` AS `schoolName`, `students`.`schoolAddress` AS `schoolAddress` FROM `students` WHERE `students`.`dep_type` = 'SHS' ;
 
 -- --------------------------------------------------------
 
@@ -2504,7 +2655,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_subjects_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_subjects_jhs`  AS  select `subjects`.`id` AS `id`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel` from `subjects` where `subjects`.`dep_type` = 'JHS' order by `subjects`.`gradeLevel` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_subjects_jhs`  AS SELECT `subjects`.`id` AS `id`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel` FROM `subjects` WHERE `subjects`.`dep_type` = 'JHS' ORDER BY `subjects`.`gradeLevel` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2513,7 +2664,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_subjects_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_subjects_shs`  AS  select `subjects`.`id` AS `id`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`subjects`.`sem` AS `sem` from `subjects` where `subjects`.`dep_type` = 'SHS' order by `subjects`.`gradeLevel` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_subjects_shs`  AS SELECT `subjects`.`id` AS `id`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `subjects`.`sem` AS `sem` FROM `subjects` WHERE `subjects`.`dep_type` = 'SHS' ORDER BY `subjects`.`gradeLevel` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2522,7 +2673,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_teacherloads`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_teacherloads`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`sectionId` AS `sectionId`,`teacherloads`.`teacherId` AS `teacherId`,ifnull(`users`.`user_Lname`,'None') AS `user_Lname`,ifnull(`users`.`user_Fname`,'None') AS `user_Fname`,ifnull(`users`.`user_Mname`,'None') AS `user_Mname`,ifnull(`users`.`gender`,'None') AS `gender`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel` from ((`teacherloads` left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_teacherloads`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`sectionId` AS `sectionId`, `teacherloads`.`teacherId` AS `teacherId`, ifnull(`users`.`user_Lname`,'None') AS `user_Lname`, ifnull(`users`.`user_Fname`,'None') AS `user_Fname`, ifnull(`users`.`user_Mname`,'None') AS `user_Mname`, ifnull(`users`.`gender`,'None') AS `gender`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel` FROM ((`teacherloads` left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2531,7 +2682,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_teacherloads_w_time`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_teacherloads_w_time`  AS  select `teacherloads`.`id` AS `id`,`teacherloads`.`sectionId` AS `sectionId`,`teacherloads`.`teacherId` AS `teacherId`,ifnull(`users`.`user_Lname`,'None') AS `user_Lname`,ifnull(`users`.`user_Fname`,'None') AS `user_Fname`,ifnull(`users`.`user_Mname`,'None') AS `user_Mname`,ifnull(`users`.`gender`,'None') AS `gender`,`teacherloads`.`subjectId` AS `subjectId`,`subjects`.`subjectCode` AS `subjectCode`,`subjects`.`description` AS `description`,`subjects`.`gradeLevel` AS `gradeLevel`,`teacherloads`.`timeStart` AS `timeStart`,`teacherloads`.`timeEnd` AS `timeEnd` from ((`teacherloads` left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_teacherloads_w_time`  AS SELECT `teacherloads`.`id` AS `id`, `teacherloads`.`sectionId` AS `sectionId`, `teacherloads`.`teacherId` AS `teacherId`, ifnull(`users`.`user_Lname`,'None') AS `user_Lname`, ifnull(`users`.`user_Fname`,'None') AS `user_Fname`, ifnull(`users`.`user_Mname`,'None') AS `user_Mname`, ifnull(`users`.`gender`,'None') AS `gender`, `teacherloads`.`subjectId` AS `subjectId`, `subjects`.`subjectCode` AS `subjectCode`, `subjects`.`description` AS `description`, `subjects`.`gradeLevel` AS `gradeLevel`, `teacherloads`.`timeStart` AS `timeStart`, `teacherloads`.`timeEnd` AS `timeEnd` FROM ((`teacherloads` left join `users` on(`teacherloads`.`teacherId` = `users`.`id`)) left join `subjects` on(`teacherloads`.`subjectId` = `subjects`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2540,7 +2691,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_users_jhs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users_jhs`  AS  select `users`.`id` AS `id`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`users`.`user_name` AS `user_name`,`users`.`user_password` AS `user_password`,`users`.`user_level` AS `user_level` from `users` where `users`.`dep_type` = 'JHS' order by `users`.`user_level` desc,`users`.`user_Lname`,`users`.`user_Fname`,`users`.`user_Mname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users_jhs`  AS SELECT `users`.`id` AS `id`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `users`.`user_name` AS `user_name`, `users`.`user_password` AS `user_password`, `users`.`user_level` AS `user_level` FROM `users` WHERE `users`.`dep_type` = 'JHS' ORDER BY `users`.`user_level` DESC, `users`.`user_Lname` ASC, `users`.`user_Fname` ASC, `users`.`user_Mname` ASC ;
 
 -- --------------------------------------------------------
 
@@ -2549,7 +2700,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_users_shs`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users_shs`  AS  select `users`.`id` AS `id`,`users`.`user_Lname` AS `user_Lname`,`users`.`user_Fname` AS `user_Fname`,`users`.`user_Mname` AS `user_Mname`,`users`.`gender` AS `gender`,`users`.`user_name` AS `user_name`,`users`.`user_password` AS `user_password`,`users`.`user_level` AS `user_level` from `users` where `users`.`dep_type` = 'SHS' order by `users`.`user_level` desc,`users`.`user_Lname`,`users`.`user_Fname`,`users`.`user_Mname` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users_shs`  AS SELECT `users`.`id` AS `id`, `users`.`user_Lname` AS `user_Lname`, `users`.`user_Fname` AS `user_Fname`, `users`.`user_Mname` AS `user_Mname`, `users`.`gender` AS `gender`, `users`.`user_name` AS `user_name`, `users`.`user_password` AS `user_password`, `users`.`user_level` AS `user_level` FROM `users` WHERE `users`.`dep_type` = 'SHS' ORDER BY `users`.`user_level` DESC, `users`.`user_Lname` ASC, `users`.`user_Fname` ASC, `users`.`user_Mname` ASC ;
 
 --
 -- Indexes for dumped tables
@@ -2719,7 +2870,7 @@ ALTER TABLE `bmichart_male`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `booksissuedreturned`
@@ -2731,13 +2882,13 @@ ALTER TABLE `booksissuedreturned`
 -- AUTO_INCREMENT for table `booktemplates`
 --
 ALTER TABLE `booktemplates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `enrollment`
 --
 ALTER TABLE `enrollment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `enrollment_static`
@@ -2755,7 +2906,7 @@ ALTER TABLE `finalgrades`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `grades_static`
@@ -2779,49 +2930,49 @@ ALTER TABLE `hfachart_male`
 -- AUTO_INCREMENT for table `loads`
 --
 ALTER TABLE `loads`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `personalinfo`
 --
 ALTER TABLE `personalinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `teacherloads`
 --
 ALTER TABLE `teacherloads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `userdetails`
 --
 ALTER TABLE `userdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

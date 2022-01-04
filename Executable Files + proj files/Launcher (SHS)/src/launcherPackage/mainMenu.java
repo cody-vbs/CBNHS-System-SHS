@@ -325,7 +325,7 @@ public class mainMenu extends javax.swing.JFrame {
         mainTab = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("HiSRMS v2.0");
+        setTitle("CBNHS-SHS");
         setIconImage(my.getImgIcn(myVariables.getLauncherIcon()).getImage()
         );
         setMinimumSize(new java.awt.Dimension(1284, 770));

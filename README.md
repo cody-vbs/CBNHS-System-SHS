@@ -13,7 +13,7 @@ You can download and install the package through here [Link](https://drive.googl
 > How to Install? 
 
 1. Download and install Java Runtime Environment [Download Here](https://www.java.com/en/download/manual.jsp)
-2. Click  *CBNHS-SH.exe* to install the app **Follow the on screen instructions
+2. Click  *CBNHS-SH.exe* to install the app **Follow the on screen instructions**
 
 ![alt text](https://github.com/cody-vbs/CBNHS-System-SHS/blob/master/img4.png)
 

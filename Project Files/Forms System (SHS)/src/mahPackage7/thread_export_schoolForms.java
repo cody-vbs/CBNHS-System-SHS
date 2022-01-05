@@ -42,12 +42,18 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
         private JTable sf2SummaryTable;
         private String sf2MonthSelected;
         private String sf2SchoolDays;
+        private String strand2;
+        private String sem2;
+        
         //SF3
         private JTable sf3Table;
         private JTable sf3BooksTable;
+        
         //SF4
         private String sf4MonthSelected;
         private JTable sf4Table;
+        private String sem4;
+        
         //SF5
         private JTable sf5Table;
         private JTable sf5SummaryTable;
@@ -183,6 +189,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                 sf2SummaryTable = tables[2];
                 sf2MonthSelected = stringsToUse[0].toUpperCase();
                 sf2SchoolDays = textFieldsToUse[4].getText();
+                strand2 = textFieldsToUse[5].getText();
+                sem2 =   stringsToUse[1];
                 break;
             }case 3:{
                 //Global Variables
@@ -197,6 +205,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
             }case 4:{
                 //Global Variables
                 schoolYear = textFieldsToUse[0].getText();
+                sem4 =   stringsToUse[1];
+                
                 //SF4 Variables
                 sf4Table = tables[0];
                 sf4MonthSelected = stringsToUse[0].toUpperCase();
@@ -503,8 +513,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         studentName = my.getValueAtColumn(line, 3);
                         gender = my.getValueAtColumn(line, 4);
                         
-                        absent = my.getValueAtColumn(line, 32);
-                        tardy = my.getValueAtColumn(line, 33);
+                        absent = my.getValueAtColumn(line, 33);
+                        tardy = my.getValueAtColumn(line, 34);
                         
                         //Extract & Move remarks to last part of the line later
                         remarks = my.getValueAtColumn(line, 6);
@@ -1304,8 +1314,8 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(schoolName, "C,4"),
                         new header(schoolYear, "I,3"),
                         new header(gradeLevel, "R,4"),
-                        //new header(Strand, "AB,3"),
-                        //new header(Semester, "AD,3"),
+                        new header(strand2, "AB,3"),
+                        new header(sem2, "AD,3"),
                         new header(sectionName, "AB,4"),
                         //Form's Custom Fields
                         new header(sf2MonthSelected, monthSelected[sheetNumber]),
@@ -1343,6 +1353,7 @@ public class thread_export_schoolForms extends SwingWorker<Object, Object>{
                         new header(division, "Q,4"),
                         new header(district, "Y,4"),
                         new header(schoolName, "C,6"),
+                        new header(sem4, "S,6"),
                         new header(schoolYear, "Y,6"),
                         new header(sf4MonthSelected, "AJ,6"),
                     };

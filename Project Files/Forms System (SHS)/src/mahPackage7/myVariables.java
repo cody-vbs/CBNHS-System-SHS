@@ -871,7 +871,9 @@ public class myVariables {
     public static void setTvl_dec(String tvl_dec) {
         myVariables.tvl_dec = tvl_dec;
     }
-    
+     public static int[] getShsf2Order() {
+        return jhsf2Order;
+    }
     
     
     

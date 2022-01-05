@@ -47,6 +47,7 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
     private JTextField tfAdviserName;
     private JTextField tfGradeLevel;
     private JTextField tfSchoolYear;
+    private JTextField tfStrand2;
     
     //Main Variables
     private JTable dateTable;
@@ -88,11 +89,13 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
         missingValuesSubstitute = stringsToUse[4];
         
         tfSchoolDays = textFieldsToUse[0];
-        if(textFieldsToUse.length>1){
+         if(textFieldsToUse.length>2){
             tfSectionName = textFieldsToUse[1];
             tfAdviserName = textFieldsToUse[2];
             tfGradeLevel = textFieldsToUse[3];
             tfSchoolYear = textFieldsToUse[4];
+        }else{
+            tfStrand2 = textFieldsToUse[1];
         }
         
         this.waitForMainThreadToFinish = booleansToUse[0];
@@ -140,6 +143,12 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                 }
             }
             
+            try{
+                my.getStrandFromSectionID("form_sf2_view_shs","WHERE sectionId='"+sectionId+"'",myVariables.getShsf2Order());
+                tfStrand2.setText(myVariables.getStrandName()); 
+            }catch(Exception e){
+                e.printStackTrace();
+            }
             
             tableName.setEnabled(false);
             showCustomDialog("Loading Attendances...", dialogPanel, false, 420, 220, false);
@@ -147,12 +156,14 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                 throw new InterruptedException("Interrupted @ Load Summary");
             }
             loadSchoolDaysIndex();
+            
             //Check if there are students
             if(tableName.getRowCount() <= 0){
                 //System.err.println("No students found. SKipping");
                 tfSchoolDays.setText("0");
                 throw new InterruptedException("Ended");
             }
+            
             //Remove Students That are not enrolled Yet During the month
             if(!removeStudents()){
                 throw new InterruptedException("Interrupted @ Remove Students");
@@ -768,8 +779,8 @@ public class thread_loadSf2Details extends SwingWorker<String, Object>{
                     Thread.sleep(threadDelay);
                 }
                 //Put results to column
-                tableName.setValueAt(absent, n, 32);
-                tableName.setValueAt(tardy, n, 33);
+                tableName.setValueAt(absent, n, 33);
+                tableName.setValueAt(tardy, n, 34);
                 
                 Thread.sleep(pauseDelay);
             }

@@ -7,7 +7,7 @@ A School Management System for Crossing Bayabas National High School (Senior Hig
 ***
 ### For Mac Users 
 
-You can download and install the package through here [Link](https://drive.google.com/file/d/1WfinuhfGB-V-KMYE4Hq4-XjzJENfH04t/view?usp=sharing)
+You can download and install the package through here [Link](https://drive.google.com/file/d/16O0C7CM5oMVva_U3Yv6eRdAoKzWkeWJr/view?usp=sharing)
 
 
 > How to Install? 

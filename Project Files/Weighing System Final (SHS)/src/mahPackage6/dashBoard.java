@@ -32,6 +32,7 @@ import java.awt.geom.RoundRectangle2D;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 import javazoom.jl.player.Player;
@@ -533,6 +534,8 @@ public class dashBoard extends javax.swing.JFrame {
         hfaChartFemaleTable = new javax.swing.JTable();
         btnRefreshHfa = new javax.swing.JButton();
         jInternalFrame1 = new javax.swing.JInternalFrame();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         mainTab = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -775,7 +778,19 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Nutrional Status Properties");
 
+        tfWeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfWeightActionPerformed(evt);
+            }
+        });
+
         jLabel17.setText("Height (m)");
+
+        tfHeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHeightActionPerformed(evt);
+            }
+        });
 
         btnEvaluate.setForeground(new java.awt.Color(255, 255, 255));
         btnEvaluate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/calculator 1.png"))); // NOI18N
@@ -870,11 +885,8 @@ public class dashBoard extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnEvaluate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(1, 1, 1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(290, 290, 290))
@@ -1178,6 +1190,12 @@ public class dashBoard extends javax.swing.JFrame {
 
         jLabel8.setText("Height (m)");
 
+        tfTestHeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTestHeightActionPerformed(evt);
+            }
+        });
+
         tfTestBmi.setEditable(false);
         tfTestBmi.setFocusable(false);
 
@@ -1194,43 +1212,62 @@ public class dashBoard extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(right1Layout.createSequentialGroup()
                         .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel9))
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(79, 79, 79))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbNutritionalStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbHeightForAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addComponent(lbHeightForAge, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                .addGap(17, 17, 17))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, right1Layout.createSequentialGroup()
                         .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, right1Layout.createSequentialGroup()
-                                    .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(tfTestWeight)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(tfTestAge, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jdcTestDateOfBirt, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(right1Layout.createSequentialGroup()
-                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, Short.MAX_VALUE)
-                                    .addComponent(tfTestHeight))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfTestHeightSq, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(right1Layout.createSequentialGroup()
+                                        .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(tfTestWeight)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(tfTestAge, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)))
+                                    .addGroup(right1Layout.createSequentialGroup()
+                                        .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jdcTestDateOfBirt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)))
+                                .addGap(29, 29, 29))
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tfTestHeight)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(right1Layout.createSequentialGroup()
+                                        .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                                        .addGap(27, 27, 27))
+                                    .addGroup(right1Layout.createSequentialGroup()
+                                        .addComponent(tfTestHeightSq, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
                         .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jdcTestDateOfMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jcbTestGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(tfTestBmi, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)))))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addComponent(jdcTestDateOfMeasurement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(15, 15, 15))
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addComponent(jcbTestGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(69, 69, 69))
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(91, 91, 91))
+                            .addGroup(right1Layout.createSequentialGroup()
+                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tfTestBmi, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(77, 77, 77)))))
                 .addContainerGap())
         );
         right1Layout.setVerticalGroup(
@@ -1250,33 +1287,30 @@ public class dashBoard extends javax.swing.JFrame {
                         .addComponent(jdcTestDateOfMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(right1Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(51, 51, 51))
-                    .addGroup(right1Layout.createSequentialGroup()
-                        .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, right1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfTestWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(right1Layout.createSequentialGroup()
-                                .addComponent(jLabel26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tfTestAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jcbTestGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                    .addComponent(jLabel13)
+                    .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, right1Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfTestWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(right1Layout.createSequentialGroup()
+                            .addComponent(jLabel26)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfTestAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jcbTestGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(right1Layout.createSequentialGroup()
-                                .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel25))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfTestHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tfTestHeightSq, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tfTestBmi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(right1Layout.createSequentialGroup()
+                            .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel25))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfTestHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(right1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTestBmi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfTestHeightSq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel27))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEvaluateTest)
@@ -1393,7 +1427,7 @@ public class dashBoard extends javax.swing.JFrame {
         referenceChartsDialog.setLayout(referenceChartsDialogLayout);
         referenceChartsDialogLayout.setHorizontalGroup(
             referenceChartsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
+            .addComponent(jSplitPane2)
             .addGroup(referenceChartsDialogLayout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -1422,6 +1456,8 @@ public class dashBoard extends javax.swing.JFrame {
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jScrollPane10.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Dashboard");
@@ -1928,12 +1964,25 @@ public void myInitComponents() {
             Toolkit.getDefaultToolkit().beep();
             my.showMessage("Invalid Date.", JOptionPane.WARNING_MESSAGE);return;}
         try {
-            Integer.parseInt(weight);
+     //     Integer.parseInt(weight);
             Float.parseFloat(height);
+            boolean heightVal= Pattern.matches("^([0])(\\.[6-9])(\\d{0,3})$|^([1-3])(\\.)(\\d{0,4})$|^[1-3?]$", height);
+            //range 0.6000 - 3.9999 meters
+            if (!heightVal) {
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Height: 1 feet = 0.3048 meters", JOptionPane.WARNING_MESSAGE);return;
+            }
+            boolean weightVal =Pattern.matches("^[1-9](\\.\\d{1,2}){0,3}$|^[0-9]{2}(\\.\\d{1,2}){0,3}$|^[1-5][0-9]{2}(\\.\\d{1,2}){0,3}$", weight); 
+            //range 1- 599.99 kg
+            if (!weightVal) {
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Weight", JOptionPane.WARNING_MESSAGE);return;
+            }
+              
         } catch (Exception e) {
             Toolkit.getDefaultToolkit().beep();
             my.showMessage("Invalid Weight/Height.", JOptionPane.WARNING_MESSAGE);return;}
-        
+
         heightSquared = my.getHeightSquared(height);
         bmi = my.getBmi(weight, heightSquared);
         String ageInYearMonth = my.getAgeInYearsMonths(dateConducted, dateOfBirth);
@@ -1965,8 +2014,20 @@ public void myInitComponents() {
              Toolkit.getDefaultToolkit().beep();
             my.showMessage("Invalid Date.", JOptionPane.WARNING_MESSAGE);return;}
         try {
-            Integer.parseInt(weight);
+        //    Integer.parseInt(weight);
             Float.parseFloat(height);
+            boolean heightVal= Pattern.matches("^([0])(\\.[6-9])(\\d{0,3})$|^([1-3])(\\.)(\\d{0,4})$|^[1-3?]$", height);
+            //range 0.6000 - 3.9999 meters
+            if (!heightVal) {
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Height: 1 feet = 0.3048 meters", JOptionPane.WARNING_MESSAGE);return;
+            }
+            boolean weightVal =Pattern.matches("^[1-9](\\.\\d{1,2}){0,3}$|^[0-9]{2}(\\.\\d{1,2}){0,3}$|^[1-4][0-9]{2}(\\.\\d{1,2}){0,3}$", weight); 
+            //range 1- 599.99 kg
+            if (!weightVal) {
+            Toolkit.getDefaultToolkit().beep();
+            my.showMessage("Invalid Weight", JOptionPane.WARNING_MESSAGE);return;
+            }    
         } catch (Exception e) {
              Toolkit.getDefaultToolkit().beep();
             my.showMessage("Invalid Weight/Height.", JOptionPane.WARNING_MESSAGE);return;}
@@ -2080,6 +2141,18 @@ public void myInitComponents() {
     private void tfstrandM6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfstrandM6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfstrandM6ActionPerformed
+
+    private void tfHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHeightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHeightActionPerformed
+
+    private void tfWeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfWeightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfWeightActionPerformed
+
+    private void tfTestHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTestHeightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTestHeightActionPerformed
     private void clearBmiFields(boolean clearFields,boolean enableDisableEvaluateBtn,boolean enableDisableSaveBtn){
         if(clearFields){
             lbBmiRecordId.setText("--Please Select A Student--");
@@ -2222,6 +2295,7 @@ public void myInitComponents() {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2233,6 +2307,7 @@ public void myInitComponents() {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JComboBox<String> jcbSchoolYear1;
     private javax.swing.JComboBox<String> jcbTestGender;
     private com.toedter.calendar.JDateChooser jdcDateOfMeasurement;

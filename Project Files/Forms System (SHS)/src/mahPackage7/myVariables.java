@@ -35,21 +35,21 @@ public class myVariables {
     
     private static int processingSpeed = 0;
     //Fonts
-    public static final Font COLUMN_HEADER_FONT = new Font("Poppins SemiBold",Font.PLAIN,13);
+    public static final Font COLUMN_HEADER_FONT = new Font("Poppins",Font.PLAIN,13);
     public static final Font COLUMN_FONT = new Font("Poppins",Font.PLAIN,13);
     
-    public static final Font BUTTON_FONT = new Font("Poppins SemiBold",Font.PLAIN,12);
-    public static final Font TAB_HEADER_FONT = new Font("Poppins SemiBold",Font.PLAIN,13);
-    public static final Font TAB_FONT = new Font("Poppins SemiBold",Font.PLAIN,11);
+    public static final Font BUTTON_FONT = new Font("Poppins",Font.PLAIN,12);
+    public static final Font TAB_HEADER_FONT = new Font("Poppins Semibold",Font.PLAIN,13);
+    public static final Font TAB_FONT = new Font("Poppins",Font.PLAIN,11);
     
-    public static final Font TEXTFIELD_HEADER_FONT = new Font("Poppins SemiBold",Font.PLAIN,12);//e.g. First Name
-    public static final Font TEXTFIELD_FONT = new Font("Poppins SemiBold",Font.PLAIN,12);
-    public static final Font SEARCH_TEXTFIELD_FONT = new Font("Poppins SemiBold",Font.PLAIN,12);
+    public static final Font TEXTFIELD_HEADER_FONT = new Font("Poppins Semibold",Font.PLAIN,12);//e.g. First Name
+    public static final Font TEXTFIELD_FONT = new Font("Poppins",Font.PLAIN,12);
+    public static final Font SEARCH_TEXTFIELD_FONT = new Font("Poppins",Font.PLAIN,12);
     
-    public static final Font TITLE_HEADER_FONT = new Font("Poppins SemiBold",Font.PLAIN,18); //e.g. Add New Subject
-    public static final Font FORMS_HEADER_FONT = new Font("Poppins SemiBold",Font.PLAIN,14); // e.g. Basic Information
+    public static final Font TITLE_HEADER_FONT = new Font("Poppins Semibold",Font.PLAIN,18); //e.g. Add New Subject
+    public static final Font FORMS_HEADER_FONT = new Font("Poppins",Font.PLAIN,14); // e.g. Basic Information
     
-    public static final Font LABEL_FONT = new Font("Poppins SemiBold",Font.PLAIN,13); // e.g. Showing 5 results of 'to search'
+    public static final Font LABEL_FONT = new Font("Poppins Semibold",Font.PLAIN,13); // e.g. Showing 5 results of 'to search'
     
     //Logged In User Details
     private static int userLoggedInId;

@@ -9,6 +9,9 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.Icon;
@@ -27,6 +30,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javazoom.jl.player.Player;
 import javax.swing.SwingUtilities;
 import java.io.FileInputStream;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 
 /**
@@ -36,11 +40,63 @@ import javax.swing.ImageIcon;
 public class dashBoard extends javax.swing.JFrame {
     myFunctions my;
     JPanel formsPanels [];
+    Font pixelMplus;
+    Font poppins48;
+    Font poppins38;
+    Font poppins30;
+    Font poppins24;
+    Font poppins19;
+    Font poppins16;
+    Font poppins14;
+    Font poppins12;
+    Font poppins12R;
+    
     public dashBoard() {
+        
+        try{
+            // load a custom font in your project folder
+			pixelMplus = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-Regular.ttf")).deriveFont(16f);	
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-Regular.ttf")));		
+                        
+                        
+                        poppins48 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(48f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins38 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(38f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins30 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(30f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins24 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(24f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins19 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(19f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));
+                        
+                        poppins16 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(16f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins14 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(14f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins12 = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")).deriveFont(12f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                        poppins12R = Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-Regular.ttf")).deriveFont(12f);	
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Poppins-SemiBold.ttf")));	
+                        
+                       
+		}
+		catch(IOException | FontFormatException e){
+			
+		}
        
         my = new myFunctions(false);
         
         initComponents();
+        myInitComponents();
         menu.setText(myVariables.getUserLoggedInName());
         formsPanels = new JPanel[]{
             selectFormPanel,
@@ -87,7 +143,12 @@ public class dashBoard extends javax.swing.JFrame {
         
         mainTab.setBackground(new java.awt.Color(203,184,160)); 
         mainTab.setForeground(new java.awt.Color(0,0,0));
-    
+        btnSearchSection.setBackground(new java.awt.Color(251,185,211));
+        
+        
+        jLabel119.setFont(poppins48);
+        jLabel118.setFont(poppins19);
+//        label1.setFont(poppins14);
     
     }
     static void playErrorSound() {
@@ -141,6 +202,8 @@ public class dashBoard extends javax.swing.JFrame {
     void playError(){
         SwingUtilities.invokeLater(new PlayErrorMessageSound());
     }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -559,9 +622,9 @@ public class dashBoard extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         btnShowRankings = new javax.swing.JButton();
         jLabel121 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         cards = new javax.swing.JPanel();
         card1 = new javax.swing.JPanel();
@@ -593,7 +656,7 @@ public class dashBoard extends javax.swing.JFrame {
 
         jPanel37.setBackground(new java.awt.Color(203, 184, 160));
 
-        jLabel120.setFont(new java.awt.Font("Poppins SemiBold", 1, 18)); // NOI18N
+        jLabel120.setFont(new java.awt.Font("Poppins SemiBold", 0, 18)); // NOI18N
         jLabel120.setText("Select A Form First");
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
@@ -4686,17 +4749,25 @@ public class dashBoard extends javax.swing.JFrame {
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(1003, 600));
 
         headerPanel.setBackground(new java.awt.Color(251, 185, 211));
-        headerPanel.setPreferredSize(new java.awt.Dimension(862, 75));
+        headerPanel.setPreferredSize(new java.awt.Dimension(300, 723));
 
-        jLabel118.setFont(new java.awt.Font("Poppins SemiBold", 0, 15)); // NOI18N
+        jLabel118.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        jLabel118.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel118.setText("Forms System");
+        jLabel118.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel119.setFont(new java.awt.Font("Poppins SemiBold", 0, 24)); // NOI18N
+        jLabel119.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel119.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel119.setText("SHS");
+        jLabel119.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton1.setText("School Form 1");
+        jButton1.setText("<html> <b>School Form 1</b> <br><small> School Register</small> </html>");
         jButton1.setToolTipText("School Register");
+        jButton1.setActionCommand("<html> <b>School Form 1</b> <br><small> School Register</small> </html>");
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton1.setIconTextGap(10);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -4704,8 +4775,11 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton2.setText("School Form 2");
+        jButton2.setText("<html> <b>School Forms 2</b> <br><small> Daily Attendance Report of Learners</small></html>");
         jButton2.setToolTipText("Daily Attendance Report of Learners");
+        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton2.setIconTextGap(10);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -4713,8 +4787,11 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton3.setText("School Form 3");
+        jButton3.setText("<html><b>School Forms 3</b> <br><small> Books Issued and Returned</small></html>");
         jButton3.setToolTipText("Books Issued and Returned");
+        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton3.setIconTextGap(10);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -4722,8 +4799,12 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton4.setText("School Form 4");
+        jButton4.setText("<html><b>School Form 4</b> <br><small>Monthly Learner's Movement and Attendance</small></html>");
         jButton4.setToolTipText("Monthly Learner's Movement and Attendance");
+        jButton4.setActionCommand("SF 4  \nMonthly Learner's Movement and Attendance");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton4.setIconTextGap(10);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -4731,8 +4812,11 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton5.setText("School Form 5");
+        jButton5.setText("<html><b>School Form 5</b> <br><small>Report on Promotion and Level of Proficiency & Achievement</small></html>");
         jButton5.setToolTipText("Report on Promotion and Level of Proficiency & Achievement");
+        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton5.setIconTextGap(10);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -4740,8 +4824,11 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton6.setText("School Form 6");
+        jButton6.setText("<html><b>School Form 6</b> <br><small>Summarized Report on Promotion and Level of Proficiency</small></html>");
         jButton6.setToolTipText("Summarized Report on Promotion and Level of Proficiency");
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton6.setIconTextGap(10);
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -4749,8 +4836,11 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton7.setText("School Form 7");
+        jButton7.setText("<html><b>School Form 7</b><br><small>School Personnel Assignment List and Basic Profile</small></html>");
         jButton7.setToolTipText("School Personnel Assignment List and Basic Profile");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.setIconTextGap(10);
+        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -4758,8 +4848,11 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton8.setText("School Form 8");
+        jButton8.setText("<html><b>School Form 8</b><br><small>Learner's Basic Health and Nutrition Report</small></html>");
         jButton8.setToolTipText("Learner's Basic Health and Nutrition Report");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton8.setIconTextGap(10);
+        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -4767,26 +4860,21 @@ public class dashBoard extends javax.swing.JFrame {
         });
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton9.setText("School Form 9");
+        jButton9.setText("<html><b>School Form 9</b><br><small>Student's Report Card</small></html>");
         jButton9.setToolTipText("Student's Report Card");
+        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton9.setIconTextGap(10);
+        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton10.setText("School Form 10");
-        jButton10.setToolTipText("Learner's Permanent Academic Record for Senior High School");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
         btnShowRankings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_prize_16px.png"))); // NOI18N
         btnShowRankings.setText("Student Rankings");
         btnShowRankings.setToolTipText("Student Rankings");
+        btnShowRankings.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnShowRankings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowRankingsActionPerformed(evt);
@@ -4795,72 +4883,79 @@ public class dashBoard extends javax.swing.JFrame {
 
         jLabel121.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/cbshs.png"))); // NOI18N
 
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
+        jButton10.setText("<html><b>School Form 10</b><br><small>Learner's Permanent Academic Record for Senior High School</small></html>");
+        jButton10.setToolTipText("Learner's Permanent Academic Record for Senior High School");
+        jButton10.setIconTextGap(10);
+        jButton10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addComponent(btnShowRankings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel118)
-                            .addComponent(jLabel117)
-                            .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(jLabel117)
+                .addGap(32, 32, 32))
             .addGroup(headerPanelLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel119)
+                .addGap(98, 98, 98)
+                .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel117)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel118)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnShowRankings)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnShowRankings, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4882,15 +4977,17 @@ public class dashBoard extends javax.swing.JFrame {
         card1.setLayout(card1Layout);
         card1Layout.setHorizontalGroup(
             card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1092, Short.MAX_VALUE)
+            .addGap(0, 969, Short.MAX_VALUE)
             .addGroup(card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card1Layout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)))
         );
         card1Layout.setVerticalGroup(
             card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 789, Short.MAX_VALUE)
             .addGroup(card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE))
+                .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE))
         );
 
         cards.add(card1, "card2");
@@ -5007,7 +5104,7 @@ public class dashBoard extends javax.swing.JFrame {
         rankingsDialog.setLayout(rankingsDialogLayout);
         rankingsDialogLayout.setHorizontalGroup(
             rankingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+            .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
             .addGroup(rankingsDialogLayout.createSequentialGroup()
                 .addComponent(jLabel51)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -5036,20 +5133,20 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(jcbRankingSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE))
+                .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout card2Layout = new javax.swing.GroupLayout(card2);
         card2.setLayout(card2Layout);
         card2Layout.setHorizontalGroup(
             card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1092, Short.MAX_VALUE)
+            .addGap(0, 969, Short.MAX_VALUE)
             .addGroup(card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(rankingsDialog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         card2Layout.setVerticalGroup(
             card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 789, Short.MAX_VALUE)
             .addGroup(card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(rankingsDialog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -5064,7 +5161,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
@@ -5072,14 +5169,14 @@ public class dashBoard extends javax.swing.JFrame {
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
             .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
         );
 
         jMenuBar1.setToolTipText("");
@@ -5104,11 +5201,11 @@ public class dashBoard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1303, Short.MAX_VALUE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1315, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
         );
 
         pack();

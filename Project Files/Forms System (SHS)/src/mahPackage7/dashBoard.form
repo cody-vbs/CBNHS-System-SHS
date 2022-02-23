@@ -122,7 +122,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel120">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Poppins SemiBold" size="18" style="1"/>
+                              <Font name="Poppins SemiBold" size="18" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Select A Form First"/>
                           </Properties>
@@ -8031,12 +8031,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="kGradientPanel1" alignment="0" pref="1303" max="32767" attributes="0"/>
+          <Component id="kGradientPanel1" alignment="0" pref="1315" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="kGradientPanel1" alignment="0" pref="760" max="32767" attributes="0"/>
+          <Component id="kGradientPanel1" alignment="0" pref="829" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -8058,16 +8058,16 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="headerPanel" min="-2" pref="165" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="headerPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="contentPanel" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="headerPanel" pref="760" max="32767" attributes="0"/>
               <Component id="contentPanel" alignment="0" max="32767" attributes="0"/>
+              <Component id="headerPanel" alignment="0" pref="829" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -8078,7 +8078,7 @@
               <Color blue="d3" green="b9" red="fb" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[862, 75]"/>
+              <Dimension value="[300, 723]"/>
             </Property>
           </Properties>
 
@@ -8087,36 +8087,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnShowRankings" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton4" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton3" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton2" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton5" alignment="1" pref="0" max="32767" attributes="0"/>
+                  <Component id="jButton6" alignment="1" pref="0" max="32767" attributes="0"/>
+                  <Component id="jButton7" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton8" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton9" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jLabel119" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel118" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel118" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel121" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton7" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton9" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton10" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      <Component id="jLabel121" min="-2" pref="100" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Component id="jButton10" alignment="0" pref="300" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -8124,36 +8116,36 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jLabel121" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel119" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel119" min="-2" pref="47" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel118" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton4" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton5" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton6" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton7" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton8" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnShowRankings" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton10" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnShowRankings" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -8165,17 +8157,21 @@
             <Component class="javax.swing.JLabel" name="jLabel118">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Poppins SemiBold" size="15" style="0"/>
+                  <Font name="Tahoma" size="19" style="1"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Forms System"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel119">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Poppins SemiBold" size="24" style="0"/>
+                  <Font name="Tahoma" size="48" style="0"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="SHS"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -8185,8 +8181,12 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 1"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;b&gt;School Form 1&lt;/b&gt; &lt;br&gt;&lt;small&gt; School Register&lt;/small&gt; &lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="School Register"/>
+                <Property name="actionCommand" type="java.lang.String" value="&lt;html&gt; &lt;b&gt;School Form 1&lt;/b&gt; &lt;br&gt;&lt;small&gt; School Register&lt;/small&gt; &lt;/html&gt;"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -8197,8 +8197,11 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 2"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;b&gt;School Forms 2&lt;/b&gt; &lt;br&gt;&lt;small&gt; Daily Attendance Report of Learners&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Daily Attendance Report of Learners"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -8209,8 +8212,11 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 3"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Forms 3&lt;/b&gt; &lt;br&gt;&lt;small&gt; Books Issued and Returned&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Books Issued and Returned"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
@@ -8221,8 +8227,12 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 4"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 4&lt;/b&gt; &lt;br&gt;&lt;small&gt;Monthly Learner&apos;s Movement and Attendance&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Monthly Learner&apos;s Movement and Attendance"/>
+                <Property name="actionCommand" type="java.lang.String" value="SF 4  &#xa;Monthly Learner&apos;s Movement and Attendance"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
@@ -8233,8 +8243,11 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 5"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 5&lt;/b&gt; &lt;br&gt;&lt;small&gt;Report on Promotion and Level of Proficiency &amp; Achievement&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Report on Promotion and Level of Proficiency &amp; Achievement"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
@@ -8245,8 +8258,11 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 6"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 6&lt;/b&gt; &lt;br&gt;&lt;small&gt;Summarized Report on Promotion and Level of Proficiency&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Summarized Report on Promotion and Level of Proficiency"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
@@ -8257,8 +8273,11 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 7"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 7&lt;/b&gt;&lt;br&gt;&lt;small&gt;School Personnel Assignment List and Basic Profile&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="School Personnel Assignment List and Basic Profile"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
@@ -8269,8 +8288,11 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 8"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 8&lt;/b&gt;&lt;br&gt;&lt;small&gt;Learner&apos;s Basic Health and Nutrition Report&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Learner&apos;s Basic Health and Nutrition Report"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
@@ -8281,23 +8303,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="School Form 9"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 9&lt;/b&gt;&lt;br&gt;&lt;small&gt;Student&apos;s Report Card&lt;/small&gt;&lt;/html&gt;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Student&apos;s Report Card"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton10">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="School Form 10"/>
-                <Property name="toolTipText" type="java.lang.String" value="Learner&apos;s Permanent Academic Record for Senior High School"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnShowRankings">
@@ -8307,6 +8320,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Student Rankings"/>
                 <Property name="toolTipText" type="java.lang.String" value="Student Rankings"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnShowRankingsActionPerformed"/>
@@ -8318,6 +8332,20 @@
                   <Image iconType="3" name="/mahPackage7/icons/cbshs.png"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton10">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/mahPackage7/icons/icons8_google_forms_20px.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;School Form 10&lt;/b&gt;&lt;br&gt;&lt;small&gt;Learner&apos;s Permanent Academic Record for Senior High School&lt;/small&gt;&lt;/html&gt;"/>
+                <Property name="toolTipText" type="java.lang.String" value="Learner&apos;s Permanent Academic Record for Senior High School"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="verticalTextPosition" type="int" value="1"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -8341,7 +8369,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="cards" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="cards" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -8370,17 +8398,20 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1092" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="969" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Component id="mainTab" alignment="0" pref="1092" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                  <Component id="mainTab" pref="969" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="789" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Component id="mainTab" alignment="0" pref="720" max="32767" attributes="0"/>
+                              <Component id="mainTab" alignment="0" pref="789" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -8420,7 +8451,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1092" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="969" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Component id="rankingsDialog" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -8428,7 +8459,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="720" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="789" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Component id="rankingsDialog" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -8446,7 +8477,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tpRankingsTab" pref="1092" max="32767" attributes="0"/>
+                              <Component id="tpRankingsTab" pref="969" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -8480,7 +8511,7 @@
                                       <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="tpRankingsTab" pref="673" max="32767" attributes="0"/>
+                                  <Component id="tpRankingsTab" pref="742" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

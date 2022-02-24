@@ -3639,8 +3639,16 @@ public class dashBoard extends javax.swing.JFrame {
                     Integer.parseInt(enrolledStudentsTable1.getValueAt(row, 8).toString()) : 0;
 
             gwa = (q1+q2)/2;
-
-            enrolledStudentsTable1.setValueAt(gwa,row, 11);
+            
+            if(q2 == 0){
+                gwa = 0;
+            }if(q1 == 0){
+                gwa = 0;
+            }if(gwa == 0){
+                enrolledStudentsTable1.setValueAt("",row, 11);
+            }else{
+                enrolledStudentsTable1.setValueAt(gwa,row, 11);
+            }
             
             String newStatus = my.setValueAtColumn(
                     enrolledStudentsTable1.getValueAt(row, 12).toString().replace(":", "@@"),

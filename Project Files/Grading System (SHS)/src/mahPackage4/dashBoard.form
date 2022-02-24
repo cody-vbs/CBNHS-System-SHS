@@ -3376,7 +3376,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel94" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jtbImportTabs" pref="465" max="32767" attributes="0"/>
+                                  <Component id="jtbImportTabs" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3539,7 +3539,7 @@
                                               <Component id="btnOpenFileExplorer" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="gradeTabs" pref="331" max="32767" attributes="0"/>
+                                          <Component id="gradeTabs" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>

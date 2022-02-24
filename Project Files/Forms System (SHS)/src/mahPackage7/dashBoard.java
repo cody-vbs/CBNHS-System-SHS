@@ -543,9 +543,9 @@ public class dashBoard extends javax.swing.JFrame {
         sf10Tab = new javax.swing.JPanel();
         tpSf10Pane = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
-        lbSearchResult2 = new javax.swing.JLabel();
         jScrollPane35 = new javax.swing.JScrollPane();
         enrolledStudentsTable1 = new javax.swing.JTable();
+        lbSearchResult2 = new javax.swing.JLabel();
         tfSearchEnrolledStudent1 = new javax.swing.JTextField();
         btnSearchEnrolledStudent1 = new javax.swing.JButton();
         jPanel26 = new javax.swing.JPanel();
@@ -613,18 +613,20 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel118 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel121 = new javax.swing.JLabel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        jPanel17 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        btnShowRankings = new javax.swing.JButton();
-        jLabel121 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
+        btnShowRankings = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         cards = new javax.swing.JPanel();
         card1 = new javax.swing.JPanel();
@@ -4050,9 +4052,6 @@ public class dashBoard extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(249, 239, 227));
 
-        lbSearchResult2.setForeground(new java.awt.Color(255, 255, 255));
-        lbSearchResult2.setText("Search using the search bar...");
-
         enrolledStudentsTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -4072,7 +4071,10 @@ public class dashBoard extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        enrolledStudentsTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        enrolledStudentsTable1.setFillsViewportHeight(true);
+        enrolledStudentsTable1.setMaximumSize(new java.awt.Dimension(25000, 25048));
+        enrolledStudentsTable1.setMinimumSize(new java.awt.Dimension(2048, 2048));
+        enrolledStudentsTable1.setPreferredSize(new java.awt.Dimension(1038, 610));
         enrolledStudentsTable1.getTableHeader().setReorderingAllowed(false);
         enrolledStudentsTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -4095,6 +4097,9 @@ public class dashBoard extends javax.swing.JFrame {
             enrolledStudentsTable1.getColumnModel().getColumn(9).setPreferredWidth(200);
             enrolledStudentsTable1.getColumnModel().getColumn(10).setPreferredWidth(200);
         }
+
+        lbSearchResult2.setForeground(new java.awt.Color(255, 255, 255));
+        lbSearchResult2.setText("Search using the search bar...");
 
         tfSearchEnrolledStudent1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4162,7 +4167,9 @@ public class dashBoard extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        sf10Table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        sf10Table.setFillsViewportHeight(true);
+        sf10Table.setMinimumSize(new java.awt.Dimension(2048, 2048));
+        sf10Table.setPreferredSize(new java.awt.Dimension(1038, 610));
         sf10Table.getTableHeader().setReorderingAllowed(false);
         sf10Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -4761,6 +4768,12 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel119.setText("SHS");
         jLabel119.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jLabel121.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/cbshs.png"))); // NOI18N
+
+        jScrollPane27.setBorder(null);
+
+        jPanel17.setBackground(new java.awt.Color(251, 185, 211));
+
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
         jButton1.setText("<html> <b>School Form 1</b> <br><small> School Register</small> </html>");
         jButton1.setToolTipText("School Register");
@@ -4798,19 +4811,6 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton4.setText("<html><b>School Form 4</b> <br><small>Monthly Learner's Movement and Attendance</small></html>");
-        jButton4.setToolTipText("Monthly Learner's Movement and Attendance");
-        jButton4.setActionCommand("SF 4  \nMonthly Learner's Movement and Attendance");
-        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton4.setIconTextGap(10);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
         jButton5.setText("<html><b>School Form 5</b> <br><small>Report on Promotion and Level of Proficiency & Achievement</small></html>");
         jButton5.setToolTipText("Report on Promotion and Level of Proficiency & Achievement");
@@ -4820,30 +4820,6 @@ public class dashBoard extends javax.swing.JFrame {
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton6.setText("<html><b>School Form 6</b> <br><small>Summarized Report on Promotion and Level of Proficiency</small></html>");
-        jButton6.setToolTipText("Summarized Report on Promotion and Level of Proficiency");
-        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton6.setIconTextGap(10);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton7.setText("<html><b>School Form 7</b><br><small>School Personnel Assignment List and Basic Profile</small></html>");
-        jButton7.setToolTipText("School Personnel Assignment List and Basic Profile");
-        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton7.setIconTextGap(10);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
             }
         });
 
@@ -4859,6 +4835,43 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
+        jButton6.setText("<html><b>School Form 6</b> <br><small>Summarized Report on Promotion and Level of Proficiency</small></html>");
+        jButton6.setToolTipText("Summarized Report on Promotion and Level of Proficiency");
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton6.setIconTextGap(10);
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
+        jButton4.setText("<html><b>School Form 4</b> <br><small>Monthly Learner's Movement and Attendance</small></html>");
+        jButton4.setToolTipText("Monthly Learner's Movement and Attendance");
+        jButton4.setActionCommand("SF 4  \nMonthly Learner's Movement and Attendance");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton4.setIconTextGap(10);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
+        jButton7.setText("<html><b>School Form 7</b><br><small>School Personnel Assignment List and Basic Profile</small></html>");
+        jButton7.setToolTipText("School Personnel Assignment List and Basic Profile");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.setIconTextGap(10);
+        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
         jButton9.setText("<html><b>School Form 9</b><br><small>Student's Report Card</small></html>");
         jButton9.setToolTipText("Student's Report Card");
@@ -4868,6 +4881,17 @@ public class dashBoard extends javax.swing.JFrame {
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
+        jButton10.setText("<html><b>School Form 10</b><br><small>Learner's Permanent Academic Record for Senior High School</small></html>");
+        jButton10.setToolTipText("Learner's Permanent Academic Record for Senior High School");
+        jButton10.setIconTextGap(10);
+        jButton10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
             }
         });
 
@@ -4881,60 +4905,25 @@ public class dashBoard extends javax.swing.JFrame {
             }
         });
 
-        jLabel121.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/cbshs.png"))); // NOI18N
-
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mahPackage7/icons/icons8_google_forms_20px.png"))); // NOI18N
-        jButton10.setText("<html><b>School Form 10</b><br><small>Learner's Permanent Academic Record for Senior High School</small></html>");
-        jButton10.setToolTipText("Learner's Permanent Academic Record for Senior High School");
-        jButton10.setIconTextGap(10);
-        jButton10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
-        headerPanel.setLayout(headerPanelLayout);
-        headerPanelLayout.setHorizontalGroup(
-            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addComponent(btnShowRankings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton2)
+            .addComponent(jButton1)
             .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(btnShowRankings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel117)
-                .addGap(32, 32, 32))
-            .addGroup(headerPanelLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
-        headerPanelLayout.setVerticalGroup(
-            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel117)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel118)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4956,7 +4945,43 @@ public class dashBoard extends javax.swing.JFrame {
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnShowRankings, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(84, Short.MAX_VALUE))
+        );
+
+        jScrollPane27.setViewportView(jPanel17);
+
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel117)
+                .addGap(32, 32, 32))
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane27)
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel117)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel121, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel118)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane27))
         );
 
         contentPanel.setBackground(new java.awt.Color(249, 238, 227));
@@ -4983,7 +5008,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         card1Layout.setVerticalGroup(
             card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 789, Short.MAX_VALUE)
+            .addGap(0, 855, Short.MAX_VALUE)
             .addGroup(card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -5131,7 +5156,7 @@ public class dashBoard extends javax.swing.JFrame {
                             .addComponent(jcbRankingSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE))
+                .addComponent(tpRankingsTab, javax.swing.GroupLayout.DEFAULT_SIZE, 808, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout card2Layout = new javax.swing.GroupLayout(card2);
@@ -5144,7 +5169,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         card2Layout.setVerticalGroup(
             card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 789, Short.MAX_VALUE)
+            .addGap(0, 855, Short.MAX_VALUE)
             .addGroup(card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(rankingsDialog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -5174,7 +5199,7 @@ public class dashBoard extends javax.swing.JFrame {
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
+            .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
         );
 
         jMenuBar1.setToolTipText("");
@@ -5203,7 +5228,7 @@ public class dashBoard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
         );
 
         pack();
@@ -7633,6 +7658,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -7680,6 +7706,7 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;

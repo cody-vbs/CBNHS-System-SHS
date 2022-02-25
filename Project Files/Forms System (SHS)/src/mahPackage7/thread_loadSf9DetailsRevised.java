@@ -28,6 +28,8 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
     String sectionId;
     String subjectsContained;
     
+    JTextField tfGeneralAverage;
+    
     JButton btnLoadGrades;
     JButton btnExportSf9;
     
@@ -50,6 +52,8 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
         studentId = stringsToUse[0];
         sectionId = stringsToUse[1];
         subjectsContained = stringsToUse[2].substring(0,stringsToUse[2].length()-1);
+        
+        tfGeneralAverage = textFieldsToUse[3];
                 
         enableDisableButtons = booleansToUse[0];
         
@@ -148,6 +152,7 @@ public class thread_loadSf9DetailsRevised extends SwingWorker<String, Object>{
                 if(!matchFound){
                     String toWrite = "-1@@-1@@-1@@"+my.skipColumns(subjectsResult[n], new int []{3,4,5})+" @@ @@ @@ @@ @@INCOMPLETE@@ @@MISSING@@";
                     my.add_table_row(toWrite, sf9Table);
+                    tfGeneralAverage.setText("INC");
                 }
                 Thread.sleep(threadDelay);
             }
